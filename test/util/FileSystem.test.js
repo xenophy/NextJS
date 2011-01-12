@@ -413,7 +413,6 @@ module.exports = {
                 }
             });
 
-
         });
 
         beforeExit(function(){
@@ -431,6 +430,272 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test stat#standard
+
+    'test stat#standard': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.stat');
+        var ret = null;
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .next(function() {
+
+            NX.fs.stat(filename, function(err, s) {
+                ret = s;
+            });
+
+            NX.fs.stat(filename + '.unexists', function(err) {
+                if(err) {
+                    error = true;
+                }
+            });
+
+        });
+
+        beforeExit(function(){
+
+            assert.equal(NX.isObject(ret), true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test stat#deferred
+
+    'test stat#deferred': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.stat2');
+        var ret = null;
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .stat(filename)
+        .next(function(s) {
+            ret = s;
+        })
+        .stat(filename + '.unexists')
+        .error(function() {
+            error = true;
+        });
+
+        beforeExit(function(){
+
+            assert.equal(NX.isObject(ret), true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test lstat#standard
+
+    'test lstat#standard': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.lstat');
+        var ret = null;
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .next(function() {
+
+            NX.fs.lstat(filename, function(err, s) {
+                ret = s;
+            });
+
+            NX.fs.lstat(filename + '.unexists', function(err) {
+                if(err) {
+                    error = true;
+                }
+            });
+
+        });
+
+        beforeExit(function(){
+
+            assert.equal(NX.isObject(ret), true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test lstat#deferred
+
+    'test lstat#deferred': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.lstat2');
+        var ret = null;
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .lstat(filename)
+        .next(function(s) {
+            ret = s;
+        })
+        .lstat(filename + '.unexists')
+        .error(function() {
+            error = true;
+        });
+
+        beforeExit(function(){
+
+            assert.equal(NX.isObject(ret), true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test fstat#standard
+
+    /*
+    'test fstat#standard': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.fstat');
+        var ret = null;
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .next(function() {
+
+            NX.fs.fstat(filename, function(err, s) {
+                ret = s;
+            });
+
+            NX.fs.fstat(filename + '.unexists', function(err) {
+                if(err) {
+                    error = true;
+                }
+            });
+
+        });
+
+        beforeExit(function(){
+
+            assert.equal(NX.isObject(ret), true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test fstat#deferred
+
+    'test fstat#deferred': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.fstat2');
+        var ret = null;
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .fstat(filename)
+        .next(function(s) {
+            ret = s;
+        })
+        .fstat(filename + '.unexists')
+        .error(function() {
+            error = true;
+        });
+
+        beforeExit(function(){
+
+            assert.equal(NX.isObject(ret), true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
