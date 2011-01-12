@@ -979,10 +979,174 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test realpath#standard
 
+    'test realpath#standard': function(beforeExit) {
 
+        var ret = null;
 
+        NX.fs.realpath('./test/util', function(err, resolvedPath) {
+            ret = resolvedPath;
+        })
 
+        beforeExit(function(){
+
+            assert.equal(ret, __dirname);
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test realpath#deferred
+
+    'test realpath#deferred': function(beforeExit) {
+
+        var ret = null;
+        var error = null;
+
+        NX.fs
+        .realpath('./test/util')
+        .next(function(resolvedPath) {
+            ret = resolvedPath;
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret, __dirname);
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test unlink#standard
+
+    'test unlink#standard': function(beforeExit) {
+
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.unlink');
+
+        NX.fs
+        .touch(filename)
+        .next(function() {
+
+            NX.fs.unlink(filename, function(err) {
+                if(NX.isNull(err)) {
+                    ret = true;
+                }
+            })
+
+        })
+
+        beforeExit(function(){
+
+            assert.equal(ret, true);
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test unlink#deferred
+
+    'test unlink#deferred': function(beforeExit) {
+
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.unlink2');
+        var error = null;
+
+        NX.fs
+        .touch(filename)
+        .unlink(filename)
+        .unlink(filename + '.unexists')
+        .error(function() {
+            error = true;
+        });
+
+        beforeExit(function(){
+
+            assert.equal(NX.fs.existsSync(filename), false);
+            assert.equal(error, true);
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test mkdir#standard
+
+    'test mkdir#standard': function(beforeExit) {
+
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.mkdir');
+        var error = null;
+
+        try {
+            NX.fs.rmdirSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs.mkdir(filename, 0755, function(err) {
+            var s = require('fs').statSync(filename);
+            var mod = NX.sprintf('%o', s.mode);
+            ret = mod.substr(-4);
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret, '0755');
+
+            try {
+                NX.fs.rmdirSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test mkdir#deferred
+
+    'test mkdir#deferred': function(beforeExit) {
+
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.mkdir2');
+        var error = null;
+
+        try {
+            NX.fs.rmdirSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .mkdir(filename, 0755)
+        .next(function() {
+            var s = require('fs').statSync(filename);
+            var mod = NX.sprintf('%o', s.mode);
+            ret = mod.substr(-4);
+        })
+        .mkdir(filename, 0777)
+        .error(function() {
+            error = true;
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret, '0755');
+            assert.equal(error, true);
+
+            try {
+                NX.fs.rmdirSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
 
 
 
