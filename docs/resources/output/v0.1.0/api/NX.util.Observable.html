@@ -1,0 +1,322 @@
+<div class="api-doc"><div class="cls">
+  <h1>NX.util.Observable クラス</h1>
+  <div class="desc"><p>イベントを発行するインタフェースを持つ共通の基底クラスとして、提供されます。</p>
+
+<pre><code>Employee = NX.extend(NX.util.Observable, {
+    constructor: function(config){
+        this.name = config.name;
+        this.addEvents({
+            "fired" : true,
+            "quit" : true
+        });
+
+        this.listeners = config.listeners;
+
+        Employee.superclass.constructor.call(config)
+    }
+});
+</code></pre>
+
+<p>そして、次のように利用します。</p>
+
+<pre><code>var newEmployee = new Employee({
+    name: employeeName,
+    listeners: {
+        quit: function() {
+            alert(this.name + " has quit!");
+        }
+    }
+});
+</code></pre></div>
+</div>
+<a id="NX.util.Observable-methods"></a>
+<h2>メソッド</h2>
+<table cellspacing="0" class="member-table">
+<tr>
+  <th colspan="2" class="sig-header caption">メソッド</th>
+  <th class="sig-header defined">定義クラス</th>
+</tr>
+<tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-Observable.capture"></a>
+    <b>Observable.capture</b>(Observable o, Function fn, [Object scope]) : void
+    <div class="mdesc"><p>&lt;static&gt;</p>
+
+<p>引数で指定されたオブジェクトのイベントを取り込み、監視します。</p>
+
+<p><div class="long">
+このオブジェクトは、Ext.util.Observableクラスを継承したクラスのオブジェクトである必要があります。
+このようなオブジェクトであれば、どのようなクラスのオブジェクトであっても内部で発生するイベントを監視することができます。
+オブジェクトのイベントが発火する前に、イベント名とイベントで使用する引数が第２引数の関数に渡されます。
+関数の戻り値がfalseの場合、イベントは発火せず、Observable.captureの第２引数に記述した関数も実行されません。</p><div class="params"><strong>パラメータ:</strong><ul><li>  o:Observable  <ul>    <li>      <p>NX.util.Observableを継承した監視を行うクラスオブジェクト</p>    </li>  </ul></li><li>  fn:Function  <ul>    <li>      <p>コールバック関数</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>コールバック関数内のスコープオブジェクトを指定します。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-Observable.observe"></a>
+    <b>Observable.observe</b>(Function c) : void
+    <div class="mdesc"><p>&lt;static&gt;</p>
+
+<p>読み込まれるオブジェクトのコンストラクタに、Observableな機能を追加します。</p>
+
+<p><div class="long">
+共通の親クラスを持つ子クラス全てに同じイベントリスナーを設定する場合などに使用します。
+継承元クラスに対して使用し、継承元クラスでイベントリスナーを設定することで、継承クラス全てにリスナーが設定されます。</p>
+
+<p><br />
+使用方法:</p>
+
+<pre><code>NX.util.Observable.observeClass(NX.data.Connection);
+NX.data.Connection.on('beforerequest', function(con, options) {
+    console.log("Ajax request made to " + options.url);
+});
+</code></pre><div class="params"><strong>パラメータ:</strong><ul><li>  c:Function  <ul>    <li>      <p>クラスコンストラクタ</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-Observable.releaseCapture"></a>
+    <b>Observable.releaseCapture</b>(Observable o) : void
+    <div class="mdesc"><p>&lt;static&gt;</p>
+
+<p>captureによって取り込んだオブジェクトの監視を全て解除します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  o:Observable  <ul>    <li>      <p>監視を解除するオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-addEvents"></a>
+    <b>addEvents</b>(Object/String object) : void
+    <div class="mdesc"><p>イベントを定義します。</p>
+
+<p><div class="long">
+自分自身でオリジナルのイベント名を定義する場合に使用します。
+定義することで、fireEventによるイベント発火が可能です。</p>
+
+<p>イベントは一度に複数定義することができます。</p><div class="params"><strong>パラメータ:</strong><ul><li>  object:Object/String  <ul>    <li>      <p>イベント名がキーとなるオブジェクト。</p>
+
+<p>文字列で複数一度にイベントを定義することも可能です。</p>
+
+<pre><code>addEvents('event1', 'event2');
+</code></pre>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-addListener"></a>
+    <b>addListener</b>(String eventName, Function handler, [Object scope], [Object options]) : void
+    <div class="mdesc"><p>このオブジェクトにイベントハンドラを設定します。</p>
+
+<p><div class="long">
+第１引数のイベント名のイベントが発火した場合、引数の関数が実行されます。
+一度に複数のハンドラを加えることが可能です 。</p><div class="params"><strong>パラメータ:</strong><ul><li>  eventName:String  <ul>    <li>      <p>リスンするイベント名</p>    </li>  </ul></li><li>  handler:Function  <ul>    <li>      <p>イベントによって呼び出される関数</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>スコープオブジェクト。
+指定しない場合、イベント発火したオブジェクト</p>    </li>  </ul></li><li>  options:Object  <ul>    <li> (オプション) <p>ハンドラ設定プロパティを含んでいるオブジェクト</p>
+
+<p><br />
+<strong>scope : Object</strong></p>
+
+<p>スコープ。指定しない場合、イベント発火したオブジェクト
+<br /></p>
+
+<p><strong>delay : Number</strong></p>
+
+<p>ハンドラの起動を遅らせる(ミリ秒単位)
+<br /></p>
+
+<p><strong>single : Boolean</strong></p>
+
+<p>trueの場合、一度イベントによってハンドラが実行された後、そのハンドラを無効にするハンドラを追加します。
+<br /></p>
+
+<p><strong>buffer : Number</strong></p>
+
+<p>ハンドラの起動を遅らせて(ミリ秒単位)、Ext.util.DelayedTaskによって実行を予約されます。 もし、遅らせている最中に再度イベントが発火した場合、遅らされているハンドラは実行されず、新しいハンドラが実行されます。
+<br /></p>
+
+<p><strong>target : Observable</strong></p>
+
+<p>子クラスからのバブリングではなくターゲットのObservableなオブジェクトで発火した場合に、ハンドラをコールします。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-clearListeners"></a>
+    <b>clearListeners</b>() : void
+    <div class="mdesc"><p>このオブジェクトから、イベントリスナーを全て削除します。</p><div class="long"><div class="params"><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-enableBubble"></a>
+    <b>enableBubble</b>(Object events) : void
+    <div class="mdesc"><p>イベントのバブリングを有効にします。</p>
+
+<p><div class="long">
+コンテナに内包されている一番子供のコンテナに設定することで、親コンテナへイベントがリレーします。
+イベントがfalseになった時点でバブリングが停止します。</p><div class="params"><strong>パラメータ:</strong><ul><li>  events:Object  <ul>    <li>      <p>イベントオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-fireEvent"></a>
+    <b>fireEvent</b>(String eventName, Mixed args) : Boolean
+    <div class="mdesc"><p>イベントを発火させます。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  eventName:String  <ul>    <li>      <p>発火させるイベント名</p>    </li>  </ul></li><li>  args:Mixed  <ul>    <li>      <p>ハンドラに渡す引数</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>    <p>falseを返したハンドラがあればfalse, そうでなければtrueを返します。</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-on"></a>
+    <b>on</b>(String eventName, Function handler, [Object scope], [Object options]) : void
+    <div class="mdesc"><p>(addListenerのエイリアス)
+このオブジェクトにイベントハンドラを設定します。</p>
+
+<p><div class="long">
+第１引数のイベント名のイベントが発火した場合、引数の関数が実行されます。
+一度に複数のハンドラを加えることが可能です 。</p><div class="params"><strong>パラメータ:</strong><ul><li>  eventName:String  <ul>    <li>      <p>リスンするイベント名</p>    </li>  </ul></li><li>  handler:Function  <ul>    <li>      <p>イベントによって呼び出される関数</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>スコープオブジェクト。
+指定しない場合、イベント発火したオブジェクト</p>    </li>  </ul></li><li>  options:Object  <ul>    <li> (オプション) <p>ハンドラ設定プロパティを含んでいるオブジェクト</p>
+
+<p><br />
+<strong>scope : Object</strong></p>
+
+<p>スコープ。指定しない場合、イベント発火したオブジェクト
+<br /></p>
+
+<p><strong>delay : Number</strong></p>
+
+<p>ハンドラの起動を遅らせる(ミリ秒単位)
+<br /></p>
+
+<p><strong>single : Boolean</strong></p>
+
+<p>trueの場合、一度イベントによってハンドラが実行された後、そのハンドラを無効にするハンドラを追加します。
+<br /></p>
+
+<p><strong>buffer : Number</strong></p>
+
+<p>ハンドラの起動を遅らせて(ミリ秒単位)、Ext.util.DelayedTaskによって実行を予約されます。 もし、遅らせている最中に再度イベントが発火した場合、遅らされているハンドラは実行されず、新しいハンドラが実行されます。
+<br /></p>
+
+<p><strong>target : Observable</strong></p>
+
+<p>子クラスからのバブリングではなくターゲットのObservableなオブジェクトで発火した場合に、ハンドラをコールします。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-relayEvents"></a>
+    <b>relayEvents</b>(Object o, Array events) : void
+    <div class="mdesc"><p>イベントをリレーします。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  o:Object  <ul>    <li>      <p>イベントのリレーをするオブジェクト</p>    </li>  </ul></li><li>  events:Array  <ul>    <li>      <p>イベント名の配列</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-removeListener"></a>
+    <b>removeListener</b>(String eventName, Function handler, [Object scope]) : void
+    <div class="mdesc"><p>このオブジェクトから、指定したイベントハンドラを削除します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  eventName:String  <ul>    <li>      <p>ハンドラが設定されたイベント</p>    </li>  </ul></li><li>  handler:Function  <ul>    <li>      <p>削除されるハンドラ。</p>
+
+<p><div class="long">
+これはaddListenerによってコールされる関数の参照と違いありません。</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>スコープはハンドラに元々指定されていたものです。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-resumeEvents"></a>
+    <b>resumeEvents</b>() : void
+    <div class="mdesc"><p>イベントの発生を再開します。</p>
+
+<p><div class="long">
+もし、suspendEventsの引数でqueueSuspendedをtrueとした場合、イベント停止時に発火したイベントのハンドラは再会時に次々と実行されます。</p><div class="params"><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-suspendEvents"></a>
+    <b>suspendEvents</b>(Boolean queueSuspended) : void
+    <div class="mdesc"><p>イベントの発生を停止します。</p>
+
+<p><div class="long">
+(参照:resumeEvents)</p><div class="params"><strong>パラメータ:</strong><ul><li>  queueSuspended:Boolean  <ul>    <li>      <p>trueを設定した場合、停止させたイベントをresumeEventsコール時に実行されるキューに保存します。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Observable-un"></a>
+    <b>un</b>(String eventName, Function handler, [Object scope]) : void
+    <div class="mdesc"><p>(removeListenerのエイリアス)
+このオブジェクトから、指定したイベントハンドラを削除します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  eventName:String  <ul>    <li>      <p>ハンドラが設定されたイベント</p>    </li>  </ul></li><li>  handler:Function  <ul>    <li>      <p>削除されるハンドラ。</p>
+
+<p><div class="long">
+これはaddListenerによってコールされる関数の参照と違いありません。</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>スコープはハンドラに元々指定されていたものです。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr>
+</table></div>

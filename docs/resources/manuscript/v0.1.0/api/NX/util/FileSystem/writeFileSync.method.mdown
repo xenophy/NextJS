@@ -1,0 +1,13 @@
+同期でデータをファイルに書き込みます。
+
+<div class="long">
+dataは文字列またはバッファです。
+
+例:
+
+    NX.fs.writeFile('message.txt', 'Hello Node', function (err) {
+        if (err) throw err;
+        console.log('It\'s saved!');
+    });
+
+

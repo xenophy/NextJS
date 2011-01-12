@@ -1,0 +1,3 @@
+NX.util.str.sprintfのエイリアス
+<div class="long">
+フォーマット文字列 format に基づき生成された文字列を返します。

@@ -1,0 +1,16 @@
+&lt;static&gt;
+
+読み込まれるオブジェクトのコンストラクタに、Observableな機能を追加します。
+
+<div class="long">
+共通の親クラスを持つ子クラス全てに同じイベントリスナーを設定する場合などに使用します。
+継承元クラスに対して使用し、継承元クラスでイベントリスナーを設定することで、継承クラス全てにリスナーが設定されます。
+
+<br />
+使用方法:
+
+    NX.util.Observable.observeClass(NX.data.Connection);
+    NX.data.Connection.on('beforerequest', function(con, options) {
+        console.log("Ajax request made to " + options.url);
+    });
+

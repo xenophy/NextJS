@@ -1,0 +1,286 @@
+/* vim: set expandtab tabstop=2 shiftwidth=2 softtabstop=2: */
+
+/*!
+ * xFramework NX Docs
+ *
+ * http://xFrameworknx.com
+ */
+.api-doc h1 {
+  color: #083772;
+  font-size: 140%;
+}
+
+.api-doc .cls .desc {
+  border-bottom: 1px solid #ccc;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.api-doc .member-table {
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #D0D0D0;
+}
+
+.api-doc .member-table th {
+  background: #F9F9F9 url(http://extjs.cachefly.net/ext-3.3.1/docs/resources/images/default/grid/grid3-hrow.gif) repeat-x 0px 0%;
+  border-left: 1px solid #EEE;
+  border-right: 1px solid #D0D0D0;
+  border-top: 1px solid #EEE;
+  padding: 3px 3px 0 3px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.api-doc,
+.api-doc td,
+.api-doc th {
+  /*font-size: 13px;*/
+}
+
+.api-doc {
+  font-size: 14px;
+}
+
+.api-doc td {
+  font-size: 14px;
+}
+
+
+.api-doc th {
+  font-size: 13px;
+}
+
+.api-doc .member-table td.micon {
+  background: #F9F9F9 url(http://extjs.cachefly.net/ext-3.3.1/docs/resources/expand-bg.gif) repeat-y 100% 0%;
+  border-right: 1px solid #D0D0D0;
+  padding: 0px;
+  width: 16px;
+}
+
+.api-doc .member-table .expanded td.micon {
+  background: #F9F9F9 url(http://extjs.cachefly.net/ext-3.3.1/docs/resources/expand-bg-over.gif) repeat-y 100% 0%;
+  cursor: pointer;
+}
+
+.api-doc .member-table .expandable td.micon {
+  cursor: pointer;
+}
+
+.api-doc .member-table .expandable td.micon a {
+  display: block;
+  height: 30px;
+  outline: none;
+  text-decoration: none !important;
+  width: 98%;
+  cursor: pointer;
+}
+
+.api-doc .expandable .micon a {
+  background: transparent url(http://extjs.cachefly.net/ext-3.3.1/docs/resources/member-collapsed.gif) no-repeat 5px 6px;
+  cursor: pointer;
+}
+
+.api-doc .member-table .expanded td.micon a {
+  background: transparent url(http://extjs.cachefly.net/ext-3.3.1/docs/resources/member-expanded.gif) no-repeat 5px 6px;
+  cursor: pointer;
+}
+
+.api-doc .member-table .expandable td.sig .long {
+  display: none;
+}
+
+.api-doc .member-table .expanded td.sig .long {
+  display: block;
+}
+
+.api-doc .member-table td.micon a {
+  cursor: default;
+  display: block;
+  height: 1px;
+  overflow: hidden;
+  width: 1px;
+}
+
+.api-doc .member-table td.micon,
+.api-doc .member-table td.sig,
+.api-doc .member-table td.msource {
+  border-top: 1px solid #D0D0D0;
+}
+
+.api-doc .member-table td.sig {
+  padding-left: 7px;
+}
+
+.api-doc .member-table td {
+  padding: 4px 15px 4px 4px;
+  padding-right: 15px;
+  vertical-align: top;
+}
+
+.api-doc a:link {
+  color: #083772;
+  text-decoration: none;
+}
+
+.api-doc a {
+  color: #083772;
+}
+
+.api-doc th.defined {
+  width: 15%;
+}
+
+.api-doc td.msource {
+  border-left: 1px solid #D0D0D0;
+}
+
+.api-doc b {
+  color: #083772;
+}
+
+.api-doc em {
+  font-style: italic;
+}
+
+.api-doc ul {
+  list-style: circle inside;
+  list-style-type: circle;
+  margin: 12px;
+}
+
+.api-doc li {
+  list-style: circle inside;
+  list-style-type: circle;
+}
+
+.api-doc ul li ul {
+  margin: 0 12px;
+}
+
+.api-doc ul li ul li {
+  list-style: none;
+  font-weight: normal;
+  margin-left: 12px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.api-doc ul li ol li {
+  margin-left: 20px;
+  list-style-type: decimal;
+}
+
+.api-doc strong {
+  color: #555;
+  display: block;
+  font-size: 76%;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.api-doc .mdesc {
+  color: #444;
+  padding: 5px 0px;
+}
+
+.api-doc .mdesc .params {
+  margin: 10px;
+}
+
+.api-doc pre {
+  background: #F8F8F8;
+  border: 1px dotted #CCC;
+  font-size: 86%;
+  line-height: 14px;
+  margin: 1em 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 7px;
+}
+
+.api-doc .nav ul {
+  text-align: right;
+}
+
+.api-doc .nav li {
+  display: inline;
+  margin-right: 10px;
+  padding-left: 20px;
+  font-size: 90%;
+  padding-top: 3px;
+}
+
+.api-doc .nav li a:hover {
+  text-decoration: underline;
+}
+
+.api-doc .nav li.prop  {
+  background-image:url(../images/icons/prop.gif) !important;
+  background-repeat: no-repeat;
+}
+
+.icon-prop {
+  background-image:url(../images/icons/prop.gif) !important;
+  background-repeat: no-repeat;
+}
+
+.api-doc .nav li.method  {
+  background-image:url(../images/icons/method.gif) !important;
+  background-repeat: no-repeat;
+}
+
+.icon-method {
+  background-image:url(../images/icons/method.gif) !important;
+  background-repeat: no-repeat;
+}
+
+.api-doc .nav li.direct  {
+  background-image:url(../images/icons/fav.gif) !important;
+  background-repeat: no-repeat;
+}
+
+.icon-direct {
+  background-image:url(../images/icons/fav.gif) !important;
+  background-repeat: no-repeat;
+}
+
+.icon-hide-inherited {
+  background-image: url(http://extjs.cachefly.net/ext-3.3.1/docs/resources/hide-inherited.gif) !important;
+  background-repeat: no-repeat;
+}
+
+.icon-expand-members {
+  background-image: url(http://extjs.cachefly.net/ext-3.3.1/docs/resources/expand-members.gif) !important;
+  background-repeat: no-repeat;
+}
+
+.icon-font-inc {
+  background-image:url(../images/icons/font-inc.png) !important;
+  background-repeat: no-repeat;
+}
+
+.icon-font-dec {
+  background-image:url(../images/icons/font-dec.png) !important;
+  background-repeat: no-repeat;
+}
+
+.icon-font-reset {
+  background-image:url(../images/icons/font.png) !important;
+  background-repeat: no-repeat;
+}
+
+.api-doc .mdesc strong {
+  color: #083772 !important;
+  display: inline;
+  font-weight: bold;
+}
+
+/*
+ * Local variables:
+ * tab-width: 2
+ * c-basic-offset: 2
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */

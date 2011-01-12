@@ -1,0 +1,5 @@
+Douglas Crockford's によって作られたjson.js(<a href="http://www.json.org/js.html">http://www.json.org/js.html</a>)を変更したクラスです。
+
+<br />
+*このクラスはシングルトンパターンで実装されています。直接生成することはできません。*
+

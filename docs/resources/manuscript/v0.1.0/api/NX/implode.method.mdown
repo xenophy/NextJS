@@ -1,0 +1,3 @@
+NX.util.str.implodeのエイリアス
+<div class="long">
+配列の要素をglue文字列で連結します。

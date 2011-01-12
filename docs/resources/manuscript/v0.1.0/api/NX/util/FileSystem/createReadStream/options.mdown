@@ -1,0 +1,15 @@
+    {
+        flags: 'r',
+        encoding: null,
+        mode: 0666,
+        bufferSize: 4096
+    }
+
+ファイル全体を読み込む代わりに一部の範囲を読み込むため、optionsにstartおよびendを含めることができます。startとendはどちらも包含的で0から始まります。
+使う際にはいつでも、両方を同時に指定しなければなりません。
+
+<br />
+100バイトの長さを持つファイルの最後の10バイトを読み込む例:
+
+    NX.fs.createReadStream('sample.txt', {start: 90, end: 99});
+

@@ -1,0 +1,14 @@
+変数やクラスのための名前空間を作成します。名前空間内の変数やクラスはグローバルではありません。
+<div class="long">
+また、NX.namespaceのエイリアスとして、**NX.ns**が利用できます。
+<br />
+<br />
+使用方法:
+
+    NX.namespace('Company', 'Company.data');
+    NX.namespace('Company.data');
+
+    Company.Widget = function() { ... }
+    Company.data.CustomStore = function(config) { ... }
+
+

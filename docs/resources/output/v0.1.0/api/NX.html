@@ -1,0 +1,654 @@
+<div class="api-doc"><div class="cls">
+  <h1>NX クラス</h1>
+  <div class="desc"><p>xFramework NX コアクラスと関数群</p>
+
+<p><br />
+<em>このクラスはシングルトンパターンで実装されています。直接生成することはできません。</em></p></div>
+</div>
+<a id="NX-props"></a>
+<h2>プロパティ</h2>
+<table cellspacing="0" class="member-table">
+<tr>
+  <th colspan="2" class="sig-header caption">プロパティ</th>
+  <th class="sig-header defined">定義クラス</th>
+</tr>
+<tr class="prop-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-emptyFn"></a>
+    <b>emptyFn</b> : Function
+    <div class="mdesc"><p>再利用ができる空の関数オブジェクトです。
+<div class="long">
+プログラム内部で何かしらの関数を設定しなくてはならない場合や、 継承先のクラスにメソッドを実装してもらうときの抽象メソッド定義などに使用します。</p></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="prop-row inherited">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-version"></a>
+    <b>version</b> : String
+    <div class="mdesc"><p>使用しているxFramework NXのバージョン</p></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="prop-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-versionDetail"></a>
+    <b>versionDetail</b> : Object
+    <div class="mdesc"><p>使用しているxFramework NXのバージョン詳細
+<div class="long"></p>
+
+<ul>
+<li>major
+<ul><li>メジャーバージョン</li></ul></li>
+<li>minor
+<ul><li>マイナーバージョン</li></ul></li>
+<li>patch
+<ul><li>パッチバージョン</li></ul></li>
+</ul></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr>
+</table><a id="NX-methods"></a>
+<h2>メソッド</h2>
+<table cellspacing="0" class="member-table">
+<tr>
+  <th colspan="2" class="sig-header caption">メソッド</th>
+  <th class="sig-header defined">定義クラス</th>
+</tr>
+<tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-apply"></a>
+    <b>apply</b>(Object o, Object config, Object defaults) : Object
+    <div class="mdesc"><p>指定されたoにconfigを適用します。
+<div class="long"></p>
+
+<p>configのキーが既に、oに存在する場合は、上書きします。</p><div class="params"><strong>パラメータ:</strong><ul><li>  o:Object  <ul>    <li>      <p>値を設定するオブジェクト</p>    </li>  </ul></li><li>  config:Object  <ul>    <li>      <p>設定を行うためのオブジェクト</p>    </li>  </ul></li><li>  defaults:Object  <ul>    <li>      <p>初期値として適用されるオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>    <p>configが適用されたオブジェクト</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-applyIf"></a>
+    <b>applyIf</b>(Object target, Object config) : Object
+    <div class="mdesc"><p>指定されたtargetにconfigを適用します。
+<div class="long"></p>
+
+<p>configのキーが既に、oに存在する場合は、上書きしません。</p><div class="params"><strong>パラメータ:</strong><ul><li>  target:Object  <ul>    <li>      <p>configパラメータの説明</p>    </li>  </ul></li><li>  config:Object  <ul>    <li>      <p>設定を行うためのオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>    <p>configが適用されたオブジェクト</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-asort"></a>
+    <b>asort</b>(Array arr, String key) : void
+    <div class="mdesc"><p>arr配列内のオブジェクトのキーをソートします。
+<div class="long"></p>
+
+<pre><code>var arr = [
+    {name: 'apple', order: 2},
+    {name: 'orange', order: 3},
+    {name: 'peach', order: 1}
+];
+
+NX.asort(arr, 'order');
+
+// arr trace
+// {name: 'peach', order: 1}
+// {name: 'apple', order: 2}
+// {name: 'orange', order: 3}
+</code></pre><div class="params"><strong>パラメータ:</strong><ul><li>  arr:Array  <ul>    <li>      <p>ソートする配列</p>    </li>  </ul></li><li>  key:String  <ul>    <li>      <p>オブジェクトキー名</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-clone"></a>
+    <b>clone</b>(Object obj) : Object
+    <div class="mdesc"><p>objに指定されたオブジェクトのクローンを生成します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  obj:Object  <ul>    <li>      <p>クローンするオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>    <p>クローンされたオブジェクト</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-createDelegate"></a>
+    <b>createDelegate</b>(Object obj, [Array args], [Boolean/Number appendArgs]) : Function
+    <div class="mdesc"><p>NX.util.Functions.createDelegateのエイリアス</p>
+
+<p>配列に指定された関数をコールバック関数として登録します。</p>
+
+<p><div class="long">
+また、第３引数の指定を行うことで、コールバック関数の引数を変更することができます。</p>
+
+<pre><code>var sayHi = function(name){
+    console.log('Hi, ' + name + '.');
+}
+
+var f = NX.createDelegate(sayHi, {foo: 'bar'}, ['Fred']);
+
+f();
+</code></pre><div class="params"><strong>パラメータ:</strong><ul><li>  obj:Object  <ul>    <li>      <p>スコープオブジェクト</p>    </li>  </ul></li><li>  args:Array  <ul>    <li> (オプション) <p>引数の上書き(デフォルトではコールバック関数から渡される引数)</p>    </li>  </ul></li><li>  appendArgs:Boolean/Number  <ul>    <li> (オプション) <p>true: 第２引数で指定した引数を、コールバック関数にデフォルトで渡される引数の後ろに追加。</p>
+
+<p>false: 第２引数を配列として渡す。</p>
+
+<p>数値: コールバック関数の引数内に、指定した数値番目に引数を挿入（数値 == N とすると第N+1引数)</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Function  <ul>    <li>    <p>新たに生成された関数</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-createInterceptor"></a>
+    <b>createInterceptor</b>(Function fcn, [Object scope]) : Function
+    <div class="mdesc"><p>NX.util.Functions.createInterceptorのエイリアス</p>
+
+<p>引数に設定する関数の戻り値が、trueの場合のみ設定した関数を実行することができます。</p>
+
+<p><div class="long">
+条件によって関数を呼び出したくない場合などに使用します。</p>
+
+<pre><code>var sayHi = function(name){
+    console.log('Hi, ' + name);
+}
+
+sayHi('Fred');
+
+var sayHiToFriend = NX.createInterceptor(sayHi, function(name){
+    return name == 'Brian';
+});
+
+sayHiToFriend('Fred');
+
+sayHiToFriend('Brian');
+</code></pre><div class="params"><strong>パラメータ:</strong><ul><li>  fcn:Function  <ul>    <li>      <p>元の関数が実行される前に実行される関数(判定などの関数で、戻り値が真偽型)</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>呼び出されるインターセプタ関数のスコープオブジェクトを指定します。(初期値：元の関数またはglobalオブジェクト)</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Function  <ul>    <li>    <p>新たに生成された関数</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-createSequence"></a>
+    <b>createSequence</b>(Function fcn, [Object scope]) : Function
+    <div class="mdesc"><p>NX.util.Functions.createSequenceのエイリアス</p>
+
+<p>元の関数を呼び出した後に、任意の処理を追加して呼び出します。</p>
+
+<p><div class="long"></p>
+
+<pre><code>var sayHi = function(name){
+    console.log('Hi, ' + name);
+}
+
+sayHi('Fred');
+
+var sayGoodbye = NX.createSequence(sayHi, function(name){
+    alert('Bye, ' + name);
+});
+
+sayGoodbye('Fred');
+</code></pre><div class="params"><strong>パラメータ:</strong><ul><li>  fcn:Function  <ul>    <li>      <p>元の関数が実行された後に実行される関数</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>呼び出されるシーケンシャル関数のスコープオブジェクトを指定します。(初期値：元の関数またはglobalオブジェクト)</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Function  <ul>    <li>    <p>新たに生成された関数</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-defer"></a>
+    <b>defer</b>(Number millis, Object obj, [Array args], [Boolean/Number appendArgs]) : Number
+    <div class="mdesc"><p>NX.util.Functions.deferのエイリアス</p>
+
+<p>ミリ秒で設定した時間後、この設定された関数を呼び出します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  millis:Number  <ul>    <li>      <p>待機させる時間をミリ秒で設定(内部でsetTimeout使用)、もし0を設定した場合は、即時実行</p>    </li>  </ul></li><li>  obj:Object  <ul>    <li>      <p>関数のスコープオブジェクトを指定します。</p>    </li>  </ul></li><li>  args:Array  <ul>    <li> (オプション) <p>引数の上書き(デフォルトではコールバック関数から渡される引数)</p>    </li>  </ul></li><li>  appendArgs:Boolean/Number  <ul>    <li> (オプション) <p>true: 第２引数で指定した引数を、コールバック関数にデフォルトで渡される引数の後ろに追加。</p>
+
+<p>false: 第２引数を配列として渡す。</p>
+
+<p>数値: コールバック関数の引数内に、指定した数値番目に引数を挿入（数値 == N とすると第N+1引数)</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Number  <ul>    <li>    <p>clearTimeoutで利用できるid</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-each"></a>
+    <b>each</b>(Array arr, Function fn, [Object scope]) : Number
+    <div class="mdesc"><p>arrに指定された配列を、fn指定された関数オブジェクトを使って繰り返します。
+<div class="long">
+もし、繰り返しを途中で停止させたい場合は、呼び出し関数の戻り値をfalse に設定してください。
+もし、配列でないオブジェクトを指定した場合、本来配列の要素オブジェクトが渡されるところに、そのオブジェクトを引き渡し関数が呼び出されます。</p><div class="params"><strong>パラメータ:</strong><ul><li>  arr:Array  <ul>    <li>      <p>繰り返しを行う配列</p>    </li>  </ul></li><li>  fn:Function  <ul>    <li>      <p>第１引数:現在繰り返されているデータオブジェクト
+<br />
+第２引数:カウント値
+<br />
+第３引数:設定した配列
+<br /></p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>繰り返される関数オブジェクト内のスコープオブジェクトを指定します。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Number  <ul>    <li>    <p>繰り返された数</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-escapeRe"></a>
+    <b>escapeRe</b>() : undefined
+    <div class="mdesc"><div class="long"><div class="params"><strong>戻り値:</strong><ul>  <li>  undefined  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-explode"></a>
+    <b>explode</b>(String delimiter, String string, [Number limit]) : Array
+    <div class="mdesc"><p>NX.util.str.explodeのエイリアス
+<div class="long">
+文字列の配列を返します。この配列の各要素は、stringを文字列delimiterで区切った部分文字列となります。</p><div class="params"><strong>パラメータ:</strong><ul><li>  delimiter:String  <ul>    <li>      <p>区切り文字列</p>    </li>  </ul></li><li>  string:String  <ul>    <li>      <p>入力文字列</p>    </li>  </ul></li><li>  limit:Number  <ul>    <li> (オプション) <p>limitに正の値が指定された場合、返される配列には最大limitの要素が含まれ、その最後の要素にはstringの残りの部分が全て含まれます。</p>
+
+<p>もしlimitパラメータが負の場合、最後の-limit個の要素を除く全ての構成要素が返されます。</p>
+
+<p>limitパラメータがゼロの場合は、1を指定したものとみなされます。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Array  <ul>    <li>    <p>stringの内容をdelimiterで分割した文字列の配列を返します。</p>
+
+<p>空の文字列("")がdelimiterとして使用された場合、explode()はfalseを返します。
+delimiterに引数stringに含まれていない値が含まれている場合は、limitが負の値なら空の配列、そうでなければ引数stringを含む配列を返します。</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-extend"></a>
+    <b>extend</b>() : undefined
+    <div class="mdesc"><div class="long"><div class="params"><strong>戻り値:</strong><ul>  <li>  undefined  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-implode"></a>
+    <b>implode</b>(String glue, Array pieces) : String
+    <div class="mdesc"><p>NX.util.str.implodeのエイリアス
+<div class="long">
+配列の要素をglue文字列で連結します。</p><div class="params"><strong>パラメータ:</strong><ul><li>  glue:String  <ul>    <li>      <p>結合文字列</p>    </li>  </ul></li><li>  pieces:Array  <ul>    <li>      <p>連結したい文字列の配列</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  String  <ul>    <li>    <p>すべての配列要素の順序を変えずに、各要素間にglue文字列をはさんで1つの文字列にして返します。</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-isArray"></a>
+    <b>isArray</b>(Mixed value v) : Boolean
+    <div class="mdesc"><p>オブジェクトが配列の場合はtrue、そうでない場合はfalseを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  v:Mixed value  <ul>    <li>      <p>調べるオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-isBoolean"></a>
+    <b>isBoolean</b>(Mixed value v) : Boolean
+    <div class="mdesc"><p>オブジェクトが真偽値の場合はtrue、そうでない場合はfalseを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  v:Mixed value  <ul>    <li>      <p>調べるオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-isDate"></a>
+    <b>isDate</b>(Mixed value v) : Boolean
+    <div class="mdesc"><p>オブジェクトが日付型の場合はtrue、そうでない場合はfalseを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  v:Mixed value  <ul>    <li>      <p>調べるオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-isDefined"></a>
+    <b>isDefined</b>(Mixed value v) : Boolean
+    <div class="mdesc"><p>オブジェクトが定義されている場合はtrue、そうでない場合はfalseを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  v:Mixed value  <ul>    <li>      <p>調べるオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-isEmpty"></a>
+    <b>isEmpty</b>(Mixed value v) : Boolean
+    <div class="mdesc"><p>value値がnullまたは、undefined、または空文字列、空配列の場合、trueを返します。 空文字列をEmpty(空)としない場合は、allowBlankにtrueを設定します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  v:Mixed value  <ul>    <li>      <p>調べるオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-isFunction"></a>
+    <b>isFunction</b>(Mixed value v) : Boolean
+    <div class="mdesc"><p>オブジェクトが関数オブジェクトの場合はtrue、そうでない場合はfalseを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  v:Mixed value  <ul>    <li>      <p>調べるオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-isIterable"></a>
+    <b>isIterable</b>(Mixed value v) : Boolean
+    <div class="mdesc"><p>オブジェクトが繰り返し可能な場合はtrue、そうでない場合はfalseを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  v:Mixed value  <ul>    <li>      <p>調べるオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-isNull"></a>
+    <b>isNull</b>() : undefined
+    <div class="mdesc"><div class="long"><div class="params"><strong>戻り値:</strong><ul>  <li>  undefined  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-isNumber"></a>
+    <b>isNumber</b>(Mixed value v) : Boolean
+    <div class="mdesc"><p>オブジェクトが数値型の場合はtrue、そうでない場合はfalseを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  v:Mixed value  <ul>    <li>      <p>調べるオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-isObject"></a>
+    <b>isObject</b>(Mixed value v) : Boolean
+    <div class="mdesc"><p>vで指定された値がオブジェクトの場合はtrue、そうでない場合はfalseを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  v:Mixed value  <ul>    <li>      <p>調べるオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-isPrimitive"></a>
+    <b>isPrimitive</b>(Mixed value v) : Boolean
+    <div class="mdesc"><p>vで指定された値が文字列、数値、真偽値の場合はtrue、そうでない場合はfalseを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  v:Mixed value  <ul>    <li>      <p>調べるオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-isString"></a>
+    <b>isString</b>(Mixed value v) : Boolean
+    <div class="mdesc"><p>vで指定された値が文字列の場合はtrue、そうでない場合はfalseを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  v:Mixed value  <ul>    <li>      <p>調べるオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-iterate"></a>
+    <b>iterate</b>(Object/Array obj, Function fn, [Object scope]) : void
+    <div class="mdesc"><p>配列の各要素か、オブジェクトのプロパティを繰り返します。
+objに指定された値が、配列の場合、内部的にeachが利用され、fnの引数もeachと同様になります。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  obj:Object/Array  <ul>    <li>      <p>繰り返しを行うオブジェクトか配列</p>    </li>  </ul></li><li>  fn:Function  <ul>    <li>      <p>繰り返し時に呼び出す関数を設定します。
+繰り返しを中断したい場合は、戻り値としてfalseを返します。
+繰り返しを行うオブジェクトタイプによって、引数が次のように変わります。
+<br />
+<br />
+[配列の場合] :<br />
+(Object item, Number index, Array allItems)<br />
+繰り返すオブジェクトタイプが配列の場合、それぞれの要素ごとに関数が呼び出されます。
+<br />
+<br />
+[オブジェクトの場合] :<br />
+(String key, Object value)<br />
+繰り返すオブジェクトタイプがオブジェクトの場合、オブジェクトの中のキーごとに関数が呼び出されます。</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>繰り返される関数オブジェクト内のスコープオブジェクトを指定します。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-namespace"></a>
+    <b>namespace</b>(String namespace1, String namespace2, String etc) : void
+    <div class="mdesc"><p>変数やクラスのための名前空間を作成します。名前空間内の変数やクラスはグローバルではありません。
+<div class="long">
+また、NX.namespaceのエイリアスとして、<strong>NX.ns</strong>が利用できます。
+<br />
+<br />
+使用方法:</p>
+
+<pre><code>NX.namespace('Company', 'Company.data');
+NX.namespace('Company.data');
+
+Company.Widget = function() { ... }
+Company.data.CustomStore = function(config) { ... }
+</code></pre><div class="params"><strong>パラメータ:</strong><ul><li>  namespace1:String  <ul>    <li>      <p>定義する名前空間</p>    </li>  </ul></li><li>  namespace2:String  <ul>    <li>      <p>定義する名前空間</p>    </li>  </ul></li><li>  etc:String  <ul>    <li>      <p>定義する名前空間</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-override"></a>
+    <b>override</b>(Object orgcls, Object overrides) : void
+    <div class="mdesc"><p>既に存在するクラスに対してメソッドをオーバーライドします。
+<div class="long">
+同じ名前のメソッドが存在する場合、そのまま上書きされます。
+<br />
+<br />
+使用方法:
+<br /></p>
+
+<pre><code>NX.override(MyClass, {
+    newMethod1: function(){
+        // etc.  
+    },
+    newMethod2: function(foo){
+        // etc.  
+    }
+});
+</code></pre><div class="params"><strong>パラメータ:</strong><ul><li>  orgcls:Object  <ul>    <li>      <p>オーバーライドするクラス</p>    </li>  </ul></li><li>  overrides:Object  <ul>    <li>      <p>オブジェクトキーにメソッドやプロパティが設定されたオブジェクトを指定します。
+オリジナルクラスに存在しないメソッドは追加されます。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-service"></a>
+    <b>service</b>() : undefined
+    <div class="mdesc"><div class="long"><div class="params"><strong>戻り値:</strong><ul>  <li>  undefined  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-sleep"></a>
+    <b>sleep</b>(Number ms) : void
+    <div class="mdesc"><p>msで指定した時間(ミリ秒)処理を停止します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  ms:Number  <ul>    <li>      <p>停止時間(ミリ秒)</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-sprintf"></a>
+    <b>sprintf</b>(String format, [Mixed value args]) : String
+    <div class="mdesc"><p>NX.util.str.sprintfのエイリアス
+<div class="long">
+フォーマット文字列 format に基づき生成された文字列を返します。</p><div class="params"><strong>パラメータ:</strong><ul><li>  format:String  <ul>    <li>      <p>フォーマット文字列は 0 個以上のディレクティブ(指示子) により構成されます。</p>
+
+<p>ディレクティブには、そのまま結果にコピーされる(% を除く)通常の文字と変換指定子(conversion specifications)があり、</p>
+
+<p>取り出される際はどちらもそれ自身がパラメータとなります。</p>
+
+<ol>
+<li><p>オプションの符号指定子。
+これは、 数値で符号 (- あるいは +) を使用するよう指定します。
+デフォルトでは、数値が負の場合の - 符号のみが使用されます。
+この指定子により、正の数にも強制的に + 符号をつけることができます。</p></li>
+<li><p>オプションのパディング指定子。
+これは、文字列が正しい長さになるまでどんな文字で埋めるかということを指定します。
+これは空白かまたは 0 (文字 '0') のいずれかです。
+デフォルトでは空白で埋められます。
+これ以外のパディング文字を指定するには、その文字の前に 単一引用符 (') を置きます。
+後述の例を参照ください。</p></li>
+<li><p>オプションのアラインメント指定子。
+これは、結果を左寄せまたは右寄せにしたい場合に指定します。
+デフォルトは右寄せです。ここで - 文字を指定すると左寄せとなります。</p></li>
+<li><p>オプションの数字。
+これは表示幅指定子です。
+結果を(最低)何桁にするかを指定します。</p></li>
+<li><p>オプションの精度指定子(ピリオド(`.')に続けてオプションで桁数指定文字列を書いたもの)。
+これは、浮動小数点数に対して数字を何桁まで表示するかを指定します。
+文字列に対して使用した場合は、これは切り捨て位置として働きます。
+この文字数を超える文字を切り捨てられます。</p></li>
+<li><p>型指定子。
+引数を何の型として扱うかを指定します。
+指定できる型を以下に示します。</p></li>
+</ol>
+
+<p><br /></p>
+
+<ul>
+<li><strong>%</strong> - パーセント文字。引数は不要です。</li>
+<li><strong>b</strong> - 引数を整数として扱い、 2 進数として表現します。</li>
+<li><strong>c</strong> - 引数を整数として扱い、その ASCII 値の文字として表現します。</li>
+<li><strong>d</strong> - 引数を整数として扱い、 10 進数として表現します。</li>
+<li><strong>e</strong> - 引数を科学記法として扱います (例 1.2e+2)。</li>
+<li><strong>E</strong> - %e と同じですが、 大文字を使います (例 1.2E+2)。</li>
+<li><strong>u</strong> - 引数を整数として扱い、符号無しの 10 進数として表現します。</li>
+<li><strong>f</strong> - 引数を double として扱い、 浮動小数点数として表現します。</li>
+<li><strong>F</strong> - 引数を float として扱い、 浮動小数点数として表現します (ロケールに依存しません)。</li>
+<li><strong>g</strong> - %e および %f の短縮形。</li>
+<li><strong>G</strong> - %E および %f の短縮形。</li>
+<li><strong>o</strong> - 引数を整数として扱い、 8 進数として表現します。</li>
+<li><strong>s</strong> - 引数を文字列として扱い、表現します。</li>
+<li><strong>x</strong> - 引数を整数として扱い、16 進数として (小文字で)表現します。</li>
+<li><strong>X</strong> - 引数を整数として扱い、16 進数として (大文字で)表現します。</li>
+</ul>    </li>  </ul></li><li>  args:Mixed value  <ul>    <li> (オプション) <p>フォーマットに指定する値を複数指定できます。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  String  <ul>    <li>    <p>フォーマットされた文字列</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX-toArray"></a>
+    <b>toArray</b>(Array arr, Number start, Number end) : Array
+    <div class="mdesc"><p>0 から数えて、start 番目～ end - 1 番目までの要素を抜き出した配列を返します。
+<div class="long">
+start を省略した場合は、先頭から、end を省略した場合は最後までの要素を返します。
+arr は変化しません。</p><div class="params"><strong>パラメータ:</strong><ul><li>  arr:Array  <ul>    <li>      <p>抽出する配列</p>    </li>  </ul></li><li>  start:Number  <ul>    <li>      <p>抽出開始番号</p>    </li>  </ul></li><li>  end:Number  <ul>    <li>      <p>抽出終了番号</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Array  <ul>    <li>    <p>抽出された配列</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX
+  </td>
+</tr>
+</table></div>

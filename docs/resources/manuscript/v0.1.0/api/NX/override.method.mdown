@@ -1,0 +1,17 @@
+既に存在するクラスに対してメソッドをオーバーライドします。
+<div class="long">
+同じ名前のメソッドが存在する場合、そのまま上書きされます。
+<br />
+<br />
+使用方法:
+<br />
+
+    NX.override(MyClass, {
+        newMethod1: function(){
+            // etc.  
+        },
+        newMethod2: function(foo){
+            // etc.  
+        }
+    });
+

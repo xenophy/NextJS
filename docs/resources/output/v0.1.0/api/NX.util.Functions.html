@@ -1,0 +1,114 @@
+<div class="api-doc"><div class="cls">
+  <h1>NX.util.Functions クラス</h1>
+  <div class="desc"></div>
+</div>
+<a id="NX.util.Functions-methods"></a>
+<h2>メソッド</h2>
+<table cellspacing="0" class="member-table">
+<tr>
+  <th colspan="2" class="sig-header caption">メソッド</th>
+  <th class="sig-header defined">定義クラス</th>
+</tr>
+<tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Functions-createDelegate"></a>
+    <b>createDelegate</b>(Function fn, Object obj, [Array args], [Boolean/Number appendArgs]) : Function
+    <div class="mdesc"><p>配列に指定された関数をコールバック関数として登録します。</p>
+
+<p><div class="long">
+また、第３引数の指定を行うことで、コールバック関数の引数を変更することができます。</p>
+
+<pre><code>var sayHi = function(name){
+    console.log('Hi, ' + name + '.');
+}
+
+var f = NX.createDelegate(sayHi, {foo: 'bar'}, ['Fred']);
+
+f();
+</code></pre><div class="params"><strong>パラメータ:</strong><ul><li>  fn:Function  <ul>    <li>      <p>対象の関数オブジェクト</p>    </li>  </ul></li><li>  obj:Object  <ul>    <li>      <p>スコープオブジェクト</p>    </li>  </ul></li><li>  args:Array  <ul>    <li> (オプション) <p>引数の上書き(デフォルトではコールバック関数から渡される引数)</p>    </li>  </ul></li><li>  appendArgs:Boolean/Number  <ul>    <li> (オプション) <p>true: 第２引数で指定した引数を、コールバック関数にデフォルトで渡される引数の後ろに追加。</p>
+
+<p>false: 第２引数を配列として渡す。</p>
+
+<p>数値: コールバック関数の引数内に、指定した数値番目に引数を挿入（数値 == N とすると第N+1引数)</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Function  <ul>    <li>    <p>新たに生成された関数</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Functions
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Functions-createInterceptor"></a>
+    <b>createInterceptor</b>(Function fn, Function fcn, [Object scope]) : Function
+    <div class="mdesc"><p>引数に設定する関数の戻り値が、trueの場合のみ設定した関数を実行することができます。</p>
+
+<p><div class="long">
+条件によって関数を呼び出したくない場合などに使用します。</p>
+
+<pre><code>var sayHi = function(name){
+    console.log('Hi, ' + name);
+}
+
+sayHi('Fred');
+
+var sayHiToFriend = NX.createInterceptor(sayHi, function(name){
+    return name == 'Brian';
+});
+
+sayHiToFriend('Fred');
+
+sayHiToFriend('Brian');
+</code></pre><div class="params"><strong>パラメータ:</strong><ul><li>  fn:Function  <ul>    <li>      <p>対象の関数オブジェクト</p>    </li>  </ul></li><li>  fcn:Function  <ul>    <li>      <p>元の関数が実行される前に実行される関数(判定などの関数で、戻り値が真偽型)</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>呼び出されるインターセプタ関数のスコープオブジェクトを指定します。(初期値：元の関数またはglobalオブジェクト)</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Function  <ul>    <li>    <p>新たに生成された関数</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Functions
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Functions-createSequence"></a>
+    <b>createSequence</b>(Function fn, Function fcn, [Object scope]) : Function
+    <div class="mdesc"><p>元の関数を呼び出した後に、任意の処理を追加して呼び出します。</p>
+
+<p><div class="long"></p>
+
+<pre><code>var sayHi = function(name){
+    console.log('Hi, ' + name);
+}
+
+sayHi('Fred');
+
+var sayGoodbye = NX.createSequence(sayHi, function(name){
+    alert('Bye, ' + name);
+});
+
+sayGoodbye('Fred');
+</code></pre><div class="params"><strong>パラメータ:</strong><ul><li>  fn:Function  <ul>    <li>      <p>対象の関数オブジェクト</p>    </li>  </ul></li><li>  fcn:Function  <ul>    <li>      <p>元の関数が実行された後に実行される関数</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>呼び出されるシーケンシャル関数のスコープオブジェクトを指定します。(初期値：元の関数またはglobalオブジェクト)</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Function  <ul>    <li>    <p>新たに生成された関数</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Functions
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.Functions-defer"></a>
+    <b>defer</b>(Function fn, Number millis, Object obj, [Array args], [Boolean/Number appendArgs]) : Number
+    <div class="mdesc"><p>ミリ秒で設定した時間後、この設定された関数を呼び出します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  fn:Function  <ul>    <li>      <p>対象の関数オブジェクト</p>    </li>  </ul></li><li>  millis:Number  <ul>    <li>      <p>待機させる時間をミリ秒で設定(内部でsetTimeout使用)、もし0を設定した場合は、即時実行</p>    </li>  </ul></li><li>  obj:Object  <ul>    <li>      <p>関数のスコープオブジェクトを指定します。</p>    </li>  </ul></li><li>  args:Array  <ul>    <li> (オプション) <p>引数の上書き(デフォルトではコールバック関数から渡される引数)</p>    </li>  </ul></li><li>  appendArgs:Boolean/Number  <ul>    <li> (オプション) <p>true: 第２引数で指定した引数を、コールバック関数にデフォルトで渡される引数の後ろに追加。</p>
+
+<p>false: 第２引数を配列として渡す。</p>
+
+<p>数値: コールバック関数の引数内に、指定した数値番目に引数を挿入（数値 == N とすると第N+1引数)</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Number  <ul>    <li>    <p>clearTimeoutで利用できるid</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Functions
+  </td>
+</tr>
+</table></div>

@@ -1,0 +1,4 @@
+{
+    "param" : ["path"],
+    "return": "String"
+}

@@ -1,0 +1,27 @@
+イベントを発行するインタフェースを持つ共通の基底クラスとして、提供されます。
+
+    Employee = NX.extend(NX.util.Observable, {
+        constructor: function(config){
+            this.name = config.name;
+            this.addEvents({
+                "fired" : true,
+                "quit" : true
+            });
+
+            this.listeners = config.listeners;
+
+            Employee.superclass.constructor.call(config)
+        }
+    });
+
+そして、次のように利用します。
+
+    var newEmployee = new Employee({
+        name: employeeName,
+        listeners: {
+            quit: function() {
+                alert(this.name + " has quit!");
+            }
+        }
+    });
+

@@ -1,0 +1,4 @@
+{
+    "param" : ["key"],
+    "return": "Boolean"
+}

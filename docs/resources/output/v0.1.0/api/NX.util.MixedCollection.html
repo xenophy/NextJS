@@ -1,0 +1,714 @@
+<div class="api-doc"><div class="cls">
+  <h1>NX.util.MixedCollection クラス</h1>
+  <div class="desc"><p>数値のインデックスとキーとそれらを操作する時のイベント発生させ管理するクラスです。</p></div>
+</div>
+<a id="NX.util.MixedCollection-methods"></a>
+<h2>メソッド</h2>
+<table cellspacing="0" class="member-table">
+<tr>
+  <th colspan="2" class="sig-header caption">メソッド</th>
+  <th class="sig-header defined">定義クラス</th>
+</tr>
+<tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-MixedCollection"></a>
+    <b>MixedCollection</b>([Boolean allowFunctions], [Function keyFn]) : void
+    <div class="mdesc"><p>コンストラクタ</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  allowFunctions:Boolean  <ul>    <li> (オプション) <p>trueの場合、addAllメソッドで関数オブジェクトを追加可能にします。(初期値 false)</p>    </li>  </ul></li><li>  keyFn:Function  <ul>    <li> (オプション) <p>getKeyとして呼び出される関数を設定します。
+アイテム内のパラメータを戻り値として返却しキーとすることができる関数です。
+この関数は、アイテム内のキーに取り出そうとしたキーが存在しない場合に適用されます。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-add"></a>
+    <b>add</b>(String key, Mixed value o) : Object
+    <div class="mdesc"><p>アイテムを追加します。</p>
+
+<p><div class="long">
+完了した時点でaddイベントを発火します。</p><div class="params"><strong>パラメータ:</strong><ul><li>  key:String  <ul>    <li>      <p>キー
+オブジェクトのidキーを、内部のidとして利用します。
+getKeyを実装するか、コンストラクタのkeyFnを指定した場合は、そちらを利用します。</p>    </li>  </ul></li><li>  o:Mixed value  <ul>    <li>      <p>追加するアイテム</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-addAll"></a>
+    <b>addAll</b>(Object/Array objs) : void
+    <div class="mdesc"><p>複数のアイテムを一括で追加します。</p>
+
+<p><div class="long">
+一つ一つのアイテムの追加が完了した時点でaddイベントを発火します。</p><div class="params"><strong>パラメータ:</strong><ul><li>  objs:Object/Array  <ul>    <li>      <p>配列、もしくはオブジェクトのすべての要素を追加します。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row extended expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-addEvents"></a>
+    <b>addEvents</b>(Object/String object) : void
+    <div class="mdesc"><p>イベントを定義します。</p>
+
+<p><div class="long">
+自分自身でオリジナルのイベント名を定義する場合に使用します。
+定義することで、fireEventによるイベント発火が可能です。</p>
+
+<p>イベントは一度に複数定義することができます。</p><div class="params"><strong>パラメータ:</strong><ul><li>  object:Object/String  <ul>    <li>      <p>イベント名がキーとなるオブジェクト。</p>
+
+<p>文字列で複数一度にイベントを定義することも可能です。</p>
+
+<pre><code>addEvents('event1', 'event2');
+</code></pre>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row extended expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-addListener"></a>
+    <b>addListener</b>(String eventName, Function handler, [Object scope], [Object options]) : void
+    <div class="mdesc"><p>このオブジェクトにイベントハンドラを設定します。</p>
+
+<p><div class="long">
+第１引数のイベント名のイベントが発火した場合、引数の関数が実行されます。
+一度に複数のハンドラを加えることが可能です 。</p><div class="params"><strong>パラメータ:</strong><ul><li>  eventName:String  <ul>    <li>      <p>リスンするイベント名</p>    </li>  </ul></li><li>  handler:Function  <ul>    <li>      <p>イベントによって呼び出される関数</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>スコープオブジェクト。
+指定しない場合、イベント発火したオブジェクト</p>    </li>  </ul></li><li>  options:Object  <ul>    <li> (オプション) <p>ハンドラ設定プロパティを含んでいるオブジェクト</p>
+
+<p><br />
+<strong>scope : Object</strong></p>
+
+<p>スコープ。指定しない場合、イベント発火したオブジェクト
+<br /></p>
+
+<p><strong>delay : Number</strong></p>
+
+<p>ハンドラの起動を遅らせる(ミリ秒単位)
+<br /></p>
+
+<p><strong>single : Boolean</strong></p>
+
+<p>trueの場合、一度イベントによってハンドラが実行された後、そのハンドラを無効にするハンドラを追加します。
+<br /></p>
+
+<p><strong>buffer : Number</strong></p>
+
+<p>ハンドラの起動を遅らせて(ミリ秒単位)、Ext.util.DelayedTaskによって実行を予約されます。 もし、遅らせている最中に再度イベントが発火した場合、遅らされているハンドラは実行されず、新しいハンドラが実行されます。
+<br /></p>
+
+<p><strong>target : Observable</strong></p>
+
+<p>子クラスからのバブリングではなくターゲットのObservableなオブジェクトで発火した場合に、ハンドラをコールします。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-clear"></a>
+    <b>clear</b>() : void
+    <div class="mdesc"><p>すべてのアイテムを取り除きます。</p>
+
+<p><div class="long">
+完了した時点でclearイベントを発火します。</p><div class="params"><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row extended expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-clearListeners"></a>
+    <b>clearListeners</b>() : void
+    <div class="mdesc"><p>このオブジェクトから、イベントリスナーを全て削除します。</p><div class="long"><div class="params"><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-clone"></a>
+    <b>clone</b>() : MixedCollection
+    <div class="mdesc"><p>コレクションのクローンを別インスタンスで新たに生成します。</p><div class="long"><div class="params"><strong>戻り値:</strong><ul>  <li>  MixedCollection  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-contains"></a>
+    <b>contains</b>(Object o) : Boolean
+    <div class="mdesc"><p>引数で指定されたオブジェクトを持っている場合trueを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  o:Object  <ul>    <li>      <p>コレクション内に存在するか検索するオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>    <p>引数で指定されたオブジェクトを持っている場合true</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-containsKey"></a>
+    <b>containsKey</b>(String key) : Boolean
+    <div class="mdesc"><p>引数に設定されたキーのアイテムがコレクション内に存在する場合、trueを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  key:String  <ul>    <li>      <p>コレクション内を検索するキー</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>    <p>引数に設定されたキーのアイテムがコレクション内に存在する場合、true</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-each"></a>
+    <b>each</b>(Function fn, [Object scope]) : void
+    <div class="mdesc"><p>コレクション中のアイテムを一つずつ引数とした指定された関数を実行します。</p>
+
+<p><div class="long">
+<br />
+関数の引数は次の通り :</p>
+
+<p><strong>item : Mixed</strong>
+該当のアイテムオブジェクト</p>
+
+<p><strong>index : Number</strong>
+アイテムインデックス</p>
+
+<p><strong>length : Number</strong>
+総アイテム数</p>
+
+<p><br />
+関数は真偽値を返してください。</p>
+
+<p>関数が false を返すと、繰り返しを中断します。</p><div class="params"><strong>パラメータ:</strong><ul><li>  fn:Function  <ul>    <li>      <p>繰り返し時、実行される関数</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>関数内のスコープオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-eachKey"></a>
+    <b>eachKey</b>(Function fn, [Object scope]) : void
+    <div class="mdesc"><p>コレクション中のアイテムを一つずつ引数とした指定された関数を実行します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  fn:Function  <ul>    <li>      <p>繰り返し時、実行される関数</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>関数内のスコープオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row extended expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-enableBubble"></a>
+    <b>enableBubble</b>(Object events) : void
+    <div class="mdesc"><p>イベントのバブリングを有効にします。</p>
+
+<p><div class="long">
+コンテナに内包されている一番子供のコンテナに設定することで、親コンテナへイベントがリレーします。
+イベントがfalseになった時点でバブリングが停止します。</p><div class="params"><strong>パラメータ:</strong><ul><li>  events:Object  <ul>    <li>      <p>イベントオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-filter"></a>
+    <b>filter</b>(String property, String/RegExp value, [Boolean anyMatch], [Boolean caseSensitive], [Boolean exactMatch]) : MixedCollection
+    <div class="mdesc"><p>指定したプロパティで、コレクション中のオブジェクトをフィルタリングし、新たなコレクションを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  property:String  <ul>    <li>      <p>プロパティ</p>    </li>  </ul></li><li>  value:String/RegExp  <ul>    <li>      <p>プロパティの値に先頭一致すべき文字列か、プロパティに対してテストを行う正規表現</p>    </li>  </ul></li><li>  anyMatch:Boolean  <ul>    <li> (オプション) <p>文字列のどの部分でもマッチするならtrue、そうでなければ開始部分</p>    </li>  </ul></li><li>  caseSensitive:Boolean  <ul>    <li> (オプション) <p>大文字小文字を区別して比較するならtrue(初期値 false)</p>    </li>  </ul></li><li>  exactMatch:Boolean  <ul>    <li> (オプション) <p>厳格に末尾までチェックする場合はtrueを指定します。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  MixedCollection  <ul>    <li>    <p>フィルタリングされた新たなコレクション</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-filterBy"></a>
+    <b>filterBy</b>(Function fn, [Object scope]) : MixedCollection
+    <div class="mdesc"><p>任意の関数でフィルタリングし、新たなコレクションを返します。</p>
+
+<p><div class="long">
+引数として渡された関数は、コレクション中のオブジェクト毎に呼ばれます。
+もし、関数がtrueを返せばその値が含まれ、そうでなければ除外されます。</p><div class="params"><strong>パラメータ:</strong><ul><li>  fn:Function  <ul>    <li>      <p>コールバック関数。</p>
+
+<p><br />
+関数は引数:</p>
+
+<p><strong>o</strong> : 評価するオブジェクト</p>
+
+<p><strong>k</strong> : 評価するキー</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>関数内のスコープオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  MixedCollection  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-find"></a>
+    <b>find</b>(Function fn, [Object scope]) : Object
+    <div class="mdesc"><p>引数に設定した関数の戻り値がtrueのアイテムで、最初のアイテムを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  fn:Function  <ul>    <li>      <p>アイテム毎に実行する選択関数</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>関数内のスコープオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>    <p>引数に設定した関数の戻り値がtrueのアイテムで、最初のアイテム</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-findIndex"></a>
+    <b>findIndex</b>(String property, String/RegExp value, [Number start], [Boolean anyMatch], [Boolean caseSensitive], [Boolean exactMatch]) : Number
+    <div class="mdesc"><p>指定したプロパティ値によるコレクション中から、最初にマッチしたオブジェクトのインデックスを見つけます。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  property:String  <ul>    <li>      <p>プロパティ</p>    </li>  </ul></li><li>  value:String/RegExp  <ul>    <li>      <p>プロパティの値に先頭一致すべき文字列か、プロパティに対してテストを行う正規表現</p>    </li>  </ul></li><li>  start:Number  <ul>    <li> (オプション) <p>検索を始めるインデックス (初期値 0)</p>    </li>  </ul></li><li>  anyMatch:Boolean  <ul>    <li> (オプション) <p>文字列のどの部分でもマッチするならtrue、そうでなければ開始部分</p>    </li>  </ul></li><li>  caseSensitive:Boolean  <ul>    <li> (オプション) <p>大文字小文字を区別して比較するならtrue(初期値 false)</p>    </li>  </ul></li><li>  exactMatch:Boolean  <ul>    <li> (オプション) <p>厳格に末尾までチェックする場合はtrueを指定します。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Number  <ul>    <li>    <p>マッチしたインデックスか、-1</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-findIndexBy"></a>
+    <b>findIndexBy</b>(未定義 allowFunctions, 未定義 keyFn) : void
+    <div class="mdesc"><p>任意の関数によるコレクション中から、最初にマッチしたオブジェクトのインデックスを見つけます。</p>
+
+<p><div class="long">
+もし、関数がtrueを返せば、マッチしたと見なします。</p><div class="params"><strong>パラメータ:</strong><ul><li>  allowFunctions:未定義  <ul>    <li>          </li>  </ul></li><li>  keyFn:未定義  <ul>    <li>          </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>    <p>マッチしたインデックスか、-1</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row extended expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-fireEvent"></a>
+    <b>fireEvent</b>(String eventName, Mixed args) : Boolean
+    <div class="mdesc"><p>イベントを発火させます。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  eventName:String  <ul>    <li>      <p>発火させるイベント名</p>    </li>  </ul></li><li>  args:Mixed  <ul>    <li>      <p>ハンドラに渡す引数</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Boolean  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-first"></a>
+    <b>first</b>() : Object
+    <div class="mdesc"><p>コレクション中の最初のアイテムを返します。</p><div class="long"><div class="params"><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>    <p>コレクション中の最初のアイテム</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-get"></a>
+    <b>get</b>() : undefined
+    <div class="mdesc"><div class="long"><div class="params"><strong>戻り値:</strong><ul>  <li>  undefined  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-getCount"></a>
+    <b>getCount</b>() : Number
+    <div class="mdesc"><p>コレクション内のアイテム数を返します。</p><div class="long"><div class="params"><strong>戻り値:</strong><ul>  <li>  Number  <ul>    <li>    <p>コレクション内のアイテム数</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-getKey"></a>
+    <b>getKey</b>(Object item) : String
+    <div class="mdesc"><p>MixedCollectionには、キーを取得する一般的な方法があります。
+デフォルトはitem.idを返します。</p>
+
+<p><div class="long">
+しかし、次の例のように、設定次第では異なった値を返すことも可能です。</p>
+
+<pre><code>var mc = new NX.util.MixedCollection();
+mc.add(someEl.dom.id, someEl);
+mc.add(otherEl.dom.id, otherEl);
+
+var mc = new NX.util.MixedCollection();
+mc.getKey = function(el){
+    return el.dom.id;
+};
+mc.add(someEl);
+mc.add(otherEl);
+
+var mc = new NX.util.MixedCollection(false, function(el){
+    return el.dom.id;
+});
+mc.add(someEl);
+mc.add(otherEl);
+</code></pre><div class="params"><strong>パラメータ:</strong><ul><li>  item:Object  <ul>    <li>      <p>キーを見つけるためのアイテム</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  String  <ul>    <li>    <p>キー</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-getRange"></a>
+    <b>getRange</b>([Number startIndex], [Number endIndex]) : Array
+    <div class="mdesc"><p>コレクション中のインデックス範囲を指定して、一部のアイテムを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  startIndex:Number  <ul>    <li> (オプション) <p>初期値:0</p>    </li>  </ul></li><li>  endIndex:Number  <ul>    <li> (オプション) <p>初期値:最後のアイテムインデックス</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Array  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-indexOf"></a>
+    <b>indexOf</b>(Object o) : Number
+    <div class="mdesc"><p>引数として渡されたオブジェクトのコレクション内でのインデックスを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  o:Object  <ul>    <li>      <p>インデックスを取得するため検索を行うオブジェクト</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Number  <ul>    <li>    <p>アイテムのインデックス、見つからなかったときは-1を返します。</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-indexOfKey"></a>
+    <b>indexOfKey</b>(String key) : Number
+    <div class="mdesc"><p>引数として渡されたキーのコレクション内でのインデックスを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  key:String  <ul>    <li>      <p>インデックスを探すキー</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Number  <ul>    <li>    <p>キーのインデックス</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-insert"></a>
+    <b>insert</b>(Number index, String key, [Object o]) : Object
+    <div class="mdesc"><p>コレクション内の指定したインデックスにアイテムを挿入します。</p>
+
+<p><div class="long">
+完了した時にaddイベントが発生します。</p><div class="params"><strong>パラメータ:</strong><ul><li>  index:Number  <ul>    <li>      <p>アイテムを挿入するインデックス</p>    </li>  </ul></li><li>  key:String  <ul>    <li>      <p>アイテムに対応するキーか、アイテム</p>    </li>  </ul></li><li>  o:Object  <ul>    <li> (オプション) <p>二番目のパラメータがキーの場合は、新しいアイテム</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>    <p>挿入されたアイテム</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-item"></a>
+    <b>item</b>(String/Number key) : Object
+    <div class="mdesc"><p>引数で指定したキー、またはインデックスのアイテムを返します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  key:String/Number  <ul>    <li>      <p>キー、またはインデックス</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-itemAt"></a>
+    <b>itemAt</b>(Number index) : Object
+    <div class="mdesc"><p>インデックスで指定されたアイテムを取得します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  index:Number  <ul>    <li>      <p>インデックス</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-key"></a>
+    <b>key</b>(String/Number key) : Object
+    <div class="mdesc"><p>キーで指定したアイテムを取得します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  key:String/Number  <ul>    <li>      <p>キーで指定されたアイテム</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-keySort"></a>
+    <b>keySort</b>([String direction], [Function fn]) : void
+    <div class="mdesc"><p>コレクション内をキーでソートします。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  direction:String  <ul>    <li> (オプション) <p>'ASC' または 'DESC' (初期値:'ASC')</p>    </li>  </ul></li><li>  fn:Function  <ul>    <li> (オプション) <p>比較関数</p>
+
+<p>未指定の場合、自動的にキー文字列でソートします。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-last"></a>
+    <b>last</b>() : Object
+    <div class="mdesc"><p>コレクション中の最後のアイテムを返します。</p><div class="long"><div class="params"><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row extended expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-on"></a>
+    <b>on</b>(String eventName, Function handler, [Object scope], [Object options]) : void
+    <div class="mdesc"><p>(addListenerのエイリアス)
+このオブジェクトにイベントハンドラを設定します。</p>
+
+<p><div class="long">
+第１引数のイベント名のイベントが発火した場合、引数の関数が実行されます。
+一度に複数のハンドラを加えることが可能です 。</p><div class="params"><strong>パラメータ:</strong><ul><li>  eventName:String  <ul>    <li>      <p>リスンするイベント名</p>    </li>  </ul></li><li>  handler:Function  <ul>    <li>      <p>イベントによって呼び出される関数</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>スコープオブジェクト。
+指定しない場合、イベント発火したオブジェクト</p>    </li>  </ul></li><li>  options:Object  <ul>    <li> (オプション) <p>ハンドラ設定プロパティを含んでいるオブジェクト</p>
+
+<p><br />
+<strong>scope : Object</strong></p>
+
+<p>スコープ。指定しない場合、イベント発火したオブジェクト
+<br /></p>
+
+<p><strong>delay : Number</strong></p>
+
+<p>ハンドラの起動を遅らせる(ミリ秒単位)
+<br /></p>
+
+<p><strong>single : Boolean</strong></p>
+
+<p>trueの場合、一度イベントによってハンドラが実行された後、そのハンドラを無効にするハンドラを追加します。
+<br /></p>
+
+<p><strong>buffer : Number</strong></p>
+
+<p>ハンドラの起動を遅らせて(ミリ秒単位)、Ext.util.DelayedTaskによって実行を予約されます。 もし、遅らせている最中に再度イベントが発火した場合、遅らされているハンドラは実行されず、新しいハンドラが実行されます。
+<br /></p>
+
+<p><strong>target : Observable</strong></p>
+
+<p>子クラスからのバブリングではなくターゲットのObservableなオブジェクトで発火した場合に、ハンドラをコールします。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row extended expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-relayEvents"></a>
+    <b>relayEvents</b>(Object o, Array events) : void
+    <div class="mdesc"><p>イベントをリレーします。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  o:Object  <ul>    <li>      <p>イベントのリレーをするオブジェクト</p>    </li>  </ul></li><li>  events:Array  <ul>    <li>      <p>イベント名の配列</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-remove"></a>
+    <b>remove</b>(Object o) : Object
+    <div class="mdesc"><p>コレクションからアイテムを取り除きます。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  o:Object  <ul>    <li>      <p>取り除くアイテム</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>    <p>取り除かれたアイテムか、取り除くアイテムがなければ false</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-removeAt"></a>
+    <b>removeAt</b>(Object index) : Object
+    <div class="mdesc"><p>コレクション中の指定したインデックスからアイテムを取り除きます。</p>
+
+<p><div class="long">
+完了した時にremoveイベントが発生します。</p><div class="params"><strong>パラメータ:</strong><ul><li>  index:Object  <ul>    <li>      <p>アイテムを取り除くためのコレクション中のインデックス</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>    <p>取り除かれたアイテムか、取り除くアイテムがなければ false</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-removeKey"></a>
+    <b>removeKey</b>(String key) : Object
+    <div class="mdesc"><p>キーで指定したアイテムを削除します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  key:String  <ul>    <li>      <p>アイテムを取り除くためのコレクション中のキー</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>    <p>取り除かれたアイテムか、取り除くアイテムがなければ false</p>    </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row extended expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-removeListener"></a>
+    <b>removeListener</b>(String eventName, Function handler, [Object scope]) : void
+    <div class="mdesc"><p>このオブジェクトから、指定したイベントハンドラを削除します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  eventName:String  <ul>    <li>      <p>ハンドラが設定されたイベント</p>    </li>  </ul></li><li>  handler:Function  <ul>    <li>      <p>削除されるハンドラ。</p>
+
+<p><div class="long">
+これはaddListenerによってコールされる関数の参照と違いありません。</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>スコープはハンドラに元々指定されていたものです。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-reorder"></a>
+    <b>reorder</b>(Object mapping) : void
+    <div class="mdesc"><p>mappingに指定されたキーの対応で並べ直します。</p>
+
+<p><div class="long">
+処理が終わった後、sortイベントを発火します。</p><div class="params"><strong>パラメータ:</strong><ul><li>  mapping:Object  <ul>    <li>      <p>古いインデックスと新しいインデックスをそれぞれ、キーと値として設定したオブジェクトを指定します。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-replace"></a>
+    <b>replace</b>(String key, Object o) : Object
+    <div class="mdesc"><p>コレクション中のアイテムを置き換えます。</p>
+
+<p><div class="long">
+完了した時にreplaceイベントが発生します。</p><div class="params"><strong>パラメータ:</strong><ul><li>  key:String  <ul>    <li>      <p>置き換えるアイテムに対応するキー、もしくは置き換えるアイテム。</p>
+
+<p>もし、getKeyを設定した場合、任意のプロパティ名で置換することができます。
+同じキー値を持ちながら、その中の1つだけを置換したい場合には、このパラメータで置換するアイテムを渡してください。</p>    </li>  </ul></li><li>  o:Object  <ul>    <li>      <p>もし、渡された最初の引数がキーなら、そのキーに対応するアイテム</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  Object  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row extended expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-resumeEvents"></a>
+    <b>resumeEvents</b>() : void
+    <div class="mdesc"><p>イベントの発生を再開します。</p>
+
+<p><div class="long">
+もし、suspendEventsの引数でqueueSuspendedをtrueとした場合、イベント停止時に発火したイベントのハンドラは再会時に次々と実行されます。</p><div class="params"><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row inherited expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-sort"></a>
+    <b>sort</b>([String direction], [Function fn]) : void
+    <div class="mdesc"><p>引数で渡された比較関数でコレクションをソートします。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  direction:String  <ul>    <li> (オプション) <p>"ASC" または、 "DESC"</p>    </li>  </ul></li><li>  fn:Function  <ul>    <li> (オプション) <p>比較関数</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.MixedCollection
+  </td>
+</tr><tr class="method-row extended expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-suspendEvents"></a>
+    <b>suspendEvents</b>(Boolean queueSuspended) : void
+    <div class="mdesc"><p>イベントの発生を停止します。</p>
+
+<p><div class="long">
+(参照:resumeEvents)</p><div class="params"><strong>パラメータ:</strong><ul><li>  queueSuspended:Boolean  <ul>    <li>      <p>trueを設定した場合、停止させたイベントをresumeEventsコール時に実行されるキューに保存します。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr><tr class="method-row extended expandable">
+  <td class="micon">
+    <a href="#expand" class="exi">&nbsp;</a>
+  </td>
+  <td class="sig">
+    <a id="NX.util.MixedCollection-un"></a>
+    <b>un</b>(String eventName, Function handler, [Object scope]) : void
+    <div class="mdesc"><p>(removeListenerのエイリアス)
+このオブジェクトから、指定したイベントハンドラを削除します。</p><div class="long"><div class="params"><strong>パラメータ:</strong><ul><li>  eventName:String  <ul>    <li>      <p>ハンドラが設定されたイベント</p>    </li>  </ul></li><li>  handler:Function  <ul>    <li>      <p>削除されるハンドラ。</p>
+
+<p><div class="long">
+これはaddListenerによってコールされる関数の参照と違いありません。</p>    </li>  </ul></li><li>  scope:Object  <ul>    <li> (オプション) <p>スコープはハンドラに元々指定されていたものです。</p>    </li>  </ul></li></ul><strong>戻り値:</strong><ul>  <li>  void  <ul>    <li>        </li>  </ul>  </li></ul></div></div></div>
+  </td>
+  <td class="msource">
+    NX.util.Observable
+  </td>
+</tr>
+</table></div>

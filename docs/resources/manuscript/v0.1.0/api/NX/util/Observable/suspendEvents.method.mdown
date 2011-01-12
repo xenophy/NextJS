@@ -1,0 +1,4 @@
+イベントの発生を停止します。
+
+<div class="long">
+(参照:resumeEvents)

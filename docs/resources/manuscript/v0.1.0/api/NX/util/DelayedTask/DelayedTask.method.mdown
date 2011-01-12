@@ -1,0 +1,7 @@
+コンストラクタ
+
+<div class="long">
+
+    var task = new NX.util.DelayedTask(function (){});
+    task.delay(2000);
+

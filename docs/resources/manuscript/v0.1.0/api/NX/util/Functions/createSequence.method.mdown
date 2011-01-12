@@ -1,0 +1,16 @@
+元の関数を呼び出した後に、任意の処理を追加して呼び出します。
+
+<div class="long">
+
+    var sayHi = function(name){
+        console.log('Hi, ' + name);
+    }
+
+    sayHi('Fred');
+
+    var sayGoodbye = NX.createSequence(sayHi, function(name){
+        alert('Bye, ' + name);
+    });
+
+    sayGoodbye('Fred');
+
