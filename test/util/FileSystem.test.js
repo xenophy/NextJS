@@ -837,6 +837,16 @@ module.exports = {
         } catch(e) {
         }
 
+        try {
+            NX.fs.unlinkSync(filename + '.link');
+        } catch(e) {
+        }
+
+        try {
+            NX.fs.unlinkSync(filename + '.linkunexists');
+        } catch(e) {
+        }
+
         NX.fs
         .touch(filename)
         .symlink(filename, filename + '.link')
@@ -859,13 +869,116 @@ module.exports = {
             } catch(e) {
             }
 
+            try {
+                NX.fs.unlinkSync(filename + '.linkunexists');
+            } catch(e) {
+            }
+
         });
 
     },
 
     // }}}
-    
+    // {{{ test readlink#standard
 
+    'test readlink#standard': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.readlink');
+        var ret = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        try {
+            NX.fs.unlinkSync(filename + '.link');
+        } catch(e) {
+        }
+
+        NX.fs
+        .symlink(filename, filename + '.link')
+        .next(function() {
+
+            NX.fs.readlink(filename + '.link', function(err, resolvedPath) {
+                ret = resolvedPath;
+            });
+
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret, filename);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+            try {
+                NX.fs.unlinkSync(filename + '.link');
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test readlink#deferred
+
+    'test readlink#deferred': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.readlink2');
+        var ret = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        try {
+            NX.fs.unlinkSync(filename + '.link');
+        } catch(e) {
+        }
+
+        try {
+            NX.fs.unlinkSync(filename + '.linkunexists');
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .symlink(filename, filename + '.link')
+        .readlink(filename + '.link')
+        .next(function(resolvedPath) {
+            ret = resolvedPath;
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret, filename);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+            try {
+                NX.fs.unlinkSync(filename + '.link');
+            } catch(e) {
+            }
+
+            try {
+                NX.fs.unlinkSync(filename + '.linkunexists');
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
 
 
 
