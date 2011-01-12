@@ -4,6 +4,6 @@ RIA Server side Framework
 
 ## 利用する外部モジュール
 
-[[https://github.com/senchalabs/connect]]
-[[https://github.com/felixge/node-mysql]]
+* [https://github.com/senchalabs/connect](https://github.com/senchalabs/connect)
+* [https://github.com/felixge/node-mysql](https://github.com/felixge/node-mysql)
 
