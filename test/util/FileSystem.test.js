@@ -60,6 +60,106 @@ module.exports = {
         ret = NX.fs.pathinfo('/www/htdocs/index.html', 'PATHINFO_BASENAME');
         assert.equal(ret, 'index.html');
 
+        ret = NX.fs.pathinfo();
+        assert.equal(ret, false);
+
+        ret = NX.fs.pathinfo('/www/htdocs/index.html', 'PATHINFO_FILENAME');
+        assert.equal(ret, 'index');
+
+        ret = NX.fs.pathinfo('/www/htdocs/index.html', 'PATHINFO_EXTENSION');
+        assert.equal(ret, '.html');
+
+    },
+
+    // }}}
+    // {{{ test iterate#standard
+
+    'test iterate#standard': function() {
+
+        var path = require('path');
+        var root = path.normalize(__dirname + '/../shared/iterate/');
+        var ret = {};
+
+        ret[root + 'dir1'] = null;
+        ret[root + 'dir1/file1.html'] = null;
+        ret[root + 'dir2'] = null;
+        ret[root + 'dir2/file1.js'] = null;
+        ret[root + 'file1.txt'] = null;
+        ret[root + 'file2.txt'] = null;
+
+        NX.fs.iterate(__dirname + '/../shared/iterate/', function(s) {
+
+            var filename = require('path').normalize(s.getFullPath()) + '/' + require('path').normalize(s.getFilename());
+            ret[filename] = true;
+
+
+            if(NX.fs.extname(s.getFilename()) === '') {
+                assert.equal(s.isDir(), true);
+                assert.equal('/', s.getPath());
+            } else {
+                assert.equal(s.isFile(), true);
+            }
+
+        });
+
+        NX.iterate(ret, function(key, v) {
+            assert.equal(v, true);
+        });
+
+
+        ret[root + 'dir1'] = null;
+        ret[root + 'dir1/file1.html'] = null;
+        ret[root + 'dir2'] = null;
+        ret[root + 'dir2/file1.js'] = null;
+        ret[root + 'file1.txt'] = null;
+        ret[root + 'file2.txt'] = null;
+
+        NX.fs.iterate(__dirname + '/../shared/iterate/', function(s) {
+
+            if(s.isDir()) {
+                return false;
+            }
+
+            var filename = require('path').normalize(s.getFullPath()) + '/' + require('path').normalize(s.getFilename());
+            ret[filename] = true;
+
+        });
+
+        var cnt = 0;
+        NX.iterate(ret, function(key, v) {
+            if(v === null) {
+                cnt++;
+            }
+        });
+        assert.equal(cnt, 6);
+
+        ret[root + 'dir1'] = null;
+        ret[root + 'dir1/file1.html'] = null;
+        ret[root + 'dir2'] = null;
+        ret[root + 'dir2/file1.js'] = null;
+        ret[root + 'file1.txt'] = null;
+        ret[root + 'file2.txt'] = null;
+
+        NX.fs.iterate(__dirname + '/../shared/iterate/', function(s) {
+
+            if(s.isFile()) {
+                return false;
+            }
+
+            var filename = require('path').normalize(s.getFullPath()) + '/' + require('path').normalize(s.getFilename());
+            ret[filename] = true;
+
+        });
+
+        var cnt = 0;
+        NX.iterate(ret, function(key, v) {
+            if(v === null) {
+                cnt++;
+            }
+        });
+        assert.equal(cnt, 4);
+
+
     },
 
     // }}}
