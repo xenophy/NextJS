@@ -683,6 +683,190 @@ module.exports = {
 
     */
 
+    // {{{ test link#standard
+
+    'test link#standard': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.link');
+        var ret = null;
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        try {
+            NX.fs.unlinkSync(filename + '.link');
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .next(function() {
+
+            NX.fs.link(filename, filename + '.link', function(err) {
+            });
+
+            NX.fs.link(filename + '.unexists', filename + '.linkunexists', function(err) {
+                if(err) {
+                    error = true;
+                }
+            });
+
+        });
+
+        beforeExit(function(){
+
+            assert.equal(NX.fs.existsSync(filename + '.link'), true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+            try {
+                NX.fs.unlinkSync(filename + '.link');
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test link#deferred
+
+    'test link#deferred': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.link2');
+        var ret = null;
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .link(filename, filename + '.link')
+        .next(function(s) {
+            ret = s;
+        })
+        .link(filename + '.unexists', filename + '.linkunexists')
+        .error(function() {
+            error = true;
+        });
+
+        beforeExit(function(){
+
+            assert.equal(NX.fs.existsSync(filename + '.link'), true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+            try {
+                NX.fs.unlinkSync(filename + '.link');
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test symlink#standard
+
+    'test symlink#standard': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.symlink');
+        var ret = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        try {
+            NX.fs.unlinkSync(filename + '.link');
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .next(function() {
+
+            NX.fs.symlink(filename, filename + '.link', function(err) {
+            });
+
+        });
+
+        beforeExit(function(){
+
+            assert.equal(NX.fs.existsSync(filename + '.link'), true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+            try {
+                NX.fs.unlinkSync(filename + '.link');
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test symlink#deferred
+
+    'test symlink#deferred': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.symlink2');
+        var ret = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .symlink(filename, filename + '.link')
+        .next(function(s) {
+            ret = s;
+        })
+        .symlink(filename + '.unexists', filename + '.linkunexists');
+
+        beforeExit(function(){
+
+            assert.equal(NX.fs.existsSync(filename + '.link'), true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+            try {
+                NX.fs.unlinkSync(filename + '.link');
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    
+
+
 
 
 
