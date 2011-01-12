@@ -159,23 +159,30 @@ module.exports = {
         });
         assert.equal(cnt, 4);
 
-
     },
 
     // }}}
-    // {{{ test exists#standard
+    // {{{ test exists#notexists
 
-    'test exists#standard': function(beforeExit) {
+    'test exists#notexists': function(beforeExit) {
 
         var deferredRet = null;
         var callbackRet = null;
+        var path = require('path');
+        var filename = path.normalize(__dirname + '/../temp/NX.util.FileSystem.exists');
 
-        NX.fs.exists('./testcase.txt')
+        try {
+            NX.fs.unlinkSync(filename + '.deferred');
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs.exists(filename)
         .next(function(exists) {
             deferredRet = exists;
         });
 
-        NX.fs.exists('./testcase.txt', function(exists) {
+        NX.fs.exists(filename, function(exists) {
             callbackRet = exists;
         })
 
@@ -187,15 +194,251 @@ module.exports = {
     },
 
     // }}}
-    // {{{ test existsSync#standard
+    // {{{ test exists#exists
 
-    'test existsSync#standard': function(beforeExit) {
+    'test exists#exists': function(beforeExit) {
 
-        assert.equal(NX.fs.existsSync('./testcase.txt'), false);
+        var deferredRet = null;
+        var callbackRet = null;
+        var path = require('path');
+        var filename = path.normalize(__dirname + '/../temp/NX.util.FileSystem.exists');
+
+        try {
+            NX.fs.unlinkSync(filename + '.deferred');
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename + '.deferred')
+        .touch(filename)
+        .next(function() {
+
+            NX.fs.exists(filename + '.deferred')
+            .next(function(exists) {
+                deferredRet = exists;
+            });
+
+            NX.fs.exists(filename, function(exists) {
+                callbackRet = exists;
+            })
+
+        });
+
+        beforeExit(function(){
+            assert.equal(deferredRet, true);
+            assert.equal(callbackRet, true);
+
+            NX.fs.unlinkSync(filename + '.deferred');
+            NX.fs.unlinkSync(filename);
+        });
 
     },
 
     // }}}
+    // {{{ test existsSync#standard
+
+    'test existsSync#standard': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.exists');
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        assert.equal(NX.fs.existsSync(filename), false);
+
+    },
+
+    // }}}
+    // {{{ test chmod#standerd
+
+    'test chmod#standerd': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.chmod');
+        var ret = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .next(function() {
+
+            NX.fs.chmod(filename, 0777, function() {
+                var s = require('fs').statSync(filename);
+                var mod = NX.sprintf('%o', s.mode);
+                ret = mod.substr(-4);
+
+                try {
+                    NX.fs.unlinkSync(filename);
+                } catch(e) {
+                }
+
+            });
+
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret, '0777');
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test chmod#deferred
+
+    'test chmod#deferred': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.chmod2');
+        var ret1 = null;
+        var ret2 = null;
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .chmod(filename, 0777)
+        .next(function() {
+            var s = require('fs').statSync(filename);
+            var mod = NX.sprintf('%o', s.mode);
+            ret1 = mod.substr(-4);
+        })
+        .chmod(filename, 0666)
+        .next(function() {
+            var s = require('fs').statSync(filename);
+            var mod = NX.sprintf('%o', s.mode);
+            ret2 = mod.substr(-4);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        })
+        .chmod(filename, 0666)
+        .error(function() {
+            error = true;
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret1, '0777');
+            assert.equal(ret2, '0666');
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test rename#deferred
+
+    'test rename#deferred': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.rename');
+        var ret = null;
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .rename(filename, filename + '.renamed')
+        .rename(filename + '.unexists', filename + '.renamed')
+        .error(function() {
+            error = true;
+        });
+
+        beforeExit(function(){
+
+            assert.equal(NX.fs.existsSync(filename + '.renamed'), true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename + '.renamed');
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test rename#standard
+
+    'test rename#standard': function(beforeExit) {
+
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.rename2');
+        var ret = null;
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .next(function() {
+
+            NX.fs.rename(filename, filename + '.renamed', function() {
+            });
+
+            NX.fs.rename(filename + '.unexists', filename + '.renamed', function(err) {
+                if(err) {
+                    error = true;
+                }
+            });
+
+
+        });
+
+        beforeExit(function(){
+
+            assert.equal(NX.fs.existsSync(filename + '.renamed'), true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename + '.renamed');
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+
+
+
+
+
+
+
+
     // {{{ test isReadable#standard
 
     'test isReadable#standard': function(beforeExit) {
