@@ -17,10 +17,13 @@ module.exports = NX.extend(NX.Module, {
     // }}}
     // {{{ getList
 
-    getList : function() {
+    getList : function(callback) {
 
-        console.log('users getList called');
+        var me = this;
 
+        me.query('SELECT * FROM tbl_users', function(err, rs) {
+            callback(rs);
+        });
     }
 
     // }}}
