@@ -598,7 +598,6 @@ module.exports = {
     // }}}
     // {{{ test fstat#standard
 
-    /*
     'test fstat#standard': function(beforeExit) {
 
         var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.fstat');
@@ -612,30 +611,34 @@ module.exports = {
 
         NX.fs
         .touch(filename)
-        .next(function() {
-
-            NX.fs.fstat(filename, function(err, s) {
-                ret = s;
-            });
-
-            NX.fs.fstat(filename + '.unexists', function(err) {
-                if(err) {
-                    error = true;
+        .open(filename, 'r')
+        .next(function(fd) {
+            NX.fs.fstat(fd, function(err, s) {
+                if(s) {
+                    ret = true;
                 }
-            });
 
+                NX.fs
+                .close(fd)
+                .next(function() {
+                    NX.fs.fstat(fd, function(err, s) {
+                        if(err) {
+                            error = true;
+                        }
+                    });
+                });
+            });
         });
 
         beforeExit(function(){
-
-            assert.equal(NX.isObject(ret), true);
-            assert.equal(error, true);
 
             try {
                 NX.fs.unlinkSync(filename);
             } catch(e) {
             }
 
+            assert.equal(ret, true);
+            assert.equal(error, true);
         });
 
     },
@@ -656,18 +659,25 @@ module.exports = {
 
         NX.fs
         .touch(filename)
-        .fstat(filename)
-        .next(function(s) {
-            ret = s;
+        .open(filename, 'r')
+        .next(function(fd) {
+            NX.fs
+            .fstat(fd)
+            .next(function(s) {
+                if(s) {
+                    ret = true;
+                }
+            })
+            .close(fd)
+            .fstat(fd)
+            .error(function() {
+                error = true;
+            });
         })
-        .fstat(filename + '.unexists')
-        .error(function() {
-            error = true;
-        });
 
         beforeExit(function(){
 
-            assert.equal(NX.isObject(ret), true);
+            assert.equal(ret, true);
             assert.equal(error, true);
 
             try {
@@ -680,9 +690,6 @@ module.exports = {
     },
 
     // }}}
-
-    */
-
     // {{{ test link#standard
 
     'test link#standard': function(beforeExit) {
@@ -1672,74 +1679,267 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test writeFile#standard
 
+    'test writeFile#standard': function(beforeExit) {
 
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.writeFile');
 
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
 
-
-
-    // {{{ test isReadable#standard
-
-    'test isReadable#standard': function(beforeExit) {
-
-        var deferredRet = null;
-        var callbackRet = null;
-
-        NX.fs.isReadable('./testcase.txt')
-        .next(function(readable) {
-            deferredRet = readable;
+        NX.fs.writeFile(filename, 'temp', 'utf8', function(err) {
+            ret = true;
         });
-
-        NX.fs.isReadable('./testcase.txt', function(readable) {
-            callbackRet = readable;
-        })
 
         beforeExit(function(){
-            assert.equal(deferredRet, false);
-            assert.equal(callbackRet, false);
+
+            assert.equal(ret, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
         });
 
     },
 
     // }}}
-    // {{{ test isReadableSync#standard
+    // {{{ test writeFile#deferred
 
-    'test isReadableSync#standard': function(beforeExit) {
+    'test writeFile#deferred': function(beforeExit) {
 
-        assert.equal(NX.fs.isReadableSync('./testcase.txt'), false);
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.writeFile2');
 
-    },
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
 
-    // }}}
-    // {{{ test isWritable#standard
-
-    'test isWritable#standard': function(beforeExit) {
-
-        var deferredRet = null;
-        var callbackRet = null;
-
-        NX.fs.isWritable('./testcase.txt')
-        .next(function(writable) {
-            deferredRet = writable;
-        });
-
-        NX.fs.isWritable('./testcase.txt', function(writable) {
-            callbackRet = writable;
+        NX.fs
+        .writeFile(filename, 'temp', 'utf8')
+        .next(function() {
+            ret = true;
         })
+        .writeFile(filename + '/hoge.txt', 'temp', 'utf8')
+        .error(function() {
+            error = true;
+        });
 
         beforeExit(function(){
-            assert.equal(deferredRet, false);
-            assert.equal(callbackRet, false);
+
+            assert.equal(ret, true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
         });
 
     },
 
     // }}}
-    // {{{ test isWritableSync#standard
+    // {{{ test readFile#standard
 
-    'test isWritableSync#standard': function(beforeExit) {
+    'test readFile#standard': function(beforeExit) {
 
-        assert.equal(NX.fs.isWritableSync('./testcase.txt'), false);
+        var ret = null;
+        var ret2 = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.readFile');
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs.writeFile(filename, 'temp', 'utf8', function(err) {
+            NX.fs.readFile(filename, 'utf8', function(err, data) {
+                if(data.toString() === 'temp') {
+                    ret = true;
+                }
+            });
+            NX.fs.readFile(filename, function(err, data) {
+                if(data.toString() === 'temp') {
+                    ret2 = true;
+                }
+            });
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret, true);
+            assert.equal(ret2, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test readFile#deferred
+
+    'test readFile#deferred': function(beforeExit) {
+
+        var ret = null;
+        var ret2 = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.readFile2');
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .writeFile(filename, 'temp', 'utf8')
+        .readFile(filename)
+        .next(function(data) {
+            if(data.toString() === 'temp') {
+                ret = true;
+            }
+        })
+        .readFile(filename, 'utf8')
+        .next(function(data) {
+            if(data.toString() === 'temp') {
+                ret2 = true;
+            }
+        })
+        .readFile(filename + 'unexists', 'utf8')
+        .error(function() {
+            error = true;
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret, true);
+            assert.equal(ret2, true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test truncate#standard
+
+    'test truncate#standard': function(beforeExit) {
+
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.truncate');
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .open(filename, 'w', 0666)
+        .next(function(fd) {
+
+            var buf = new Buffer(256);
+            var len = buf.write('temp', 0);
+
+            NX.fs
+            .write(fd, buf, 0, len, null)
+            .next(function() {
+                NX.fs.truncate(fd, 2, function() {
+
+                    var rbuf = new Buffer(256);
+
+                    NX.fs.readFile(filename, function(err, data) {
+                        if(data.toString() === 'te') {
+                            ret = true;
+                        }
+                    });
+
+                    NX.fs.close(fd);
+
+                });
+            })
+            .close(fd);
+
+        });
+
+        beforeExit(function(){
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+            assert.equal(ret, true);
+        });
+
+    },
+
+    // }}}
+    // {{{ test truncate#deferred
+
+    'test truncate#deferred': function(beforeExit) {
+
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.truncate2');
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .open(filename, 'w', 0666)
+        .next(function(fd) {
+
+            var buf = new Buffer(256);
+            var len = buf.write('temp', 0);
+
+            NX.fs
+            .write(fd, buf, 0, len, null)
+            .next(function() {
+                NX.fs
+                .truncate(fd, 2)
+                .readFile(filename)
+                .next(function(data) {
+                    if(data.toString() === 'te') {
+                        ret = true;
+                    }
+                })
+                .close(fd)
+                .truncate(fd, 2)
+                .error(function() {
+                    error = true;
+                });
+
+            });
+
+        });
+
+        beforeExit(function(){
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+            assert.equal(ret, true);
+            assert.equal(error, true);
+        });
 
     },
 
@@ -1749,11 +1949,36 @@ module.exports = {
     'test touch#standard': function(beforeExit) {
 
         var ret = null;
+        var ret2 = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.touch');
 
-        NX.fs.touch('./tc-touch.txt',function() {
-            ret = NX.fs.existsSync('./tc-touch.txt');
+        NX.fs.touch(filename,function() {
+            ret = NX.fs.existsSync(filename);
+            NX.fs.unlinkSync(filename);
+
+            NX.fs.touch(filename, '200604050709', function() {
+
+                var s = NX.fs.statSync(filename);
+
+                if('1144188540000' == s.mtime.getTime()) {
+                    ret2 = true;
+                }
+
+                NX.fs.unlinkSync(filename);
+
+            });
+
+        });
+
+        beforeExit(function(){
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
             assert.equal(ret, true);
-            NX.fs.unlinkSync('./tc-touch.txt');
+            assert.equal(ret2, true);
         });
 
     },
@@ -1764,12 +1989,21 @@ module.exports = {
     'test touch deferred#standard': function(beforeExit) {
 
         var ret;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.touch2');
 
-        NX.fs.touch('./tc-touch-deferred.txt')
+        NX.fs.touch(filename)
         .next(function() {
-            ret = NX.fs.existsSync('./tc-touch-deferred.txt');
+            ret = NX.fs.existsSync(filename);
+        });
+
+        beforeExit(function(){
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
             assert.equal(ret, true);
-            NX.fs.unlinkSync('./tc-touch-deferred.txt');
         });
 
     }
