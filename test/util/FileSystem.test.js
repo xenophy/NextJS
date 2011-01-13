@@ -1569,10 +1569,109 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test read#standard
 
+    'test read#standard': function(beforeExit) {
 
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.read');
 
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
 
+        NX.fs
+        .touch(filename)
+        .open(filename, 'w+', 0666)
+        .next(function(fd) {
+
+            var buf = new Buffer(256);
+            var rbuf = new Buffer(256);
+            var len = buf.write('\u00bd + \u00bc = \u00be', 0);
+
+            NX.fs
+            .write(fd, buf, 0, len, null)
+            .next(function(err, writen) {
+
+                NX.fs
+                .read(fd, rbuf, 0, len, 0, function(err, bytesRead) {
+                    if(bytesRead == len) {
+                        ret = true;
+                    }
+                })
+                .close(fd);
+
+            });
+
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test read#deferred
+
+    'test read#deferred': function(beforeExit) {
+
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.read2');
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .open(filename, 'w+', 0666)
+        .next(function(fd) {
+
+            var buf = new Buffer(256);
+            var rbuf = new Buffer(256);
+            var len = buf.write('\u00bd + \u00bc = \u00be', 0);
+
+            NX.fs
+            .write(fd, buf, 0, len, null)
+            .read(fd, rbuf, 0, len, 0)
+            .next(function(bytesRead) {
+                if(bytesRead == len) {
+                    ret = true;
+                }
+            })
+            .close(fd)
+            .read(fd, rbuf, 0, len, 0)
+            .error(function() {
+                error = true;
+            });
+
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret, true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
 
 
 
