@@ -1147,14 +1147,161 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test rmdir#standard
 
+    'test rmdir#standard': function(beforeExit) {
 
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.rmdir');
+        var error = null;
 
+        NX.fs
+        .mkdir(filename, 0755)
+        .next(function() {
 
+            NX.fs.rmdir(filename, function() {
+            });
 
+            NX.fs.rmdir(filename + '.unexists', function() {
+                error = true;
+            });
 
+        });
 
+        beforeExit(function(){
 
+            assert.equal(NX.fs.existsSync(filename), false);
+            assert.equal(error, true);
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test rmdir#deferred
+
+    'test rmdir#deferred': function(beforeExit) {
+
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.rmdir2');
+        var error = null;
+
+        NX.fs
+        .mkdir(filename, 0755)
+        .rmdir(filename)
+        .rmdir(filename)
+        .error(function() {
+            error = true;
+        });
+
+        beforeExit(function(){
+
+            assert.equal(NX.fs.existsSync(filename), false);
+            assert.equal(error, true);
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test readdir#standard
+
+    'test readdir#standard': function(beforeExit) {
+
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.readdir');
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename + '/temp.txt');
+        } catch(e) {
+        }
+        try {
+            NX.fs.rmdirSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .mkdir(filename, 0755)
+        .touch(filename + '/temp.txt', function() {
+
+            NX.fs.readdir(filename, function(err, files) {
+                ret = files;
+            });
+
+            NX.fs.readdir(filename + '.unexists', function(err, files) {
+                if(err) {
+                    error = true;
+                }
+            });
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret[0], 'temp.txt');
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename + '/temp.txt');
+            } catch(e) {
+            }
+            try {
+                NX.fs.rmdirSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test readdir#deferred
+
+    'test readdir#deferred': function(beforeExit) {
+
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.readdir2');
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename + '/temp.txt');
+        } catch(e) {
+        }
+        try {
+            NX.fs.rmdirSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .mkdir(filename, 0755)
+        .touch(filename + '/temp.txt')
+        .readdir(filename)
+        .next(function(files) {
+            ret = files;
+        })
+        .readdir(filename + '.unexists')
+        .error(function() {
+            error = true;
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret[0], 'temp.txt');
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename + '/temp.txt');
+            } catch(e) {
+            }
+            try {
+                NX.fs.rmdirSync(filename);
+            } catch(e) {
+            }
+
+        });
+    },
+
+    // }}}
 
 
 
