@@ -1386,6 +1386,99 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test close#standard
+
+    'test close#standard': function(beforeExit) {
+
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.close');
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .open(filename, 'r', 0666)
+        .next(function(fd) {
+            NX.fs.close(fd, function(err) {
+                if(NX.isNull(err)) {
+                    ret = true;
+
+                    NX.fs.close(fd, function(err) {
+                        if(err) {
+                            error = true;
+                        }
+                    });
+                }
+            });
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret, true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test close#deferred
+
+    'test close#deferred': function(beforeExit) {
+
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.close2');
+        var error = null;
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        var fp = null;
+
+        NX.fs
+        .touch(filename)
+        .open(filename, 'r', 0666)
+        .next(function(fd) {
+            fp = fd;
+
+            NX.fs.close(fp)
+            .next(function() {
+                ret = true;
+            })
+            .close(fp)
+            .error(function() {
+                error = true;
+            });
+        })
+
+        beforeExit(function(){
+
+            assert.equal(ret, true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+
+
 
 
 
