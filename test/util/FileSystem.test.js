@@ -1477,8 +1477,98 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test write#standard
 
+    'test write#standard': function(beforeExit) {
 
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.write');
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .open(filename, 'w', 0666)
+        .next(function(fd) {
+
+            var buf = new Buffer(256);
+            var len = buf.write('\u00bd + \u00bc = \u00be', 0);
+
+            NX.fs.write(fd, buf, 0, len, null, function(err, writen) {
+                if(writen) {
+                    ret = true;
+                }
+            });
+
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
+    // {{{ test write#deferred
+
+    'test write#deferred': function(beforeExit) {
+
+        var ret = null;
+        var filename = require('path').normalize(__dirname + '/../temp/NX.util.FileSystem.write2');
+
+        try {
+            NX.fs.unlinkSync(filename);
+        } catch(e) {
+        }
+
+        NX.fs
+        .touch(filename)
+        .open(filename, 'w', 0666)
+        .next(function(fd) {
+
+            var buf = new Buffer(256);
+            var len = buf.write('\u00bd + \u00bc = \u00be', 0);
+
+            NX.fs
+            .write(fd, buf, 0, len, null)
+            .next(function(writen) {
+                if(writen) {
+                    ret = true;
+                }
+            })
+            .close(fd)
+            .write(fd, buf, 0, len, null)
+            .error(function() {
+                error = true;
+            });
+
+        });
+
+        beforeExit(function(){
+
+            assert.equal(ret, true);
+            assert.equal(error, true);
+
+            try {
+                NX.fs.unlinkSync(filename);
+            } catch(e) {
+            }
+
+        });
+
+    },
+
+    // }}}
 
 
 
