@@ -24,7 +24,15 @@ module.exports = NX.extend(NX.WebController, {
         var me = this;
 
         me.users.getList(function(rs) {
-            me.set('users', rs);
+
+            var data = [];
+
+            NX.iterate(rs, function(o) {
+                data.push({
+                    name : o.name
+                });
+            });
+            me.set('users', data);
             me.end();
         });
 

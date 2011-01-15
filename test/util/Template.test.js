@@ -120,7 +120,6 @@ module.exports = {
             }
         );
 
-        console.log(html);
     },
 
     // }}}

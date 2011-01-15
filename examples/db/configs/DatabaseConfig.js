@@ -20,7 +20,7 @@ NX.config['database'] = {
             host: 'localhost',
             user: 'root',
             password: 'root',
-            database: 'xframeworknx',
+            database: 'nextjs',
             prefix: '',
             port: '',
             socket: ''
