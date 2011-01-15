@@ -16,11 +16,13 @@
         {foreach from=users item=item key=key}
         <li>
             <h2>{key}.[{item.id}] {item.name}</h2>
-            {foreach from=item.hobby item=hobby key=hkey}
             <ul>
+            {foreach from=item.hobby item=hobby key=hkey}
                 <li>{hkey}.{hobby}</li>
-            </ul>
+            {foreachelse}
+                <li>non hobby.</li>
             {/foreach}
+            </ul>
         </li>
         {/foreach}
     </ul>
