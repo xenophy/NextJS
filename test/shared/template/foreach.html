@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+    <!--
+    <h1>Food List</h1>
+    <ul>
+        {foreach from=foods item=item key=key}
+        <li>{key}.{item}</li>
+        {/foreach}
+    </ul>
+    -->
+
+    <h1>User List</h1>
+    <ul>
+        {foreach from=users item=item key=key}
+        <li>
+            <h2>{key}.[{item.id}] {item.name}</h2>
+            {foreach from=item.hobby item=hobby key=hkey}
+            <ul>
+                <li>{hkey}.{hobby}</li>
+            </ul>
+            {/foreach}
+        </li>
+        {/foreach}
+    </ul>
+</body>
+</html>

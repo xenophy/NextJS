@@ -14,7 +14,7 @@ var assert = require('assert');
 // }}}
 // {{{ common settings
 
-var tpl = NX.util.Template;
+var tpl = new NX.util.Template();
 var text = [
     '<html>',
     '<head>',
@@ -28,11 +28,17 @@ var text = [
     '</head>',
     '{* This is comment! *}',
     'foo value is {foo}!!',
+    '<ul>',
+    '{foreach from=foods item=item key=key}',
+    '  <li>{key}.{item}</li>',
+    '{/foreach}',
+    '</ul>',
     '</html>'
 ].join("\n");
 
 var bind = {
-    foo: 'bar'
+    foo: 'bar',
+    foods: ['apple', 'orange', 'peach']
 };
 
 // }}}
@@ -40,14 +46,91 @@ var bind = {
 
 module.exports = {
 
+    // {{{ test commentCut
+
+    'test commentCut' : function() {
+
+        /*
+        var text = NX.fs.readFileSync(__dirname + '/../shared/template/comment.html').toString();
+        var html = tpl.fetch(text);
+        var comp = [
+            '<html>',
+            '<head>',
+            '</head>',
+            '<body>',
+            '    ',
+            '    ',
+            '</body>',
+            '</html>'
+        ].join('');
+
+        html = html.replace(/[\n\r]/g, '');
+
+        assert.equal(html, comp);
+        */
+    },
+
+    // }}}
+    // {{{ test simpleBind
+
+    'test simpleBind' : function() {
+
+        /*
+        var text = NX.fs.readFileSync(__dirname + '/../shared/template/bind.html').toString();
+        var html = tpl.fetch(text, {foo: 'bar'});
+
+        console.log(html);
+        */
+    },
+
+    // }}}
+    // {{{ test foreach
+
+    'test foreach' : function() {
+
+        var text = NX.fs.readFileSync(__dirname + '/../shared/template/foreach.html').toString();
+        var html = tpl.fetch(
+            text,
+            {
+                foods: [
+                    'apple',
+                    'orange',
+                    'peach'
+                ],
+
+                users: [{
+                    id: '0001',
+                    name: 'Jack',
+                    hobby: [
+                        'Collecting',
+                        'Games'
+                    ]
+                },{
+                    id: '0002',
+                    name: 'Kazuhiro',
+                    hobby: [
+                        'Cooking',
+                        'Games',
+                        'Gardening'
+                    ]
+                }]
+            }
+        );
+
+        console.log(html);
+    },
+
+    // }}}
     // {{{ test fetch#standard
 
     'test fetch#standard': function() {
 
+        /*
         var html = tpl.fetch(text, bind);
 
 //        console.log(html);
 //        assert.equal(html, '');
+        */
 
     }
 
