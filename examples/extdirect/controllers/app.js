@@ -6,25 +6,15 @@
  * http://www.xenophy.com
  */
 
-// {{{ users
+// {{{ app
 
-module.exports = NX.extend(NX.Module, {
+module.exports = NX.extend(NX.WebController, {
 
-    // {{{ useTable
+    // {{{ remotingapi
 
-    useTable : 'users',
-
-    // }}}
-    // {{{ getList
-
-    getList : function(callback) {
-
-        var me = this;
-
-        me.query('SELECT * FROM tbl_users', function(err, rs) {
-            callback(rs);
-        });
-    }
+    remotingapi : new NX.DirectAction({
+        use: ['users']
+    })
 
     // }}}
 
