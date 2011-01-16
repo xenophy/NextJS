@@ -2,6 +2,8 @@
 
 RIA Server side Framework
 
+<img src="http://art38.photozou.jp/pub/253/198253/photo/64571100.png" alt="Next JS" width="450" height="135" style="border:0" />
+
 ## 利用する外部モジュール
 
 * [https://github.com/senchalabs/connect](https://github.com/senchalabs/connect)
