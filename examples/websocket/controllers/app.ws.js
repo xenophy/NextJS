@@ -8,11 +8,36 @@
 
 // {{{ app.ws
 
+var user;
+var buffer = [];
+
 module.exports = NX.extend(NX.WebSocketController, {
 
     // {{{ use
 
     use: ['users'],
+
+    // }}}
+    // {{{ connect
+
+    connect : function(client) {
+
+        client.send({ buffer: buffer });
+
+    },
+
+    // }}}
+    // {{{ message
+
+    message : function(message) {
+
+        if (!user) {
+            user = message;
+            return;
+        }
+
+
+    }
 
     // }}}
 
