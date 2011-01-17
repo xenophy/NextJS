@@ -10,6 +10,11 @@
 
 module.exports = NX.extend(NX.WebController, {
 
+    // {{{ use
+
+    use: ['users'],
+
+    // }}}
     // {{{ remotingapi
 
     remotingapi : new NX.DirectAction({
