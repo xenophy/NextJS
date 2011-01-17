@@ -17,6 +17,9 @@ module.exports = NX.extend(NX.Module, {
     // }}}
     // {{{ getList
 
+    /**
+     * @formHandler true
+     */
     getList : function(callback) {
 
         var me = this;
