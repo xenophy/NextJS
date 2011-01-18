@@ -1,7 +1,7 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
 
 /*!
- * xFramework NX
+ * Next JS
  * Copyright(c) 2006-2011 Xenophy.CO.,LTD All rights Reserved.
  * http://www.xenophy.com
  */
@@ -45,6 +45,8 @@ module.exports = {
         staticServer.testHelper(port);
 
         staticServer.assertResponse('GET', '/index.html', 200, fs.readFileSync(__dirname + '/public_html/index.html').toString('utf8'));
+        staticServer.assertResponse('GET', '/subdir/index.html', 200, fs.readFileSync(__dirname + '/public_html/subdir/index.html').toString('utf8'));
+        staticServer.assertResponse('GET', '/subdir/test.html', 200, fs.readFileSync(__dirname + '/public_html/subdir/test.html').toString('utf8'));
 
         beforeExit(function(){
             assert.equal(beforeListen, true);
