@@ -8,7 +8,6 @@
 
 // {{{ app.ws
 
-var user;
 var buffer = [];
 
 module.exports = NX.extend(NX.WebSocketController, {
@@ -29,13 +28,35 @@ module.exports = NX.extend(NX.WebSocketController, {
     // }}}
     // {{{ message
 
-    message : function(message) {
+    message : function(message, client) {
 
-        if (!user) {
-            user = message;
-            return;
+        var me = this;
+
+        var msg;
+        if (!me.user) {
+            me.user = message;
+            msg = { message: [client.sessionId, me.user + 'さん、が入室しました。', 'SYSTEM'] };
+        } else {
+            msg = { message: [client.sessionId, message, me.user] };
         }
 
+        buffer.push(msg);
+        if(buffer.length > 15) {
+            buffer.shift();
+        }
+
+        client.broadcast(msg);
+//        client.send({ buffer: buffer });
+    },
+
+    // }}}
+    // {{{ disconnect
+
+    disconnect : function(client) {
+
+        var me = this;
+
+        client.broadcast({ announcement: client.sessionId + ' disconnected' });
 
     }
 
