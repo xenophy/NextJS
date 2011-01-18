@@ -8,4 +8,5 @@ RIA Server side Framework
 
 * [https://github.com/senchalabs/connect](https://github.com/senchalabs/connect)
 * [https://github.com/felixge/node-mysql](https://github.com/felixge/node-mysql)
+* [https://github.com/LearnBoost/Socket.IO-node](https://github.com/LearnBoost/Socket.IO-node)
 
