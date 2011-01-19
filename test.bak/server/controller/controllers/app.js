@@ -17,16 +17,6 @@ module.exports = NX.extend(NX.WebController, {
         console.log("index action called.");
 
         this.end();
-    },
-
-    // }}}
-    // {{{ sample
-
-    sample : function(req, res) {
-
-        console.log("sample action called.");
-
-        this.end();
     }
 
     // }}}

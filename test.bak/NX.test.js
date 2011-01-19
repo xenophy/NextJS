@@ -8,8 +8,8 @@
 
 // {{{ requires
 
-var NX = require('NX/NX.js'),
-    assert = require('assert');
+require('NX');
+var assert = require('assert');
 
 // }}}
 // {{{ NX Class Tests
@@ -21,6 +21,7 @@ module.exports = {
     'test apply#standard': function() {
 
         var src = {};
+
         var ret = NX.apply(src, {
             foo: 'bar'
         });
@@ -1530,32 +1531,6 @@ module.exports = {
 
         assert.equal(require.cache[mod1path], undefined);
         assert.equal(require.cache[mod2path], undefined);
-
-    },
-
-    // }}}
-    // {{{ test escapeRe#standard
-
-    'test escapeRe#standard': function() {
-
-        assert.equal('\\-', NX.escapeRe('-'), 'Test with single char');
-        assert.equal('\\*\\.', NX.escapeRe('*.'), 'Test with multiple characters next to each other');
-        assert.equal('foo', NX.escapeRe('foo'), 'Test with no escapeable chars');
-        assert.equal('\\{baz\\}', NX.escapeRe('{baz}'), 'Test with mixed set');
-        assert.equal('\\-\\.\\*\\+\\?\\^\\$\\{\\}\\(\\)\\|\\[\\]\\/\\\\', NX.escapeRe('-.*+?^${}()|[]/\\'), 'Test with every character');
-
-    },
-
-    // }}}
-    // {{{ test isNull#standard
-
-    'test isNull#standard': function() {
-
-        assert.equal(NX.isNull(null), true);
-        assert.equal(NX.isNull(123), false);
-        assert.equal(NX.isNull('string'), false);
-        assert.equal(NX.isNull([]), false);
-        assert.equal(NX.isNull({}), false);
 
     }
 
