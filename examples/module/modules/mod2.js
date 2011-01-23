@@ -12,9 +12,9 @@ module.exports = NX.extend(NX.Module, {
 
     // {{{ foo
 
-    foo : function() {
+    foo : function(callback) {
 
-        console.log('mod2 foo called');
+        callback('mod2 execute');
 
     }
 

@@ -8,12 +8,9 @@
 
 // {{{ requires
 
-
-var NX = require('NX/NX.js'),
-    assert = require('assert');
-
-NX.util = {};
-NX.util.JSON = require('NX/util/JSON.js');
+require('NX');
+var assert = require('assert');
+var should = require('should');
 
 // }}}
 // {{{ NX.util.JSON Class Tests
@@ -34,7 +31,6 @@ module.exports = {
         };
 
         var d = NX.util.JSON.encode(o);
-
         var ret = NX.util.JSON.decode(d);
 
         assert.equal(ret.v1, 1234);

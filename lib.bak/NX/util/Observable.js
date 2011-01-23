@@ -6,14 +6,18 @@
  * http://www.xenophy.com
  */
 
-// {{{ NX.util.Observable
-
 /**
  * @class NX.util.Observable
- *
- * Observableクラス
  */
-NX.util.Observable = NX.extend(Object, {
+
+// {{{ requires
+
+var NX = require('../NX.js');
+    events = require('events').EventEmitter;
+
+// }}}
+
+var Observable = NX.extend(Object, {
 
     // @private
     isObservable: true,
@@ -339,26 +343,10 @@ NX.util.Observable = NX.extend(Object, {
 // }}}
 // {{{ shorthand
 
-NX.override(NX.util.Observable, {
+Observable.on = Observable.prototype.addListener;
+Observable.un = Observable.prototype.removeListener;
 
-    // {{{ on
-
-    /**
-     * @method on
-     */
-    on: NX.util.Observable.prototype.addListener,
-
-    // }}}
-    // {{{ un
-
-    /**
-     * @method un
-     */
-    un: NX.util.Observable.prototype.removeListener
-
-    // }}}
-
-});
+module.exports = Observable;
 
 // }}}
 // {{{ NX.util.Observable.releaseCapture
@@ -366,8 +354,8 @@ NX.override(NX.util.Observable, {
 /**
  * @method Observable.releaseCapture
  */
-NX.util.Observable.releaseCapture = function(o) {
-    o.fireEvent = NX.util.Observable.prototype.fireEvent;
+module.exports.releaseCapture = function(o) {
+    o.fireEvent = Observable.prototype.fireEvent;
 };
 
 // }}}
@@ -376,7 +364,7 @@ NX.util.Observable.releaseCapture = function(o) {
 /**
  * @method Observable.capture
  */
-NX.util.Observable.capture = function(o, fn, scope) {
+module.exports.capture = function(o, fn, scope) {
     o.fireEvent = NX.createInterceptor(o.fireEvent, fn, scope);
 };
 
@@ -386,20 +374,20 @@ NX.util.Observable.capture = function(o, fn, scope) {
 /**
  * @method Observable.observe
  */
-NX.util.Observable.observe = function(cls, listeners) {
+module.exports.observe = function(cls, listeners) {
 
     if(cls) {
 
         if(!cls.isObservable) {
 
-            var o = new NX.util.Observable();
+            var o = new Observable();
             NX.applyIf(cls, o);
 
-            NX.iterate(NX.util.Observable.prototype, function(prop, v) {
+            NX.iterate(Observable.prototype, function(prop, v) {
                 cls[prop] = o[prop];
             });
 
-            NX.util.Observable.capture(cls, cls.fireEvent, cls);
+            Observable.capture(cls, cls.fireEvent, cls);
         }
 
         if(NX.isObject(listeners)) {

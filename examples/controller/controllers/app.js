@@ -13,9 +13,7 @@ module.exports = NX.extend(NX.WebController, {
     // {{{ index
 
     index : function(req, res) {
-
-        console.log("index action called.");
-
+        this.set('index', 'executed');
         this.end();
     },
 

@@ -8,8 +8,9 @@
 
 // {{{ requires
 
-var NX = require('NX/NX.js'),
-    assert = require('assert');
+require('NX');
+var assert = require('assert');
+var should = require('should');
 
 // }}}
 // {{{ NX Class Tests
@@ -21,6 +22,7 @@ module.exports = {
     'test apply#standard': function() {
 
         var src = {};
+
         var ret = NX.apply(src, {
             foo: 'bar'
         });
@@ -1551,11 +1553,11 @@ module.exports = {
 
     'test isNull#standard': function() {
 
-        assert.equal(NX.isNull(null), true);
-        assert.equal(NX.isNull(123), false);
-        assert.equal(NX.isNull('string'), false);
-        assert.equal(NX.isNull([]), false);
-        assert.equal(NX.isNull({}), false);
+        NX.isNull(null).should.equal(true);
+        NX.isNull(123).should.equal(false);
+        NX.isNull('string').should.equal(false);
+        NX.isNull([]).should.equal(false);
+        NX.isNull({}).should.equal(false);
 
     }
 
