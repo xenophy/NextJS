@@ -21,7 +21,7 @@ module.exports = NX.extend(NX.Module, {
 
         var me = this;
 
-        me.query('SELECT * FROM tbl_users', function(err, rs) {
+        me.query('SELECT * FROM users', function(err, rs) {
             callback(rs);
         });
     }
