@@ -6,9 +6,9 @@
  * http://www.xenophy.com
  */
 
-// {{{ NX.config.ControllerConfig
+// {{{ DatabaseConfig
 
-NX.config['database'] = {
+module.exports = {
 
     // {{{ connections
 
