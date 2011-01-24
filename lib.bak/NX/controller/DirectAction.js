@@ -9,6 +9,7 @@
 // {{{ requires
 
 var path = require('path');
+var fs = require('fs');
 
 // }}}
 // {{{ NX.DirectAction
@@ -28,7 +29,7 @@ NX.DirectAction = function() {
 
             var ret = [];
 
-            NX.fs.readFile(file, function(err, data) {
+            fs.readFile(file, function(err, data) {
 
                 var src = data.toString();
                 src = src.replace(/[\n\r|\r]/gm, "\n");
@@ -195,12 +196,13 @@ NX.DirectAction = function() {
             if(req.method === "POST") {
 
                 var mod = me.controller.mods[me.post.action];
-
                 var arg = me.post.data;
+
+
                 arg.push(function(result) {
 
                     res.writeHead(200, {
-                        "Content-Type": NX.config.http.mimetype['js']
+                        "Content-Type": me.controller.mimetype['js']
                     });
 
                     res.end(NX.encode({
@@ -226,7 +228,7 @@ NX.DirectAction = function() {
                     api = NX.sprintf(api, me.router);
 
                     res.writeHead(200, {
-                        "Content-Type": NX.config.http.mimetype['js']
+                        "Content-Type": me.controller.mimetype['js']
                     });
                     res.end(
                         NX.sprintf(

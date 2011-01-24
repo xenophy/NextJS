@@ -3,7 +3,7 @@ Ext.onReady(function() {
 
     Ext.Direct.addProvider(Ext.app.REMOTING_API);
 
-    users.getList(123, function(ret) {
+    users.getList(function(ret) {
 
         var lis = [];
 

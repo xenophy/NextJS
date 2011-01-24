@@ -20,11 +20,11 @@ module.exports = NX.extend(NX.Module, {
     /**
      * @formHandler true
      */
-    getList : function(nu, callback) {
+    getList : function(callback) {
 
         var me = this;
 
-        me.query('SELECT * FROM tbl_users', function(err, rs) {
+        me.query('SELECT * FROM users', function(err, rs) {
             callback(rs);
         });
     }
