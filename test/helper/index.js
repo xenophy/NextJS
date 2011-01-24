@@ -24,7 +24,7 @@ NX.override(NX.server.HttpServer, {
         var me = this;
 
         if(t.client === undefined) {
-            t.client = http.createClient(t.port);
+//            t.client = http.createClient(t.port);
         }
 
         if(t.pending === undefined) {
@@ -32,7 +32,94 @@ NX.override(NX.server.HttpServer, {
         }
         t.pending++;
 
-        var req = t.client.request.apply(t.client, [method, path]);
+        var post_data;
+        if(method.substr(0, 5) == 'POST?') {
+            post_data = method.substr(5);
+            method = 'POST';
+        }
+
+        var options = {
+            port: t.port,
+            path: path,
+            method: method
+        };
+
+        if(post_data) {
+            options.headers = {
+                'Content-Type': 'application/json',
+                'Content-Length': post_data.length
+            };
+        }
+
+        var req = http.request(options, function(res) {
+
+            if (req.buffer) {
+                res.body = '';
+                res.setEncoding('utf8');
+                res.addListener('data', function(chunk){ res.body += chunk });
+            }
+
+            if(!--t.pending) {
+                t.server.close();
+            }
+
+        });
+
+
+        /*
+        var req;
+        if(method.substr(0, 5) == 'POST?') {
+            var post_data = method.substr(5);
+            method = 'POST';
+
+
+var options = {
+  host: 'www.google.com',
+  port: 80,
+  path: '/upload',
+  method: 'POST'
+};
+
+var req = http.request(options, function(res) {
+  console.log('STATUS: ' + res.statusCode);
+  console.log('HEADERS: ' + JSON.stringify(res.headers));
+  res.setEncoding('utf8');
+  res.on('data', function (chunk) {
+    console.log('BODY: ' + chunk);
+  });
+});
+
+// write data to request body
+req.write('data\n');
+req.write('data\n');
+req.end();
+            
+
+
+            req = t.client.request.apply(t.client, [method, path, {
+                'Content-Length': post_data.length,
+            }]);
+            console.log(post_data.length);
+            console.log(post_data);
+            req.write(post_data);
+            req.end();
+        } else {
+            req = t.client.request.apply(t.client, [method, path]);
+        }
+
+        */
+
+
+        /*
+var request = connection.request("POST", uri, {
+   'host':'github.com',
+   "User-Agent": "NodeJS HTTP Client",
+   'Content-Length': post_data.length,
+ });
+
+*/
+
+/*
 
         req.addListener('response', function(res){
 
@@ -47,6 +134,7 @@ NX.override(NX.server.HttpServer, {
             }
 
         });
+        */
 
         return req;
     },
@@ -61,6 +149,12 @@ NX.override(NX.server.HttpServer, {
         }
 
         var req = me.request(target, method, path);
+
+        var post_data;
+        if(method.substr(0, 5) == 'POST?') {
+            post_data = method.substr(5);
+            method = 'POST';
+        }
 
         req.buffer = true;
         req.addListener('response', function(res){
@@ -83,6 +177,10 @@ NX.override(NX.server.HttpServer, {
                 }
             });
         });
+
+        if(post_data) {
+            req.write(post_data);
+        }
 
         req.end();
     }
