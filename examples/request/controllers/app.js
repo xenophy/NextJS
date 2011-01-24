@@ -13,9 +13,23 @@ module.exports = NX.extend(NX.WebController, {
     // {{{ index
 
     index : function(req, res) {
-        this.set('index', 'executed');
+        this.set('person', this.request.person);
         this.end();
     },
+
+    // }}}
+    // {{{ postget
+
+    postget : function(req, res) {
+
+        if(req.method === 'POST') {
+            this.set('person', this.post.person);
+        } else {
+            this.set('person', this.get.person);
+        }
+
+        this.end();
+    }
 
     // }}}
 
