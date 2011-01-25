@@ -15,10 +15,21 @@ var assert = require('assert'),
     sys = require('sys');
 
 // }}}
+// {{{ running servers
+
+var runserver;
+
+// }}}
+// {{{ waiting servers
+
+var waitingServers = [];
+
+// }}}
 // {{{ NX.server.HttpServer override
 
 NX.override(NX.server.HttpServer, {
 
+    /*
     request: function(t, method, path) {
 
         var me = this;
@@ -65,80 +76,11 @@ NX.override(NX.server.HttpServer, {
 
         });
 
-
-        /*
-        var req;
-        if(method.substr(0, 5) == 'POST?') {
-            var post_data = method.substr(5);
-            method = 'POST';
-
-
-var options = {
-  host: 'www.google.com',
-  port: 80,
-  path: '/upload',
-  method: 'POST'
-};
-
-var req = http.request(options, function(res) {
-  console.log('STATUS: ' + res.statusCode);
-  console.log('HEADERS: ' + JSON.stringify(res.headers));
-  res.setEncoding('utf8');
-  res.on('data', function (chunk) {
-    console.log('BODY: ' + chunk);
-  });
-});
-
-// write data to request body
-req.write('data\n');
-req.write('data\n');
-req.end();
-            
-
-
-            req = t.client.request.apply(t.client, [method, path, {
-                'Content-Length': post_data.length,
-            }]);
-            console.log(post_data.length);
-            console.log(post_data);
-            req.write(post_data);
-            req.end();
-        } else {
-            req = t.client.request.apply(t.client, [method, path]);
-        }
-
-        */
-
-
-        /*
-var request = connection.request("POST", uri, {
-   'host':'github.com',
-   "User-Agent": "NodeJS HTTP Client",
-   'Content-Length': post_data.length,
- });
-
-*/
-
-/*
-
-        req.addListener('response', function(res){
-
-            if (req.buffer) {
-                res.body = '';
-                res.setEncoding('utf8');
-                res.addListener('data', function(chunk){ res.body += chunk });
-            }
-
-            if(!--t.pending) {
-                t.server.close();
-            }
-
-        });
-        */
-
         return req;
     },
+    */
 
+    /*
     assertResponse: function(target, method, path, expectedStatus, expectedBody, msg, fn) {
 
         var me = this;
@@ -186,6 +128,96 @@ var request = connection.request("POST", uri, {
 
         req.end();
     }
+    */
+
+    // {{{ testRequest
+
+    testRequest : function(config) {
+
+        config = config || {};
+
+        var t = config.server;
+        var method = config.method;
+        var path = config.path;
+
+        t.pending = t.pending || 0;
+        t.pending++;
+
+        var options = {
+            port: t.port,
+            path: path,
+            method: method
+        };
+
+        if(method === 'POST') {
+            options.headers = {
+                'Content-Type': 'application/json',
+                'Content-Length': data.length
+            };
+        }
+
+        var req = http.request(options, function(res) {
+
+            console.log("res?");
+            if (req.buffer) {
+                res.body = '';
+                res.setEncoding('utf8');
+                res.addListener('data', function(chunk){ res.body += chunk });
+            }
+
+            /*
+            if(!--t.pending) {
+                t.server.close();
+            }
+            */
+
+        });
+
+        return req;
+    },
+
+    // }}}
+    // {{{ assertResponse
+
+    assertResponse : function(config) {
+
+        config = config || {};
+
+        var me = this;
+        var t = config.server;
+        var method = config.method;
+        var path = config.path;
+        var data = config.data;
+
+        if(t.running == true && runserver !== t) {
+            waitingServers.push(t);
+            return;
+        }
+        runserver = t;
+
+        if(t.running !== true) {
+            t.server.listen(t.port);
+            t.running = true;
+        }
+
+        var req = me.testRequest({
+            server: t,
+            method: method,
+            path: path,
+            data: data
+        });
+
+        req.addListener('response', function(res) {
+            console.log("response");
+            res.addListener('end', function(){
+                console.log("end");
+            });
+        });
+
+
+    }
+
+    // }}}
 
 });
 

@@ -26,14 +26,26 @@ module.exports = {
 
         var srv = NX.createServer({
             servers: [{
-                port: process.NXEnv.testport++
+                port: process.NXEnv.testport
             }]
         });
 
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/public_html/index.html'),
+            msg: 'static'
+        });
+
+
+        /*
         srv.assertResponse(srv.servers[0], 'GET', '/', 200, fs.readFileSync(__dirname + '/public_html/index.html'), 'static');
 
         var html = fs.readFileSync(process.NXEnv.libdir + '/config/error/HTTP_NOT_FOUND.html');
         srv.assertResponse(srv.servers[0], 'GET', '/notfound', 404, html.toString('utf8'), '404 Error');
+        */
     }
 
     // }}}
