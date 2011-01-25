@@ -20,9 +20,9 @@ var assert = require('assert'),
 var runserver;
 
 // }}}
-// {{{ waiting servers
+// {{{ task
 
-var waitingServers = [];
+var task = [];
 
 // }}}
 // {{{ NX.server.HttpServer override
@@ -130,12 +130,13 @@ NX.override(NX.server.HttpServer, {
     }
     */
 
-    // {{{ testRequest
+    // {{{ request
 
-    testRequest : function(config) {
+    request : function(config) {
 
         config = config || {};
 
+        var me = this;
         var t = config.server;
         var method = config.method;
         var path = config.path;
@@ -158,18 +159,28 @@ NX.override(NX.server.HttpServer, {
 
         var req = http.request(options, function(res) {
 
-            console.log("res?");
-            if (req.buffer) {
-                res.body = '';
-                res.setEncoding('utf8');
-                res.addListener('data', function(chunk){ res.body += chunk });
-            }
+            res.body = '';
+            res.setEncoding('utf8');
+            res.addListener('data', function(chunk){ res.body += chunk });
 
-            /*
-            if(!--t.pending) {
+            // 最後のタスク参照
+            var lastTask = task[task.length - 1];
+
+            if(lastTask) {
+                lastTask = task.pop();
+                if(lastTask.server === t) {
+                    t.next = true;
+                    me.assertResponse(lastTask);
+                } else {
+                    t.next = false;
+                    t.server.close();
+                    t.running = false;
+                    me.assertResponse(lastTask);
+                }
+            } else {
                 t.server.close();
             }
-            */
+
 
         });
 
@@ -188,19 +199,26 @@ NX.override(NX.server.HttpServer, {
         var method = config.method;
         var path = config.path;
         var data = config.data;
+        var expectedStatus = config.expectedStatus;
+        var expectedBody = config.expectedBody;
+        var msg = config.msg;
+        var fn = config.fn;
 
-        if(t.running == true && runserver !== t) {
-            waitingServers.push(t);
+        // テスト中にリクエストがあった場合タスクに追加
+        if(runserver && runserver.running === true && !t.next) {
+            task.push(config);
             return;
         }
+
         runserver = t;
+        t.next = false;
 
         if(t.running !== true) {
             t.server.listen(t.port);
             t.running = true;
         }
 
-        var req = me.testRequest({
+        var req = me.request({
             server: t,
             method: method,
             path: path,
@@ -208,12 +226,30 @@ NX.override(NX.server.HttpServer, {
         });
 
         req.addListener('response', function(res) {
-            console.log("response");
             res.addListener('end', function(){
-                console.log("end");
+
+                if(expectedBody !== undefined) {
+                    assert.equal(
+                        expectedBody,
+                        res.body,
+                        msg + ' response body of ' + sys.inspect(expectedBody) + ', got ' + sys.inspect(res.body)
+                    );
+                }
+
+                assert.equal(
+                    expectedStatus,
+                    res.statusCode,
+                    msg + ' status code of ' + expectedStatus + ', got ' + res.statusCode
+                );
+
+                if(fn) {
+                    fn(req, res);
+                }
+
             });
         });
 
+        req.end();
 
     }
 

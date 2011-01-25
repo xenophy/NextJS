@@ -39,13 +39,30 @@ module.exports = {
             msg: 'static'
         });
 
+    },
 
-        /*
-        srv.assertResponse(srv.servers[0], 'GET', '/', 200, fs.readFileSync(__dirname + '/public_html/index.html'), 'static');
+    // }}}
+    // {{{ test createServer#notfound
 
-        var html = fs.readFileSync(process.NXEnv.libdir + '/config/error/HTTP_NOT_FOUND.html');
-        srv.assertResponse(srv.servers[0], 'GET', '/notfound', 404, html.toString('utf8'), '404 Error');
-        */
+    'test createServer#notfound': function() {
+
+        process.NXEnv.dirname = __dirname;
+
+        var srv = NX.createServer({
+            servers: [{
+                port: process.NXEnv.testport
+            }]
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/notfoundpath',
+            expectedStatus: 404,
+            expectedBody: fs.readFileSync(process.NXEnv.libdir + '/config/error/HTTP_NOT_FOUND.html'),
+            msg: '404 Error'
+        });
+
     }
 
     // }}}
