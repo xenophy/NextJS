@@ -143,6 +143,8 @@ var request = connection.request("POST", uri, {
 
         var me = this;
 
+        target.msg = msg;
+
         if(target.started !== true) {
             target.server.listen(target.port);
             target.started = true;

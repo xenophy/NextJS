@@ -30,8 +30,7 @@ module.exports = {
             }]
         });
 
-        srv.servers[0].flag ="db";
-        srv.assertResponse(srv.servers[0], 'GET', '/', 200, fs.readFileSync(__dirname + '/public_html/index.result.html'));
+        srv.assertResponse(srv.servers[0], 'GET', '/', 200, fs.readFileSync(__dirname + '/public_html/index.result.html'), 'db');
 
     }
 
