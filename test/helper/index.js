@@ -156,15 +156,18 @@ NX.override(NX.server.HttpServer, {
 
         var req = http.request(options, function(res) {
 
+            console.log("res?");
             if (req.buffer) {
                 res.body = '';
                 res.setEncoding('utf8');
                 res.addListener('data', function(chunk){ res.body += chunk });
             }
 
+            /*
             if(!--t.pending) {
                 t.server.close();
             }
+            */
 
         });
 
@@ -202,8 +205,13 @@ NX.override(NX.server.HttpServer, {
             data: data
         });
 
+        req.addListener('response', function(res) {
+            console.log("response");
+            res.addListener('end', function(){
+                console.log("end");
+            });
+        });
 
-        console.log(t);
 
     }
 
