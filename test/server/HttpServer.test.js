@@ -118,7 +118,43 @@ module.exports = {
             path: '/',
             expectedStatus: 200,
             expectedBody: fs.readFileSync(__dirname + '/controller/public_html/index.result.html'),
-            msg: 'controller#standard'
+            msg: 'controller#/'
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/users/',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/controller/public_html/users/index.result.html'),
+            msg: 'controller#/users/'
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/users/index.html',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/controller/public_html/users/index.result.html'),
+            msg: 'controller#/users/index.html'
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/users/info/',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/controller/public_html/users/info/index.result.html'),
+            msg: 'controller#/users/info/'
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/users/info/index.html',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/controller/public_html/users/info/index.result.html'),
+            msg: 'controller#/users/info/index.html'
         });
 
     }

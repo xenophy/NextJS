@@ -168,19 +168,16 @@ NX.override(NX.server.HttpServer, {
             var lastTask = task.shift();
 
             nexttask = lastTask;
-            if(task.length > 0) {
+            if(lastTask) {
 
                 if(lastTask.server === t.server) {
                     t.next = true;
-            //        nexttask = lastTask;
                 } else {
                     runserver.server.close()
                     t.running = false;
                     t.next = true;
-                    //nexttask = lastTask;
                 }
             } else {
-                //nexttask = task[0];
                 runserver.server.close();
                 t.next = true;
             }
@@ -212,8 +209,6 @@ NX.override(NX.server.HttpServer, {
             task.push(config);
             return;
         }
-
-        console.log("EXEC:" + msg);
 
         runserver = t;
         t.next = false;
