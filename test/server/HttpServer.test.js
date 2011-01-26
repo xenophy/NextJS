@@ -157,6 +157,29 @@ module.exports = {
             msg: 'controller#/users/info/index.html'
         });
 
+    },
+
+    // }}}
+    // {{{ test db#standard
+
+    'test db#standard': function(beforeExit) {
+
+        var srv = NX.createServer({
+            servers: [{
+                port: process.NXEnv.testport,
+                path: __dirname + '/db/'
+            }]
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/db/public_html/index.result.html'),
+            msg: 'db#/'
+        });
+
     }
 
     // }}}
