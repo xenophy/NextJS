@@ -218,6 +218,8 @@ NX.override(NX.server.HttpServer, {
             t.running = true;
         }
 
+        console.log('#Server Requesting : ' + msg);
+
         var req = me.request({
             server: t,
             method: method,
