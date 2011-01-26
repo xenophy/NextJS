@@ -22,19 +22,30 @@ module.exports = {
 
     'test createServer#standard': function() {
 
-        process.NXEnv.dirname = __dirname;
-
         var srv = NX.createServer({
             servers: [{
-                port: process.NXEnv.testport++
+                port: process.NXEnv.testport,
+                path: __dirname
             }]
         });
 
-        srv.assertResponse(srv.servers[0], 'GET', '/', 200, fs.readFileSync(__dirname + '/public_html/index.result.html'), 'ctrl1');
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/public_html/index.result.html'),
+            msg: 'ctrl1'
+        });
+
+
+
+        /*
         srv.assertResponse(srv.servers[0], 'GET', '/users/', 200, fs.readFileSync(__dirname + '/public_html/users/index.result.html'), 'ctrl2');
         srv.assertResponse(srv.servers[0], 'GET', '/users/index.html', 200, fs.readFileSync(__dirname + '/public_html/users/index.result.html'), 'ctrl3');
         srv.assertResponse(srv.servers[0], 'GET', '/users/info/', 200, fs.readFileSync(__dirname + '/public_html/users/info/index.result.html'), 'ctrl4');
         srv.assertResponse(srv.servers[0], 'GET', '/users/info/index.html', 200, fs.readFileSync(__dirname + '/public_html/users/info/index.result.html'), 'ctrl5');
+        */
     }
 
     // }}}

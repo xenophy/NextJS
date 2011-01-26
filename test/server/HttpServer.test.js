@@ -11,6 +11,7 @@
 require('NX');
 require('../helper');
 var should = require('should');
+var fs = require('fs');
 
 // }}}
 // {{{ NX.server.HttpServer Class Tests
@@ -50,6 +51,75 @@ module.exports = {
         } catch (e) {
             e.message.should.equal('specify an number of port.');
         }
+
+    },
+
+    // }}}
+    // {{{ test static#standard
+
+    'test static#standard': function(beforeExit) {
+
+        var srv = NX.createServer({
+            servers: [{
+                port: process.NXEnv.testport,
+                path: __dirname + '/static/'
+            }]
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/static/public_html/index.html'),
+            msg: 'static'
+        });
+
+    },
+
+    // }}}
+    // {{{ test static#notfound
+
+    'test static#notfound': function(beforeExit) {
+
+        var srv = NX.createServer({
+            servers: [{
+                port: process.NXEnv.testport,
+                path: __dirname + '/static/'
+            }]
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/notfoundpath',
+            expectedStatus: 404,
+            expectedBody: fs.readFileSync(process.NXEnv.libdir + '/config/error/HTTP_NOT_FOUND.html'),
+            msg: '404 Error'
+        });
+
+    },
+
+    // }}}
+    // {{{ test controller#standard
+
+    'test controller#standard': function(beforeExit) {
+
+        var srv = NX.createServer({
+            servers: [{
+                port: process.NXEnv.testport,
+                path: __dirname + '/controller/'
+            }]
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/controller/public_html/index.result.html'),
+            msg: 'controller#standard'
+        });
 
     }
 

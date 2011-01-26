@@ -23,6 +23,7 @@ var runserver;
 // {{{ task
 
 var task = [];
+var nexttask;
 
 // }}}
 // {{{ NX.server.HttpServer override
@@ -164,23 +165,25 @@ NX.override(NX.server.HttpServer, {
             res.addListener('data', function(chunk){ res.body += chunk });
 
             // 最後のタスク参照
-            var lastTask = task[task.length - 1];
+            var lastTask = task.shift();
 
-            if(lastTask) {
-                lastTask = task.pop();
-                if(lastTask.server === t) {
+            nexttask = lastTask;
+            if(task.length > 0) {
+
+                if(lastTask.server === t.server) {
                     t.next = true;
-                    me.assertResponse(lastTask);
+            //        nexttask = lastTask;
                 } else {
-                    t.next = false;
-                    t.server.close();
+                    runserver.server.close()
                     t.running = false;
-                    me.assertResponse(lastTask);
+                    t.next = true;
+                    //nexttask = lastTask;
                 }
             } else {
-                t.server.close();
+                //nexttask = task[0];
+                runserver.server.close();
+                t.next = true;
             }
-
 
         });
 
@@ -210,6 +213,8 @@ NX.override(NX.server.HttpServer, {
             return;
         }
 
+        console.log("EXEC:" + msg);
+
         runserver = t;
         t.next = false;
 
@@ -221,6 +226,7 @@ NX.override(NX.server.HttpServer, {
         var req = me.request({
             server: t,
             method: method,
+            msg: msg,
             path: path,
             data: data
         });
@@ -244,6 +250,16 @@ NX.override(NX.server.HttpServer, {
 
                 if(fn) {
                     fn(req, res);
+                }
+
+                if(nexttask) {
+                    nexttask.server.next = true;
+                    me.assertResponse(nexttask);
+                }
+
+                if(task.length === 0) {
+//                    runserver.close();
+
                 }
 
             });
