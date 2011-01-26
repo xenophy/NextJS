@@ -180,6 +180,72 @@ module.exports = {
             msg: 'db#/'
         });
 
+    },
+
+    // }}}
+    // {{{ test module#standard
+
+    'test module#standard': function(beforeExit) {
+
+        var srv = NX.createServer({
+            servers: [{
+                port: process.NXEnv.testport,
+                path: __dirname + '/module/'
+            }]
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/module/public_html/index.result.html'),
+            msg: 'module#/'
+        });
+
+    },
+
+    // }}}
+    // {{{ test request#standard
+
+    'test request#standard': function(beforeExit) {
+
+        var srv = NX.createServer({
+            servers: [{
+                port: process.NXEnv.testport,
+                path: __dirname + '/request/'
+            }]
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/request/public_html/index.result.html'),
+            msg: 'request#/'
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/?person=urlrequest',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/request/public_html/index.result2.html'),
+            msg: 'request#/?person=urlrequest'
+        });
+
+        var post_data = NX.encode({person: 'kotsutsumi'});
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'POST',
+            path: '/',
+            data: post_data,
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/request/public_html/index.result3.html'),
+            msg: "request#/?{person: 'kotsutsumi'}"
+        });
+
     }
 
     // }}}

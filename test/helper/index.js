@@ -141,6 +141,7 @@ NX.override(NX.server.HttpServer, {
         var t = config.server;
         var method = config.method;
         var path = config.path;
+        var data = config.data;
 
         t.pending = t.pending || 0;
         t.pending++;
@@ -261,6 +262,10 @@ NX.override(NX.server.HttpServer, {
 
             });
         });
+
+        if(data) {
+            req.write(data);
+        }
 
         req.end();
 
