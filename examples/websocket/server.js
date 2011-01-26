@@ -14,17 +14,13 @@ require('../../lib/NX');
 // {{{ create server
 
 NX.createServer({
-    websocket: 'app.ws.js',
-    listeners : {
+    servers: [{
+        websocket: 'app.ws.js',
+        port: 3000
+    }]
+}).listen();
 
-        beforeListen : function() {
-            console.log('Server running at http://127.0.0.1:3000/');
-        },
-
-        afterListen : function() {
-        }
-    }
-}).listen(3000);
+console.log('Server running at http://127.0.0.1:3000/');
 
 // }}}
 
