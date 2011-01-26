@@ -84,5 +84,29 @@
     </dl>
     <!-- /If Else -->
 
+    <!-- Else If -->
+    <h2>If Else</h2>
+    <dl>
+        {if data.number == 3001}
+        <dd>data.number is 3001</dd>
+        {elseif data.number == 3000}
+        <dd>data.number is 3000</dd>
+        {/if}
+
+        {if data.number == 3001}
+        <dd>data.number is 3001</dd>
+        {elseif data.number == 3002}
+        <dd>data.number is 3000</dd>
+        {else}
+            {if data.number == 3001}
+            <dd>data.number is 3001</dd>
+            {elseif data.number == 3000}
+            <dd>data.number is 3000</dd>
+            {/if}
+        {/if}
+
+    </dl>
+    <!-- /Else If -->
+
 </body>
 </html>
