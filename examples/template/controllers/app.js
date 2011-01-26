@@ -17,7 +17,12 @@ module.exports = NX.extend(NX.WebController, {
         this.set('data', {
             string: 'string',
             number: 3000,
-            bool: true
+            bool: true,
+            fruit: [
+                { name: 'apple', price: 200 },
+                { name: 'orange', price: 100 },
+                { name: 'peach', price: 250 }
+            ]
         });
 
         this.end();

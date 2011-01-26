@@ -5,18 +5,43 @@
 <body>
     <h1>Template Examples</h1>
 
-    <h2>Simple bind.</h2>
+    <!-- Simple Bind -->
+    <h2>Simple Bind</h2>
     <dl>
         <dt>string</dt>
         <dd>value: {data.string}</dd>
 
-    <!-- -->
         <dt>number</dt>
         <dd>value: {data.number}</dd>
 
         <dt>boolean</dt>
         <dd>value: {data.bool}</dd>
     </dl>
+    <!-- /Simple Bind -->
+
+    <!-- Foreach -->
+    <h2>Foreach</h2>
+    <dl>
+        {foreach from=data.fruit item=item key=key}
+        <dt>{item.name}</dt>
+        <dd>Price: {item.price}</dd>
+        {/foreach}
+    </dl>
+    <!-- /Foreach -->
+
+    <!-- Foreach Else-->
+    <h2>Foreach Else</h2>
+    <dl>
+        {foreach from=data.nodata item=item key=key}
+        <dt>{item.name}</dt>
+        <dd>Price: {item.price}</dd>
+        {foreachelse}
+        <dd>No items.</dd>
+        {/foreach}
+    </dl>
+    <!-- /Foreach Else -->
+
+
 
 </body>
 </html>
