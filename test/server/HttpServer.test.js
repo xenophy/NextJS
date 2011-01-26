@@ -302,11 +302,12 @@ module.exports = {
 
                 var store = srv.servers[0].sessionStore;
 
-                store.get(sessionId, function(err, v) {
+                console.log("セッション内容:");
 
-                    assert.equal(v.person, 'kotsutsumi');
-                
-                });
+                var o = store.sessions[sessionId];
+                console.log(o);
+
+                assert.equal(o.person, 'kotsutsumi');
 
             }
         });
@@ -314,9 +315,23 @@ module.exports = {
         srv.assertResponse({
             server: srv.servers[0],
             method: 'GET',
+            path: '/',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/session/public_html/index.result.html'),
+            msg: 'session#/'
+        });
+
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
             path: '/clear',
             expectedStatus: 302,
-            msg: 'session#/clear'
+            msg: 'session#/clear',
+            fn : function(req, res) {
+
+
+            }
         });
 
         srv.assertResponse({
