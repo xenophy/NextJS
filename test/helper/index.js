@@ -141,6 +141,7 @@ NX.override(NX.server.HttpServer, {
         var t = config.server;
         var method = config.method;
         var path = config.path;
+        var cookie = config.cookie;
         var data = config.data;
 
         t.pending = t.pending || 0;
@@ -159,6 +160,11 @@ NX.override(NX.server.HttpServer, {
             };
         }
 
+        if(cookie) {
+            options.headers = options.headers || {};
+            options.headers['Cookie'] = NX.encode(cookie);
+        }
+
         var req = http.request(options, function(res) {
 
             res.body = '';
@@ -171,13 +177,26 @@ NX.override(NX.server.HttpServer, {
             nexttask = lastTask;
             if(lastTask) {
 
-                if(lastTask.server === t.server) {
+                if(lastTask.server.pending) {
+                    lastTask.server.pending--;
                     t.next = true;
                 } else {
                     runserver.server.close()
                     t.running = false;
                     t.next = true;
                 }
+
+                /*
+                console.log(lastTask.server);
+                if(lastTask.server === t.server) {
+                    console.log("同じサーバ？");
+                    t.next = true;
+                } else {
+                    runserver.server.close()
+                    t.running = false;
+                    t.next = true;
+                }
+                */
             } else {
                 runserver.server.close();
                 t.next = true;
@@ -203,6 +222,7 @@ NX.override(NX.server.HttpServer, {
         var expectedStatus = config.expectedStatus;
         var expectedBody = config.expectedBody;
         var msg = config.msg;
+        var cookie = config.cookie;
         var fn = config.fn;
 
         // テスト中にリクエストがあった場合タスクに追加
@@ -226,11 +246,21 @@ NX.override(NX.server.HttpServer, {
             method: method,
             msg: msg,
             path: path,
+            cookie: cookie,
             data: data
         });
 
         req.addListener('response', function(res) {
             res.addListener('end', function(){
+
+                //if("session#/?{person: 'kotsutsumi'}" == msg) {
+                /*
+                if("session#/2" == msg) {
+                    console.log(expectedBody.toString('utf8'));
+                    console.log("--------------");
+                    console.log(res.body);
+                }
+                */
 
                 if(expectedBody !== undefined) {
                     assert.equal(
@@ -257,7 +287,6 @@ NX.override(NX.server.HttpServer, {
 
                 if(task.length === 0) {
 //                    runserver.close();
-
                 }
 
             });

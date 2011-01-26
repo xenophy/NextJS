@@ -12,6 +12,12 @@ require('NX');
 require('../helper');
 var should = require('should');
 var fs = require('fs');
+var assert = require('assert');
+var queryString = require('querystring')
+  , crypto = require('crypto')
+  , Path = require('path')
+  , fs = require('fs');
+
 
 // }}}
 // {{{ NX.server.HttpServer Class Tests
@@ -244,6 +250,82 @@ module.exports = {
             expectedStatus: 200,
             expectedBody: fs.readFileSync(__dirname + '/request/public_html/index.result3.html'),
             msg: "request#/?{person: 'kotsutsumi'}"
+        });
+
+    },
+
+    // }}}
+    // {{{ test session#standard
+
+    'test session#standard': function(beforeExit) {
+
+        var srv = NX.createServer({
+            servers: [{
+                port: process.NXEnv.testport,
+                path: __dirname + '/session/'
+            }]
+        });
+
+        var cookie = {};
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/session/public_html/index.result.html'),
+            msg: 'session#/'
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'POST',
+            data: NX.encode({person: 'kotsutsumi'}),
+            path: '/',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/session/public_html/index.result2.html'),
+            msg: "session#/?{person: 'kotsutsumi'}",
+            fn: function(req, res) {
+
+                var sessionId;
+                NX.each(res.headers['set-cookie'], function(item) {
+                    var tmp = NX.explode(' ', item);
+                    tmp = NX.explode('=', tmp[0]);
+
+                    var name = tmp[0];
+                    var value = tmp[1].substr(0, tmp[1].length-1);
+
+                    if(name == 'nextjs.sid') {
+                        sessionId = value;
+                    }
+                });
+
+                var store = srv.servers[0].sessionStore;
+
+                store.get(sessionId, function(err, v) {
+
+                    assert.equal(v.person, 'kotsutsumi');
+                
+                });
+
+            }
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/clear',
+            expectedStatus: 302,
+            msg: 'session#/clear'
+        });
+
+        srv.assertResponse({
+            server: srv.servers[0],
+            method: 'GET',
+            path: '/',
+            expectedStatus: 200,
+            expectedBody: fs.readFileSync(__dirname + '/session/public_html/index.result.html'),
+            msg: 'session#/'
         });
 
     }
