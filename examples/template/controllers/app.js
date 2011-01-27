@@ -19,9 +19,9 @@ module.exports = NX.extend(NX.WebController, {
             number: 3000,
             bool: true,
             fruit: [
-                { name: 'apple', price: 200 },
-                { name: 'orange', price: 100 },
-                { name: 'peach', price: 250 }
+                { name: 'apple', price: 1200 },
+                { name: 'orange', price: 1100 },
+                { name: 'peach', price: 2510 }
             ]
         });
 

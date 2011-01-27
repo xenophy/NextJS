@@ -127,5 +127,16 @@
 
     <!-- /Include -->
 
+    <!-- Modifier -->
+    <h2>Modifier</h2>
+    <dl>
+        {foreach from=data.fruit item=item key=key}
+        <dt>{item.name}</dt>
+        <dd>Price: {item.price|jpMoney}</dd>
+        {/foreach}
+        <dd>number: {data.number|number:"0,000"}</dd>
+    </dl>
+    <!-- /Modifier -->
+
 </body>
 </html>
