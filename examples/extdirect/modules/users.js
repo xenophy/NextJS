@@ -36,6 +36,37 @@ module.exports = NX.extend(NX.Module, {
         me.query('SELECT * FROM users', function(err, rs) {
             callback({users: rs});
         });
+    },
+
+    // }}}
+    // {{{ getNode
+
+    getNode : function(id, callback) {
+
+        var ret = [];
+
+        if(id === 'root') {
+
+            ret.push({id: 'sn1', text: 'サブノード1', leaf: false});
+            ret.push({id: 'sn2', text: 'サブノード2', leaf: false});
+            ret.push({id: 'sn3', text: 'サブノード3', leaf: false});
+
+        } else if(id === 'sn1') {
+
+            ret.push({id: 'ln1', text: 'リーフノード1', leaf: true});
+
+        } else if(id === 'sn2') {
+
+            ret.push({id: 'ln2', text: 'リーフノード2', leaf: true});
+
+        } else if(id === 'sn3') {
+
+            ret.push({id: 'ln3', text: 'リーフノード3', leaf: true});
+
+        }
+
+        callback(ret);
+
     }
 
     // }}}
