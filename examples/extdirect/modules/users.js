@@ -17,15 +17,24 @@ module.exports = NX.extend(NX.Module, {
     // }}}
     // {{{ getList
 
-    /**
-     * @formHandler true
-     */
     getList : function(callback) {
 
         var me = this;
 
         me.query('SELECT * FROM users', function(err, rs) {
             callback(rs);
+        });
+    },
+
+    // }}}
+    // {{{ getGridList
+
+    getGridList : function(start, limit, sort, dir, query, callback) {
+
+        var me = this;
+
+        me.query('SELECT * FROM users', function(err, rs) {
+            callback({users: rs});
         });
     }
 
