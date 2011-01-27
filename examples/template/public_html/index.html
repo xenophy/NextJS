@@ -134,7 +134,11 @@
         <dt>{item.name}</dt>
         <dd>Price: {item.price|jpMoney}</dd>
         {/foreach}
-        <dd>number: {data.number|number:"0,000"}</dd>
+        <dd>number: {data.number|number_format}</dd>
+        <dd>string: {data.string|capitalize}</dd>
+        <dd>text: {data.text|nl2br}</dd>
+        <dd>html: {data.html|escape}</dd>
+        <dd>replace: {data.string|replace:"str":"enjoy"}</dd>
     </dl>
     <!-- /Modifier -->
 

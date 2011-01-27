@@ -16,6 +16,12 @@ module.exports = NX.extend(NX.WebController, {
 
         this.set('data', {
             string: 'string',
+            html: '<h1>Header 1</h1>',
+            text: [
+                'line1',
+                'line2',
+                'line3'
+            ].join("\n"),
             number: 3000,
             bool: true,
             fruit: [
