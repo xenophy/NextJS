@@ -15,6 +15,8 @@ Ext.onReady(function() {
         // パラメータ順
         paramOrder: ['id'],
 
+        padding: 20,
+
         // ファイルアップロード設定
         fileUpload: true,
 
@@ -26,6 +28,13 @@ Ext.onReady(function() {
             fieldLabel: '写真',
             name: 'photo',
             buttonText: '参照...',
+        },{
+            id: 'uploaded',
+            title: 'アップロードされた写真',
+            anchor: '100%',
+            height: 400,
+            autoScroll: true,
+            html: 'アップロードされていません。'
         }],
 
         // ボタン設定
@@ -34,7 +43,10 @@ Ext.onReady(function() {
             handler : function() {
                 form.getForm().submit({
                     success: function(form, action) {
-                        Ext.Msg.alert('Success', action.result.msg);
+
+                        var cmp = Ext.getCmp('uploaded');
+                        cmp.update('<img src="' + action.result.imgpath + '" width="100%" />');
+
                     }
                 });
 
@@ -42,7 +54,6 @@ Ext.onReady(function() {
         }],
 
         title: 'Direct Form',
-        height: 350,
         width: 800,
         renderTo: Ext.getBody()
     });

@@ -103,17 +103,22 @@ module.exports = NX.extend(NX.Module, {
 
             var files = me.controller.request.files;
 
+            // ファイル移動
+            var src = files.photo.path;
+            var dest = me.controller.contentPath + '/photo/' + files.photo.name;
 
-            console.log(files);
+            require('fs').rename(src, dest, function() {
 
-
-
+                ret.isUpload = true;
+                ret.imgpath = 'photo/' + files.photo.name;
+                callback(ret);
+            });
 
         } else {
             ret.msg = '[' + v.name + ']';
+            callback(ret);
         }
 
-        callback(ret);
     },
 
     // }}}
