@@ -25,50 +25,5 @@ Ext.onReady(function() {
         renderTo: Ext.getBody()
     });
 
-
-
-    /*
-
-    var grid = new Ext.grid.GridPanel({
-        store: store,
-        columns: [{
-            id       :'company',
-            header   : 'ユーザ名',
-            sortable : true,
-            dataIndex: 'name'
-        }],
-        stripeRows: true,
-        title: 'Direct Grid',
-        stateful: true,
-        stateId: 'grid',
-        renderTo: Ext.getBody()
-    });
-
-
-
-
-
-
-
-    /*
-    users.getList(function(ret) {
-
-        var lis = [];
-
-        Ext.each(ret, function(r) {
-            lis.push({
-                tag: 'li',
-                html: r.name
-            });
-        });
-
-        Ext.DomHelper.append(Ext.getBody(), {
-            tag: 'ul',
-            cn: lis
-        });
-
-    });
-    */
-
 });
 

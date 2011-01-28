@@ -67,7 +67,41 @@ module.exports = NX.extend(NX.Module, {
 
         callback(ret);
 
-    }
+    },
+
+    // }}}
+    // {{{ readForm
+
+    readForm : function(id, callback) {
+
+        var ret = {success: false};
+
+        this.query('SELECT * FROM users WHERE id = ' + id, function(err, rs) {
+            if(rs[0]) {
+                ret.success = true;
+                ret.data = {
+                    name: rs[0].name
+                };
+            }
+            callback(ret);
+        });
+
+    },
+
+    // }}}
+    // {{{ writeForm
+
+    /**
+     * @formHandler
+     */
+    writeForm : function(v, callback) {
+
+        var ret = {success: true};
+
+        ret.msg = '[' + v.name + ']';
+
+        callback(ret);
+    },
 
     // }}}
 
