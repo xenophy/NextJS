@@ -96,9 +96,22 @@ module.exports = NX.extend(NX.Module, {
      */
     writeForm : function(v, callback) {
 
+        var me = this;
         var ret = {success: true};
 
-        ret.msg = '[' + v.name + ']';
+        if(v.isUpload) {
+
+            var files = me.controller.request.files;
+
+
+            console.log(files);
+
+
+
+
+        } else {
+            ret.msg = '[' + v.name + ']';
+        }
 
         callback(ret);
     },
