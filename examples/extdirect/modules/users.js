@@ -99,7 +99,7 @@ module.exports = NX.extend(NX.Module, {
         var me = this;
         var ret = {success: true};
 
-        if(v.isUpload) {
+        if(v.isUpload == true) {
 
             var files = me.controller.request.files;
 

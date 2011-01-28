@@ -55,6 +55,7 @@ Ext.onReady(function() {
             handler : function() {
                 form.getForm().submit({
                     success: function(form, action) {
+                        console.log(action);
                         Ext.Msg.alert('Success', action.result.msg);
                     }
                 });
