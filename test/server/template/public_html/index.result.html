@@ -1,0 +1,149 @@
+<html>
+<head>
+    <style>
+        
+
+        h1 {
+            color: green
+        }
+
+        h2 {
+            color: blue
+        }
+
+        
+    </style>
+    <title>Template Example</title>
+</head>
+<body>
+    <h1>Template Examples</h1>
+
+    <!-- Simple Bind -->
+    <h2>Simple Bind</h2>
+    <dl>
+        <dt>string</dt>
+        <dd>value: string</dd>
+
+        <dt>number</dt>
+        <dd>value: 3000</dd>
+
+        <dt>boolean</dt>
+        <dd>value: true</dd>
+    </dl>
+    <!-- /Simple Bind -->
+
+    <!-- Foreach -->
+    <h2>Foreach</h2>
+    <dl>
+        
+        <dt>apple</dt>
+        <dd>Price: 1200</dd>
+        
+        <dt>orange</dt>
+        <dd>Price: 1100</dd>
+        
+        <dt>peach</dt>
+        <dd>Price: 2510</dd>
+        
+    </dl>
+    <!-- /Foreach -->
+
+    <!-- Foreach Else -->
+    <h2>Foreach Else</h2>
+    <dl>
+        
+        <dd>No items.</dd>
+        
+    </dl>
+    <!-- /Foreach Else -->
+
+    <!-- If -->
+    <h2>If</h2>
+    <dl>
+        
+        <dd>data.string is "string".</dd>
+        
+        
+        <dd>data.number is 3000.</dd>
+        
+        
+        <dd>data.number is not 2000.</dd>
+        
+        
+        <dd>data.number is over 1000.</dd>
+        
+        
+        <dd>data.number is below 3000.</dd>
+        
+        
+        <dd>data.number is more 3000.</dd>
+        
+        
+        <dd>data.number is under 5000.</dd>
+        
+        
+        <dd>data.string is "string" and data.bool is true.</dd>
+        
+    </dl>
+    <!-- /If -->
+
+    <!-- If Else -->
+    <h2>If Else</h2>
+    <dl>
+        
+            
+            <dd>data.string is not "string".</dd>
+            
+        
+    </dl>
+    <!-- /If Else -->
+
+    <!-- Else If -->
+    <h2>If Else</h2>
+    <dl>
+        
+        <dd>data.number is 3000</dd>
+        
+
+        
+            
+            <dd>data.number is 3000</dd>
+            
+        
+    </dl>
+    <!-- /Else If -->
+
+    <!-- Include -->
+    <h2>Include</h2>
+
+    
+<p>This area is <em>"templates/foo.html"<em>.
+<p>outvar : Next&nbsp;JS</p>
+
+
+
+    <!-- /Include -->
+
+    <!-- Modifier -->
+    <h2>Modifier</h2>
+    <dl>
+        
+        <dt>apple</dt>
+        <dd>Price: ¥1,200</dd>
+        
+        <dt>orange</dt>
+        <dd>Price: ¥1,100</dd>
+        
+        <dt>peach</dt>
+        <dd>Price: ¥2,510</dd>
+        
+        <dd>number: 3,000</dd>
+        <dd>string: String</dd>
+        <dd>text: line1<br/>line2<br/>line3</dd>
+        <dd>html: &lt;h1&gt;Header 1&lt;/h1&gt;</dd>
+        <dd>replace: enjoying</dd>
+    </dl>
+    <!-- /Modifier -->
+
+</body>
+</html>

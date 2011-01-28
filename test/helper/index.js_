@@ -253,20 +253,22 @@ NX.override(NX.server.HttpServer, {
         req.addListener('response', function(res) {
             res.addListener('end', function(){
 
+
                 //if("session#/?{person: 'kotsutsumi'}" == msg) {
                 /*
-                if("session#/2" == msg) {
+                if("template#/" == msg) {
                     console.log(expectedBody.toString('utf8'));
                     console.log("--------------");
-                    console.log(res.body);
+                    console.log(res.body.toString('utf8'));
+                //    require('fs').writeFile(__dirname + '/../../log.html', res.body);
                 }
                 */
 
                 if(expectedBody !== undefined) {
                     assert.equal(
-                        expectedBody,
-                        res.body,
-                        msg + ' response body of ' + sys.inspect(expectedBody) + ', got ' + sys.inspect(res.body)
+                        expectedBody.toString('utf8'),
+                        res.body.toString('utf8'),
+                        msg + ' response body of ' + expectedBody.toString('utf8') + ', got ' + res.body.toString('utf8')
                     );
                 }
 
