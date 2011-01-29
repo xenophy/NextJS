@@ -17,6 +17,7 @@ var port = exports.port = process.env.CONNECT_TEST_PORT || 12345;
 
 connect.Server.prototype.listen = function(){
     var self = this,
+        cookies = [],
         client = http.createClient(port),
         pending = 0;
 
@@ -24,9 +25,12 @@ connect.Server.prototype.listen = function(){
      * Request helper.
      */
 
-    this.request = function(){
+    this.request = function() {
+
         if (self.pending === undefined) ++pending;
+
         var req = client.request.apply(client, arguments);
+
         req.addListener('response', function(res){
             if (req.buffer) {
                 res.body = '';
@@ -41,6 +45,7 @@ connect.Server.prototype.listen = function(){
                 self.close();
             }
         });
+
         return req;
     };
 
@@ -49,22 +54,109 @@ connect.Server.prototype.listen = function(){
      */
 
     this.assertResponse = function(method, path, expectedStatus, expectedBody, msg, fn){
+
         msg = msg || 'expected';
-        var req = this.request(method, path);
+
+        var data;
+        var options = {};
+
+        if(NX.isObject(path)) {
+
+            var o = path;
+
+            path = o.path;
+            cookies = o.cookies;
+            data = NX.encode(o.data);
+
+            if(method === 'POST' && data) {
+
+                options = {
+                    'Content-Type': 'application/json',
+                    'Content-Length': data.length
+                };
+
+                if(cookies) {
+                    var cookie = {};
+                    cookies.forEach(function(item) {
+                        NX.apply(cookie, item);
+                    });
+                    options['Cookie'] = NX.encode(cookie);
+                }
+            } else {
+
+                if(cookies) {
+                    var cookie = ''
+                    cookies.forEach(function(item, i) {
+                        if(i>0) {
+                            cookie += '; ';
+                        }
+                        NX.iterate(item, function(key, v) {
+                            cookie += key + '=' + v;
+                        });
+                    });
+                    options['Cookie'] = cookie;
+                }
+
+            }
+
+        }
+
+        var req = this.request(method, path, options);
+
         req.buffer = true;
+
         req.addListener('response', function(res){
             res.addListener('end', function(){
+
                 if (expectedBody !== undefined) {
                     assert.equal(expectedBody,
                         res.body,
-                        msg + ' response body of ' + sys.inspect(expectedBody) + ', got ' + sys.inspect(res.body));
+                        //msg + ' response body of ' + sys.inspect(expectedBody) + ', got ' + sys.inspect(res.body));
+                        '[' + msg + ']\n' + expectedBody.toString('utf8') + '\n\n' + res.body.toString('utf8')
+                    );
+
                 }
                 assert.equal(expectedStatus,
                     res.statusCode,
                     msg + ' status code of ' + expectedStatus + ', got ' + res.statusCode);
-                if (fn) fn(res);
+
+                if(NX.isFunction(fn)) {
+
+                    res.cookies = null;
+
+                    var cookies = [];
+                    var setCookie = res.headers['set-cookie'] || [];
+                    setCookie.forEach(function(line) {
+                        line = line.split(' ');
+
+                        line.forEach(function(item, i) {
+
+                            if(i === 0) {
+                                item = item.split('=');
+                                var name = item[0];
+                                var value = item[1];
+                                var o = {};
+                                o[name] = value;
+                                cookies.push(o);
+                                return false;
+                            }
+                        });
+
+                    });
+
+                    if(cookies.length > 0) {
+                        res.cookies = cookies;
+                    }
+
+                    fn(res);
+                }
             });
         });
+
+        if(data) {
+            req.write(data);
+        }
+
         req.end();
     };
 

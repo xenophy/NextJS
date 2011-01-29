@@ -15,12 +15,12 @@ var assert = require('assert'),
     helpers = require('../helpers');
 
 // }}}
-// {{{ template Tests
+// {{{ request Tests
 
 var srv = NX.createServer({
     servers: [{
         port: process.NXEnv.testport,
-        path: __dirname + '/template/'
+        path: __dirname + '/request/'
     }]
 });
 
@@ -28,14 +28,20 @@ srv.listen();
 
 module.exports = {
 
-    // {{{ test template#standerd
+    // {{{ test request#standerd
 
-    'test template#standerd': function(beforeExit) {
+    'test request#standerd': function(beforeExit) {
 
         var file;
 
-        file = fs.readFileSync(__dirname + '/template/public_html/index.result.html');
+        file = fs.readFileSync(__dirname + '/request/public_html/index.result.html');
         srv.servers[0].server.assertResponse('GET', '/', 200, file);
+
+        file = fs.readFileSync(__dirname + '/request/public_html/index.result2.html');
+        srv.servers[0].server.assertResponse('GET', '/?person=urlrequest', 200, file);
+
+        file = fs.readFileSync(__dirname + '/request/public_html/index.result3.html');
+        srv.servers[0].server.assertResponse('POST', {path: '/', data: {person: 'kotsutsumi'} }, 200, file);
 
     }
 
