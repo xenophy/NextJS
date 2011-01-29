@@ -64,6 +64,20 @@ module.exports = NX.extend(NX.WebController, {
         });
 
         this.end();
+    },
+
+    // }}}
+    // {{{ modifier
+
+    'modifier' : function(req, res) {
+
+        this.set('data', {
+            string: 'string',
+            number: 3000,
+            bool: true
+        });
+
+        this.end();
     }
 
     // }}}

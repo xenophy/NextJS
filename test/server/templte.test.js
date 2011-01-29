@@ -85,6 +85,30 @@ module.exports = {
         file = fs.readFileSync(__dirname + '/template/public_html/include.result.html');
         srv.servers[0].server.assertResponse('GET', '/include.html', 200, file);
 
+    },
+
+    // }}}
+    // {{{ test modifier#standerd
+
+    'test modifier#standerd': function(beforeExit) {
+
+        var file;
+
+        file = fs.readFileSync(__dirname + '/template/public_html/modifier.result.html');
+        srv.servers[0].server.assertResponse('GET', '/modifier.html', 200, file);
+
+    },
+
+    // }}}
+    // {{{ test literal#standerd
+
+    'test literal#standerd': function(beforeExit) {
+
+        var file;
+
+        file = fs.readFileSync(__dirname + '/template/public_html/literal.result.html');
+        srv.servers[0].server.assertResponse('GET', '/literal.html', 200, file);
+
     }
 
     // }}}
