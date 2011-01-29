@@ -49,6 +49,17 @@ module.exports = {
         file = fs.readFileSync(__dirname + '/controller/public_html/users/info/index.result.html');
         srv.servers[0].server.assertResponse('GET', '/users/info/index.html', 200, file);
 
+    },
+
+    // }}}
+    // {{{ test controller#standerd
+
+    'test controller#standerd': function(beforeExit) {
+
+        var file;
+
+        file = fs.readFileSync(__dirname + '/controller/public_html/settpl.result.html');
+        srv.servers[0].server.assertResponse('GET', '/changetpl', 200, file);
     }
 
     // }}}

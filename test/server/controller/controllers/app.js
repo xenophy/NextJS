@@ -15,6 +15,15 @@ module.exports = NX.extend(NX.WebController, {
     index : function(req, res) {
         this.set('index', 'executed');
         this.end();
+    },
+
+    // }}}
+    // {{{ changetpl
+
+    changetpl : function(req, res) {
+
+        this.setTemplate('settpl.html');
+        this.end();
     }
 
     // }}}
