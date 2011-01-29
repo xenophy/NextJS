@@ -112,7 +112,7 @@ connect.Server.prototype.listen = function(){
                     assert.equal(expectedBody,
                         res.body,
                         //msg + ' response body of ' + sys.inspect(expectedBody) + ', got ' + sys.inspect(res.body));
-                        '[' + msg + ']\n' + expectedBody.toString('utf8') + '\n=======================\n' + res.body.toString('utf8') + '\n=====================\n'
+                        '[' + msg + ']\n' + expectedBody.toString('utf8') + '\n=======================\n' + res.body.toString('utf8') + '=====================\n'
                     );
 
                 }
