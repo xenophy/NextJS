@@ -22,3 +22,38 @@ data.number is under 5000.
 {if data.string === 'string' and data.bool === true}
 data.string is "string" and data.bool is true.
 {/if}
+{if data.number !== '3000' }
+data.number is not '3000'.
+{/if}
+{if data.number !== 3000 }
+{/if}
+{if data.number != '3001' }
+data.number is not '3001'.
+{/if}
+{if data.number != 3000 }
+{/if}
+{if data.number >= 3001 }
+{/if}
+{if data.number <= -1 }
+{/if}
+{if !data.bool}
+{/if}
+{if data.nuber % 1500}
+{/if}
+{if data.number > 3000 }
+{/if}
+{if data.number < -1 }
+{/if}
+{if !data.bool2}
+data.bool2 is false.
+{/if}
+{if true === data.bool2}
+{/if}
+{if false === data.bool}
+{/if}
+{if 'string2' === data.string}
+{/if}
+{if data.bool2 === true}
+{/if}
+{if data.bool === false}
+{/if}

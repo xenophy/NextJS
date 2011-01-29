@@ -31,6 +31,21 @@ module.exports = NX.extend(NX.WebController, {
         this.set('data', {
             string: 'string',
             number: 3000,
+            bool: true,
+            bool2: false
+        });
+
+        this.end();
+    },
+
+    // }}}
+    // {{{ ifelse
+
+    'ifelse' : function(req, res) {
+
+        this.set('data', {
+            string: 'string',
+            number: 3000,
             bool: true
         });
 
@@ -38,6 +53,22 @@ module.exports = NX.extend(NX.WebController, {
     },
 
     // }}}
+    // {{{ elseif
+
+    'elseif' : function(req, res) {
+
+        this.set('data', {
+            string: 'string',
+            number: 3000,
+            bool: true
+        });
+
+        this.end();
+    },
+
+    // }}}
+
+
 
 });
 

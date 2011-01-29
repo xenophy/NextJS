@@ -49,10 +49,33 @@ module.exports = {
         file = fs.readFileSync(__dirname + '/template/public_html/if.result.html');
         srv.servers[0].server.assertResponse('GET', '/if.html', 200, file);
 
+    },
+
+    // }}}
+    // {{{ test ifelse#standerd
+
+    'test ifelse#standerd': function(beforeExit) {
+
+        var file;
+
+        file = fs.readFileSync(__dirname + '/template/public_html/ifelse.result.html');
+        srv.servers[0].server.assertResponse('GET', '/ifelse.html', 200, file);
+
+    },
+
+    // }}}
+    // {{{ test elseif#standerd
+
+    'test elseif#standerd': function(beforeExit) {
+
+        var file;
+
+        file = fs.readFileSync(__dirname + '/template/public_html/elseif.result.html');
+        srv.servers[0].server.assertResponse('GET', '/elseif.html', 200, file);
+
     }
 
     // }}}
-
 
 };
 
