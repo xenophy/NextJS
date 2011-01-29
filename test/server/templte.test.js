@@ -73,6 +73,18 @@ module.exports = {
         file = fs.readFileSync(__dirname + '/template/public_html/elseif.result.html');
         srv.servers[0].server.assertResponse('GET', '/elseif.html', 200, file);
 
+    },
+
+    // }}}
+    // {{{ test include#standerd
+
+    'test include#standerd': function(beforeExit) {
+
+        var file;
+
+        file = fs.readFileSync(__dirname + '/template/public_html/include.result.html');
+        srv.servers[0].server.assertResponse('GET', '/include.html', 200, file);
+
     }
 
     // }}}

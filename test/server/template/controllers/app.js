@@ -64,11 +64,9 @@ module.exports = NX.extend(NX.WebController, {
         });
 
         this.end();
-    },
+    }
 
     // }}}
-
-
 
 });
 
