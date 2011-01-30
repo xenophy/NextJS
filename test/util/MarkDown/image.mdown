@@ -1,4 +1,5 @@
 Images are exactly like links, but they have an exclamation point in front of them:
+![hoge][dummy2]
 
  ![Valid XHTML] (http://w3.org/Icons/valid-xhtml10).
 
