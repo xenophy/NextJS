@@ -1,0 +1,11 @@
+You can make inline `<code>` tags by using code spans.  Use backticks to make a code span:
+
+ Press the `<Tab>` key, then type a `$`.
+
+(The backtick key is in the upper left corner of most keyboards.)
+
+Like code blocks, code spans will be displayed in a monospaced typeface.  Markdown and HTML will not work within them:
+
+ Markdown italicizes things like this: `I *love* it.`
+
+ Don't use the `<font>` tag; use CSS instead.

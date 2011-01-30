@@ -96,6 +96,125 @@ module.exports = {
         src.should.equal(dst);
         */
 
+        // 保留....
+
+    },
+
+    // }}}
+    // {{{ test MarkDown#headers
+
+    'test MarkDown#headers': function() {
+
+        var src = fs.readFileSync(__dirname + '/MarkDown/headers.mdown').toString('utf8');
+        var dst = fs.readFileSync(__dirname + '/MarkDown/headers.html').toString('utf8');
+        src = md.parse(src) + LF;
+
+        src.should.equal(dst);
+
+    },
+
+    // }}}
+    // {{{ test MarkDown#horizontal
+
+    'test MarkDown#horizontal': function() {
+
+        var src = fs.readFileSync(__dirname + '/MarkDown/horizontal.mdown').toString('utf8');
+        var dst = fs.readFileSync(__dirname + '/MarkDown/horizontal.html').toString('utf8');
+        src = md.parse(src) + LF;
+
+        src.should.equal(dst);
+
+    },
+
+    // }}}
+    // {{{ test MarkDown#simplelist
+
+    'test MarkDown#simplelist': function() {
+
+        var src = fs.readFileSync(__dirname + '/MarkDown/simplelist.mdown').toString('utf8');
+        var dst = fs.readFileSync(__dirname + '/MarkDown/simplelist.html').toString('utf8');
+        src = md.parse(src) + LF;
+
+        src.should.equal(dst);
+
+    },
+
+    // }}}
+    // {{{ test MarkDown#advlist
+
+    'test MarkDown#advlist': function() {
+
+        var src = fs.readFileSync(__dirname + '/MarkDown/advlist.mdown').toString('utf8');
+        var dst = fs.readFileSync(__dirname + '/MarkDown/advlist.html').toString('utf8');
+        src = md.parse(src) + LF;
+
+        src.should.equal(dst);
+
+    },
+
+    // }}}
+    // {{{ test MarkDown#blockquote
+
+    'test MarkDown#blockquote': function() {
+
+        var src = fs.readFileSync(__dirname + '/MarkDown/blockquote.mdown').toString('utf8');
+        var dst = fs.readFileSync(__dirname + '/MarkDown/blockquote.html').toString('utf8');
+        src = md.parse(src) + LF;
+
+        src.should.equal(dst);
+
+    },
+
+    // }}}
+    // {{{ test MarkDown#image
+
+    'test MarkDown#image': function() {
+
+        var src = fs.readFileSync(__dirname + '/MarkDown/image.mdown').toString('utf8');
+        var dst = fs.readFileSync(__dirname + '/MarkDown/image.html').toString('utf8');
+        src = md.parse(src) + LF;
+
+        src.should.equal(dst);
+
+    },
+
+    // }}}
+    // {{{ test MarkDown#inline
+
+    'test MarkDown#inline': function() {
+
+        var src = fs.readFileSync(__dirname + '/MarkDown/inline.mdown').toString('utf8');
+        var dst = fs.readFileSync(__dirname + '/MarkDown/inline.html').toString('utf8');
+        src = md.parse(src) + LF;
+
+        src.should.equal(dst);
+
+    },
+
+    // }}}
+    // {{{ test MarkDown#preformatted
+
+    'test MarkDown#preformatted': function() {
+
+        var src = fs.readFileSync(__dirname + '/MarkDown/preformatted.mdown').toString('utf8');
+        var dst = fs.readFileSync(__dirname + '/MarkDown/preformatted.html').toString('utf8');
+        src = md.parse(src) + LF;
+
+        src.should.equal(dst);
+
+    },
+
+    // }}}
+    // {{{ test MarkDown#codespan
+
+    'test MarkDown#codespan': function() {
+
+        var src = fs.readFileSync(__dirname + '/MarkDown/codespan.mdown').toString('utf8');
+        var dst = fs.readFileSync(__dirname + '/MarkDown/codespan.html').toString('utf8');
+        src = md.parse(src) + LF;
+
+        src.should.equal(dst);
+
     }
 
     // }}}

@@ -1,0 +1,25 @@
+Images are exactly like links, but they have an exclamation point in front of them:
+
+ ![Valid XHTML] (http://w3.org/Icons/valid-xhtml10).
+
+The word in square brackets is the alt text, which gets displayed if the browser can't show the image.  Be sure to include meaningful alt text for blind users' screen-reader software.
+
+Just like links, images work with reference syntax and titles:
+
+ This page is ![valid XHTML][checkmark].
+
+ [checkmark]: http://w3.org/Icons/valid-xhtml10
+           "What are you smiling at?"
+
+
+**Note:**
+
+Markdown does not currently support the shortest reference syntax for images:
+
+  Here's a broken ![checkmark].
+
+But you can use a slightly more verbose version of implicit reference names:
+
+  This ![checkmark][] works.
+
+The reference name (`valid icon`) is also used as the alt text.

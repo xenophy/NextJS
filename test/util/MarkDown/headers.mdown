@@ -1,0 +1,22 @@
+There are two ways to do headers in Markdown.  (In these examples, Header 1 is the biggest, and Header 6 is the smallest.)
+
+You can underline text to make the two top-level headers:
+
+Header 1
+========
+
+Header 2
+--------
+
+The number of `=` or `-` signs doesn't matter; you can get away with just one.  But using enough to underline the text makes your titles look better in plain text.
+
+You can also use hash marks for all six levels of HTML headers:
+
+# Header 1 #
+## Header 2 ##
+### Header 3 ###
+#### Header 4 ####
+##### Header 5 #####
+###### Header 6 ######
+
+The closing `#` characters are optional.
