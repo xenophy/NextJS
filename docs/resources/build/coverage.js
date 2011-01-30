@@ -111,7 +111,7 @@ lines.forEach(function(o) {
         img = 'http://art17.photozou.jp/pub/253/198253/photo/65891416.gif';
     }
 
-    line = NX.sprintf(line, o.filename, o.coverage, img, o.coveragedec, o.loc, o.sloc, o.missed);
+    line = NX.sprintf(line, o.filename, o.coveragedec, img, o.coverage, o.loc, o.sloc, o.missed);
 
     output += line;
 

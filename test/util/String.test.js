@@ -17,6 +17,13 @@ var should = require('should');
 
 module.exports = {
 
+    // {{{ test number_format#standard
+
+    'test number_format#standard': function() {
+        NX.util.String.number_format(1235).should.equal("1,235");
+    },
+
+    // }}}
     // {{{ test jpMoney#standard
 
     'test jpMoney#standard': function() {
@@ -37,7 +44,7 @@ module.exports = {
 
     'test escape#standard': function() {
 
-        NX.util.String.escape("A 'quote' is <b>bold</b>").should.equal("A &#039;quote&#039; is &lt;b&gt;bold&lt;/b&gt;");
+        NX.util.String.escape("<a href='test'>Test</a>").should.equal("&lt;a href='test'&gt;Test&lt;/a&gt;");
 
     },
 

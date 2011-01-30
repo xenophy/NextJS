@@ -12,6 +12,7 @@ require('NX');
 var assert = require('assert'),
     http = require('http'),
     fs = require('fs'),
+    should = require('should'),
     helpers = require('../helpers');
 
 // }}}
