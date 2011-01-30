@@ -98,7 +98,7 @@ lines.forEach(function(o) {
      var line = [
         '<tr>',
         '     <td width="312">%s</td>',
-        '     <td width="550"><img width="%s%" height="16" alt="graph" src="http://art24.photozou.jp/pub/253/198253/photo/64702984.gif" /></td>',
+        '     <td width="550"><img width="%s%" height="16" alt="graph" src="%s" /></td>',
         '     <td width="36" align="right">%s</td>',
         '     <td width="36" align="right">%s</td>',
         '     <td width="36" align="right">%s</td>',
@@ -106,7 +106,12 @@ lines.forEach(function(o) {
         '</tr>'
     ].join(LF);
 
-    line = NX.sprintf(line, o.filename, o.coverage, o.coveragedec, o.loc, o.sloc, o.missed);
+    var img = 'http://art24.photozou.jp/pub/253/198253/photo/64702984.gif';
+    if(o.coveragedec == 100) {
+        img = 'http://art17.photozou.jp/pub/253/198253/photo/65891416.gif';
+    }
+
+    line = NX.sprintf(line, o.filename, o.coverage, img, o.coveragedec, o.loc, o.sloc, o.missed);
 
     output += line;
 

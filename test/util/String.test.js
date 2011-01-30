@@ -17,6 +17,39 @@ var should = require('should');
 
 module.exports = {
 
+    // {{{ test jpMoney#standard
+
+    'test jpMoney#standard': function() {
+
+        var ret = NX.util.String.jpMoney('3000');
+
+        if(global._$jscoverage) {
+            ret = encodeURI(ret);
+            ret.should.equal('%C3%82%C2%A53,000');
+        } else {
+            ret.should.equal('¥3,000');
+        }
+
+    },
+
+    // }}}
+    // {{{ test escape#standard
+
+    'test escape#standard': function() {
+
+        NX.util.String.escape("A 'quote' is <b>bold</b>").should.equal("A &#039;quote&#039; is &lt;b&gt;bold&lt;/b&gt;");
+
+    },
+
+    // }}}
+    // {{{ test nl2br#standard
+
+    'test nl2br#standard': function() {
+
+        NX.util.String.nl2br('<p>\n</p>').should.equal('<p><br /></p>');
+    },
+
+    // }}}
     // {{{ test stripScripts#standard
 
     'test striptScripts#standard': function() {
