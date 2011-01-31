@@ -34,35 +34,22 @@ module.exports = {
 
         var file;
 
-
         srv.servers[0].server.assertResponse('GET', '/', 200, undefined, undefined, function(res) {
-
             cookies = res.headers['set-cookie'];
-
             assert.ok(NX.inArray('param1=kotsutsumi; expires=Sun, 15 May 2011 15:00:00 GMT;', cookies));
-
-
-
         });
 
+    },
 
-        /*
-        file = fs.readFileSync(__dirname + '/controller/public_html/index.result.html');
-        srv.servers[0].server.assertResponse('GET', '/', 200, file);
+    // }}}
+    // {{{ test cookie#getCookie
 
-        file = fs.readFileSync(__dirname + '/controller/public_html/users/index.result.html');
-        srv.servers[0].server.assertResponse('GET', '/users/', 200, file);
+    'test cookie#getCookie': function(beforeExit) {
 
-        file = fs.readFileSync(__dirname + '/controller/public_html/users/index.result.html');
-        srv.servers[0].server.assertResponse('GET', '/users/index.html', 200, file);
+        var file;
+        file = fs.readFileSync(__dirname + '/cookie/public_html/index.result.html');
+        srv.servers[0].server.assertResponse('GET', {path: '/', cookies: [{param1:'kotsutsumi'}]}, 200, file);
 
-        file = fs.readFileSync(__dirname + '/controller/public_html/users/info/index.result.html');
-        srv.servers[0].server.assertResponse('GET', '/users/info/', 200, file);
-
-        file = fs.readFileSync(__dirname + '/controller/public_html/users/info/index.result.html');
-        srv.servers[0].server.assertResponse('GET', '/users/info/index.html', 200, file);
-
-        */
     }
 
     // }}}
