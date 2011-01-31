@@ -66,6 +66,7 @@ connect.Server.prototype.listen = function(){
 
             path = o.path;
             cookies = o.cookies;
+            accept = o.accept;
             data = NX.encode(o.data);
 
             if(method === 'POST' && data) {
@@ -83,6 +84,10 @@ connect.Server.prototype.listen = function(){
                     options['Cookie'] = NX.encode(cookie);
                 }
             } else {
+
+                if(accept) {
+                    options['Accept'] = accept;
+                }
 
                 if(cookies) {
                     var cookie = ''

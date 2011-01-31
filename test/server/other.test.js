@@ -54,7 +54,7 @@ module.exports = {
             e.message.should.equal('specify an number of port.');
         }
 
-    },
+    }
 
     // }}}
 

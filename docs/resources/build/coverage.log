@@ -1,4 +1,37 @@
-[?25l[?25h   +------------------------------------------+----------+------+------+--------+
+[?25lReferenceError: hoge is not defined
+    at [object Object].execute (/Users/kotsutsumikazuhiro/UserDir/NextJS/test/server/exception/controllers/app.js:17:9)
+    at [object Object].execute (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/WebController.js:206:23)
+    at [object Object].onReady (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/server/Dispatcher.js:118:16)
+    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/AbstractController.js:139:6)
+    at [object Object].emit (events.js:39:17)
+    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/AbstractController.js:192:8)
+    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/WebController.js:92:43)
+    at new <anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/index.js:305:14)
+    at /Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/server/Dispatcher.js:170:18
+    at path.js:273:19
+ReferenceError: hoge is not defined
+    at [object Object].execute (/Users/kotsutsumikazuhiro/UserDir/NextJS/test/server/exception/controllers/app.js:17:9)
+    at [object Object].execute (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/WebController.js:206:23)
+    at [object Object].onReady (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/server/Dispatcher.js:118:16)
+    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/AbstractController.js:139:6)
+    at [object Object].emit (events.js:39:17)
+    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/AbstractController.js:192:8)
+    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/WebController.js:92:43)
+    at new <anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/index.js:305:14)
+    at /Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/server/Dispatcher.js:170:18
+    at path.js:273:19
+ReferenceError: hoge is not defined
+    at [object Object].execute (/Users/kotsutsumikazuhiro/UserDir/NextJS/test/server/exception/controllers/app.js:17:9)
+    at [object Object].execute (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/WebController.js:206:23)
+    at [object Object].onReady (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/server/Dispatcher.js:118:16)
+    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/AbstractController.js:139:6)
+    at [object Object].emit (events.js:39:17)
+    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/AbstractController.js:192:8)
+    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/WebController.js:92:43)
+    at new <anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/index.js:305:14)
+    at /Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/server/Dispatcher.js:170:18
+    at path.js:273:19
+[?25h   +------------------------------------------+----------+------+------+--------+
    | filename                                 | coverage | LOC  | SLOC | missed |
    +------------------------------------------+----------+------+------+--------+
    | NX/index.js                              |   100.00 |  654 |   36 |      0 |
@@ -13,10 +46,10 @@
    | NX/module/Connection.js                  |   100.00 |   66 |    5 |      0 |
    | NX/module/Module.js                      |   100.00 |   41 |    1 |      0 |
    | NX/server/AbstractDispatcher.js          |   100.00 |  101 |    3 |      0 |
-   | NX/server/Dispatcher.js                  |    14.29 |  158 |   14 |     12 |
-   | NX/server/HttpServer.js                  |    24.00 |  259 |   50 |     38 |
+   | NX/server/Dispatcher.js                  |    55.56 |  196 |   27 |     12 |
+   | NX/server/HttpServer.js                  |    40.00 |  263 |   30 |     18 |
    | NX/util/JSON.js                          |   100.00 |   52 |    3 |      0 |
-   | NX/util/MarkDown.js                      |    90.00 |  696 |   60 |      6 |
+   | NX/util/MarkDown.js                      |    90.16 |  696 |   61 |      6 |
    | NX/util/String.js                        |   100.00 |  340 |   26 |      0 |
    | NX/util/Template.js                      |   100.00 |  449 |   19 |      0 |
    | NX/util/template/Foreach.js              |   100.00 |  115 |    6 |      0 |
@@ -31,7 +64,7 @@
    | NX/config/database.js                    |   100.00 |   30 |    1 |      0 |
    | NX/config/view.js                        |   100.00 |   23 |    1 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    61.98 | 5173 |  484 |    184 |
+                                              |    65.69 | 5215 |  478 |    164 |
                                               +----------+------+------+--------+
 
 
