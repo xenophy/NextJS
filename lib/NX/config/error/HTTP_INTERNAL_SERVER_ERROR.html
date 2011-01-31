@@ -125,7 +125,11 @@
     <div id="wrapper">
       <h1>Next JS</h1>
       <h2><em>500</em> {error}</h2>
-      <ul id="stacktrace">{stack}</ul>
+      <ul id="stacktrace">
+          {foreach from=stack item=item key=key}
+          <li>{item}</li>
+          {/foreach}
+      </ul>
     </div>
   </body>
 </html>
