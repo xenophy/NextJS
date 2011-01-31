@@ -52,9 +52,9 @@ module.exports = {
     },
 
     // }}}
-    // {{{ test controller#standerd
+    // {{{ test controller#changetpl
 
-    'test controller#standerd': function(beforeExit) {
+    'test controller#changetpl': function(beforeExit) {
 
         var file;
 
