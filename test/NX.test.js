@@ -380,6 +380,20 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test inArray
+
+    'test inArray': function(){
+
+        NX.inArray('van', ['Kevin', 'van', 'Zonneveld']).should.equal(true);
+        NX.inArray('vlado', {0: 'Kevin', vlado: 'van', 1: 'Zonneveld'}).should.equal(false);
+        NX.inArray(1, ['1', '2', '3']).should.equal(true);
+        NX.inArray(1, ['1', '2', '3'], false).should.equal(true);
+        NX.inArray(1, ['1', '2', '3'], true).should.equal(false);
+        NX.inArray(1, [1, 2, 3], true).should.equal(true);
+
+    },
+
+    // }}}
     // {{{ test isArray#string
 
     'test isArray#string': function(){
