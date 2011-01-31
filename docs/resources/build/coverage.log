@@ -46,10 +46,10 @@ ReferenceError: hoge is not defined
    | NX/module/Connection.js                  |   100.00 |   66 |    5 |      0 |
    | NX/module/Module.js                      |   100.00 |   41 |    1 |      0 |
    | NX/server/AbstractDispatcher.js          |   100.00 |  101 |    3 |      0 |
-   | NX/server/Dispatcher.js                  |    55.56 |  196 |   27 |     12 |
+   | NX/server/Dispatcher.js                  |    65.22 |  195 |   23 |      8 |
    | NX/server/HttpServer.js                  |    40.00 |  263 |   30 |     18 |
    | NX/util/JSON.js                          |   100.00 |   52 |    3 |      0 |
-   | NX/util/MarkDown.js                      |    90.16 |  696 |   61 |      6 |
+   | NX/util/MarkDown.js                      |    90.00 |  696 |   60 |      6 |
    | NX/util/String.js                        |   100.00 |  340 |   26 |      0 |
    | NX/util/Template.js                      |   100.00 |  449 |   19 |      0 |
    | NX/util/template/Foreach.js              |   100.00 |  115 |    6 |      0 |
@@ -64,7 +64,7 @@ ReferenceError: hoge is not defined
    | NX/config/database.js                    |   100.00 |   30 |    1 |      0 |
    | NX/config/view.js                        |   100.00 |   23 |    1 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    65.69 | 5215 |  478 |    164 |
+                                              |    66.17 | 5214 |  473 |    160 |
                                               +----------+------+------+--------+
 
 
