@@ -37,6 +37,8 @@ module.exports = {
 
         var file;
         srv.servers[0].server.assertResponse('GET', {path: '/remotingapi'}, 200, 'Ext.app.REMOTING_API = {"url":"/remotingapi","type":"remoting","actions":{"users":[{"name":"getList","len":0},{"name":"getGridList","len":5},{"name":"getNode","len":1},{"name":"readForm","len":1},{"name":"writeForm","len":1,"formHandler":true}]}};');
+        srv.servers[0].server.assertResponse('GET', {path: '/users/remotingapi'}, 200, 'Ext.app.REMOTING_API = {"url":"/users/remotingapi","type":"remoting","actions":{"users":[{"name":"getList","len":0},{"name":"getGridList","len":5},{"name":"getNode","len":1},{"name":"readForm","len":1},{"name":"writeForm","len":1,"formHandler":true}]}};');
+        srv.servers[0].server.assertResponse('GET', {path: '/foo/remotingapi', accept: 'application/json'}, 500);
 
         var file = '{"type":"rpc","tid":2,"action":"users","method":"getList","result":[{"id":0,"name":"kotsutsumi"},{"id":1,"name":"jack"},{"id":2,"name":"mark"}],"status":true}';
         srv.servers[0].server.assertResponse('POST', {path: '/remotingapi', data: {"action":"users","method":"getList","data":null,"type":"rpc","tid":2}}, 200, file, 'direct');
@@ -52,6 +54,10 @@ module.exports = {
             '',
             image.toString('base64'),
             //image,
+            '--' + boundary,
+            'Content-Disposition: form-data; name="dummyData"',
+            '',
+            '2',
             '--' + boundary,
             'Content-Disposition: form-data; name="extTID"',
             '',
