@@ -67,14 +67,24 @@ connect.Server.prototype.listen = function(){
             path = o.path;
             cookies = o.cookies;
             accept = o.accept;
-            data = NX.encode(o.data);
+            if(o.planedata !== true) {
+                data = NX.encode(o.data);
+            } else {
+                data = o.data;
+            }
+            contentType = o.contentType;
 
             if(method === 'POST' && data) {
 
                 options = {
-                    'Content-Type': 'application/json',
                     'Content-Length': data.length
                 };
+
+                if(!contentType) {
+                    options['Content-Type'] = 'application/json';
+                }else {
+                    options['Content-Type'] = contentType;
+                }
 
                 if(cookies) {
                     var cookie = {};
@@ -114,6 +124,7 @@ connect.Server.prototype.listen = function(){
             res.addListener('end', function(){
 
                 if (expectedBody !== undefined) {
+
                     assert.equal(expectedBody,
                         res.body,
                         //msg + ' response body of ' + sys.inspect(expectedBody) + ', got ' + sys.inspect(res.body));

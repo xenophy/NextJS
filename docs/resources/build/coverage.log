@@ -1,53 +1,20 @@
-[?25lReferenceError: hoge is not defined
-    at [object Object].execute (/Users/kotsutsumikazuhiro/UserDir/NextJS/test/server/exception/controllers/app.js:17:9)
-    at [object Object].execute (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/WebController.js:206:23)
-    at [object Object].onReady (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/server/Dispatcher.js:118:16)
-    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/AbstractController.js:139:6)
-    at [object Object].emit (events.js:39:17)
-    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/AbstractController.js:192:8)
-    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/WebController.js:92:43)
-    at new <anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/index.js:305:14)
-    at /Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/server/Dispatcher.js:170:18
-    at path.js:273:19
-ReferenceError: hoge is not defined
-    at [object Object].execute (/Users/kotsutsumikazuhiro/UserDir/NextJS/test/server/exception/controllers/app.js:17:9)
-    at [object Object].execute (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/WebController.js:206:23)
-    at [object Object].onReady (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/server/Dispatcher.js:118:16)
-    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/AbstractController.js:139:6)
-    at [object Object].emit (events.js:39:17)
-    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/AbstractController.js:192:8)
-    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/WebController.js:92:43)
-    at new <anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/index.js:305:14)
-    at /Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/server/Dispatcher.js:170:18
-    at path.js:273:19
-ReferenceError: hoge is not defined
-    at [object Object].execute (/Users/kotsutsumikazuhiro/UserDir/NextJS/test/server/exception/controllers/app.js:17:9)
-    at [object Object].execute (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/WebController.js:206:23)
-    at [object Object].onReady (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/server/Dispatcher.js:118:16)
-    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/AbstractController.js:139:6)
-    at [object Object].emit (events.js:39:17)
-    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/AbstractController.js:192:8)
-    at [object Object].<anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/controller/WebController.js:92:43)
-    at new <anonymous> (/Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/index.js:305:14)
-    at /Users/kotsutsumikazuhiro/UserDir/NextJS/lib-cov/NX/server/Dispatcher.js:170:18
-    at path.js:273:19
-[?25h   +------------------------------------------+----------+------+------+--------+
+[?25l[?25h   +------------------------------------------+----------+------+------+--------+
    | filename                                 | coverage | LOC  | SLOC | missed |
    +------------------------------------------+----------+------+------+--------+
    | NX/index.js                              |   100.00 |  654 |   36 |      0 |
-   | NX/controller/AbstractController.js      |    44.44 |  230 |    9 |      5 |
+   | NX/controller/AbstractController.js      |    42.86 |  230 |    7 |      4 |
    | NX/controller/WebController.js           |    19.05 |  227 |   21 |     17 |
    | NX/controller/WebSocketController.js     |    25.00 |   41 |    4 |      3 |
    | NX/controller/Action.js                  |    80.00 |  103 |   10 |      2 |
-   | NX/controller/DirectAction.js            |     5.83 |  325 |  103 |     97 |
+   | NX/controller/DirectAction.js            |    90.91 |  325 |   55 |      5 |
    | NX/module/adapter/AbstractAdapter.js     |   100.00 |   57 |    2 |      0 |
-   | NX/module/adapter/MySQL.js               |    89.66 |  119 |   29 |      3 |
-   | NX/module/AbstractModule.js              |    90.00 |  100 |   10 |      1 |
-   | NX/module/Connection.js                  |   100.00 |   66 |    5 |      0 |
+   | NX/module/adapter/MySQL.js               |    40.00 |  119 |    5 |      3 |
+   | NX/module/AbstractModule.js              |    80.00 |  100 |    5 |      1 |
+   | NX/module/Connection.js                  |   100.00 |   66 |    2 |      0 |
    | NX/module/Module.js                      |   100.00 |   41 |    1 |      0 |
    | NX/server/AbstractDispatcher.js          |   100.00 |  101 |    3 |      0 |
    | NX/server/Dispatcher.js                  |    65.22 |  195 |   23 |      8 |
-   | NX/server/HttpServer.js                  |    40.00 |  263 |   30 |     18 |
+   | NX/server/HttpServer.js                  |    72.41 |  265 |   29 |      8 |
    | NX/util/JSON.js                          |   100.00 |   52 |    3 |      0 |
    | NX/util/MarkDown.js                      |    90.00 |  696 |   60 |      6 |
    | NX/util/String.js                        |   100.00 |  340 |   26 |      0 |
@@ -57,14 +24,14 @@ ReferenceError: hoge is not defined
    | NX/util/template/Include.js              |   100.00 |  115 |   25 |      0 |
    | NX/util/template/TextNode.js             |   100.00 |   63 |    3 |      0 |
    | NX/view/AbstractView.js                  |   100.00 |   61 |    4 |      0 |
-   | NX/view/WebView.js                       |   100.00 |  183 |   17 |      0 |
+   | NX/view/WebView.js                       |   100.00 |  183 |   16 |      0 |
    | NX/config/http/error.js                  |   100.00 |   26 |    1 |      0 |
    | NX/config/http/mimetype.js               |   100.00 |  184 |    1 |      0 |
    | NX/config/session.js                     |   100.00 |   49 |    1 |      0 |
    | NX/config/database.js                    |   100.00 |   30 |    1 |      0 |
    | NX/config/view.js                        |   100.00 |   23 |    1 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    66.17 | 5214 |  473 |    160 |
+                                              |    85.35 | 5216 |  389 |     57 |
                                               +----------+------+------+--------+
 
 
