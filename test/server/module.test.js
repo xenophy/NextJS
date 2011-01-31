@@ -49,9 +49,21 @@ module.exports = {
         file = fs.readFileSync(__dirname + '/module/public_html/users/index.result.html');
         srv.servers[0].server.assertResponse('GET', '/users/', 200, file);
 
+    },
+
+    // }}}
+    // {{{ test module#duplicate
+
+    'test module#duplicate': function(beforeExit) {
+
+        var file;
+
+        srv.servers[0].server.assertResponse('GET', '/foo/', 500);
+
     }
 
     // }}}
+
 
 };
 
