@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Upload Example</title>
+</head>
+<body>
+    <h1>Uplopad Examples</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        ファイル：<br />
+        <input type="file" name="upfile" size="30" /><br />
+        <br />
+        <input type="submit" value="アップロード" />
+    </form>
+    {if file != undefined}<img src="./images/{file}" />{/if}
+</body>
+</html>
