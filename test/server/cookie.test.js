@@ -36,7 +36,7 @@ module.exports = {
 
         srv.servers[0].server.assertResponse('GET', '/', 200, undefined, undefined, function(res) {
             cookies = res.headers['set-cookie'];
-            assert.ok(NX.inArray('param1=kotsutsumi; expires=Sun, 15 May 2011 15:00:00 GMT;', cookies));
+            assert.ok(NX.inArray('param1=kotsutsumi; expires=Sun, 15 May 2011 15:00:00 GMT; path=/; domain=127.0.0.1; secure; httpOnly', cookies));
         });
 
     },
