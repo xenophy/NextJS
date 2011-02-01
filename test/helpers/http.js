@@ -32,11 +32,13 @@ connect.Server.prototype.listen = function(){
         var req = client.request.apply(client, arguments);
 
         req.addListener('response', function(res){
+
             if (req.buffer) {
                 res.body = '';
                 res.setEncoding('utf8');
                 res.addListener('data', function(chunk){ res.body += chunk });
             }
+
             if (self.pending === undefined) {
                 if (!--pending) {
                     self.close();

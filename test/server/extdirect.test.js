@@ -36,6 +36,7 @@ module.exports = {
     'test extdirect#remotingapi': function(beforeExit) {
 
         var file;
+
         srv.servers[0].server.assertResponse('GET', {path: '/remotingapi'}, 200, 'Ext.app.REMOTING_API = {"url":"/remotingapi","type":"remoting","actions":{"users":[{"name":"getList","len":0},{"name":"getGridList","len":5},{"name":"getNode","len":1},{"name":"readForm","len":1},{"name":"writeForm","len":1,"formHandler":true}]}};');
         srv.servers[0].server.assertResponse('GET', {path: '/users/remotingapi'}, 200, 'Ext.app.REMOTING_API = {"url":"/users/remotingapi","type":"remoting","actions":{"users":[{"name":"getList","len":0},{"name":"getGridList","len":5},{"name":"getNode","len":1},{"name":"readForm","len":1},{"name":"writeForm","len":1,"formHandler":true}]}};');
         srv.servers[0].server.assertResponse('GET', {path: '/foo/remotingapi', accept: 'application/json'}, 500);
@@ -91,11 +92,13 @@ module.exports = {
             200, undefined, 'upload', function(res) {
 
                 fs.unlink(__dirname + '/extdirect/public_html/photo/AuroraRed.jpg', function(err) {
+
+
                 });
 
         });
 
-    },
+    }
 
     // }}}
 
