@@ -1,8 +1,8 @@
-[?25l4 Feb 01:42:07 - Your node instance does not have root privileges. This means that the flash XML policy file will be served inline instead of on port 843. This will slow down initial connections slightly. NOTE: this fails with Firefox 4 betas.
-4 Feb 01:42:07 - socket.io ready - accepting connections
-4 Feb 01:42:08 - Initializing client with transport "websocket"
-4 Feb 01:42:08 - Client 40979673992842436 connected
-4 Feb 01:42:09 - Client 40979673992842436 disconnected
+[?25l4 Feb 05:24:57 - Your node instance does not have root privileges. This means that the flash XML policy file will be served inline instead of on port 843. This will slow down initial connections slightly. NOTE: this fails with Firefox 4 betas.
+4 Feb 05:24:57 - socket.io ready - accepting connections
+4 Feb 05:24:58 - Initializing client with transport "websocket"
+4 Feb 05:24:58 - Client 42638265481218696 connected
+4 Feb 05:24:58 - Client 42638265481218696 disconnected
 [?25h   +------------------------------------------+----------+------+------+--------+
    | filename                                 | coverage | LOC  | SLOC | missed |
    +------------------------------------------+----------+------+------+--------+
@@ -29,29 +29,29 @@
    | NX/server/Dispatcher.js                  |    94.12 |  221 |   17 |      1 |
    | NX/server/HttpServer.js                  |   100.00 |  218 |   29 |      0 |
    | NX/util/UA.js                            |   100.00 |  216 |    2 |      0 |
-   | NX/util/UA/isMac.js                      |    75.00 |   28 |    4 |      1 |
-   | NX/util/UA/isWindows.js                  |    75.00 |   28 |    4 |      1 |
-   | NX/util/UA/isLinux.js                    |    75.00 |   28 |    4 |      1 |
+   | NX/util/UA/isMac.js                      |   100.00 |   28 |    3 |      0 |
+   | NX/util/UA/isWindows.js                  |   100.00 |   28 |    3 |      0 |
+   | NX/util/UA/isLinux.js                    |   100.00 |   28 |    3 |      0 |
    | NX/util/UA/isOpera.js                    |   100.00 |   28 |    2 |      0 |
    | NX/util/UA/isChrome.js                   |   100.00 |   28 |    2 |      0 |
-   | NX/util/UA/isWebkit.js                   |   100.00 |   28 |    2 |      0 |
-   | NX/util/UA/isSafari.js                   |    66.67 |   30 |    3 |      1 |
-   | NX/util/UA/isSafari2.js                  |    80.00 |   30 |    5 |      1 |
-   | NX/util/UA/isSafari3.js                  |    80.00 |   30 |    5 |      1 |
-   | NX/util/UA/isSafari4.js                  |    80.00 |   30 |    5 |      1 |
-   | NX/util/UA/isSafari5.js                  |    80.00 |   30 |    5 |      1 |
-   | NX/util/UA/isIE.js                       |    66.67 |   30 |    3 |      1 |
-   | NX/util/UA/isIE7.js                      |   100.00 |   30 |    4 |      0 |
-   | NX/util/UA/isIE8.js                      |   100.00 |   30 |    4 |      0 |
-   | NX/util/UA/isIE6.js                      |    85.71 |   32 |    7 |      1 |
-   | NX/util/UA/isGecko.js                    |    66.67 |   31 |    3 |      1 |
-   | NX/util/UA/isGecko2.js                   |    80.00 |   31 |    5 |      1 |
-   | NX/util/UA/isGecko3.js                   |    80.00 |   31 |    5 |      1 |
-   | NX/util/UA/isiPod.js                     |    75.00 |   28 |    4 |      1 |
-   | NX/util/UA/isiPhone.js                   |    75.00 |   28 |    4 |      1 |
-   | NX/util/UA/isiPad.js                     |    75.00 |   28 |    4 |      1 |
-   | NX/util/UA/isXperia.js                   |    75.00 |   28 |    4 |      1 |
-   | NX/util/UA/isAndroid.js                  |    50.00 |   28 |    2 |      1 |
+   | NX/util/UA/isWebkit.js                   |   100.00 |   28 |    1 |      0 |
+   | NX/util/UA/isSafari.js                   |   100.00 |   31 |    3 |      0 |
+   | NX/util/UA/isXperia.js                   |   100.00 |   28 |    1 |      0 |
+   | NX/util/UA/isSafari2.js                  |   100.00 |   30 |    4 |      0 |
+   | NX/util/UA/isSafari3.js                  |   100.00 |   30 |    4 |      0 |
+   | NX/util/UA/isSafari4.js                  |   100.00 |   30 |    4 |      0 |
+   | NX/util/UA/isSafari5.js                  |   100.00 |   30 |    4 |      0 |
+   | NX/util/UA/isIE.js                       |   100.00 |   30 |    2 |      0 |
+   | NX/util/UA/isIE7.js                      |   100.00 |   30 |    3 |      0 |
+   | NX/util/UA/isIE8.js                      |   100.00 |   30 |    3 |      0 |
+   | NX/util/UA/isIE6.js                      |   100.00 |   32 |    6 |      0 |
+   | NX/util/UA/isGecko.js                    |   100.00 |   31 |    2 |      0 |
+   | NX/util/UA/isGecko2.js                   |   100.00 |   31 |    4 |      0 |
+   | NX/util/UA/isGecko3.js                   |   100.00 |   31 |    4 |      0 |
+   | NX/util/UA/isiPod.js                     |   100.00 |   28 |    3 |      0 |
+   | NX/util/UA/isiPhone.js                   |   100.00 |   28 |    3 |      0 |
+   | NX/util/UA/isiPad.js                     |   100.00 |   28 |    3 |      0 |
+   | NX/util/UA/isAndroid.js                  |   100.00 |   28 |    2 |      0 |
    | NX/util/JSON.js                          |   100.00 |   52 |    3 |      0 |
    | NX/util/MarkDown.js                      |    90.16 |  696 |   61 |      6 |
    | NX/util/String.js                        |   100.00 |  340 |   26 |      0 |
@@ -65,10 +65,10 @@
    | NX/config/http/error.js                  |   100.00 |   26 |    1 |      0 |
    | NX/config/http/mimetype.js               |   100.00 |  184 |    1 |      0 |
    | NX/config/session.js                     |   100.00 |   49 |    1 |      0 |
-   | NX/config/database.js                    |   100.00 |   30 |    1 |      0 |
    | NX/config/view.js                        |   100.00 |   23 |    1 |      0 |
+   | NX/config/database.js                    |   100.00 |   30 |    1 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    83.27 | 6713 |  496 |     83 |
+                                              |    86.32 | 6714 |  475 |     65 |
                                               +----------+------+------+--------+
 
 
