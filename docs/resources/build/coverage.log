@@ -1,12 +1,12 @@
-[?25l3 Feb 15:22:24 - Your node instance does not have root privileges. This means that the flash XML policy file will be served inline instead of on port 843. This will slow down initial connections slightly. NOTE: this fails with Firefox 4 betas.
-3 Feb 15:22:24 - socket.io ready - accepting connections
-3 Feb 15:22:25 - Initializing client with transport "websocket"
-3 Feb 15:22:25 - Client 8588305197190493 connected
-3 Feb 15:22:25 - Client 8588305197190493 disconnected
+[?25l4 Feb 01:42:07 - Your node instance does not have root privileges. This means that the flash XML policy file will be served inline instead of on port 843. This will slow down initial connections slightly. NOTE: this fails with Firefox 4 betas.
+4 Feb 01:42:07 - socket.io ready - accepting connections
+4 Feb 01:42:08 - Initializing client with transport "websocket"
+4 Feb 01:42:08 - Client 40979673992842436 connected
+4 Feb 01:42:09 - Client 40979673992842436 disconnected
 [?25h   +------------------------------------------+----------+------+------+--------+
    | filename                                 | coverage | LOC  | SLOC | missed |
    +------------------------------------------+----------+------+------+--------+
-   | NX/index.js                              |   100.00 |  714 |   36 |      0 |
+   | NX/index.js                              |   100.00 |  715 |   36 |      0 |
    | NX/controller/AbstractController.js      |    40.00 |  376 |   30 |     18 |
    | NX/controller/abstract/loadConfig.js     |   100.00 |   46 |    2 |      0 |
    | NX/controller/abstract/loadGlobalAction.js |    16.67 |   70 |   12 |     10 |
@@ -16,9 +16,9 @@
    | NX/controller/abstract/getModulePath.js  |   100.00 |   36 |    2 |      0 |
    | NX/controller/abstract/getOverrideActionClass.js |    66.67 |   52 |    3 |      1 |
    | NX/controller/abstract/convertToActionClass.js |    20.00 |   51 |    5 |      4 |
-   | NX/controller/WebController.js           |   100.00 |  228 |    4 |      0 |
+   | NX/controller/WebController.js           |   100.00 |  230 |    4 |      0 |
    | NX/controller/WebSocketController.js     |   100.00 |   41 |    4 |      0 |
-   | NX/controller/Action.js                  |   100.00 |  103 |    8 |      0 |
+   | NX/controller/Action.js                  |    53.33 |  125 |   15 |      7 |
    | NX/controller/DirectAction.js            |    95.24 |  290 |   21 |      1 |
    | NX/module/adapter/AbstractAdapter.js     |   100.00 |   57 |    2 |      0 |
    | NX/module/adapter/MySQL.js               |    40.00 |  119 |    5 |      3 |
@@ -28,8 +28,32 @@
    | NX/server/AbstractDispatcher.js          |   100.00 |  105 |    3 |      0 |
    | NX/server/Dispatcher.js                  |    94.12 |  221 |   17 |      1 |
    | NX/server/HttpServer.js                  |   100.00 |  218 |   29 |      0 |
+   | NX/util/UA.js                            |   100.00 |  216 |    2 |      0 |
+   | NX/util/UA/isMac.js                      |    75.00 |   28 |    4 |      1 |
+   | NX/util/UA/isWindows.js                  |    75.00 |   28 |    4 |      1 |
+   | NX/util/UA/isLinux.js                    |    75.00 |   28 |    4 |      1 |
+   | NX/util/UA/isOpera.js                    |   100.00 |   28 |    2 |      0 |
+   | NX/util/UA/isChrome.js                   |   100.00 |   28 |    2 |      0 |
+   | NX/util/UA/isWebkit.js                   |   100.00 |   28 |    2 |      0 |
+   | NX/util/UA/isSafari.js                   |    66.67 |   30 |    3 |      1 |
+   | NX/util/UA/isSafari2.js                  |    80.00 |   30 |    5 |      1 |
+   | NX/util/UA/isSafari3.js                  |    80.00 |   30 |    5 |      1 |
+   | NX/util/UA/isSafari4.js                  |    80.00 |   30 |    5 |      1 |
+   | NX/util/UA/isSafari5.js                  |    80.00 |   30 |    5 |      1 |
+   | NX/util/UA/isIE.js                       |    66.67 |   30 |    3 |      1 |
+   | NX/util/UA/isIE7.js                      |   100.00 |   30 |    4 |      0 |
+   | NX/util/UA/isIE8.js                      |   100.00 |   30 |    4 |      0 |
+   | NX/util/UA/isIE6.js                      |    85.71 |   32 |    7 |      1 |
+   | NX/util/UA/isGecko.js                    |    66.67 |   31 |    3 |      1 |
+   | NX/util/UA/isGecko2.js                   |    80.00 |   31 |    5 |      1 |
+   | NX/util/UA/isGecko3.js                   |    80.00 |   31 |    5 |      1 |
+   | NX/util/UA/isiPod.js                     |    75.00 |   28 |    4 |      1 |
+   | NX/util/UA/isiPhone.js                   |    75.00 |   28 |    4 |      1 |
+   | NX/util/UA/isiPad.js                     |    75.00 |   28 |    4 |      1 |
+   | NX/util/UA/isXperia.js                   |    75.00 |   28 |    4 |      1 |
+   | NX/util/UA/isAndroid.js                  |    50.00 |   28 |    2 |      1 |
    | NX/util/JSON.js                          |   100.00 |   52 |    3 |      0 |
-   | NX/util/MarkDown.js                      |    90.00 |  696 |   60 |      6 |
+   | NX/util/MarkDown.js                      |    90.16 |  696 |   61 |      6 |
    | NX/util/String.js                        |   100.00 |  340 |   26 |      0 |
    | NX/util/Template.js                      |   100.00 |  453 |   19 |      0 |
    | NX/util/template/Foreach.js              |   100.00 |  115 |    6 |      0 |
@@ -41,11 +65,35 @@
    | NX/config/http/error.js                  |   100.00 |   26 |    1 |      0 |
    | NX/config/http/mimetype.js               |   100.00 |  184 |    1 |      0 |
    | NX/config/session.js                     |   100.00 |   49 |    1 |      0 |
-   | NX/config/view.js                        |   100.00 |   23 |    1 |      0 |
    | NX/config/database.js                    |   100.00 |   30 |    1 |      0 |
+   | NX/config/view.js                        |   100.00 |   23 |    1 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    85.35 | 5799 |  396 |     58 |
+                                              |    83.27 | 6713 |  496 |     83 |
                                               +----------+------+------+--------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
