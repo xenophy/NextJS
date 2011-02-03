@@ -10,6 +10,11 @@
 
 module.exports = NX.extend(NX.Module, {
 
+    // {{{ useTable
+
+    useTable: false,
+
+    // }}}
     // {{{ foo
 
     foo : function(callback) {
