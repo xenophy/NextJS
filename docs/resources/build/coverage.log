@@ -1,27 +1,33 @@
-[?25l1 Feb 14:44:59 - Your node instance does not have root privileges. This means that the flash XML policy file will be served inline instead of on port 843. This will slow down initial connections slightly. NOTE: this fails with Firefox 4 betas.
-1 Feb 14:44:59 - socket.io ready - accepting connections
-1 Feb 14:45:00 - Initializing client with transport "websocket"
-1 Feb 14:45:00 - Client 20738335535861552 connected
-1 Feb 14:45:00 - Client 20738335535861552 disconnected
+[?25l3 Feb 11:05:14 - Your node instance does not have root privileges. This means that the flash XML policy file will be served inline instead of on port 843. This will slow down initial connections slightly. NOTE: this fails with Firefox 4 betas.
+3 Feb 11:05:14 - socket.io ready - accepting connections
+3 Feb 11:05:15 - Initializing client with transport "websocket"
+3 Feb 11:05:15 - Client 7387018280569464 connected
+3 Feb 11:05:15 - Client 7387018280569464 disconnected
 [?25h   +------------------------------------------+----------+------+------+--------+
    | filename                                 | coverage | LOC  | SLOC | missed |
    +------------------------------------------+----------+------+------+--------+
-   | NX/index.js                              |   100.00 |  681 |   37 |      0 |
-   | NX/controller/AbstractController.js      |    20.59 |  370 |   34 |     27 |
-   | NX/controller/WebController.js           |   100.00 |  232 |    4 |      0 |
+   | NX/index.js                              |   100.00 |  714 |   36 |      0 |
+   | NX/controller/AbstractController.js      |    38.46 |  352 |   26 |     16 |
+   | NX/controller/abstract/loadConfig.js     |   100.00 |   46 |    2 |      0 |
+   | NX/controller/abstract/getActionClass.js |    33.33 |   40 |    6 |      4 |
+   | NX/controller/abstract/getModuleConfig.js |   100.00 |   41 |    2 |      0 |
+   | NX/controller/abstract/getModulePath.js  |   100.00 |   36 |    2 |      0 |
+   | NX/controller/abstract/getOverrideActionClass.js |    66.67 |   52 |    3 |      1 |
+   | NX/controller/abstract/convertToActionClass.js |    20.00 |   51 |    5 |      4 |
+   | NX/controller/WebController.js           |   100.00 |  228 |    4 |      0 |
    | NX/controller/WebSocketController.js     |   100.00 |   41 |    4 |      0 |
    | NX/controller/Action.js                  |   100.00 |  103 |    8 |      0 |
-   | NX/controller/DirectAction.js            |   100.00 |  336 |   26 |      0 |
+   | NX/controller/DirectAction.js            |    95.24 |  290 |   21 |      1 |
    | NX/module/adapter/AbstractAdapter.js     |   100.00 |   57 |    2 |      0 |
    | NX/module/adapter/MySQL.js               |    40.00 |  119 |    5 |      3 |
-   | NX/module/AbstractModule.js              |    80.00 |  100 |    5 |      1 |
+   | NX/module/AbstractModule.js              |    80.00 |  104 |    5 |      1 |
    | NX/module/Connection.js                  |   100.00 |   66 |    2 |      0 |
    | NX/module/Module.js                      |   100.00 |   41 |    1 |      0 |
-   | NX/server/AbstractDispatcher.js          |   100.00 |  101 |    3 |      0 |
-   | NX/server/Dispatcher.js                  |   100.00 |  220 |   21 |      0 |
+   | NX/server/AbstractDispatcher.js          |   100.00 |  105 |    3 |      0 |
+   | NX/server/Dispatcher.js                  |    94.12 |  221 |   17 |      1 |
    | NX/server/HttpServer.js                  |   100.00 |  218 |   29 |      0 |
    | NX/util/JSON.js                          |   100.00 |   52 |    3 |      0 |
-   | NX/util/MarkDown.js                      |    90.00 |  696 |   60 |      6 |
+   | NX/util/MarkDown.js                      |    90.16 |  696 |   61 |      6 |
    | NX/util/String.js                        |   100.00 |  340 |   26 |      0 |
    | NX/util/Template.js                      |   100.00 |  453 |   19 |      0 |
    | NX/util/template/Foreach.js              |   100.00 |  115 |    6 |      0 |
@@ -33,11 +39,17 @@
    | NX/config/http/error.js                  |   100.00 |   26 |    1 |      0 |
    | NX/config/http/mimetype.js               |   100.00 |  184 |    1 |      0 |
    | NX/config/session.js                     |   100.00 |   49 |    1 |      0 |
-   | NX/config/view.js                        |   100.00 |   23 |    1 |      0 |
    | NX/config/database.js                    |   100.00 |   30 |    1 |      0 |
+   | NX/config/view.js                        |   100.00 |   23 |    1 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    89.92 | 5381 |  367 |     37 |
+                                              |    90.00 | 5621 |  370 |     37 |
                                               +----------+------+------+--------+
+
+
+
+
+
+
 
 
 
