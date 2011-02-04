@@ -20,7 +20,7 @@ var assert = require('assert'),
 var srv = NX.createServer({
     servers: [{
         port: process.NXEnv.testport,
-        path: __dirname + '/action/'
+        path: __dirname + '/actionchain/'
     }]
 });
 
@@ -34,8 +34,40 @@ module.exports = {
 
         var file;
 
-        file = fs.readFileSync(__dirname + '/action/public_html/index.result.html');
+        file = fs.readFileSync(__dirname + '/actionchain/public_html/index.result.html');
         srv.servers[0].server.assertResponse('GET', '/', 200, file);
+    },
+
+    // }}}
+    // {{{ test actionchain#index2
+
+    'test actionchain#index2': function(beforeExit) {
+
+        var file;
+
+        file = fs.readFileSync(__dirname + '/actionchain/public_html/index2.result.html');
+        srv.servers[0].server.assertResponse('GET', '/index2.html', 200, file);
+    },
+
+    // }}}
+    // {{{ test actionchain#index3
+
+    'test actionchain#index3': function(beforeExit) {
+
+        var file;
+
+        file = fs.readFileSync(__dirname + '/actionchain/public_html/index3.result.html');
+        srv.servers[0].server.assertResponse('GET', '/index3.html', 200, file);
+    },
+
+    // }}}
+    // {{{ test actionchain#index4
+
+    'test actionchain#index4': function(beforeExit) {
+
+        var file;
+
+        srv.servers[0].server.assertResponse('GET', '/index4.html', 500);
     }
 
     // }}}

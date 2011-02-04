@@ -6,20 +6,22 @@
  * http://www.xenophy.com
  */
 
-// {{{ requires
+// {{{ NXAction.action
 
-require('../../../lib/NX');
+module.exports = new (NX.extend(NX.Action, {
 
-// }}}
-// {{{ create server
+    // {{{ execute
 
-NX.createServer({
-    servers: [{
-        port: 3000
-    }]
-}).listen();
+    execute : function() {
 
-console.log('Server running at http://127.0.0.1:3000/');
+        var me = this;
+        me.set('nxaciton', 'NX.Action instance executed');
+        me.end();
+    }
+
+    // }}}
+
+}));
 
 // }}}
 
