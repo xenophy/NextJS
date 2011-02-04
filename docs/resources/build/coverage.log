@@ -1,20 +1,20 @@
-[?25l4 Feb 05:24:57 - Your node instance does not have root privileges. This means that the flash XML policy file will be served inline instead of on port 843. This will slow down initial connections slightly. NOTE: this fails with Firefox 4 betas.
-4 Feb 05:24:57 - socket.io ready - accepting connections
-4 Feb 05:24:58 - Initializing client with transport "websocket"
-4 Feb 05:24:58 - Client 42638265481218696 connected
-4 Feb 05:24:58 - Client 42638265481218696 disconnected
+[?25l4 Feb 18:52:29 - Your node instance does not have root privileges. This means that the flash XML policy file will be served inline instead of on port 843. This will slow down initial connections slightly. NOTE: this fails with Firefox 4 betas.
+4 Feb 18:52:29 - socket.io ready - accepting connections
+4 Feb 18:52:30 - Initializing client with transport "websocket"
+4 Feb 18:52:30 - Client 7559349904768169 connected
+4 Feb 18:52:30 - Client 7559349904768169 disconnected
 [?25h   +------------------------------------------+----------+------+------+--------+
    | filename                                 | coverage | LOC  | SLOC | missed |
    +------------------------------------------+----------+------+------+--------+
    | NX/index.js                              |   100.00 |  715 |   36 |      0 |
-   | NX/controller/AbstractController.js      |    40.00 |  376 |   30 |     18 |
+   | NX/controller/AbstractController.js      |    54.17 |  376 |   24 |     11 |
    | NX/controller/abstract/loadConfig.js     |   100.00 |   46 |    2 |      0 |
-   | NX/controller/abstract/loadGlobalAction.js |    16.67 |   70 |   12 |     10 |
-   | NX/controller/abstract/loadScopeAction.js |    18.18 |   83 |   11 |      9 |
+   | NX/controller/abstract/loadGlobalAction.js |   100.00 |   70 |    6 |      0 |
+   | NX/controller/abstract/loadScopeAction.js |   100.00 |   83 |    2 |      0 |
    | NX/controller/abstract/getActionClass.js |    33.33 |   40 |    6 |      4 |
    | NX/controller/abstract/getModuleConfig.js |   100.00 |   41 |    2 |      0 |
    | NX/controller/abstract/getModulePath.js  |   100.00 |   36 |    2 |      0 |
-   | NX/controller/abstract/getOverrideActionClass.js |    66.67 |   52 |    3 |      1 |
+   | NX/controller/abstract/getOverrideActionClass.js |   100.00 |   52 |    2 |      0 |
    | NX/controller/abstract/convertToActionClass.js |    20.00 |   51 |    5 |      4 |
    | NX/controller/WebController.js           |   100.00 |  230 |    4 |      0 |
    | NX/controller/WebSocketController.js     |   100.00 |   41 |    4 |      0 |
@@ -53,7 +53,7 @@
    | NX/util/UA/isiPad.js                     |   100.00 |   28 |    3 |      0 |
    | NX/util/UA/isAndroid.js                  |   100.00 |   28 |    2 |      0 |
    | NX/util/JSON.js                          |   100.00 |   52 |    3 |      0 |
-   | NX/util/MarkDown.js                      |    90.16 |  696 |   61 |      6 |
+   | NX/util/MarkDown.js                      |    90.00 |  696 |   60 |      6 |
    | NX/util/String.js                        |   100.00 |  340 |   26 |      0 |
    | NX/util/Template.js                      |   100.00 |  453 |   19 |      0 |
    | NX/util/template/Foreach.js              |   100.00 |  115 |    6 |      0 |
@@ -65,10 +65,10 @@
    | NX/config/http/error.js                  |   100.00 |   26 |    1 |      0 |
    | NX/config/http/mimetype.js               |   100.00 |  184 |    1 |      0 |
    | NX/config/session.js                     |   100.00 |   49 |    1 |      0 |
-   | NX/config/view.js                        |   100.00 |   23 |    1 |      0 |
    | NX/config/database.js                    |   100.00 |   30 |    1 |      0 |
+   | NX/config/view.js                        |   100.00 |   23 |    1 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    86.32 | 6714 |  475 |     65 |
+                                              |    91.59 | 6714 |  452 |     38 |
                                               +----------+------+------+--------+
 
 
