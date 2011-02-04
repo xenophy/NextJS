@@ -69,6 +69,7 @@ connect.Server.prototype.listen = function(){
             path = o.path;
             cookies = o.cookies;
             accept = o.accept;
+            ua = o.ua;
             if(o.planedata !== true) {
                 data = NX.encode(o.data);
             } else {
@@ -81,6 +82,10 @@ connect.Server.prototype.listen = function(){
                 options = {
                     'Content-Length': data.length
                 };
+
+                if(ua) {
+                    options['User-Agent'] = ua;
+                }
 
                 if(!contentType) {
                     options['Content-Type'] = 'application/json';
@@ -99,6 +104,10 @@ connect.Server.prototype.listen = function(){
 
                 if(accept) {
                     options['Accept'] = accept;
+                }
+
+                if(ua) {
+                    options['User-Agent'] = ua;
                 }
 
                 if(cookies) {

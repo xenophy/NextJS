@@ -47,9 +47,39 @@ module.exports = {
 
         file = fs.readFileSync(__dirname + '/action/public_html/mod.result.html');
         srv.servers[0].server.assertResponse('GET', '/mod.html', 200, file);
+    },
+
+    // }}}
+    // {{{ test action#ua
+
+    'test action#ua': function(beforeExit) {
+
+        var file;
+        var ua = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.55 Safari/533.4';
+
+        file = fs.readFileSync(__dirname + '/action/public_html/ua.result.html');
+        srv.servers[0].server.assertResponse('GET', {
+            path:'/ua.html',
+            ua: ua
+        }, 200, file);
+    },
+
+    // }}}
+    // {{{ test action#ua2
+
+    'test action#ua2': function(beforeExit) {
+
+        var file;
+        var ua = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.55 Safari/533.4';
+
+        srv.servers[0].server.assertResponse('GET', {
+            path:'/ua2.html',
+            ua: ua
+        }, 500);
     }
 
     // }}}
+
 
 };
 

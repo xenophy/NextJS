@@ -6,20 +6,23 @@
  * http://www.xenophy.com
  */
 
-// {{{ app
+// {{{ index.action
 
-module.exports = NX.extend(NX.WebController, {
+module.exports = NX.extend(NX.Action, {
 
-    // {{{ use
+    // {{{ execute
 
-    use: ['users', 'other'],
+    execute : function() {
 
-    // }}}
-    // {{{ remotingapi
+        var me = this;
 
-    remotingapi : new NX.DirectAction({
-        use: ['users', 'other']
-    })
+        if(me.UA('Mac')) {
+            me.set('os', 'Mac');
+        } else {
+            me.set('os', 'Unknown');
+        }
+        me.end();
+    }
 
     // }}}
 
