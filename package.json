@@ -1,19 +1,9 @@
 {
-    "name" : "NextJS",
-    "version" : "0.6.0",
+    "name" : "NX",
     "description" : "Next JS is Application Server on node.js.",
-    "tags" : ["text-analysis", "node", "utility"],
+    "keywords": ["framework", "web", "NextJS"],
+    "version" : "0.5.2",
     "author" : "Kazuhiro Kotsutsumi <kotsutsumi@xenophy.com>",
-    "repository" : {
-        "type" : "git",
-        "url" : "https://xenophy@github.com/xenophy/NextJS.git"
-    },
-    "bugs" : {
-        "web" : "https://github.com/xenophy/NextJS/issues"
-    },
-    "licenses" : [{
-        "type" : "MIT",
-        "url" : "https://github.com/xenophy/NextJS/raw/master/LICENSE"
-    }],
+    "repository" : "git://github.com/xenophy/NextJS.git",
     "main" : "./lib/NX"
 }
