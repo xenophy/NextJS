@@ -22,10 +22,16 @@ module.exports = NX.extend(NX.Module, {
 
         // スキーマ情報取得
         me.schema(function(info) {
-
             ret['schema'] = info;
 
-            callback(ret);
+            // テーブル情報取得
+            me.getTableInfo(function(info) {
+
+                ret['tableinfo'] = info;
+
+                callback(ret);
+            });
+
         });
 
     }
