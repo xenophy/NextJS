@@ -70,6 +70,8 @@ connect.Server.prototype.listen = function(){
             cookies = o.cookies;
             accept = o.accept;
             ua = o.ua;
+            serverAlive = o.serverAlive;
+
             if(o.planedata !== true) {
                 data = NX.encode(o.data);
             } else {
@@ -125,6 +127,12 @@ connect.Server.prototype.listen = function(){
 
             }
 
+            if(serverAlive) {
+                pending++;
+            }
+            if(serverAlive === false) {
+                pending--;
+            }
         }
 
         var req = this.request(method, path, options);
