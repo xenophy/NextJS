@@ -16,7 +16,8 @@ module.exports = NX.extend(NX.Module, {
 
         var me = this;
         var ret = {
-            adapterName : me.getAdapterName()
+            adapterName : me.getAdapterName(),
+            database : me.getDatabase()
         };
 
         callback(ret);
