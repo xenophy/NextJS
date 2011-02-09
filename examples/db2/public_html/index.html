@@ -15,6 +15,30 @@
         <dt>データベース名</dt>
         <dd>{info.database}</dd>
 
+        <dt>スキーマ情報</dt>
+        <dd>
+            <table border="1">
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Key</th>
+                    <th>Default</th>
+                    <th>Extra</th>
+                    <th>Comment</th>
+                </tr>
+                {foreach from=info.schema item=item key=key}
+                <tr>
+                    <td>{item.field}</td>
+                    <td>{item.type}</td>
+                    <td>{item.key}</td>
+                    <td>{item.default}</td>
+                    <td>{item.extra}</td>
+                    <td>{item.comment}</td>
+                </tr>
+                {/foreach}
+            </table>
+        </dd>
+
     </dl>
 
     <h2>User List</h2>

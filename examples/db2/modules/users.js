@@ -20,7 +20,13 @@ module.exports = NX.extend(NX.Module, {
             database : me.getDatabase()
         };
 
-        callback(ret);
+        // スキーマ情報取得
+        me.schema(function(info) {
+
+            ret['schema'] = info;
+
+            callback(ret);
+        });
 
     }
 
