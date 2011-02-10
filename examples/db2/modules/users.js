@@ -145,8 +145,20 @@ module.exports = NX.extend(NX.Module, {
         var cond = {
         };
 
-        me.find('count', cond, function(info) {
-            callback(info);
+        var ret = {};
+
+        me.find('count', cond, function(cnt) {
+
+            ret.type1 = cnt;
+
+            me.count(cond, function(cnt2) {
+
+                ret.type2 = cnt2;
+
+                callback(ret);
+
+            });
+
         });
 
     },
