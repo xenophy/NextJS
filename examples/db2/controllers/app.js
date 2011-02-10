@@ -30,8 +30,12 @@ module.exports = NX.extend(NX.WebController, {
             // ユーザー追加
             me.users.add(function() {
 
+                // ユーザー更新
+                me.users.write(function() {
 
-                me.end();
+                    me.end();
+                });
+
             });
 
         });

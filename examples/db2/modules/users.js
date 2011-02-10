@@ -61,15 +61,29 @@ module.exports = NX.extend(NX.Module, {
     add : function(callback) {
 
         var me = this;
-        var ret = {};
         var data = {name: 'system'};
 
-        me.insert(data, function() {
-            callback(ret);
+        me.insert(data, function(info) {
+            callback(info);
+        });
+    },
+
+    // }}}
+    // {{{ write
+
+    write : function(callback) {
+
+        var me = this;
+        var data = {name: 'kotsutsumi:' + NX.microtime()};
+        var where = 'id = 0';
+
+        me.update(data, where, function(info) {
+            callback(info);
         });
     }
 
     // }}}
+
 
 });
 
