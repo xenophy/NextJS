@@ -102,6 +102,22 @@ module.exports = NX.extend(NX.Module, {
             callback();
         });
 
+    },
+
+    // }}}
+    // {{{ found
+
+    found : function(callback) {
+
+        var me = this;
+        var cond = {
+            fields: ['name']
+        };
+
+        me.find('first', cond, function(info) {
+            callback(info);
+        });
+
     }
 
     // }}}
