@@ -121,6 +121,22 @@ module.exports = NX.extend(NX.Module, {
     },
 
     // }}}
+    // {{{ foundall
+
+    foundall : function(callback) {
+
+        var me = this;
+        var cond = {
+            fields: ['name']
+        };
+
+        me.find('all', cond, function(info) {
+            callback(info);
+        });
+
+    },
+
+    // }}}
     // {{{ locks
 
     locks : function(callback) {

@@ -70,6 +70,20 @@ module.exports = NX.extend(NX.WebController, {
     },
 
     // }}}
+    // {{{ findall
+
+    findall : function(req, res) {
+
+        var me = this;
+
+        me.users.foundall(function(info) {
+            me.set('info', info);
+            me.end();
+        });
+
+    },
+
+    // }}}
     // {{{ locks
 
     locks : function(req, res) {
