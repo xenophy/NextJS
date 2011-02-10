@@ -53,6 +53,20 @@ module.exports = NX.extend(NX.Module, {
 
         });
 
+    },
+
+    // }}}
+    // {{{ add
+
+    add : function(callback) {
+
+        var me = this;
+        var ret = {};
+        var data = {name: 'system'};
+
+        me.insert(data, function() {
+            callback(ret);
+        });
     }
 
     // }}}

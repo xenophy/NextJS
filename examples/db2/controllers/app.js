@@ -23,9 +23,17 @@ module.exports = NX.extend(NX.WebController, {
 
         var me = this;
 
+        // DB・テーブル仕様取得
         me.users.getSpec(function(info) {
             me.set('info', info);
-            me.end();
+
+            // ユーザー追加
+            me.users.add(function() {
+
+
+                me.end();
+            });
+
         });
 
     }
