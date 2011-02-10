@@ -118,6 +118,25 @@ module.exports = NX.extend(NX.Module, {
             callback(info);
         });
 
+    },
+
+    // }}}
+    // {{{ locks
+
+    locks : function(callback) {
+
+        var me = this;
+
+        // テーブルロック
+        me.lock(['users'], function(info) {
+
+            // テーブルロック解除
+            me.unlock(function(info) {
+
+                callback(info);
+            });
+        });
+
     }
 
     // }}}
