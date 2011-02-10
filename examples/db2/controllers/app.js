@@ -84,6 +84,20 @@ module.exports = NX.extend(NX.WebController, {
     },
 
     // }}}
+    // {{{ count
+
+    count : function(req, res) {
+
+        var me = this;
+
+        me.users.counts(function(info) {
+            me.set('info', info);
+            me.end();
+        });
+
+    },
+
+    // }}}
     // {{{ locks
 
     locks : function(req, res) {

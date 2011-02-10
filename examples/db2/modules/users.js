@@ -137,6 +137,22 @@ module.exports = NX.extend(NX.Module, {
     },
 
     // }}}
+    // {{{ counts
+
+    counts : function(callback) {
+
+        var me = this;
+        var cond = {
+        };
+
+        me.find('count', cond, function(info) {
+            callback(info);
+        });
+
+    },
+
+    // }}}
+
     // {{{ locks
 
     locks : function(callback) {
