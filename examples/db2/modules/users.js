@@ -61,7 +61,7 @@ module.exports = NX.extend(NX.Module, {
     add : function(callback) {
 
         var me = this;
-        var data = {name: 'system'};
+        var data = {name: 'system:' + NX.microtime()};
 
         me.insert(data, function(info) {
             callback(info);
@@ -78,7 +78,15 @@ module.exports = NX.extend(NX.Module, {
         var where = 'id = 0';
 
         me.update(data, where, function(info) {
-            callback(info);
+
+            var id = me.lastId();
+            var where = 'id = ' + id;
+
+            me.delete(where, function(info) {
+
+                callback(info);
+            });
+
         });
     }
 
