@@ -82,16 +82,29 @@ module.exports = NX.extend(NX.Module, {
             var id = me.lastId();
             var where = 'id = ' + id;
 
+            /*
             me.delete(where, function(info) {
 
-                callback(info);
             });
+            */
+            callback(info);
 
         });
+    },
+
+    // }}}
+    // {{{ clear
+
+    clear : function(callback) {
+
+        var me = this;
+        me.truncate(function(info) {
+            callback();
+        });
+
     }
 
     // }}}
-
 
 });
 

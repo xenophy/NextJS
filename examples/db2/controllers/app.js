@@ -40,6 +40,19 @@ module.exports = NX.extend(NX.WebController, {
 
         });
 
+    },
+
+    // }}}
+    // {{{ clear
+
+    clear : function(req, res) {
+
+        var me = this;
+
+        me.users.clear(function() {
+            me.end();
+        });
+
     }
 
     // }}}
