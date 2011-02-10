@@ -26,10 +26,29 @@ module.exports = NX.extend(NX.Module, {
 
             // テーブル情報取得
             me.getTableInfo(function(info) {
-
                 ret['tableinfo'] = info;
 
-                callback(ret);
+                // トランザクション開始
+                me.beginTrans(function(info) {
+
+                    // ロールバック
+                    me.rollback(function(info) {
+
+                        // トランザクション開始
+                        me.beginTrans(function(info) {
+
+                            // コミット
+                            me.commit(function(info) {
+
+                                callback(ret);
+                            });
+
+                        });
+
+                    });
+
+                });
+
             });
 
         });
