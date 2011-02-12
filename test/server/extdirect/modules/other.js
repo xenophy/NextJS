@@ -10,9 +10,9 @@
 
 module.exports = NX.extend(NX.Module, {
 
-    // {{{ useTable
+    // {{{ use
 
-    useTable : false,
+    use : false,
 
     // }}}
     // {{{ getOther
