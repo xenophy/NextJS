@@ -21,12 +21,18 @@ module.exports = NX.extend(NX.Action, {
 
         var me = this;
 
+        me.users.find(function(rs) {
+            me.set('users', rs);
+            me.end();
+        });
+
+        /*
         me.users.name = 'Kazuhiro Kotsutsumi';
         me.users.age = 31;
         me.users.save(function() {
-
             me.end();
         });
+        */
 
     }
 
