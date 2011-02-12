@@ -27,6 +27,7 @@ module.exports = NX.extend(NX.Action, {
         });
 
         /*
+        // データ追加
         me.users.name = 'Kazuhiro Kotsutsumi';
         me.users.age = 31;
         me.users.save(function() {
