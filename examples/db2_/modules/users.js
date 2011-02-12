@@ -164,7 +164,6 @@ module.exports = NX.extend(NX.Module, {
     },
 
     // }}}
-
     // {{{ locks
 
     locks : function(callback) {
@@ -181,9 +180,29 @@ module.exports = NX.extend(NX.Module, {
             });
         });
 
+    },
+
+    // }}}
+    // {{{ sets
+
+    sets : function(callback) {
+
+        var me = this;
+        var data = {name: 'system:' + NX.microtime()};
+        var cond = {};
+
+        // 実装中...
+        me.set(data, cond, function() {
+
+
+
+            callback();
+        });
+
     }
 
     // }}}
+
 
 });
 

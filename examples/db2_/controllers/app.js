@@ -108,10 +108,22 @@ module.exports = NX.extend(NX.WebController, {
             me.end();
         });
 
+    },
+
+    // }}}
+    // {{{ sets
+
+    sets : function(req, res) {
+
+        var me = this;
+
+        me.users.sets(function(info) {
+            me.end();
+        });
+
     }
 
     // }}}
-
 
 });
 
