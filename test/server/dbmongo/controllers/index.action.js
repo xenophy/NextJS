@@ -6,33 +6,34 @@
  * http://www.xenophy.com
  */
 
-// {{{ app
+// {{{ index.action
 
-module.exports = NX.extend(NX.WebController, {
+module.exports = NX.extend(NX.Action, {
 
     // {{{ use
 
-    use : [
-        'users',
-    ],
+    use : ['users'],
 
     // }}}
-    // {{{ index
+    // {{{ execute
 
-    index : function(req, res) {
+    execute : function() {
 
         var me = this;
 
-        me.users.getList(function(rs) {
-            var data = [];
-            NX.iterate(rs, function(o) {
-                data.push({
-                    name : o.name
-                });
-            });
-            me.set('users', data);
+        me.users.find(function(rs) {
+            me.set('users', rs);
             me.end();
         });
+
+        /*
+        // データ追加
+        me.users.name = 'Kazuhiro Kotsutsumi';
+        me.users.age = 31;
+        me.users.save(function() {
+            me.end();
+        });
+        */
 
     }
 

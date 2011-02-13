@@ -15,15 +15,12 @@ module.exports = {
     connections : {
         default: {
             name: 'default',
-            adapter: 'mysql',
-            charset: 'UTF8',
+            adapter: 'mongo',
             host: 'localhost',
-            user: 'root',
-            password: 'root',
-            database: 'nextjs',
-            prefix: '',
-            port: '',
-            socket: ''
+            user: '',
+            password: '',
+            database: 'nxsample',
+            port: '27017'
         }
     }
 
