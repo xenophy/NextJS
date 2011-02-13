@@ -6,16 +6,27 @@
  * http://www.xenophy.com
  */
 
-// {{{ isMac
+// {{{ index.action
 
-var isMac = module.exports = function(ua) {
+module.exports = NX.extend(NX.Action, {
 
-    if(NX.isString(ua) && ua.match(/Mac/i)) {
-        return true;
+    // {{{ execute
+
+    execute : function() {
+
+        var me = this;
+
+        if(me.UA('Mac2')) {
+            me.set('os', 'Mac');
+        } else {
+            me.set('os', 'Unknown');
+        }
+        me.end();
     }
 
-    return false;
-}
+    // }}}
+
+});
 
 // }}}
 

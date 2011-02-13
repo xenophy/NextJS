@@ -11,20 +11,25 @@
 require('NX');
 var assert = require('assert'),
     http = require('http'),
-    fs = require('fs'),
-    helpers = require('../helpers');
+    fs = require('fs');
 
 // }}}
-// {{{ controller Tests
+// {{{ Test Name
+
+var testName = 'action';
+var docRoot = __dirname + '/' + testName;
+
+// }}}
+// {{{ mongodb Tests
 
 var srv = NX.createServer({
     servers: [{
         port: process.NXEnv.testport,
-        path: __dirname + '/action/'
+        path: docRoot
     }]
 });
 
-srv.listen();
+var server = srv.servers[0].server;
 
 module.exports = {
 
@@ -32,10 +37,20 @@ module.exports = {
 
     'test action#index': function(beforeExit) {
 
-        var file;
+        var file = fs.readFileSync(docRoot + '/public_html/index.result.html').toString();
+        var req = {
+            url: '/',
+            method: 'GET'
+        };
+        var res = {
+            body: file,
+            status: 200
+        }
+        var cb = function(res) {
+            assert.ok(res);
+        };
 
-        file = fs.readFileSync(__dirname + '/action/public_html/index.result.html');
-        srv.servers[0].server.assertResponse('GET', '/', 200, file);
+        assert.response(server, req, res, cb);
     },
 
     // }}}
@@ -43,10 +58,20 @@ module.exports = {
 
     'test action#mod': function(beforeExit) {
 
-        var file;
+        var file = fs.readFileSync(docRoot + '/public_html/mod.result.html').toString();
+        var req = {
+            url: '/mod.html',
+            method: 'GET'
+        };
+        var res = {
+            body: file,
+            status: 200
+        }
+        var cb = function(res) {
+            assert.ok(res);
+        };
 
-        file = fs.readFileSync(__dirname + '/action/public_html/mod.result.html');
-        srv.servers[0].server.assertResponse('GET', '/mod.html', 200, file);
+        assert.response(server, req, res, cb);
     },
 
     // }}}
@@ -54,14 +79,25 @@ module.exports = {
 
     'test action#ua': function(beforeExit) {
 
-        var file;
         var ua = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.55 Safari/533.4';
+        var file = fs.readFileSync(docRoot + '/public_html/ua.result.html').toString();
 
-        file = fs.readFileSync(__dirname + '/action/public_html/ua.result.html');
-        srv.servers[0].server.assertResponse('GET', {
-            path:'/ua.html',
-            ua: ua
-        }, 200, file);
+        var req = {
+            url: '/ua.html',
+            headers: {
+                'User-Agent' : ua
+            },
+            method: 'GET'
+        };
+        var res = {
+            body: file,
+            status: 200
+        }
+        var cb = function(res) {
+            assert.ok(res);
+        };
+
+        assert.response(server, req, res, cb);
     },
 
     // }}}
@@ -69,17 +105,51 @@ module.exports = {
 
     'test action#ua2': function(beforeExit) {
 
-        var file;
-        var ua = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.55 Safari/533.4';
+        var ua = 'Mozilla/5.0 (Linux; U; Android 1.6; ja-jp; SonyEricssonSO-01B Build/XXXXXXX) AppleWebkit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.';
+        var file = fs.readFileSync(docRoot + '/public_html/ua2.result.html').toString();
 
-        srv.servers[0].server.assertResponse('GET', {
-            path:'/ua2.html',
-            ua: ua
-        }, 500);
+        var req = {
+            url: '/ua2.html',
+            headers: {
+                'User-Agent' : ua
+            },
+            method: 'GET'
+        };
+        var res = {
+            body: file,
+            status: 200
+        }
+        var cb = function(res) {
+            assert.ok(res);
+        };
+
+        assert.response(server, req, res, cb);
+
+    },
+
+    // }}}
+    // {{{ test action#ua3
+
+    'test action#ua3': function(beforeExit) {
+
+        var ua = 'Mozilla/5.0 (Linux; U; Android 1.6; ja-jp; SonyEricssonSO-01B Build/XXXXXXX) AppleWebkit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.';
+
+        var req = {
+            url: '/ua3.html',
+            method: 'GET'
+        };
+        var res = {
+            status: 500
+        }
+        var cb = function(res) {
+            assert.ok(res);
+        };
+
+        assert.response(server, req, res, cb);
+
     }
 
     // }}}
-
 
 };
 

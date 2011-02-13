@@ -11,8 +11,13 @@
 require('NX');
 var assert = require('assert'),
     http = require('http'),
-    fs = require('fs'),
-    helpers = require('../helpers');
+    fs = require('fs');
+
+// }}}
+// {{{ Test Name
+
+var testName = 'mongodb';
+var docRoot = __dirname + '/' + testName;
 
 // }}}
 // {{{ mongodb Tests
@@ -20,11 +25,11 @@ var assert = require('assert'),
 var srv = NX.createServer({
     servers: [{
         port: process.NXEnv.testport,
-        path: __dirname + '/mongodb/'
+        path: docRoot
     }]
 });
 
-srv.listen();
+var server = srv.servers[0].server;
 
 module.exports = {
 
@@ -32,10 +37,39 @@ module.exports = {
 
     'test mongodb#mod1': function(beforeExit) {
 
-        var file;
+        var file = fs.readFileSync(docRoot + '/public_html/mod1.result.html').toString();
+        var req = {
+            url: '/mod1.html',
+            method: 'GET'
+        };
+        var res = {
+            body: file,
+            status: 200
+        }
+        var cb = function(res) {
+            assert.ok(res);
+        };
 
-        file = fs.readFileSync(__dirname + '/mongodb/public_html/mod1.result.html');
-        srv.servers[0].server.assertResponse('GET', '/mod1.html', 200, file);
+        assert.response(server, req, req, cb);
+    },
+
+    // }}}
+    // {{{ test mongodb#mod2
+
+    'test mongodb#mod2': function(beforeExit) {
+
+        var req = {
+            url: '/mod2.html',
+            status: 500,
+            method: 'GET'
+        };
+        var res = {
+        };
+        var cb = function(res) {
+            assert.ok(res);
+        };
+
+        assert.response(server, req, req, cb);
     }
 
     // }}}

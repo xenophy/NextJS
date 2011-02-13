@@ -6,22 +6,25 @@
  * http://www.xenophy.com
  */
 
-// {{{ index.action
+// {{{ createcoll.action
 
 module.exports = NX.extend(NX.Action, {
 
+    // {{{ use
+
+    use : ['mod2'],
+
+    // }}}
     // {{{ execute
 
     execute : function() {
 
         var me = this;
 
-        if(me.UA('Mac')) {
-            me.set('os', 'Mac');
-        } else {
-            me.set('os', 'Unknown');
-        }
-        me.end();
+        me.mod2.scenario(function(ret) {
+            me.set('ret', ret);
+            me.end();
+        });
     }
 
     // }}}
