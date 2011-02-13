@@ -11,20 +11,25 @@
 require('NX');
 var assert = require('assert'),
     http = require('http'),
-    fs = require('fs'),
-    helpers = require('../helpers');
+    fs = require('fs');
 
 // }}}
-// {{{ controller Tests
+// {{{ Test Name
+
+var testName = 'globalaction';
+var docRoot = __dirname + '/' + testName;
+
+// }}}
+// {{{ server
 
 var srv = NX.createServer({
     servers: [{
         port: process.NXEnv.testport,
-        path: __dirname + '/globalaction/'
+        path: docRoot
     }]
 });
 
-srv.listen();
+var server = srv.servers[0].server;
 
 module.exports = {
 
@@ -32,10 +37,20 @@ module.exports = {
 
     'test globalaction#index': function(beforeExit) {
 
-        var file;
+        var file = fs.readFileSync(docRoot + '/public_html/index.result.html').toString();
+        var req = {
+            url: '/',
+            method: 'GET'
+        };
+        var res = {
+            body: file,
+            status: 200
+        }
+        var cb = function(res) {
+            assert.ok(res);
+        };
 
-        file = fs.readFileSync(__dirname + '/globalaction/public_html/index.result.html');
-        srv.servers[0].server.assertResponse('GET', '/', 200, file);
+        assert.response(server, req, res, cb);
     }
 
     // }}}

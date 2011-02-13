@@ -16,11 +16,11 @@ var assert = require('assert'),
 // }}}
 // {{{ Test Name
 
-var testName = 'mongodb';
+var testName = 'module';
 var docRoot = __dirname + '/' + testName;
 
 // }}}
-// {{{ server
+// {{{ mongodb Tests
 
 var srv = NX.createServer({
     servers: [{
@@ -33,13 +33,13 @@ var server = srv.servers[0].server;
 
 module.exports = {
 
-    // {{{ test mongodb#mod1
+    // {{{ test module#standerd
 
-    'test mongodb#mod1': function(beforeExit) {
+    'test module#standerd': function(beforeExit) {
 
-        var file = fs.readFileSync(docRoot + '/public_html/mod1.result.html').toString();
+        var file = fs.readFileSync(docRoot + '/public_html/index.result.html').toString();
         var req = {
-            url: '/mod1.html',
+            url: '/',
             method: 'GET'
         };
         var res = {
@@ -54,17 +54,40 @@ module.exports = {
     },
 
     // }}}
-    // {{{ test mongodb#mod2
+    // {{{ test module#objectsupplied
 
-    'test mongodb#mod2': function(beforeExit) {
+    'test module#objectsupplied': function(beforeExit) {
 
+        var file = fs.readFileSync(__dirname + '/module/public_html/users/index.result.html').toString();
         var req = {
-            url: '/mod2.html',
-            status: 500,
+            url: '/users/',
             method: 'GET'
         };
         var res = {
+            body: file,
+            status: 200
+        }
+        var cb = function(res) {
+            assert.ok(res);
         };
+
+        assert.response(server, req, res, cb);
+    },
+
+    // }}}
+    // {{{ test module#duplicate
+
+    'test module#duplicate': function(beforeExit) {
+
+        var file;
+
+        var req = {
+            url: '/foo/',
+            method: 'GET'
+        };
+        var res = {
+            status: 500
+        }
         var cb = function(res) {
             assert.ok(res);
         };

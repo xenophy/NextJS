@@ -20,7 +20,7 @@ var testName = 'actionchain';
 var docRoot = __dirname + '/' + testName;
 
 // }}}
-// {{{ mongodb Tests
+// {{{ server
 
 var srv = NX.createServer({
     servers: [{

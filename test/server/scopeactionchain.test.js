@@ -16,7 +16,7 @@ var assert = require('assert'),
 // }}}
 // {{{ Test Name
 
-var testName = 'mongodb';
+var testName = 'scopeactionchain';
 var docRoot = __dirname + '/' + testName;
 
 // }}}
@@ -33,13 +33,13 @@ var server = srv.servers[0].server;
 
 module.exports = {
 
-    // {{{ test mongodb#mod1
+    // {{{ test scopeactionchain#index
 
-    'test mongodb#mod1': function(beforeExit) {
+    'test scopeactionchain#index': function(beforeExit) {
 
-        var file = fs.readFileSync(docRoot + '/public_html/mod1.result.html').toString();
+        var file = fs.readFileSync(__dirname + '/scopeactionchain/public_html/index.result.html').toString();
         var req = {
-            url: '/mod1.html',
+            url: '/',
             method: 'GET'
         };
         var res = {
@@ -54,17 +54,40 @@ module.exports = {
     },
 
     // }}}
-    // {{{ test mongodb#mod2
+    // {{{ test scopeactionchain#subdir1/index
 
-    'test mongodb#mod2': function(beforeExit) {
+    'test scopeactionchain#subdir1/index': function(beforeExit) {
 
+        var file = fs.readFileSync(__dirname + '/scopeactionchain/public_html/subdir1/index.result.html').toString();
         var req = {
-            url: '/mod2.html',
-            status: 500,
+            url: '/subdir1/',
             method: 'GET'
         };
         var res = {
+            body: file,
+            status: 200
+        }
+        var cb = function(res) {
+            assert.ok(res);
         };
+
+        assert.response(server, req, res, cb);
+    },
+
+    // }}}
+    // {{{ test scopeactionchain#subdir1/override/index
+
+    'test scopeactionchain#subdir1/override/index': function(beforeExit) {
+
+        var file = fs.readFileSync(__dirname + '/scopeactionchain/public_html/subdir1/override/index.result.html').toString();
+        var req = {
+            url: '/subdir1/override/',
+            method: 'GET'
+        };
+        var res = {
+            body: file,
+            status: 200
+        }
         var cb = function(res) {
             assert.ok(res);
         };
