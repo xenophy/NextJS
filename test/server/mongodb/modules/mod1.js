@@ -6,7 +6,7 @@
  * http://www.xenophy.com
  */
 
-// {{{ users
+// {{{ mod1
 
 module.exports = NX.extend(NX.Module, {
 
@@ -24,11 +24,24 @@ module.exports = NX.extend(NX.Module, {
 
     scenario : function(cb) {
 
-//        me.createCollection();
+        var me = this;
 
+        // アダプター生成
+        me.createAdapter({
+            adapter: 'mongo',
+            host: 'localhost',
+            user: '',
+            password: '',
+            database: 'nxsample',
+            port: '27017'
+        });
 
-
-        cb();
+        // 接続
+        me.connect(function() {
+            cb({
+                connect: true
+            });
+        });
     }
 
     // }}}
