@@ -50,7 +50,7 @@ module.exports = {
             assert.ok(res);
         };
 
-        assert.response(server, req, req, cb);
+        assert.response(server, req, res, cb);
     },
 
     // }}}
@@ -69,7 +69,7 @@ module.exports = {
             assert.ok(res);
         };
 
-        assert.response(server, req, req, cb);
+        assert.response(server, req, res, cb);
     }
 
     // }}}
