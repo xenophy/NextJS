@@ -14,27 +14,33 @@ var assert = require('assert'),
     fs = require('fs'),
     WebSocket = require('socket.io/support/node-websocket-client/lib/websocket').WebSocket,
     encode = require('socket.io/lib/socket.io/utils').encode,
-    decode = require('socket.io/lib/socket.io/utils').decode,
-    helpers = require('../helpers');
+    decode = require('socket.io/lib/socket.io/utils').decode;
 
 // }}}
-// {{{ controller Tests
+// {{{ Test Name
+
+var testName = 'websocket';
+var docRoot = __dirname + '/' + testName;
+
+// }}}
+// {{{ server
 
 var srv = NX.createServer({
     servers: [{
         websocket: 'app.ws.js',
         port: process.NXEnv.testport,
-        path: __dirname + '/websocket/'
+        path: docRoot
     }]
 });
 
-srv.listen();
+var server = srv.servers[0].server;
 
 function client(server, sessid){
     sessid = sessid ? '/' + sessid : '';
     return new WebSocket('ws://localhost:' + server.port + '/socket.io/websocket' + sessid, 'borf');
 };
 
+// }}}
 
 module.exports = {
 
@@ -60,18 +66,7 @@ module.exports = {
 
             messages++;
         };
-        
 
-        /*
-        var sessid = 'NextJS';
-        sessid = sessid ? '/' + sessid : '';
-        var ws = new WebSocket('ws://localhost:' + process.NXEnv.testport + '/socket.io/websocket' + sessid, 'borf');
-            console.log(ws);
-
-
-
-            console.log("end");
-            */
     }
 
     // }}}

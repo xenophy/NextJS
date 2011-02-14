@@ -12,7 +12,7 @@ module.exports = NX.extend(NX.Module, {
 
     // {{{ use
 
-    use : 'users',
+    use : false,
 
     // }}}
     // {{{ getList
@@ -21,9 +21,17 @@ module.exports = NX.extend(NX.Module, {
 
         var me = this;
 
-        me.query('SELECT * FROM users', function(err, rs) {
-            callback(rs);
-        });
+        callback([{
+            "id":0,
+            "name":"kotsutsumi"
+        },{
+            "id":1,
+            "name":"jack"
+        },{
+            "id":2,
+            "name":"mark"
+        }]);
+
     },
 
     // }}}
@@ -33,9 +41,18 @@ module.exports = NX.extend(NX.Module, {
 
         var me = this;
 
-        me.query('SELECT * FROM users', function(err, rs) {
-            callback({users: rs});
-        });
+        var rs = [{
+            "id":0,
+            "name":"kotsutsumi"
+        },{
+            "id":1,
+            "name":"jack"
+        },{
+            "id":2,
+            "name":"mark"
+        }];
+
+        callback({users: rs});
     },
 
     // }}}
