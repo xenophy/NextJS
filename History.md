@@ -6,6 +6,7 @@
   * Changed "module"サンプルのuseTable変更に伴う修正
   * Fixed アクション終了時に、モジュールが接続しているDBを自動的に切断するように修正（MongoDB変更に伴う対応）
   * Fixed モジュールの準備ハンドラによるメモリリーク解消
+  * Changed サーバー起動型のテストケースをassert.responseに切り替え
 
 
 

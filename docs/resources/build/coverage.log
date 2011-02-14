@@ -1,34 +1,29 @@
-[?25l13 Feb 15:35:39 - Your node instance does not have root privileges. This means that the flash XML policy file will be served inline instead of on port 843. This will slow down initial connections slightly.
-13 Feb 15:35:39 - socket.io ready - accepting connections
-13 Feb 15:35:40 - Initializing client with transport "websocket"
-13 Feb 15:35:40 - Client 32332854508422315 connected
-13 Feb 15:35:40 - Client 32332854508422315 disconnected
-[?25h   +------------------------------------------+----------+------+------+--------+
+[?25l[?25h   +------------------------------------------+----------+------+------+--------+
    | filename                                 | coverage | LOC  | SLOC | missed |
    +------------------------------------------+----------+------+------+--------+
-   | NX/index.js                              |    92.31 |  727 |   39 |      3 |
-   | NX/controller/AbstractController.js      |    90.00 |  383 |   20 |      2 |
+   | NX/index.js                              |    92.31 |  728 |   39 |      3 |
+   | NX/controller/AbstractController.js      |    96.30 |  430 |   27 |      1 |
    | NX/controller/abstract/loadConfig.js     |   100.00 |   46 |    2 |      0 |
    | NX/controller/abstract/loadGlobalAction.js |   100.00 |   70 |    6 |      0 |
    | NX/controller/abstract/loadScopeAction.js |   100.00 |   83 |    2 |      0 |
    | NX/controller/abstract/getActionClass.js |   100.00 |   40 |    2 |      0 |
-   | NX/controller/abstract/getModuleConfig.js |   100.00 |   41 |    4 |      0 |
+   | NX/controller/abstract/getModuleConfig.js |   100.00 |   41 |    2 |      0 |
    | NX/controller/abstract/getModulePath.js  |   100.00 |   36 |    2 |      0 |
    | NX/controller/abstract/getOverrideActionClass.js |   100.00 |   52 |    2 |      0 |
    | NX/controller/abstract/convertToActionClass.js |   100.00 |   56 |    1 |      0 |
-   | NX/controller/WebController.js           |   100.00 |  229 |    4 |      0 |
-   | NX/controller/WebSocketController.js     |   100.00 |   41 |    4 |      0 |
-   | NX/controller/Action.js                  |    40.00 |  125 |   10 |      6 |
-   | NX/controller/DirectAction.js            |     4.81 |  290 |  104 |     99 |
-   | NX/module/adapter/AbstractAdapter.js     |    50.00 |   91 |    4 |      2 |
-   | NX/module/adapter/MongoDB.js             |    12.12 |  190 |   33 |     29 |
-   | NX/module/Connection.js                  |    25.00 |   99 |   12 |      9 |
-   | NX/module/Module.js                      |    11.11 |  165 |   27 |     24 |
+   | NX/controller/WebController.js           |   100.00 |  224 |    4 |      0 |
+   | NX/controller/WebSocketController.js     |    25.00 |   41 |    4 |      3 |
+   | NX/controller/Action.js                  |    33.33 |  125 |    9 |      6 |
+   | NX/controller/DirectAction.js            |   100.00 |  289 |   21 |      0 |
+   | NX/module/adapter/AbstractAdapter.js     |   100.00 |   91 |    2 |      0 |
+   | NX/module/adapter/MongoDB.js             |    37.50 |  179 |   24 |     15 |
+   | NX/module/Connection.js                  |    69.23 |  137 |   13 |      4 |
+   | NX/module/Module.js                      |    17.24 |  206 |   29 |     24 |
    | NX/server/AbstractDispatcher.js          |   100.00 |  105 |    3 |      0 |
-   | NX/server/Dispatcher.js                  |   100.00 |  219 |   23 |      0 |
-   | NX/server/HttpServer.js                  |    66.67 |  218 |   30 |     10 |
+   | NX/server/Dispatcher.js                  |    66.67 |  224 |   24 |      8 |
+   | NX/server/HttpServer.js                  |    68.75 |  215 |   32 |     10 |
    | NX/util/UA.js                            |   100.00 |  216 |    2 |      0 |
-   | NX/util/UA/isMac.js                      |   100.00 |   28 |    2 |      0 |
+   | NX/util/UA/isMac.js                      |   100.00 |   28 |    1 |      0 |
    | NX/util/UA/isWindows.js                  |   100.00 |   28 |    3 |      0 |
    | NX/util/UA/isLinux.js                    |   100.00 |   28 |    3 |      0 |
    | NX/util/UA/isOpera.js                    |   100.00 |   28 |    2 |      0 |
@@ -60,14 +55,14 @@
    | NX/util/template/Include.js              |   100.00 |  115 |   25 |      0 |
    | NX/util/template/TextNode.js             |   100.00 |   63 |    3 |      0 |
    | NX/view/AbstractView.js                  |   100.00 |   61 |    4 |      0 |
-   | NX/view/WebView.js                       |    61.54 |  202 |   26 |     10 |
+   | NX/view/WebView.js                       |    64.00 |  202 |   25 |      9 |
    | NX/config/http/error.js                  |   100.00 |   26 |    1 |      0 |
    | NX/config/http/mimetype.js               |   100.00 |  184 |    1 |      0 |
    | NX/config/session.js                     |   100.00 |   49 |    1 |      0 |
    | NX/config/database.js                    |   100.00 |   30 |    1 |      0 |
    | NX/config/view.js                        |   100.00 |   23 |    1 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    66.45 | 6940 |  602 |    202 |
+                                              |    82.36 | 7052 |  516 |     91 |
                                               +----------+------+------+--------+
 
 
