@@ -1,4 +1,4 @@
-# 0.6.1 / (現在開発中)
+# 0.6.1 / (2011/02/15)
 =======
 
   * Fixed 例外発生時、スタックが存在しない例外もきちんと表示されるように修正
@@ -13,14 +13,4 @@
   * Added NX.Module.dropDatabase追加
   * Added NX.Module.listDatabase追加
   * Added NX.Module.renameCollection追加
-
-
-
-
-
-テンプレ
-  * Added xxxxxx
-  * Updated xxxxxx
-  * Changed xxxxx
-  * Fixed xxxxxx
 
