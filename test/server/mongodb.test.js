@@ -82,7 +82,7 @@ module.exports = {
     // {{{ test mongodb#mod3
 
     /**
-     * コレクション作成→存在確認→コレクション削除→データベース削除→データベース存在確認
+     * コレクション作成→存在確認→コレクション削除
      */
     'test mongodb#mod3': function(beforeExit) {
 
@@ -103,6 +103,31 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test mongodb#mod4
+
+    /**
+     * コレクション作成→コレクション名変更→存在確認→コレクション削除
+     */
+    'test mongodb#mod4': function(beforeExit) {
+
+        var file = fs.readFileSync(docRoot + '/public_html/mod4.result.html').toString();
+        var req = {
+            url: '/mod4.html',
+            method: 'GET'
+        };
+        var res = {
+            body: file,
+            status: 200
+        }
+        var cb = function(res) {
+            assert.ok(res);
+        };
+
+        assert.response(server, req, res, cb);
+    },
+
+    // }}}
+
 
 };
 

@@ -72,7 +72,9 @@ module.exports = NX.extend(NX.Module, {
                                 if(exists) {
                                     cb(false);
                                 } else {
+                                    cb(true);
 
+                                    /*
                                     // データベース削除
                                     me.dropDatabase(function() {
 
@@ -95,6 +97,7 @@ module.exports = NX.extend(NX.Module, {
                                         });
 
                                     });
+                                    */
 
                                 }
 
