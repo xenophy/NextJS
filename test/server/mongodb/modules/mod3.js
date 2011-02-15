@@ -75,8 +75,25 @@ module.exports = NX.extend(NX.Module, {
 
                                     // データベース削除
                                     me.dropDatabase(function() {
-                                    
-                                        cb(true);
+
+                                        // データベース一覧取得
+                                        me.listDatabases(function(names) {
+
+                                            var exists = false;
+                                            names.forEach(function(o) {
+                                                if(o.name === me.use) {
+                                                    exists = true;
+                                                }
+                                            });
+
+                                            if(exists) {
+                                                cb(false);
+                                            } else {
+                                                cb(true);
+                                            }
+
+                                        });
+
                                     });
 
                                 }

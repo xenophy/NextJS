@@ -11,6 +11,7 @@
   * Added NX.Module.collectionName追加
   * Added NX.Module.dropCollection追加
   * Added NX.Module.dropDatabase追加
+  * Added NX.Module.listDatabase追加
 
 
 
