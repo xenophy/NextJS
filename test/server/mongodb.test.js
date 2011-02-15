@@ -76,7 +76,31 @@ module.exports = {
         };
 
         assert.response(server, req, res, cb);
-    }
+    },
+
+    // }}}
+    // {{{ test mongodb#mod3
+
+    /**
+     * コレクション作成→存在確認→コレクション削除→データベース削除→データベース存在確認
+     */
+    'test mongodb#mod3': function(beforeExit) {
+
+        var file = fs.readFileSync(docRoot + '/public_html/mod3.result.html').toString();
+        var req = {
+            url: '/mod3.html',
+            method: 'GET'
+        };
+        var res = {
+            body: file,
+            status: 200
+        }
+        var cb = function(res) {
+            assert.ok(res);
+        };
+
+        assert.response(server, req, res, cb);
+    },
 
     // }}}
 

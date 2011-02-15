@@ -56,9 +56,35 @@ module.exports = NX.extend(NX.Module, {
                         cb(false);
                     } else {
 
+                        // コレクション削除
+                        me.dropCollection('mongodbtest_mod3', function() {
 
+                            // コレクション名一覧取得
+                            me.collectionNames(function(names) {
 
-                        cb(true);
+                                var exists = false;
+                                names.forEach(function(o) {
+                                    if(o.name === me.use + '.mongodbtest_mod3') {
+                                        exists = true;
+                                    }
+                                });
+
+                                if(exists) {
+                                    cb(false);
+                                } else {
+
+                                    // データベース削除
+                                    me.dropDatabase(function() {
+                                    
+                                        cb(true);
+                                    });
+
+                                }
+
+                            });
+
+                        });
+
                     }
                 });
 

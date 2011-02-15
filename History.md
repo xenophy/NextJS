@@ -9,6 +9,8 @@
   * Changed サーバー起動型のテストケースをassert.responseに切り替え
   * Added NX.Module.createCollection追加
   * Added NX.Module.collectionName追加
+  * Added NX.Module.dropCollection追加
+  * Added NX.Module.dropDatabase追加
 
 
 
