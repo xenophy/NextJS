@@ -32,7 +32,7 @@ module.exports = NX.extend(NX.Module, {
             host: 'localhost',
             user: '',
             password: '',
-            database: 'nxsample',
+            database: me.use,
             autoReconnect: false,
             port: '12345'
         });

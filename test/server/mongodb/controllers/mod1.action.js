@@ -6,7 +6,7 @@
  * http://www.xenophy.com
  */
 
-// {{{ createcoll.action
+// {{{ mod1.action
 
 module.exports = NX.extend(NX.Action, {
 

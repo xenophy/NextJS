@@ -6,7 +6,7 @@
  * http://www.xenophy.com
  */
 
-// {{{ mod1
+// {{{ mod3
 
 module.exports = NX.extend(NX.Module, {
 
@@ -39,9 +39,29 @@ module.exports = NX.extend(NX.Module, {
         // 接続
         me.connect(function() {
 
-            // 接続解除
-            me.disconnect(function() {
-                cb({ connect: true });
+            // コレクション作成
+            me.createCollection('mongodbtest_mod3', function() {
+
+                // コレクション名一覧取得
+                me.collectionNames(function(names) {
+
+                    var exists = false;
+                    names.forEach(function(o) {
+                        if(o.name === me.use + '.mongodbtest_mod3') {
+                            exists = true;
+                        }
+                    });
+
+                    if(!exists) {
+                        cb(false);
+                    } else {
+
+
+
+                        cb(true);
+                    }
+                });
+
             });
 
         });

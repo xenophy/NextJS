@@ -35,6 +35,9 @@ module.exports = {
 
     // {{{ test mongodb#mod1
 
+    /**
+     * 手動によるデータベース接続、成功パターン
+     */
     'test mongodb#mod1': function(beforeExit) {
 
         var file = fs.readFileSync(docRoot + '/public_html/mod1.result.html').toString();
@@ -56,6 +59,9 @@ module.exports = {
     // }}}
     // {{{ test mongodb#mod2
 
+    /**
+     * 手動によるデータベース接続、失敗パターン
+     */
     'test mongodb#mod2': function(beforeExit) {
 
         var req = {

@@ -6,13 +6,27 @@
  * http://www.xenophy.com
  */
 
-// {{{ users
+// {{{ mod3.action
 
-module.exports = NX.extend(NX.Module, {
+module.exports = NX.extend(NX.Action, {
 
     // {{{ use
 
-    use : 'users',
+    use : ['mod3'],
+
+    // }}}
+    // {{{ execute
+
+    execute : function() {
+
+        var me = this;
+
+        me.mod3.scenario(function(ret) {
+            me.set('ret', ret);
+            me.end();
+        });
+
+    }
 
     // }}}
 
