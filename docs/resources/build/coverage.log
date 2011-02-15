@@ -1,8 +1,8 @@
 [?25l[?25h   +------------------------------------------+----------+------+------+--------+
    | filename                                 | coverage | LOC  | SLOC | missed |
    +------------------------------------------+----------+------+------+--------+
-   | NX/index.js                              |    92.31 |  728 |   39 |      3 |
-   | NX/controller/AbstractController.js      |    96.30 |  430 |   27 |      1 |
+   | NX/index.js                              |    92.31 |  727 |   39 |      3 |
+   | NX/controller/AbstractController.js      |    94.12 |  430 |   17 |      1 |
    | NX/controller/abstract/loadConfig.js     |   100.00 |   46 |    2 |      0 |
    | NX/controller/abstract/loadGlobalAction.js |   100.00 |   70 |    6 |      0 |
    | NX/controller/abstract/loadScopeAction.js |   100.00 |   83 |    2 |      0 |
@@ -16,9 +16,9 @@
    | NX/controller/Action.js                  |    33.33 |  125 |    9 |      6 |
    | NX/controller/DirectAction.js            |   100.00 |  289 |   21 |      0 |
    | NX/module/adapter/AbstractAdapter.js     |   100.00 |   91 |    2 |      0 |
-   | NX/module/adapter/MongoDB.js             |    37.50 |  179 |   24 |     15 |
-   | NX/module/Connection.js                  |    69.23 |  137 |   13 |      4 |
-   | NX/module/Module.js                      |    17.24 |  206 |   29 |     24 |
+   | NX/module/adapter/MongoDB.js             |    22.58 |  259 |   31 |     24 |
+   | NX/module/Connection.js                  |    45.45 |  197 |   11 |      6 |
+   | NX/module/Module.js                      |    14.29 |  282 |   35 |     30 |
    | NX/server/AbstractDispatcher.js          |   100.00 |  105 |    3 |      0 |
    | NX/server/Dispatcher.js                  |    66.67 |  224 |   24 |      8 |
    | NX/server/HttpServer.js                  |    68.75 |  215 |   32 |     10 |
@@ -62,7 +62,7 @@
    | NX/config/database.js                    |   100.00 |   30 |    1 |      0 |
    | NX/config/view.js                        |   100.00 |   23 |    1 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    82.36 | 7052 |  516 |     91 |
+                                              |    79.11 | 7267 |  517 |    108 |
                                               +----------+------+------+--------+
 
 

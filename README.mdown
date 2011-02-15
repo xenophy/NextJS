@@ -2,7 +2,7 @@
 
 RIA Server side Framework
 
-<img src="http://art38.photozou.jp/pub/253/198253/photo/64571100.png" alt="Next JS" width="450" height="135" style="border:0" />
+<img src="http://www.nextjs.net/wp-content/themes/wp.vicuna/skins/style-mono/images/common/logo.png" alt="Next JS" style="border:0" />
 
 ## 利用する外部モジュール
 

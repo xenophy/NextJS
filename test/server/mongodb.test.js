@@ -127,8 +127,33 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test mongodb#mod5
 
+    /**
+     * データ挿入→findOneで取得→削除
+     */
+     /*
+    'test mongodb#mod5': function(beforeExit) {
 
+        var file = fs.readFileSync(docRoot + '/public_html/mod5.result.html').toString();
+        var req = {
+            url: '/mod5.html',
+            method: 'GET'
+        };
+        var res = {
+            body: file,
+            status: 200
+        }
+        var cb = function(res) {
+            assert.ok(res);
+        };
+
+        assert.response(server, req, res, cb);
+    },
+
+    // }}}
+
+    */
 };
 
 // }}}

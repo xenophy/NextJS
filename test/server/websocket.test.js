@@ -35,6 +35,8 @@ var srv = NX.createServer({
 
 var server = srv.servers[0].server;
 
+srv.listen();
+
 function client(server, sessid){
     sessid = sessid ? '/' + sessid : '';
     return new WebSocket('ws://localhost:' + server.port + '/socket.io/websocket' + sessid, 'borf');
@@ -66,6 +68,12 @@ module.exports = {
 
             messages++;
         };
+
+        /*
+        var sessid = 'NextJS';
+        sessid = sessid ? '/' + sessid : '';
+        var ws = new WebSocket('ws://localhost:' + process.NXEnv.testport + '/socket.io/websocket' + sessid, 'borf');
+        */
 
     }
 
