@@ -1,4 +1,0 @@
-stringの内容をdelimiterで分割した文字列の配列を返します。
-
-空の文字列("")がdelimiterとして使用された場合、explode()はfalseを返します。
-delimiterに引数stringに含まれていない値が含まれている場合は、limitが負の値なら空の配列、そうでなければ引数stringを含む配列を返します。

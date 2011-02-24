@@ -1,4 +1,0 @@
-{
-    "type" : "String",
-    "option": true
-}

@@ -1,6 +1,0 @@
-    {
-        flags: 'w',
-        encoding: null,
-        mode: 0666
-    }
-

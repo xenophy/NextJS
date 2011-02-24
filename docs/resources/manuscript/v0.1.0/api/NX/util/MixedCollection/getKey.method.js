@@ -1,4 +1,0 @@
-{
-    "param" : ["item"],
-    "return": "String"
-}

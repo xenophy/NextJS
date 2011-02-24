@@ -1,4 +1,0 @@
-{
-    "param" : ["objs"],
-    "return": "void"
-}

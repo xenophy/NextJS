@@ -1,4 +1,0 @@
-{
-    "param" : ["ms"],
-    "return": "void"
-}

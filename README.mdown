@@ -8,6 +8,6 @@ Next JS is Application Server on node.js
 
 * [https://github.com/senchalabs/connect](https://github.com/senchalabs/connect)
 * [https://github.com/felixge/node-formidable](https://github.com/felixge/node-formidable)
-* [https://github.com/felixge/node-mysql](https://github.com/felixge/node-mysql)
+* [https://github.com/christkv/node-mongodb-native](https://github.com/christkv/node-mongodb-native)
 * [https://github.com/LearnBoost/Socket.IO-node](https://github.com/LearnBoost/Socket.IO-node)
 

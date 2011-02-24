@@ -1,5 +1,0 @@
-{
-    "type" : "Object",
-    "option": true
-}
-

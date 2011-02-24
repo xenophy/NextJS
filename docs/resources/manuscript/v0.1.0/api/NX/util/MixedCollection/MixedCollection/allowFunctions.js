@@ -1,4 +1,0 @@
-{
-    "type" : "Boolean",
-    "option": true
-}

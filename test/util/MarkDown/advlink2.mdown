@@ -1,7 +1,0 @@
-You can write bare URLs by enclosing them in angle brackets:
-
-My web site is at <http://attacklab.net>.
-
-If you use this format for email addresses, Showdown will encode the address to make it harder for spammers to harvest.  Try it and look in the *HTML Output* pane to see the results:
-
-Humans can read this, but most spam harvesting robots can't: <me@privacy.net>

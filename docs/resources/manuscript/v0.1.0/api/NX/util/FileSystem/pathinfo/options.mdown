@@ -1,6 +1,0 @@
-どの要素を返すのかをオプションのパラメータoptionsで指定します。
-
-<div class="long">
-これは'PATHINFO_DIRNAME'、'PATHINFO_BASENAME'、'PATHINFO_EXTENSION'および'PATHINFO_FILENAME'の組み合わせとなります。
-デフォルトではすべての要素を返します。
-

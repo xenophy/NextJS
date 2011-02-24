@@ -1,4 +1,0 @@
-{
-    "param" : ["mapping"],
-    "return": "void"
-}

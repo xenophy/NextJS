@@ -1,6 +1,0 @@
-イベントの発生を再開します。
-
-<div class="long">
-もし、suspendEventsの引数でqueueSuspendedをtrueとした場合、イベント停止時に発火したイベントのハンドラは再会時に次々と実行されます。
-
-

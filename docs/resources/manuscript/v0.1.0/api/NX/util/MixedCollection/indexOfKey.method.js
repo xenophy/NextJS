@@ -1,4 +1,0 @@
-{
-    "param" : ["key"],
-    "return": "Number"
-}

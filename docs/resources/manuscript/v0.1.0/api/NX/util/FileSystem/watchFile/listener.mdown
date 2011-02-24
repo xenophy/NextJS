@@ -1,9 +1,0 @@
-現在の状態オブジェクトと前の状態オブジェクトの 2 つの引数を受け取ります:
-
-    NX.fs.watchFile(f, function (curr, prev) {
-        console.log('the current mtime is: ' + curr.mtime);
-        console.log('the previous mtime was: ' + prev.mtime);
-    });
-
-これらの状態オブジェクトは fs.Stat のインスタンスです。
-

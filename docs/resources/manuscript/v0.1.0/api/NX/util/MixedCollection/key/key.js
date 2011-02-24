@@ -1,3 +1,0 @@
-{
-    "type" : "String/Number"
-}

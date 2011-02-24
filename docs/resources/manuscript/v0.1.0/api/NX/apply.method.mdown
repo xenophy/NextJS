@@ -1,5 +1,0 @@
-指定されたoにconfigを適用します。
-<div class="long">
-
-configのキーが既に、oに存在する場合は、上書きします。
-

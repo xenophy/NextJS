@@ -1,4 +1,0 @@
-{
-    "type" : "Array",
-    "option": true
-}

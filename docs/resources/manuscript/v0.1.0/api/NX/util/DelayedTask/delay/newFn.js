@@ -1,4 +1,0 @@
-{
-    "type" : "Function",
-    "option": true
-}

@@ -1,4 +1,0 @@
-{
-    "param" : ["obj"],
-    "return": "Object"
-}

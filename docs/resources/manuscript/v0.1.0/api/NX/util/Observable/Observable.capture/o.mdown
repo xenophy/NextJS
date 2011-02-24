@@ -1,1 +1,0 @@
-NX.util.Observableを継承した監視を行うクラスオブジェクト

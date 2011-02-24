@@ -1,6 +1,0 @@
-{
-    "param" : [],
-    "return": "void"
-}
-
-

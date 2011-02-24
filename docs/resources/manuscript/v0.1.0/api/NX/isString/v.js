@@ -1,3 +1,0 @@
-{
-    "type" : "Mixed value"
-}

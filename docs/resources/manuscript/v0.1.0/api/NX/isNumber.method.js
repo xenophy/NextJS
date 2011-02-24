@@ -1,4 +1,0 @@
-{
-    "param" : ["v"],
-    "return": "Boolean"
-}

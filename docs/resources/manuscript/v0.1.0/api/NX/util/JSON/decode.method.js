@@ -1,4 +1,0 @@
-{
-    "param" : ["json"],
-    "return": "Object"
-}

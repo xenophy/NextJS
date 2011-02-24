@@ -1,3 +1,0 @@
-{
-    "type" : "fs.WriteStream"
-}

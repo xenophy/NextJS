@@ -1,4 +1,0 @@
-{
-    "param" : ["events"],
-    "return": "void"
-}

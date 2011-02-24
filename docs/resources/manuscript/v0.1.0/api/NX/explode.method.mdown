@@ -1,3 +1,0 @@
-NX.util.str.explodeのエイリアス
-<div class="long">
-文字列の配列を返します。この配列の各要素は、stringを文字列delimiterで区切った部分文字列となります。

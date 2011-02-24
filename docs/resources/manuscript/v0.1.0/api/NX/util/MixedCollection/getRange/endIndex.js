@@ -1,4 +1,0 @@
-{
-    "type" : "Number",
-    "option": true
-}
