@@ -21,70 +21,70 @@ module.exports = {
     // {{{ test trim#pattern1
 
     'test trim#pattern1': function() {
-        ''.trim().should.equal('');
+        T_String.trim('').should.equal('');
     },
 
     // }}}
     // {{{ test trim#pattern2
 
     'test trim#pattern2': function() {
-        'foo'.trim().should.equal('foo');
+        T_String.trim('foo').should.equal('foo');
     },
 
     // }}}
     // {{{ test trim#pattern3
 
     'test trim#pattern3': function() {
-        '    '.trim().should.equal('');
+        T_String.trim('    ').should.equal('');
     },
 
     // }}}
     // {{{ test trim#pattern4
 
     'test trim#pattern4': function() {
-        '  bar  '.trim().should.equal('bar');
+        T_String.trim('  bar  ').should.equal('bar');
     },
 
     // }}}
     // {{{ test trim#pattern5
 
     'test trim#pattern5': function() {
-        'foo   '.trim().should.equal('foo');
+        T_String.trim('foo   ').should.equal('foo');
     },
 
     // }}}
     // {{{ test trim#pattern6
 
     'test trim#pattern6': function() {
-        '   bar'.trim().should.equal('bar');
+        T_String.trim('   bar').should.equal('bar');
     },
 
     // }}}
     // {{{ test trim#pattern7
 
     'test trim#pattern7': function() {
-        'foo bar'.trim().should.equal('foo bar');
+        T_String.trim('foo bar').should.equal('foo bar');
     },
 
     // }}}
     // {{{ test trim#pattern8
 
     'test trim#pattern8': function() {
-        '  foo bar baz   '.trim().should.equal('foo bar baz');
+        T_String.trim('  foo bar baz   ').should.equal('foo bar baz');
     },
 
     // }}}
     // {{{ test trim#pattern9
 
     'test trim#pattern9': function() {
-        '\tfoo'.trim().should.equal('foo');
+        T_String.trim('\tfoo').should.equal('foo');
     },
 
     // }}}
     // {{{ test trim#pattern10
 
     'test trim#pattern10': function() {
-        '\ttext    '.trim().should.equal('text');
+        T_String.trim('\ttext    ').should.equal('text');
     }
 
     // }}}
