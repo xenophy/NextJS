@@ -22,9 +22,8 @@ module.exports = {
 
     'test getCount#pattern1': function() {
 
-//        var hm = new NX.util.HashMap();
-
-
+        var hm = new NX.util.HashMap();
+        hm.getCount().should.equal(0);
 
     }
 
