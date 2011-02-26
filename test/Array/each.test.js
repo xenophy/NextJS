@@ -28,6 +28,49 @@ module.exports = {
         });
 
         tmp.length.should.equal(5);
+    },
+
+    // }}}
+    // {{{ test each#pattern2
+
+    'test each#pattern2': function() {
+
+        var tmp = [];
+        var ret = T_Array.each([], function(v) {
+            tmp.push(v);
+        });
+        ret.should.equal(0);
+        tmp.length.should.equal(0);
+    },
+
+    // }}}
+    // {{{ test each#pattern3
+
+    'test each#pattern3': function() {
+
+        var tmp = [];
+        var ret = T_Array.each(100, function(v) {
+            tmp.push(v);
+        });
+        ret.should.equal(true);
+        tmp[0].should.equal(100);
+        tmp.length.should.equal(1);
+    },
+
+    // }}}
+    // {{{ test each#pattern4
+
+    'test each#pattern4': function() {
+
+        var tmp = [];
+        var ret = T_Array.each([1,2,3,4,5], function(v) {
+            tmp.push(v);
+            if(v === 3) {
+                return false;
+            }
+        });
+
+        tmp.length.should.equal(3);
     }
 
     // }}}
