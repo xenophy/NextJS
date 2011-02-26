@@ -18,9 +18,9 @@ var T_Array = require('NX/Array');
 
 module.exports = {
 
-    // {{{ test every#pattern1
+    // {{{ test some#pattern1
 
-    'test every#pattern1': function() {
+    'test some#pattern1': function() {
 
         function isBigEnough(element, index, array) {
             return (element >= 10);

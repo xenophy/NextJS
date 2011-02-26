@@ -35,9 +35,9 @@ module.exports = {
     },
 
     // }}}
-    // {{{ test toArray#pattern2
+    // {{{ test include#pattern2
 
-    'test toArray#pattern2': function() {
+    'test include#pattern2': function() {
 
         var ret = [0, 1, 2, 3, 4];
         T_Array.include([0, 1, 2, 3, 4], 2);

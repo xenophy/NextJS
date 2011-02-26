@@ -33,9 +33,9 @@ module.exports = {
     },
 
     // }}}
-    // {{{ test toArray#pattern2
+    // {{{ test clean#pattern2
 
-    'test toArray#pattern2': function() {
+    'test clean#pattern2': function() {
 
         var ret = T_Array.clean([0, "", 2, "", 4]);
 
@@ -47,9 +47,9 @@ module.exports = {
     },
 
     // }}}
-    // {{{ test toArray#pattern3
+    // {{{ test clean#pattern3
 
-    'test toArray#pattern3': function() {
+    'test clean#pattern3': function() {
 
         var ret = [0, 1, 2, 3, 4];
         ret[0] = '';
