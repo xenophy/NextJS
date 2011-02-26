@@ -36,6 +36,21 @@ module.exports = {
         singles[0].should.equal('foot');
         singles[1].should.equal('goose');
         singles[2].should.equal('moose');
+    },
+
+    // }}}
+    // {{{ test map#pattern2
+
+    'test map#pattern2': function() {
+
+        var singles = ["foot", "goose", "moose"];
+
+        try {
+            var plurals = T_Array.map(singles);
+        } catch(e) {
+            e.message.should.equal('[NX.Array.map] fn must be a valid callback function');
+        }
+
     }
 
     // }}}
