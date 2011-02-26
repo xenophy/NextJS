@@ -28,7 +28,7 @@ module.exports = {
     // {{{ test capitalize#pattern2
 
     'test capitalize#pattern2': function() {
-        T_String.capitalize('NextJS').should.equal('Nextjs');
+        T_String.capitalize('NextJS').should.equal('NextJS');
     }
 
     // }}}
