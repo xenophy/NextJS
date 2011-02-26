@@ -20,14 +20,14 @@ module.exports = {
 
     // {{{ test capitalize#pattern1
 
-    'test trim#pattern1': function() {
+    'test capitalize#pattern1': function() {
         T_String.capitalize('nextjs').should.equal('Nextjs');
     },
 
     // }}}
-    // {{{ test trim#pattern2
+    // {{{ test capitalize#pattern2
 
-    'test trim#pattern2': function() {
+    'test capitalize#pattern2': function() {
         T_String.capitalize('NextJS').should.equal('Nextjs');
     }
 
