@@ -8,21 +8,25 @@
 
 // {{{ requires
 
-var T_NX = require('../index');
-var T_ClassManager = require('../../ClassManager');
-var alias = require('../../Function').alias;
+require('should');
+var assert = require('assert');
+
+var T_UTIL_HASHMAP = require('NX/util/HashMap');
 
 // }}}
-// {{{ aliases
+// {{{ getCount
 
 module.exports = {
 
-    // {{{ ns
+    // {{{ test getCount#pattern1
 
-    /**
-     * @method ns
-     */
-    ns: alias(T_NX, 'namespace')
+    'test getCount#pattern1': function() {
+
+//        var hm = new NX.util.HashMap();
+
+
+
+    }
 
     // }}}
 

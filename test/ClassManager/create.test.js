@@ -31,9 +31,6 @@ module.exports = {
             constructor: function(config) {
                 this.initConfig(config);
                 return this;
-            },
-            applyName : function(val) {
-                return "[" + val + "]";
             }
         });
 

@@ -38,15 +38,14 @@ module.exports = {
 
         var cls = new My.Class1();
 
-        cls.getName().should.equal('Awesome');
+        cls.getName().should.equal('[Awesome]');
         cls.getIsAwesome().should.equal(true);
 
         cls.setName('Next JS');
-        cls.getName().should.equal('Next JS');
+        cls.getName().should.equal('[Next JS]');
 
         cls.resetName();
-        cls.getName().should.equal('Awesome');
-
+        cls.getName().should.equal('[Awesome]');
    }
 
     // }}}

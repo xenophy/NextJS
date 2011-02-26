@@ -8,25 +8,14 @@
 
 // {{{ requires
 
-var T_NX = require('../index');
-var T_ClassManager = require('../../ClassManager');
-var alias = require('../../Function').alias;
+require('../../../../lib/NX');
 
 // }}}
-// {{{ aliases
+// {{{ regist server
 
-module.exports = {
-
-    // {{{ ns
-
-    /**
-     * @method ns
-     */
-    ns: alias(T_NX, 'namespace')
-
-    // }}}
-
-};
+NX.regServer({
+    port: 3000
+});
 
 // }}}
 
@@ -37,3 +26,6 @@ module.exports = {
  * c-hanging-comment-ender-p: nil
  * End:
  */
+
+
+
