@@ -24,17 +24,18 @@ module.exports = {
 
     'test instantiateByAlias#pattern1': function() {
 
-        T_ClassManager.setDefaultPostprocessors([]);
-
-        T_ClassManager.create('ClassManagerTest.instantinateByAlias.cls1', {
+        T_ClassManager.create('ClassManagerTest.instantiateByAlias.cls1', {
             test: function() {
                 return 'test';
             }
         });
 
-        T_ClassManager.setAlias('ClassManagerTest.instantinateByAlias.cls1', 'ClassManagerTest.instantinateByAlias.cls2');
+        T_ClassManager.setAlias(
+            'ClassManagerTest.instantiateByAlias.cls1',
+            'ClassManagerTest.instantiateByAlias.cls2'
+        );
 
-        var cls2 = T_ClassManager.instantiateByAlias('ClassManagerTest.instantinateByAlias.cls2');
+        var cls2 = T_ClassManager.instantiateByAlias('ClassManagerTest.instantiateByAlias.cls2');
         cls2.test().should.equal('test');
 
     },
@@ -46,7 +47,7 @@ module.exports = {
 
         T_ClassManager.setDefaultPostprocessors([]);
 
-        T_ClassManager.create('ClassManagerTest.instantinateByAlias.cls1', {
+        T_ClassManager.create('ClassManagerTest.instantiateByAlias.cls3', {
             constructor: function(config) {
                 T_NX.apply(this, config);
                 return this;
@@ -56,10 +57,10 @@ module.exports = {
             }
         });
 
-        T_ClassManager.setAlias('ClassManagerTest.instantinateByAlias.cls1', 'ClassManagerTest.instantinateByAlias.cls2');
+        T_ClassManager.setAlias('ClassManagerTest.instantiateByAlias.cls3', 'ClassManagerTest.instantiateByAlias.cls4');
 
-        var cls2 = T_ClassManager.instantiateByAlias('ClassManagerTest.instantinateByAlias.cls2', {foo: 'bar'});
-        cls2.test().should.equal('bar');
+        var cls4 = T_ClassManager.instantiateByAlias('ClassManagerTest.instantiateByAlias.cls4', {foo: 'bar'});
+        cls4.test().should.equal('bar');
 
     },
 

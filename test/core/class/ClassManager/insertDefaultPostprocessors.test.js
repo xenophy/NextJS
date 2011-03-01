@@ -35,6 +35,13 @@ module.exports = {
         T_ClassManager.getDefaultPostprocessors()[1].should.equal('processor1');
         T_ClassManager.getDefaultPostprocessors()[2].should.equal('processor2');
         T_ClassManager.getDefaultPostprocessors()[3].should.equal('processor3');
+
+        T_ClassManager.setDefaultPostprocessors([
+            'alias',
+            'singleton',
+            'alternateClassName'
+        ]);
+
     },
 
     // }}}
@@ -54,6 +61,13 @@ module.exports = {
         T_ClassManager.getDefaultPostprocessors()[1].should.equal('firstProcessor');
         T_ClassManager.getDefaultPostprocessors()[2].should.equal('processor2');
         T_ClassManager.getDefaultPostprocessors()[3].should.equal('processor3');
+
+        T_ClassManager.setDefaultPostprocessors([
+            'alias',
+            'singleton',
+            'alternateClassName'
+        ]);
+
     },
 
     // }}}
@@ -73,6 +87,13 @@ module.exports = {
         T_ClassManager.getDefaultPostprocessors()[1].should.equal('processor2');
         T_ClassManager.getDefaultPostprocessors()[2].should.equal('processor3');
         T_ClassManager.getDefaultPostprocessors()[3].should.equal('firstProcessor');
+
+        T_ClassManager.setDefaultPostprocessors([
+            'alias',
+            'singleton',
+            'alternateClassName'
+        ]);
+
     },
 
     // }}}
@@ -92,6 +113,13 @@ module.exports = {
         T_ClassManager.getDefaultPostprocessors()[1].should.equal('processor2');
         T_ClassManager.getDefaultPostprocessors()[2].should.equal('firstProcessor');
         T_ClassManager.getDefaultPostprocessors()[3].should.equal('processor3');
+
+        T_ClassManager.setDefaultPostprocessors([
+            'alias',
+            'singleton',
+            'alternateClassName'
+        ]);
+
     }
 
     // }}}
