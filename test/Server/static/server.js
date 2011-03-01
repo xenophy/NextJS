@@ -8,7 +8,7 @@
 
 // {{{ requires
 
-require('../../../../lib/NX');
+require('../../../lib/NX');
 
 // }}}
 // {{{ regist server
