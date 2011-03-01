@@ -45,8 +45,6 @@ module.exports = {
 
     'test instantiateByAlias#pattern2': function() {
 
-        T_ClassManager.setDefaultPostprocessors([]);
-
         T_ClassManager.create('ClassManagerTest.instantiateByAlias.cls3', {
             constructor: function(config) {
                 T_NX.apply(this, config);

@@ -24,8 +24,6 @@ module.exports = {
 
     'test getName#pattern1': function() {
 
-        T_ClassManager.setDefaultPostprocessors([]);
-
         T_ClassManager.create('ClassManagerTest.getName.cls1', {
         });
 
