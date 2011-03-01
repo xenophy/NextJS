@@ -2,7 +2,11 @@
 
 NODE = node
 TEST = /usr/local/bin/expresso
-TESTS = test/*.test.js test/*/*.test.js test/*/*/*.test.js
+TESTS = \
+		test/core/NX/*.test.js \
+		test/core/*/*/*.test.js \
+		test/util/*/*.test.js \
+
 PREFIX = /usr/local
 LIB_PREFIX = $(HOME)/.node_libraries
 

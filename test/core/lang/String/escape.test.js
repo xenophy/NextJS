@@ -8,26 +8,21 @@
 
 // {{{ requires
 
-var T_NX = require('../index');
-var T_ClassManager = require('../class/ClassManager');
-var alias = require('../lang/Function').alias;
+require('should');
+var assert = require('assert');
+
+var T_String = require('NX/core/lang/String');
 
 // }}}
-// {{{ aliases
+// {{{ escape
 
 module.exports = {
 
-    // {{{ define
+    // {{{ test escape#standard
 
-    /**
-     * @method define
-     */
-    define: alias(T_ClassManager, 'create'),
-
-    // }}}
-    // {{{ getClassName
-
-    getClassName: alias(T_ClassManager, 'getName'),
+    'test escape#standard': function() {
+        T_String.escape("'\\").should.equal("\\'\\\\");
+    }
 
     // }}}
 
