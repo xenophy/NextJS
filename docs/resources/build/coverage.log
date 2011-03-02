@@ -61,23 +61,25 @@
    | NX/core/class/ClassManager/set.js        |   100.00 |   32 |    1 |      0 |
    | NX/core/class/ClassManager/assignNamespace.js |   100.00 |   50 |    2 |      0 |
    | NX/AbstractManager/index.js              |   100.00 |  120 |    2 |      0 |
-   | NX/util/HashMap/index.js                 |    33.33 |  186 |    3 |      2 |
+   | NX/util/HashMap/index.js                 |   100.00 |  183 |    1 |      0 |
    | NX/util/HashMap/constructor.js           |   100.00 |   23 |    1 |      0 |
    | NX/util/HashMap/getCount.js              |   100.00 |   23 |    1 |      0 |
-   | NX/util/HashMap/getData.js               |    50.00 |   34 |    4 |      2 |
-   | NX/util/HashMap/getKey.js                |   100.00 |   23 |    2 |      0 |
-   | NX/util/HashMap/add.js                   |   100.00 |   43 |    4 |      0 |
-   | NX/util/HashMap/replace.js               |    33.33 |   39 |    9 |      6 |
-   | NX/util/HashMap/containsKey.js           |   100.00 |   23 |    1 |      0 |
-   | NX/util/HashMap/remove.js                |    42.86 |   36 |    7 |      4 |
-   | NX/util/HashMap/findKey.js               |    16.67 |   32 |    6 |      5 |
-   | NX/util/HashMap/removeByKey.js           |    22.22 |   38 |    9 |      7 |
-   | NX/util/HashMap/get.js                   |    50.00 |   23 |    2 |      1 |
+   | NX/util/HashMap/getData.js               |   100.00 |   29 |    3 |      0 |
+   | NX/util/HashMap/getKey.js                |   100.00 |   23 |    1 |      0 |
+   | NX/util/HashMap/add.js                   |   100.00 |   43 |    2 |      0 |
+   | NX/util/HashMap/replace.js               |   100.00 |   33 |    2 |      0 |
+   | NX/util/HashMap/remove.js                |   100.00 |   30 |    3 |      0 |
+   | NX/util/HashMap/removeByKey.js           |   100.00 |   33 |    2 |      0 |
+   | NX/util/HashMap/get.js                   |   100.00 |   23 |    1 |      0 |
    | NX/util/HashMap/clear.js                 |   100.00 |   29 |    1 |      0 |
-   | NX/util/HashMap/getValues.js             |    66.67 |   28 |    3 |      1 |
-   | NX/util/HashMap/getArray.js              |    16.67 |   32 |    6 |      5 |
-   | NX/util/HashMap/each.js                  |    22.22 |   41 |    9 |      7 |
+   | NX/util/HashMap/containsKey.js           |   100.00 |   23 |    1 |      0 |
+   | NX/util/HashMap/contains.js              |   100.00 |   23 |    1 |      0 |
+   | NX/util/HashMap/getKeys.js               |   100.00 |   23 |    2 |      0 |
+   | NX/util/HashMap/getValues.js             |   100.00 |   23 |    2 |      0 |
+   | NX/util/HashMap/getArray.js              |   100.00 |   32 |    1 |      0 |
+   | NX/util/HashMap/each.js                  |   100.00 |   43 |    3 |      0 |
    | NX/util/HashMap/clone.js                 |   100.00 |   32 |    6 |      0 |
+   | NX/util/HashMap/findKey.js               |   100.00 |   32 |    1 |      0 |
    | NX/AbstractManager/constructor.js        |   100.00 |   29 |    5 |      0 |
    | NX/AbstractManager/get.js                |    50.00 |   23 |    2 |      1 |
    | NX/AbstractManager/register.js           |    50.00 |   23 |    2 |      1 |
@@ -104,8 +106,10 @@
    | NX/core/class/ClassManager/insertDefaultPreprocessor.js |   100.00 |   51 |    8 |      0 |
    | NX/core/class/ClassManager/getAliasesByName.js |   100.00 |   23 |    2 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    61.25 | 5993 |  529 |    205 |
+                                              |    66.33 | 6011 |  490 |    165 |
                                               +----------+------+------+--------+
+
+
 
 
 
