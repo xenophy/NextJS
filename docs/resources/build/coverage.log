@@ -1,0 +1,210 @@
+[?25l[?25h   +------------------------------------------+----------+------+------+--------+
+   | filename                                 | coverage | LOC  | SLOC | missed |
+   +------------------------------------------+----------+------+------+--------+
+   | NX/core/index.js                         |    81.48 |  513 |   27 |      5 |
+   | NX/core/aliases/NX.js                    |   100.00 |   39 |    4 |      0 |
+   | NX/core/class/ClassManager/index.js      |    62.50 |  562 |   32 |     12 |
+   | NX/core/lang/Array/index.js              |   100.00 |  160 |    1 |      0 |
+   | NX/core/lang/Array/each.js               |   100.00 |   43 |    5 |      0 |
+   | NX/core/lang/Array/forEach.js            |   100.00 |   23 |    1 |      0 |
+   | NX/core/lang/Array/indexOf.js            |   100.00 |   23 |    1 |      0 |
+   | NX/core/lang/Array/contains.js           |   100.00 |   28 |    2 |      0 |
+   | NX/core/lang/Array/toArray.js            |   100.00 |   23 |    1 |      0 |
+   | NX/core/lang/Array/pluck.js              |   100.00 |   34 |    5 |      0 |
+   | NX/core/lang/Array/map.js                |   100.00 |   33 |    4 |      0 |
+   | NX/core/lang/Array/every.js              |   100.00 |   23 |    1 |      0 |
+   | NX/core/lang/Array/some.js               |   100.00 |   23 |    1 |      0 |
+   | NX/core/lang/Array/clean.js              |   100.00 |   40 |    2 |      0 |
+   | NX/core/lang/Array/unique.js             |   100.00 |   38 |    6 |      0 |
+   | NX/core/lang/Array/filter.js             |   100.00 |   28 |    3 |      0 |
+   | NX/core/lang/Array/from.js               |   100.00 |   38 |    3 |      0 |
+   | NX/core/lang/Array/remove.js             |   100.00 |   35 |    3 |      0 |
+   | NX/core/lang/Array/include.js            |   100.00 |   30 |    2 |      0 |
+   | NX/core/lang/Array/clone.js              |   100.00 |   23 |    2 |      0 |
+   | NX/core/lang/Array/merge.js              |   100.00 |   41 |    7 |      0 |
+   | NX/core/class/Class/index.js             |    74.19 |  350 |   31 |      8 |
+   | NX/core/lang/String/index.js             |   100.00 |  169 |    2 |      0 |
+   | NX/core/lang/String/escapeRe.js          |   100.00 |   21 |    1 |      0 |
+   | NX/core/lang/String/escapeRegexRe.js     |   100.00 |   21 |    1 |      0 |
+   | NX/core/lang/String/trim.js              |   100.00 |   23 |    1 |      0 |
+   | NX/core/lang/String/capitalize.js        |   100.00 |   23 |    1 |      0 |
+   | NX/core/lang/String/escape.js            |   100.00 |   28 |    3 |      0 |
+   | NX/core/lang/String/escapeRegex.js       |   100.00 |   28 |    2 |      0 |
+   | NX/core/lang/String/format.js            |   100.00 |  149 |    8 |      0 |
+   | NX/core/class/Base/index.js              |    22.03 |  327 |   59 |     46 |
+   | NX/core/lang/Object/index.js             |   100.00 |   93 |    3 |      0 |
+   | NX/core/lang/Object/toQueryString.js     |   100.00 |   34 |    3 |      0 |
+   | NX/core/lang/Object/each.js              |   100.00 |   33 |    2 |      0 |
+   | NX/core/lang/Object/merge.js             |   100.00 |   53 |    2 |      0 |
+   | NX/core/lang/Object/keyOf.js             |   100.00 |   28 |    3 |      0 |
+   | NX/core/lang/Object/getValues.js         |   100.00 |   32 |    4 |      0 |
+   | NX/core/lang/Object/getKeys.js           |   100.00 |   37 |    5 |      0 |
+   | NX/core/lang/Object/getSize.js           |   100.00 |   37 |    5 |      0 |
+   | NX/core/lang/Function/index.js           |     2.08 |  183 |   48 |     47 |
+   | NX/core/lang/Function/flexSetter.js      |    50.00 |   44 |    2 |      1 |
+   | NX/core/class/ClassManager/maps.js       |   100.00 |   25 |    1 |      0 |
+   | NX/core/class/ClassManager/namespaceRewrites.js |   100.00 |   29 |    2 |      0 |
+   | NX/core/class/ClassManager/parseNamespace.js |    60.00 |   60 |    5 |      2 |
+   | NX/core/class/ClassManager/getByAlias.js |   100.00 |   23 |    2 |      0 |
+   | NX/core/class/ClassManager/getName.js    |   100.00 |   23 |    1 |      0 |
+   | NX/core/class/ClassManager/getClass.js   |   100.00 |   23 |    2 |      0 |
+   | NX/core/class/ClassManager/instantiateByAlias.js |    37.50 |   55 |    8 |      5 |
+   | NX/core/class/ClassManager/instantiate.js |    41.18 |   94 |   17 |     10 |
+   | NX/core/class/ClassManager/postprocessors/alias.js |    50.00 |   55 |    6 |      3 |
+   | NX/core/class/ClassManager/postprocessors/singleton.js |   100.00 |   36 |    4 |      0 |
+   | NX/core/class/ClassManager/postprocessors/alternateClassName.js |    75.00 |   46 |    4 |      1 |
+   | NX/core/aliases/Object.js                |   100.00 |   38 |    3 |      0 |
+   | NX/core/aliases/ClassManager.js          |   100.00 |   44 |    4 |      0 |
+   | NX/index.js                              |   100.00 |   87 |   17 |      0 |
+   | NX/Version/index.js                      |   100.00 |   29 |    1 |      0 |
+   | NX/core/class/ClassManager/create.js     |    83.33 |   62 |    6 |      1 |
+   | NX/core/class/ClassManager/set.js        |   100.00 |   32 |    1 |      0 |
+   | NX/core/class/ClassManager/assignNamespace.js |   100.00 |   50 |    2 |      0 |
+   | NX/AbstractManager/index.js              |   100.00 |  120 |    2 |      0 |
+   | NX/util/HashMap/index.js                 |    33.33 |  186 |    3 |      2 |
+   | NX/util/HashMap/constructor.js           |   100.00 |   23 |    1 |      0 |
+   | NX/util/HashMap/getCount.js              |   100.00 |   23 |    1 |      0 |
+   | NX/util/HashMap/getData.js               |    50.00 |   34 |    4 |      2 |
+   | NX/util/HashMap/getKey.js                |   100.00 |   23 |    2 |      0 |
+   | NX/util/HashMap/add.js                   |   100.00 |   43 |    4 |      0 |
+   | NX/util/HashMap/replace.js               |    33.33 |   39 |    9 |      6 |
+   | NX/util/HashMap/containsKey.js           |   100.00 |   23 |    1 |      0 |
+   | NX/util/HashMap/remove.js                |    42.86 |   36 |    7 |      4 |
+   | NX/util/HashMap/findKey.js               |    16.67 |   32 |    6 |      5 |
+   | NX/util/HashMap/removeByKey.js           |    22.22 |   38 |    9 |      7 |
+   | NX/util/HashMap/get.js                   |    50.00 |   23 |    2 |      1 |
+   | NX/util/HashMap/clear.js                 |   100.00 |   29 |    1 |      0 |
+   | NX/util/HashMap/getValues.js             |    66.67 |   28 |    3 |      1 |
+   | NX/util/HashMap/getArray.js              |    16.67 |   32 |    6 |      5 |
+   | NX/util/HashMap/each.js                  |    22.22 |   41 |    9 |      7 |
+   | NX/util/HashMap/clone.js                 |   100.00 |   32 |    6 |      0 |
+   | NX/AbstractManager/constructor.js        |   100.00 |   29 |    5 |      0 |
+   | NX/AbstractManager/get.js                |    50.00 |   23 |    2 |      1 |
+   | NX/AbstractManager/register.js           |    50.00 |   23 |    2 |      1 |
+   | NX/AbstractManager/unregister.js         |    50.00 |   23 |    2 |      1 |
+   | NX/AbstractManager/registerType.js       |    33.33 |   24 |    3 |      2 |
+   | NX/AbstractManager/isRegistered.js       |    50.00 |   23 |    2 |      1 |
+   | NX/AbstractManager/create.js             |    20.00 |   30 |    5 |      4 |
+   | NX/AbstractManager/onAvailable.js        |    50.00 |   34 |    2 |      1 |
+   | NX/AbstractManager/each.js               |    50.00 |   23 |    2 |      1 |
+   | NX/AbstractManager/getCount.js           |    50.00 |   23 |    2 |      1 |
+   | NX/server/Server/index.js                |   100.00 |   40 |    1 |      0 |
+   | NX/server/ServerManager/index.js         |    30.00 |   82 |   10 |      7 |
+   | NX/core/class/ClassManager/get.js        |   100.00 |   51 |    3 |      0 |
+   | NX/controller/Controller/index.js        |   100.00 |   29 |    1 |      0 |
+   | NX/controller/ControllerManager/index.js |   100.00 |   29 |    1 |      0 |
+   | NX/module/Module/index.js                |   100.00 |   29 |    1 |      0 |
+   | NX/module/ModuleManager/index.js         |   100.00 |   29 |    1 |      0 |
+   | NX/view/AbstractView/index.js            |   100.00 |   29 |    1 |      0 |
+   | NX/view/ConsoleView/index.js             |   100.00 |   29 |    1 |      0 |
+   | NX/view/WebView/index.js                 |   100.00 |   29 |    1 |      0 |
+   | NX/core/class/ClassManager/setAlias.js   |    75.00 |   59 |    4 |      1 |
+   | NX/core/class/ClassManager/getNamesByExpression.js |    40.00 |   77 |    5 |      3 |
+   | NX/core/class/ClassManager/getNameByAlias.js |   100.00 |   23 |    1 |      0 |
+   | NX/core/class/ClassManager/insertDefaultPreprocessor.js |   100.00 |   51 |    8 |      0 |
+   | NX/core/class/ClassManager/getAliasesByName.js |   100.00 |   23 |    2 |      0 |
+   +------------------------------------------+----------+------+------+--------+
+                                              |    61.25 | 5993 |  529 |    205 |
+                                              +----------+------+------+--------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
