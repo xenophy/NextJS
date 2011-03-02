@@ -4,7 +4,7 @@
    | NX/core/index.js                         |    81.48 |  513 |   27 |      5 |
    | NX/core/aliases/NX.js                    |   100.00 |   39 |    4 |      0 |
    | NX/core/class/ClassManager/index.js      |    62.50 |  562 |   32 |     12 |
-   | NX/core/lang/Array/index.js              |   100.00 |  160 |    1 |      0 |
+   | NX/core/lang/Array/index.js              |   100.00 |  163 |    1 |      0 |
    | NX/core/lang/Array/each.js               |   100.00 |   43 |    5 |      0 |
    | NX/core/lang/Array/forEach.js            |   100.00 |   23 |    1 |      0 |
    | NX/core/lang/Array/indexOf.js            |   100.00 |   23 |    1 |      0 |
@@ -22,7 +22,7 @@
    | NX/core/lang/Array/include.js            |   100.00 |   30 |    2 |      0 |
    | NX/core/lang/Array/clone.js              |   100.00 |   23 |    2 |      0 |
    | NX/core/lang/Array/merge.js              |   100.00 |   41 |    7 |      0 |
-   | NX/core/class/Class/index.js             |    74.19 |  350 |   31 |      8 |
+   | NX/core/class/Class/index.js             |    91.30 |  196 |   23 |      2 |
    | NX/core/lang/String/index.js             |   100.00 |  169 |    2 |      0 |
    | NX/core/lang/String/escapeRe.js          |   100.00 |   21 |    1 |      0 |
    | NX/core/lang/String/escapeRegexRe.js     |   100.00 |   21 |    1 |      0 |
@@ -42,6 +42,11 @@
    | NX/core/lang/Object/getSize.js           |   100.00 |   37 |    5 |      0 |
    | NX/core/lang/Function/index.js           |     2.08 |  183 |   48 |     47 |
    | NX/core/lang/Function/flexSetter.js      |    50.00 |   44 |    2 |      1 |
+   | NX/core/class/Class/constructor.js       |   100.00 |   64 |    4 |      0 |
+   | NX/core/class/Class/preprocessors/extend.js |   100.00 |   52 |    3 |      0 |
+   | NX/core/class/Class/preprocessors/mixins.js |    50.00 |   34 |    2 |      1 |
+   | NX/core/class/Class/preprocessors/config.js |    80.00 |   87 |    5 |      1 |
+   | NX/core/class/Class/preprocessors/statics.js |   100.00 |   43 |    4 |      0 |
    | NX/core/class/ClassManager/maps.js       |   100.00 |   25 |    1 |      0 |
    | NX/core/class/ClassManager/namespaceRewrites.js |   100.00 |   29 |    2 |      0 |
    | NX/core/class/ClassManager/parseNamespace.js |    60.00 |   60 |    5 |      2 |
@@ -105,9 +110,16 @@
    | NX/core/class/ClassManager/getNameByAlias.js |   100.00 |   23 |    1 |      0 |
    | NX/core/class/ClassManager/insertDefaultPreprocessor.js |   100.00 |   51 |    8 |      0 |
    | NX/core/class/ClassManager/getAliasesByName.js |   100.00 |   23 |    2 |      0 |
+   | NX/core/util/DelayedTask/index.js        |   100.00 |   70 |    6 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    66.33 | 6011 |  490 |    165 |
+                                              |    68.18 | 6210 |  506 |    161 |
                                               +----------+------+------+--------+
+
+
+
+
+
+
 
 
 

@@ -86,6 +86,25 @@ module.exports = {
         cls2.resetName();
         cls2.getName().should.equal('[Awesome]');
 
+    },
+
+    // }}}
+    // {{{ test define#pattern3
+
+    'test define#pattern3': function() {
+
+         NX.define('NXTest.define.cls4', {
+             statics: {
+                 value: 123,
+                 func: function() {
+                     return 'foo';
+                 }
+             }
+         });
+
+         NXTest.define.cls4.value.should.equal(123);
+         NXTest.define.cls4.func().should.equal('foo');
+
     }
 
     // }}}
