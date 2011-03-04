@@ -44,6 +44,7 @@ module.exports = {
 
         // 文字列テスト
         T_NX.isNumber('Next JS').should.not.equal(true);
+        T_NX.isNumber('8124').should.not.equal(true);
 
     },
 
@@ -54,6 +55,7 @@ module.exports = {
 
         // 数値テスト
         T_NX.isNumber(8124).should.equal(true);
+        T_NX.isNumber(0).should.equal(true);
 
     },
 
