@@ -23,10 +23,21 @@ module.exports = {
     'test isNull#standard': function() {
 
         T_NX.isNull(null).should.equal(true);
+
+    },
+
+    // }}}
+    // {{{ test isNull#otherwise
+
+    'test isNull#otherwise': function() {
+
+        T_NX.isNull(undefined).should.equal(false);
         T_NX.isNull(123).should.equal(false);
         T_NX.isNull('string').should.equal(false);
         T_NX.isNull([]).should.equal(false);
         T_NX.isNull({}).should.equal(false);
+        T_NX.isNull(function(){}).should.equal(false);
+        T_NX.isNull(new Date()).should.equal(false);
 
     }
 
