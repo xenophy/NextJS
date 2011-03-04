@@ -18,16 +18,37 @@ var T_NX = require('NX/core');
 
 module.exports = {
 
-    // {{{ test isIterable
+    // {{{ test isIterable#array
 
-    'test isIterable': function() {
+    'test isIterable#array': function() {
 
-        var a = [];
-        var str = '';
+        T_NX.isIterable([]).should.equal(true);
+        T_NX.isIterable(['1','2','3']).should.equal(true);
 
-        T_NX.isIterable(a).should.equal(true);
-        T_NX.isIterable(arguments).should.equal(true);
-        T_NX.isIterable(str).should.not.equal(true);
+    },
+
+    // }}}
+    // {{{ test isIterable#object
+
+    'test isIterable#object': function() {
+
+        // オブジェクトは回せないほうに入る
+        T_NX.isIterable({}).should.not.equal(true);
+        T_NX.isIterable({foo:'1',bar:'2',hoge:'3'}).should.not.equal(true);
+
+    },
+
+    // }}}
+    // {{{ test isIterable#otherwise
+
+    'test isIterable#otherwise': function() {
+
+        // それ以外も回せない
+        T_NX.isIterable('Next JS').should.not.equal(true);
+        T_NX.isIterable(1234).should.not.equal(true);
+        T_NX.isIterable(true).should.not.equal(true);
+        T_NX.isIterable(new Date()).should.not.equal(true);
+        T_NX.isIterable(function(){}).should.not.equal(true);
     }
 
     // }}}
