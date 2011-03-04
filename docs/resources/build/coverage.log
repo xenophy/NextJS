@@ -1,7 +1,7 @@
 [?25l[?25h   +------------------------------------------+----------+------+------+--------+
    | filename                                 | coverage | LOC  | SLOC | missed |
    +------------------------------------------+----------+------+------+--------+
-   | NX/core/index.js                         |    81.48 |  513 |   27 |      5 |
+   | NX/core/index.js                         |    80.00 |  536 |   25 |      5 |
    | NX/core/aliases/NX.js                    |   100.00 |   39 |    4 |      0 |
    | NX/core/class/ClassManager/index.js      |    62.50 |  562 |   32 |     12 |
    | NX/core/lang/Array/index.js              |   100.00 |  163 |    1 |      0 |
@@ -22,7 +22,7 @@
    | NX/core/lang/Array/include.js            |   100.00 |   30 |    2 |      0 |
    | NX/core/lang/Array/clone.js              |   100.00 |   23 |    2 |      0 |
    | NX/core/lang/Array/merge.js              |   100.00 |   41 |    7 |      0 |
-   | NX/core/class/Class/index.js             |    91.30 |  196 |   23 |      2 |
+   | NX/core/class/Class/index.js             |    91.30 |  197 |   23 |      2 |
    | NX/core/lang/String/index.js             |   100.00 |  169 |    2 |      0 |
    | NX/core/lang/String/escapeRe.js          |   100.00 |   21 |    1 |      0 |
    | NX/core/lang/String/escapeRegexRe.js     |   100.00 |   21 |    1 |      0 |
@@ -31,7 +31,7 @@
    | NX/core/lang/String/escape.js            |   100.00 |   28 |    3 |      0 |
    | NX/core/lang/String/escapeRegex.js       |   100.00 |   28 |    2 |      0 |
    | NX/core/lang/String/format.js            |   100.00 |  149 |    8 |      0 |
-   | NX/core/class/Base/index.js              |    22.03 |  327 |   59 |     46 |
+   | NX/core/class/Base/index.js              |    22.41 |  330 |   58 |     45 |
    | NX/core/lang/Object/index.js             |   100.00 |   93 |    3 |      0 |
    | NX/core/lang/Object/toQueryString.js     |   100.00 |   34 |    3 |      0 |
    | NX/core/lang/Object/each.js              |   100.00 |   33 |    2 |      0 |
@@ -40,13 +40,13 @@
    | NX/core/lang/Object/getValues.js         |   100.00 |   32 |    4 |      0 |
    | NX/core/lang/Object/getKeys.js           |   100.00 |   37 |    5 |      0 |
    | NX/core/lang/Object/getSize.js           |   100.00 |   37 |    5 |      0 |
-   | NX/core/lang/Function/index.js           |     2.08 |  183 |   48 |     47 |
+   | NX/core/lang/Function/index.js           |     4.76 |  188 |   42 |     40 |
    | NX/core/lang/Function/flexSetter.js      |    50.00 |   44 |    2 |      1 |
-   | NX/core/class/Class/constructor.js       |   100.00 |   64 |    4 |      0 |
-   | NX/core/class/Class/preprocessors/extend.js |   100.00 |   52 |    3 |      0 |
+   | NX/core/class/Class/constructor.js       |   100.00 |  115 |    4 |      0 |
+   | NX/core/class/Class/preprocessors/extend.js |    75.00 |   69 |    4 |      1 |
    | NX/core/class/Class/preprocessors/mixins.js |    50.00 |   34 |    2 |      1 |
    | NX/core/class/Class/preprocessors/config.js |    80.00 |   87 |    5 |      1 |
-   | NX/core/class/Class/preprocessors/statics.js |   100.00 |   43 |    4 |      0 |
+   | NX/core/class/Class/preprocessors/statics.js |   100.00 |   43 |    2 |      0 |
    | NX/core/class/ClassManager/maps.js       |   100.00 |   25 |    1 |      0 |
    | NX/core/class/ClassManager/namespaceRewrites.js |   100.00 |   29 |    2 |      0 |
    | NX/core/class/ClassManager/parseNamespace.js |    60.00 |   60 |    5 |      2 |
@@ -62,7 +62,7 @@
    | NX/core/aliases/ClassManager.js          |   100.00 |   44 |    4 |      0 |
    | NX/index.js                              |   100.00 |   87 |   17 |      0 |
    | NX/Version/index.js                      |   100.00 |   29 |    1 |      0 |
-   | NX/core/class/ClassManager/create.js     |    83.33 |   62 |    6 |      1 |
+   | NX/core/class/ClassManager/create.js     |    80.00 |   62 |    5 |      1 |
    | NX/core/class/ClassManager/set.js        |   100.00 |   32 |    1 |      0 |
    | NX/core/class/ClassManager/assignNamespace.js |   100.00 |   50 |    2 |      0 |
    | NX/AbstractManager/index.js              |   100.00 |  120 |    2 |      0 |
@@ -95,7 +95,7 @@
    | NX/AbstractManager/onAvailable.js        |    50.00 |   34 |    2 |      1 |
    | NX/AbstractManager/each.js               |    50.00 |   23 |    2 |      1 |
    | NX/AbstractManager/getCount.js           |    50.00 |   23 |    2 |      1 |
-   | NX/server/Server/index.js                |   100.00 |   40 |    1 |      0 |
+   | NX/server/Server/index.js                |   100.00 |   37 |    1 |      0 |
    | NX/server/ServerManager/index.js         |    30.00 |   82 |   10 |      7 |
    | NX/core/class/ClassManager/get.js        |   100.00 |   51 |    3 |      0 |
    | NX/controller/Controller/index.js        |   100.00 |   29 |    1 |      0 |
@@ -112,16 +112,54 @@
    | NX/core/class/ClassManager/getAliasesByName.js |   100.00 |   23 |    2 |      0 |
    | NX/core/util/DelayedTask/index.js        |   100.00 |   70 |    1 |      0 |
    | NX/core/util/Event/index.js              |   100.00 |  181 |    6 |      0 |
-   | NX/core/util/Event/addListener.js        |    33.33 |   39 |    3 |      2 |
+   | NX/core/util/Event/addListener.js        |    50.00 |   38 |    2 |      1 |
    | NX/core/util/Event/findListener.js       |   100.00 |   43 |    1 |      0 |
    | NX/core/util/Event/isListening.js        |   100.00 |   23 |    1 |      0 |
    | NX/core/util/Event/removeListener.js     |    14.29 |   58 |    7 |      6 |
-   | NX/core/util/Event/clearListeners.js     |   100.00 |   29 |    4 |      0 |
-   | NX/core/util/Event/fire.js               |    50.00 |   52 |    2 |      1 |
+   | NX/core/util/Event/clearListeners.js     |   100.00 |   29 |    1 |      0 |
+   | NX/core/util/Event/fire.js               |   100.00 |   52 |    1 |      0 |
    | NX/core/util/Event/createListener.js     |   100.00 |   50 |    1 |      0 |
+   | NX/util/Observable/index.js              |   100.00 |  368 |    6 |      0 |
+   | NX/util/Observable/releaseCapture.js     |   100.00 |   23 |    2 |      0 |
+   | NX/util/Observable/capture.js            |   100.00 |   28 |    2 |      0 |
+   | NX/util/Observable/observe.js            |   100.00 |   41 |    9 |      0 |
+   | NX/util/Observable/constructor.js        |   100.00 |   43 |    3 |      0 |
+   | NX/util/Observable/addManagedListener.js |     9.09 |   55 |   11 |     10 |
+   | NX/util/Observable/removeManagedListener.js |     6.25 |   63 |   16 |     15 |
+   | NX/util/Observable/fireEvent.js          |   100.00 |   73 |    5 |      0 |
+   | NX/util/Observable/addListener.js        |   100.00 |   67 |    3 |      0 |
+   | NX/util/Observable/removeListener.js     |   100.00 |   60 |    8 |      0 |
+   | NX/util/Observable/clearListeners.js     |   100.00 |   37 |    4 |      0 |
+   | NX/util/Observable/clearManagedListeners.js |    66.67 |   34 |    6 |      2 |
+   | NX/util/Observable/addEvents.js          |   100.00 |   44 |    3 |      0 |
+   | NX/util/Observable/hasListener.js        |    33.33 |   24 |    3 |      2 |
+   | NX/util/Observable/relayEvents.js        |   100.00 |   37 |    8 |      0 |
+   | NX/util/Observable/suspendEvents.js      |   100.00 |   33 |    3 |      0 |
+   | NX/util/Observable/resumeEvents.js       |   100.00 |   36 |    3 |      0 |
+   | NX/util/Observable/createRelayer.js      |   100.00 |   28 |    4 |      0 |
+   | NX/util/Observable/enableBubble.js       |   100.00 |   52 |    4 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    67.68 | 6685 |  526 |    170 |
+                                              |    69.00 | 7927 |  613 |    190 |
                                               +----------+------+------+--------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -11,7 +11,7 @@
 require('should');
 var assert = require('assert');
 
-var T_NX = require('NX/core');
+var T_Array = require('NX/core/lang/Array');
 
 // }}}
 // {{{ asort
@@ -30,7 +30,7 @@ module.exports = {
             id: 99
         }]
 
-        T_NX.asort(arr, 'id');
+        T_Array.asort(arr, 'id');
 
         arr[0].id.should.equal(0);
         arr[1].id.should.equal(99);
