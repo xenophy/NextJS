@@ -14,13 +14,13 @@ var assert = require('assert');
 var T_UTIL_Observable = require('NX/util/Observable');
 
 // }}}
-// {{{ removeListener
+// {{{ resumeEvents
 
 module.exports = {
 
-    // {{{ test removeListener#pattern1
+    // {{{ test resumeEvents#pattern1
 
-    'test removeListener#pattern1': function(beforeExit) {
+    'test resumeEvents#pattern1': function() {
 
         var obs = new NX.util.Observable();
         var ret = 0;
@@ -31,37 +31,30 @@ module.exports = {
         obs.addEvents('event1');
 
         obs.on('event1', f);
-        obs.fireEvent('event1');
-        obs.un('event1', f);
+
+        obs.suspendEvents();
+
         obs.fireEvent('event1');
 
-        beforeExit(function(){
-            assert.equal(ret, 1);
-        });
+        assert.equal(ret, 0);
+
+        obs.resumeEvents();
+
+        obs.fireEvent('event1');
+
+        assert.equal(ret, 1);
+
+        obs.suspendEvents(true);
+
+        obs.fireEvent('event1');
+
+        assert.equal(ret, 1);
+
+        obs.resumeEvents();
+
+        assert.equal(ret, 2);
 
     },
-
-    // }}}
-    // {{{ test removeListener#pattern2
-
-    'test removeListener#pattern2': function(beforeExit) {
-
-        var ret = null;
-        var obs = new NX.util.Observable();
-        var ev = {
-            event1 : function() {
-                ret = 'fired';
-            }
-        };
-
-        obs.on(ev);
-        obs.un(ev);
-
-        beforeExit(function(){
-            assert.equal(ret, null);
-        });
-
-    }
 
     // }}}
 
