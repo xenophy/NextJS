@@ -18,6 +18,26 @@ var T_NX = require('NX/core');
 
 module.exports = {
 
+    // {{{ test isArray#undefined
+
+    'test isArray#undefined': function(){
+
+        // undefinedテスト
+        T_NX.isArray(undefined).should.not.equal(true);
+
+    },
+
+    // }}}
+    // {{{ test isArray#null
+
+    'test isArray#null': function(){
+
+        // nullテスト
+        T_NX.isArray(null).should.not.equal(true);
+
+    },
+
+    // }}}
     // {{{ test isArray#string
 
     'test isArray#string': function(){
