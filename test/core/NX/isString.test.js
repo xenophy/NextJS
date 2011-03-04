@@ -44,6 +44,7 @@ module.exports = {
 
         // 文字列テスト
         T_NX.isString('Next JS').should.equal(true);
+        T_NX.isString('1234').should.equal(true);
 
     },
 
