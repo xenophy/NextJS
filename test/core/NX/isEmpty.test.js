@@ -74,6 +74,7 @@ module.exports = {
     'test isEmpty#object': function(){
 
         T_NX.isEmpty({}).should.not.equal(true);
+        T_NX.isEmpty({foo:'bar'}).should.not.equal(true);
 
     },
 
