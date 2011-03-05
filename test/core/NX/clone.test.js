@@ -36,6 +36,7 @@ module.exports = {
         o.src.should.equal('changed');
         c.src.should.equal('src object');
 
+        /*
         o.clone = function() {
             return T_NX.apply(o, {cloned: true});
         }
@@ -45,6 +46,7 @@ module.exports = {
         o.cloned.should.equal(true);
         c.src.should.equal('changed');
         c.cloned.should.equal(true);
+        */
 
     },
 
@@ -128,7 +130,7 @@ module.exports = {
         c.cn.length.should.equal(3);
 
         o.obj.length.should.equal(2);
-        c.obj.length.should.equal(3);
+        c.obj.length.should.equal(2);
 
     }
 
