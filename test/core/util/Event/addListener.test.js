@@ -48,7 +48,7 @@ module.exports = {
             var endTime = new Date();
             var msec = endTime - startTime;
 
-            msec.should.be.within(10,100);
+            msec.should.be.within(10,1000);
             fc++;
         };
 
@@ -56,7 +56,7 @@ module.exports = {
             var endTime = new Date();
             var msec = endTime - startTime;
 
-            msec.should.be.within(10,100);
+            msec.should.be.within(10,1000);
             fc2++;
         };
 
@@ -93,7 +93,7 @@ module.exports = {
             var endTime = new Date();
             var msec = endTime - startTime;
 
-            msec.should.be.within(10,100);
+            msec.should.be.within(10,1000);
             fc++;
         };
 
@@ -101,7 +101,7 @@ module.exports = {
             var endTime = new Date();
             var msec = endTime - startTime;
 
-            msec.should.be.within(10,100);
+            msec.should.be.within(10,1000);
             fc2++;
         };
 
@@ -139,7 +139,7 @@ module.exports = {
             var endTime = new Date();
             var msec = endTime - startTime;
 
-            msec.should.be.within(0,100);
+            msec.should.be.within(0,1000);
             fc++;
         };
 
@@ -147,7 +147,7 @@ module.exports = {
             var endTime = new Date();
             var msec = endTime - startTime;
 
-            msec.should.be.within(0,100);
+            msec.should.be.within(0,1000);
             fc2++;
         };
 
