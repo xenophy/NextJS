@@ -61,15 +61,16 @@
    | NX/core/lang/Object/getKeys.js           |   100.00 |   37 |    5 |      0 |
    | NX/core/lang/Object/getSize.js           |   100.00 |   37 |    5 |      0 |
    | NX/core/lang/Function/index.js           |   100.00 |  104 |    2 |      0 |
-   | NX/core/lang/Function/flexSetter.js      |    50.00 |   44 |    2 |      1 |
-   | NX/core/lang/Function/bind.js            |    15.38 |   50 |   13 |     11 |
-   | NX/core/lang/Function/pass.js            |    33.33 |   36 |    6 |      4 |
+   | NX/core/lang/Function/flexSetter.js      |   100.00 |   45 |    2 |      0 |
+   | NX/core/lang/Function/bind.js            |   100.00 |   51 |    7 |      0 |
+   | NX/core/lang/Function/pass.js            |   100.00 |   36 |    6 |      0 |
    | NX/core/lang/Function/alias.js           |   100.00 |   25 |    1 |      0 |
-   | NX/core/lang/Function/createInterceptor.js |    50.00 |   42 |    2 |      1 |
-   | NX/core/lang/Function/defer.js           |    16.67 |   32 |    6 |      5 |
-   | NX/core/lang/Function/createSequence.js  |    14.29 |   39 |    7 |      6 |
-   | NX/core/lang/Function/createBuffered.js  |    25.00 |   29 |    4 |      3 |
-   | NX/core/lang/Function/createThrottled.js |     9.09 |   44 |   11 |     10 |
+   | NX/core/lang/Function/createInterceptor.js |   100.00 |   47 |    3 |      0 |
+   | NX/core/lang/Function/defer.js           |   100.00 |   32 |    4 |      0 |
+   | NX/core/lang/Function/createSequence.js  |   100.00 |   44 |    7 |      0 |
+   | NX/core/lang/Function/createBuffered.js  |   100.00 |   36 |    7 |      0 |
+   | NX/core/util/DelayedTask/index.js        |   100.00 |   70 |    1 |      0 |
+   | NX/core/lang/Function/createThrottled.js |   100.00 |   44 |    4 |      0 |
    | NX/core/class/Class/constructor.js       |   100.00 |  115 |    4 |      0 |
    | NX/core/class/Class/preprocessors/extend.js |    75.00 |   69 |    4 |      1 |
    | NX/core/class/Class/preprocessors/mixins.js |    50.00 |   34 |    2 |      1 |
@@ -143,7 +144,6 @@
    | NX/core/lang/Boolean/toBoolean.js        |   100.00 |   23 |    1 |      0 |
    | NX/core/lang/Time/index.js               |   100.00 |   35 |    1 |      0 |
    | NX/core/lang/Time/microtime.js           |   100.00 |   25 |    1 |      0 |
-   | NX/core/util/DelayedTask/index.js        |   100.00 |   70 |    1 |      0 |
    | NX/core/util/Event/index.js              |   100.00 |  181 |    6 |      0 |
    | NX/core/util/Event/addListener.js        |    50.00 |   38 |    2 |      1 |
    | NX/core/util/Event/findListener.js       |   100.00 |   43 |    1 |      0 |
@@ -152,31 +152,25 @@
    | NX/core/util/Event/clearListeners.js     |   100.00 |   29 |    1 |      0 |
    | NX/core/util/Event/fire.js               |   100.00 |   52 |    1 |      0 |
    | NX/core/util/Event/createListener.js     |   100.00 |   50 |    1 |      0 |
-   | NX/util/Observable/index.js              |   100.00 |  368 |    6 |      0 |
+   | NX/util/Observable/index.js              |   100.00 |  344 |    6 |      0 |
    | NX/util/Observable/releaseCapture.js     |   100.00 |   23 |    2 |      0 |
    | NX/util/Observable/capture.js            |   100.00 |   28 |    2 |      0 |
    | NX/util/Observable/observe.js            |   100.00 |   41 |    9 |      0 |
    | NX/util/Observable/constructor.js        |   100.00 |   43 |    3 |      0 |
-   | NX/util/Observable/addManagedListener.js |     9.09 |   55 |   11 |     10 |
-   | NX/util/Observable/removeManagedListener.js |     6.25 |   63 |   16 |     15 |
    | NX/util/Observable/fireEvent.js          |   100.00 |   73 |    5 |      0 |
    | NX/util/Observable/addListener.js        |   100.00 |   67 |    3 |      0 |
    | NX/util/Observable/removeListener.js     |   100.00 |   60 |    8 |      0 |
-   | NX/util/Observable/clearListeners.js     |   100.00 |   37 |    4 |      0 |
-   | NX/util/Observable/clearManagedListeners.js |    66.67 |   34 |    6 |      2 |
+   | NX/util/Observable/clearListeners.js     |   100.00 |   36 |    3 |      0 |
    | NX/util/Observable/addEvents.js          |   100.00 |   44 |    3 |      0 |
-   | NX/util/Observable/hasListener.js        |    33.33 |   24 |    3 |      2 |
+   | NX/util/Observable/hasListener.js        |   100.00 |   24 |    1 |      0 |
    | NX/util/Observable/relayEvents.js        |   100.00 |   37 |    8 |      0 |
    | NX/util/Observable/suspendEvents.js      |   100.00 |   33 |    3 |      0 |
    | NX/util/Observable/resumeEvents.js       |   100.00 |   36 |    3 |      0 |
    | NX/util/Observable/createRelayer.js      |   100.00 |   28 |    4 |      0 |
    | NX/util/Observable/enableBubble.js       |   100.00 |   52 |    4 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    71.05 | 8646 |  646 |    187 |
+                                              |    80.47 | 8488 |  599 |    117 |
                                               +----------+------+------+--------+
-
-
-
 
 
 
