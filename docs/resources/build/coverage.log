@@ -1,14 +1,34 @@
 [?25l[?25h   +------------------------------------------+----------+------+------+--------+
    | filename                                 | coverage | LOC  | SLOC | missed |
    +------------------------------------------+----------+------+------+--------+
-   | NX/core/index.js                         |    80.00 |  536 |   25 |      5 |
-   | NX/core/aliases/NX.js                    |   100.00 |   39 |    4 |      0 |
-   | NX/core/class/ClassManager/index.js      |    62.50 |  562 |   32 |     12 |
-   | NX/core/lang/Array/index.js              |   100.00 |  163 |    1 |      0 |
+   | NX/core/index.js                         |    66.67 |  209 |    6 |      2 |
+   | NX/core/apply.js                         |   100.00 |   38 |    2 |      0 |
+   | NX/core/applyIf.js                       |   100.00 |   34 |    1 |      0 |
+   | NX/core/clone.js                         |    66.67 |   53 |    3 |      1 |
+   | NX/core/each.js                          |   100.00 |   36 |    2 |      0 |
+   | NX/core/extend.js                        |   100.00 |   78 |    8 |      0 |
+   | NX/core/isArray.js                       |   100.00 |   23 |    1 |      0 |
+   | NX/core/isBoolean.js                     |   100.00 |   23 |    1 |      0 |
+   | NX/core/isDate.js                        |   100.00 |   23 |    1 |      0 |
+   | NX/core/isNull.js                        |   100.00 |   23 |    1 |      0 |
+   | NX/core/isDefined.js                     |   100.00 |   23 |    1 |      0 |
+   | NX/core/isEmpty.js                       |   100.00 |   23 |    1 |      0 |
+   | NX/core/isFunction.js                    |   100.00 |   23 |    1 |      0 |
+   | NX/core/isIterable.js                    |   100.00 |   28 |    1 |      0 |
+   | NX/core/isNumber.js                      |   100.00 |   23 |    1 |      0 |
+   | NX/core/isObject.js                      |   100.00 |   23 |    1 |      0 |
+   | NX/core/isPrimitive.js                   |   100.00 |   23 |    1 |      0 |
+   | NX/core/isString.js                      |   100.00 |   23 |    1 |      0 |
+   | NX/core/iterate.js                       |   100.00 |   46 |    5 |      0 |
+   | NX/core/override.js                      |   100.00 |   23 |    1 |      0 |
+   | NX/core/aliases/NX.js                    |   100.00 |   55 |    4 |      0 |
+   | NX/core/class/ClassManager/index.js      |    64.52 |  562 |   31 |     11 |
+   | NX/core/lang/Array/index.js              |   100.00 |  171 |    1 |      0 |
+   | NX/core/lang/Array/asort.js              |   100.00 |   25 |    2 |      0 |
    | NX/core/lang/Array/each.js               |   100.00 |   43 |    5 |      0 |
    | NX/core/lang/Array/forEach.js            |   100.00 |   23 |    1 |      0 |
    | NX/core/lang/Array/indexOf.js            |   100.00 |   23 |    1 |      0 |
-   | NX/core/lang/Array/contains.js           |   100.00 |   28 |    2 |      0 |
+   | NX/core/lang/Array/contains.js           |   100.00 |   53 |    2 |      0 |
    | NX/core/lang/Array/toArray.js            |   100.00 |   23 |    1 |      0 |
    | NX/core/lang/Array/pluck.js              |   100.00 |   34 |    5 |      0 |
    | NX/core/lang/Array/map.js                |   100.00 |   33 |    4 |      0 |
@@ -40,8 +60,16 @@
    | NX/core/lang/Object/getValues.js         |   100.00 |   32 |    4 |      0 |
    | NX/core/lang/Object/getKeys.js           |   100.00 |   37 |    5 |      0 |
    | NX/core/lang/Object/getSize.js           |   100.00 |   37 |    5 |      0 |
-   | NX/core/lang/Function/index.js           |     4.76 |  188 |   42 |     40 |
+   | NX/core/lang/Function/index.js           |   100.00 |  104 |    2 |      0 |
    | NX/core/lang/Function/flexSetter.js      |    50.00 |   44 |    2 |      1 |
+   | NX/core/lang/Function/bind.js            |    15.38 |   50 |   13 |     11 |
+   | NX/core/lang/Function/pass.js            |    33.33 |   36 |    6 |      4 |
+   | NX/core/lang/Function/alias.js           |   100.00 |   25 |    1 |      0 |
+   | NX/core/lang/Function/createInterceptor.js |    50.00 |   42 |    2 |      1 |
+   | NX/core/lang/Function/defer.js           |    16.67 |   32 |    6 |      5 |
+   | NX/core/lang/Function/createSequence.js  |    14.29 |   39 |    7 |      6 |
+   | NX/core/lang/Function/createBuffered.js  |    25.00 |   29 |    4 |      3 |
+   | NX/core/lang/Function/createThrottled.js |     9.09 |   44 |   11 |     10 |
    | NX/core/class/Class/constructor.js       |   100.00 |  115 |    4 |      0 |
    | NX/core/class/Class/preprocessors/extend.js |    75.00 |   69 |    4 |      1 |
    | NX/core/class/Class/preprocessors/mixins.js |    50.00 |   34 |    2 |      1 |
@@ -105,11 +133,16 @@
    | NX/view/AbstractView/index.js            |   100.00 |   29 |    1 |      0 |
    | NX/view/ConsoleView/index.js             |   100.00 |   29 |    1 |      0 |
    | NX/view/WebView/index.js                 |   100.00 |   29 |    1 |      0 |
+   | NX/core/class/ClassManager/createNamespaces.js |   100.00 |   52 |    3 |      0 |
    | NX/core/class/ClassManager/setAlias.js   |    75.00 |   59 |    4 |      1 |
    | NX/core/class/ClassManager/getNamesByExpression.js |    40.00 |   77 |    5 |      3 |
    | NX/core/class/ClassManager/getNameByAlias.js |   100.00 |   23 |    1 |      0 |
    | NX/core/class/ClassManager/insertDefaultPreprocessor.js |   100.00 |   51 |    8 |      0 |
    | NX/core/class/ClassManager/getAliasesByName.js |   100.00 |   23 |    2 |      0 |
+   | NX/core/lang/Boolean/index.js            |   100.00 |   35 |    1 |      0 |
+   | NX/core/lang/Boolean/toBoolean.js        |   100.00 |   23 |    1 |      0 |
+   | NX/core/lang/Time/index.js               |   100.00 |   35 |    1 |      0 |
+   | NX/core/lang/Time/microtime.js           |   100.00 |   25 |    1 |      0 |
    | NX/core/util/DelayedTask/index.js        |   100.00 |   70 |    1 |      0 |
    | NX/core/util/Event/index.js              |   100.00 |  181 |    6 |      0 |
    | NX/core/util/Event/addListener.js        |    50.00 |   38 |    2 |      1 |
@@ -139,8 +172,41 @@
    | NX/util/Observable/createRelayer.js      |   100.00 |   28 |    4 |      0 |
    | NX/util/Observable/enableBubble.js       |   100.00 |   52 |    4 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    69.00 | 7927 |  613 |    190 |
+                                              |    71.05 | 8646 |  646 |    187 |
                                               +----------+------+------+--------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
