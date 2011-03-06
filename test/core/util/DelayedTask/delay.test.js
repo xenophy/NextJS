@@ -28,7 +28,7 @@ module.exports = {
             var endTime = new Date();
             var msec = endTime - startTime;
 
-            msec.should.be.within(10,100);
+            msec.should.be.within(10,1000);
         });
 
         dt.delay(10);
