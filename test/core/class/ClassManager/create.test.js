@@ -48,6 +48,19 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test create#pattern2
+
+    'test create#pattern2': function() {
+
+        try {
+            T_ClassManager.create({}, {});
+        } catch(e) {
+            e.message.should.equal("[NX.define] Invalid class name of: '[object Object]', must be a valid string");
+        }
+
+    }
+
+    // }}}
 
 };
 

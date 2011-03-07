@@ -62,6 +62,20 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test clone#date
+
+    'test clone#date': function() {
+
+        var date1 = new Date();
+
+        var date2 = T_NX.clone(date1);
+
+        date1.getMilliseconds().should.equal(date2.getMilliseconds());
+        date2.setMilliseconds(500);
+        date1.getMilliseconds().should.not.equal(date2.getMilliseconds());
+    },
+
+    // }}}
     // {{{ test clone#array
 
     'test clone#array': function() {

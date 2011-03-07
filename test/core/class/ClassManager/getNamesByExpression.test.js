@@ -67,15 +67,15 @@ module.exports = {
 
         var ret = T_ClassManager.getNamesByExpression('ClassManagerTest.testalt.getNamesByExpression.cls1');
         ret.length.should.equal(1);
-        ret[0].should.equal('ClassManagerTest.testalt.getNamesByExpression.cls1');
+        ret[0].should.equal('ClassManagerTest.getNamesByExpression.cls1');
 
         var ret = T_ClassManager.getNamesByExpression('ClassManagerTest.testalt.getNamesByExpression.cls2');
         ret.length.should.equal(1);
-        ret[0].should.equal('ClassManagerTest.testalt.getNamesByExpression.cls2');
+        ret[0].should.equal('ClassManagerTest.getNamesByExpression.cls2');
 
         var ret = T_ClassManager.getNamesByExpression('ClassManagerTest.testalt.getNamesByExpression.cls3');
         ret.length.should.equal(1);
-        ret[0].should.equal('ClassManagerTest.testalt.getNamesByExpression.cls3');
+        ret[0].should.equal('ClassManagerTest.getNamesByExpression.cls3');
 
     },
 
@@ -184,17 +184,73 @@ module.exports = {
 
         var ret = T_ClassManager.getNamesByExpression('ClassManagerTest.testalt.getNamesByExpression.cls1');
         ret.length.should.equal(1);
-        ret[0].should.equal('ClassManagerTest.testalt.getNamesByExpression.cls1');
+        ret[0].should.equal('ClassManagerTest.getNamesByExpression.cls1');
 
         var ret = T_ClassManager.getNamesByExpression('ClassManagerTest.testalt.getNamesByExpression.cls2');
         ret.length.should.equal(1);
-        ret[0].should.equal('ClassManagerTest.testalt.getNamesByExpression.cls2');
+        ret[0].should.equal('ClassManagerTest.getNamesByExpression.cls2');
 
         var ret = T_ClassManager.getNamesByExpression('ClassManagerTest.testalt.getNamesByExpression.cls3');
         ret.length.should.equal(1);
-        ret[0].should.equal('ClassManagerTest.testalt.getNamesByExpression.cls3');
+        ret[0].should.equal('ClassManagerTest.getNamesByExpression.cls3');
 
     },
+
+    // }}}
+    // {{{ test getNamesByExpressoin#pattern4
+
+    'test getNamesByExpression#pattern4': function() {
+
+        try {
+            T_ClassManager.getNamesByExpression({});
+        } catch(e) {
+            e.message.should.equal('[NX.ClassManager.getNamesByExpression] expression must be a valid string');
+        }
+
+    },
+
+    // }}}
+    // {{{ test getNamesByExpressoin#pattern5
+
+    'test getNamesByExpression#pattern5': function() {
+
+        T_ClassManager.create('ClassManagerTest.getNamesByExpression.cls1', {
+            alias: 'ClassManagerTest.testalias.getNamesByExpression.cls1',
+            alternateClassName: 'ClassManagerTest.testalt.getNamesByExpression.cls1',
+            test: function() {
+                return 'cls1.pattern1';
+            }
+        });
+
+        T_ClassManager.create('ClassManagerTest.getNamesByExpression.cls2', {
+            alias: 'ClassManagerTest.testalias.getNamesByExpression.cls2',
+            alternateClassName: 'ClassManagerTest.testalt.getNamesByExpression.cls2',
+            test: function() {
+                return 'cls2.pattern1';
+            }
+        });
+
+        T_ClassManager.create('ClassManagerTest.getNamesByExpression.cls3', {
+            alias: 'ClassManagerTest.testalias.getNamesByExpression.cls3',
+            alternateClassName: 'ClassManagerTest.testalt.getNamesByExpression.cls3',
+            test: function() {
+                return 'cls3.pattern1';
+            }
+        });
+
+        var ret = T_ClassManager.getNamesByExpression('ClassManagerTest.testalias.getNamesByExpression.cls1');
+        ret.length.should.equal(1);
+        ret[0].should.equal('ClassManagerTest.getNamesByExpression.cls1');
+
+        var ret = T_ClassManager.getNamesByExpression('ClassManagerTest.testalias.getNamesByExpression.cls2');
+        ret.length.should.equal(1);
+        ret[0].should.equal('ClassManagerTest.getNamesByExpression.cls2');
+
+        var ret = T_ClassManager.getNamesByExpression('ClassManagerTest.testalias.getNamesByExpression.cls3');
+        ret.length.should.equal(1);
+        ret[0].should.equal('ClassManagerTest.getNamesByExpression.cls3');
+
+    }
 
     // }}}
 

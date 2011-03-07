@@ -44,6 +44,32 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test setAlias#pattern2
+
+    'test setAlias#pattern2': function() {
+
+        var f1 = function() {
+            return 'f1';
+        };
+
+        var f2 = function() {
+            return 'f2';
+        };
+
+
+        T_ClassManager.set('ClassManagerTest.setAlias.cls3', f1);
+        T_ClassManager.set('ClassManagerTest.setAlias.cls4', f2);
+        T_ClassManager.setAlias('ClassManagerTest.setAlias.cls3', 'ClassManagerTest.setAlias.cls5');
+
+        try {
+            T_ClassManager.setAlias('ClassManagerTest.setAlias.cls4', 'ClassManagerTest.setAlias.cls5');
+        } catch(e) {
+            e.message.should.equal('[NX.ClassManager] Overriding already existed alias: \'ClassManagerTest.setAlias.cls5\' of: \'ClassManagerTest.setAlias.cls3\' with: \'ClassManagerTest.setAlias.cls4\'. Be sure it\'s intentional.');
+        }
+
+    }
+
+    // }}}
 
 };
 

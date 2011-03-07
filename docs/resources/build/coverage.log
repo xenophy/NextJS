@@ -4,7 +4,7 @@
    | NX/core/index.js                         |    66.67 |  209 |    6 |      2 |
    | NX/core/apply.js                         |   100.00 |   38 |    2 |      0 |
    | NX/core/applyIf.js                       |   100.00 |   34 |    1 |      0 |
-   | NX/core/clone.js                         |    66.67 |   53 |    3 |      1 |
+   | NX/core/clone.js                         |   100.00 |   53 |    3 |      0 |
    | NX/core/each.js                          |   100.00 |   36 |    2 |      0 |
    | NX/core/extend.js                        |   100.00 |   78 |    8 |      0 |
    | NX/core/isArray.js                       |   100.00 |   23 |    1 |      0 |
@@ -22,7 +22,7 @@
    | NX/core/iterate.js                       |   100.00 |   46 |    5 |      0 |
    | NX/core/override.js                      |   100.00 |   23 |    1 |      0 |
    | NX/core/aliases/NX.js                    |   100.00 |   55 |    4 |      0 |
-   | NX/core/class/ClassManager/index.js      |    64.52 |  562 |   31 |     11 |
+   | NX/core/class/ClassManager/index.js      |    64.52 |  561 |   31 |     11 |
    | NX/core/lang/Array/index.js              |   100.00 |  171 |    1 |      0 |
    | NX/core/lang/Array/asort.js              |   100.00 |   25 |    2 |      0 |
    | NX/core/lang/Array/each.js               |   100.00 |   43 |    5 |      0 |
@@ -78,7 +78,7 @@
    | NX/core/class/Class/preprocessors/statics.js |   100.00 |   43 |    2 |      0 |
    | NX/core/class/ClassManager/maps.js       |   100.00 |   25 |    1 |      0 |
    | NX/core/class/ClassManager/namespaceRewrites.js |   100.00 |   29 |    2 |      0 |
-   | NX/core/class/ClassManager/parseNamespace.js |    60.00 |   60 |    5 |      2 |
+   | NX/core/class/ClassManager/parseNamespace.js |   100.00 |   61 |    4 |      0 |
    | NX/core/class/ClassManager/getByAlias.js |   100.00 |   23 |    2 |      0 |
    | NX/core/class/ClassManager/getName.js    |   100.00 |   23 |    1 |      0 |
    | NX/core/class/ClassManager/getClass.js   |   100.00 |   23 |    2 |      0 |
@@ -91,7 +91,7 @@
    | NX/core/aliases/ClassManager.js          |   100.00 |   44 |    4 |      0 |
    | NX/index.js                              |   100.00 |   87 |   17 |      0 |
    | NX/Version/index.js                      |   100.00 |   29 |    1 |      0 |
-   | NX/core/class/ClassManager/create.js     |    80.00 |   62 |    5 |      1 |
+   | NX/core/class/ClassManager/create.js     |   100.00 |   62 |    5 |      0 |
    | NX/core/class/ClassManager/set.js        |   100.00 |   32 |    1 |      0 |
    | NX/core/class/ClassManager/assignNamespace.js |   100.00 |   50 |    2 |      0 |
    | NX/AbstractManager/index.js              |   100.00 |  120 |    2 |      0 |
@@ -135,9 +135,10 @@
    | NX/view/ConsoleView/index.js             |   100.00 |   29 |    1 |      0 |
    | NX/view/WebView/index.js                 |   100.00 |   29 |    1 |      0 |
    | NX/core/class/ClassManager/createNamespaces.js |   100.00 |   52 |    3 |      0 |
-   | NX/core/class/ClassManager/setAlias.js   |    75.00 |   59 |    4 |      1 |
-   | NX/core/class/ClassManager/getNamesByExpression.js |    40.00 |   77 |    5 |      3 |
+   | NX/core/class/ClassManager/setAlias.js   |   100.00 |   60 |    4 |      0 |
+   | NX/core/class/ClassManager/getNamesByExpression.js |   100.00 |   77 |    4 |      0 |
    | NX/core/class/ClassManager/getNameByAlias.js |   100.00 |   23 |    1 |      0 |
+   | NX/core/class/ClassManager/getNameByAlternate.js |   100.00 |   23 |    1 |      0 |
    | NX/core/class/ClassManager/insertDefaultPreprocessor.js |   100.00 |   51 |    8 |      0 |
    | NX/core/class/ClassManager/getAliasesByName.js |   100.00 |   23 |    2 |      0 |
    | NX/core/lang/Boolean/index.js            |   100.00 |   35 |    1 |      0 |
@@ -145,10 +146,10 @@
    | NX/core/lang/Time/index.js               |   100.00 |   35 |    1 |      0 |
    | NX/core/lang/Time/microtime.js           |   100.00 |   25 |    1 |      0 |
    | NX/core/util/Event/index.js              |   100.00 |  181 |    6 |      0 |
-   | NX/core/util/Event/addListener.js        |    50.00 |   38 |    2 |      1 |
+   | NX/core/util/Event/addListener.js        |   100.00 |   38 |    1 |      0 |
    | NX/core/util/Event/findListener.js       |   100.00 |   43 |    1 |      0 |
    | NX/core/util/Event/isListening.js        |   100.00 |   23 |    1 |      0 |
-   | NX/core/util/Event/removeListener.js     |    14.29 |   58 |    7 |      6 |
+   | NX/core/util/Event/removeListener.js     |   100.00 |   60 |    2 |      0 |
    | NX/core/util/Event/clearListeners.js     |   100.00 |   29 |    1 |      0 |
    | NX/core/util/Event/fire.js               |   100.00 |   52 |    1 |      0 |
    | NX/core/util/Event/createListener.js     |   100.00 |   50 |    1 |      0 |
@@ -169,8 +170,9 @@
    | NX/util/Observable/createRelayer.js      |   100.00 |   28 |    4 |      0 |
    | NX/util/Observable/enableBubble.js       |   100.00 |   52 |    4 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    80.47 | 8488 |  599 |    117 |
+                                              |    82.77 | 8514 |  592 |    102 |
                                               +----------+------+------+--------+
+
 
 
 
