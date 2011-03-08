@@ -22,7 +22,7 @@
    | NX/core/iterate.js                       |   100.00 |   46 |    5 |      0 |
    | NX/core/override.js                      |   100.00 |   23 |    1 |      0 |
    | NX/core/aliases/NX.js                    |   100.00 |   55 |    4 |      0 |
-   | NX/core/class/ClassManager/index.js      |    64.52 |  561 |   31 |     11 |
+   | NX/core/class/ClassManager/index.js      |    64.52 |  569 |   31 |     11 |
    | NX/core/lang/Array/index.js              |   100.00 |  171 |    1 |      0 |
    | NX/core/lang/Array/asort.js              |   100.00 |   25 |    2 |      0 |
    | NX/core/lang/Array/each.js               |   100.00 |   43 |    5 |      0 |
@@ -82,10 +82,10 @@
    | NX/core/class/ClassManager/getByAlias.js |   100.00 |   23 |    2 |      0 |
    | NX/core/class/ClassManager/getName.js    |   100.00 |   23 |    1 |      0 |
    | NX/core/class/ClassManager/getClass.js   |   100.00 |   23 |    2 |      0 |
-   | NX/core/class/ClassManager/instantiateByAlias.js |    37.50 |   55 |    8 |      5 |
-   | NX/core/class/ClassManager/instantiate.js |    41.18 |   94 |   17 |     10 |
+   | NX/core/class/ClassManager/instantiateByAlias.js |   100.00 |   56 |    6 |      0 |
+   | NX/core/class/ClassManager/instantiate.js |   100.00 |   99 |    9 |      0 |
    | NX/core/class/ClassManager/postprocessors/alias.js |    50.00 |   55 |    6 |      3 |
-   | NX/core/class/ClassManager/postprocessors/singleton.js |   100.00 |   36 |    4 |      0 |
+   | NX/core/class/ClassManager/postprocessors/singleton.js |   100.00 |   36 |    3 |      0 |
    | NX/core/class/ClassManager/postprocessors/alternateClassName.js |    75.00 |   46 |    4 |      1 |
    | NX/core/aliases/Object.js                |   100.00 |   38 |    3 |      0 |
    | NX/core/aliases/ClassManager.js          |   100.00 |   44 |    4 |      0 |
@@ -126,7 +126,7 @@
    | NX/AbstractManager/getCount.js           |    50.00 |   23 |    2 |      1 |
    | NX/server/Server/index.js                |   100.00 |   37 |    1 |      0 |
    | NX/server/ServerManager/index.js         |    30.00 |   82 |   10 |      7 |
-   | NX/core/class/ClassManager/get.js        |   100.00 |   51 |    3 |      0 |
+   | NX/core/class/ClassManager/get.js        |   100.00 |   51 |    2 |      0 |
    | NX/controller/Controller/index.js        |   100.00 |   29 |    1 |      0 |
    | NX/controller/ControllerManager/index.js |   100.00 |   29 |    1 |      0 |
    | NX/module/Module/index.js                |   100.00 |   29 |    1 |      0 |
@@ -170,7 +170,7 @@
    | NX/util/Observable/createRelayer.js      |   100.00 |   28 |    4 |      0 |
    | NX/util/Observable/enableBubble.js       |   100.00 |   52 |    4 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    82.77 | 8514 |  592 |    102 |
+                                              |    85.00 | 8528 |  580 |     87 |
                                               +----------+------+------+--------+
 
 

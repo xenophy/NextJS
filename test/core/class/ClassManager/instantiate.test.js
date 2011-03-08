@@ -70,6 +70,52 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test instantiate#pattern4
+
+    'test instantiate#pattern4': function() {
+
+        try {
+            var cls = T_ClassManager.instantiate({});
+        } catch(e) {
+            e.message.should.equal("[NX.create] Invalid class name or alias: '[object Object]', must be a valid string");
+        }
+
+    },
+
+    // }}}
+    // {{{ test instantiate#pattern5
+
+    'test instantiate#pattern5': function() {
+
+        try {
+            var cls = T_ClassManager.instantiate('ClassManagerTest.instantiate.cls99');
+        } catch(e) {
+            e.message.should.equal("[NX.ClassManager] Cannot create an instance of unrecognized class name / alias: ClassManagerTest.instantiate.cls99");
+        }
+
+    },
+
+    // }}}
+    // {{{ test instantiate#pattern6
+
+    'test instantiate#pattern6': function() {
+
+        T_ClassManager.create('ClassManagerTest.instantiate.cls7', {
+            singleton: true,
+            test: function() {
+                return 'pattern3';
+            }
+        });
+
+        try {
+            var cls = T_ClassManager.instantiate('ClassManagerTest.instantiate.cls7');
+        } catch(e) {
+            e.message.should.equal("[NX.create] 'ClassManagerTest.instantiate.cls7' is a singleton and cannot be instantiated");
+        }
+
+    }
+
+    // }}}
 
 };
 

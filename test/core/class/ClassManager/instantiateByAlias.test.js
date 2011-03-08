@@ -63,6 +63,19 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test instantiateByAlias#pattern3
+
+    'test instantiateByAlias#pattern3': function() {
+
+        try {
+            var cls = T_ClassManager.instantiateByAlias('ClassManagerTest.instantiateByAlias.cls99', {foo: 'bar'});
+        } catch(e) {
+            e.message.should.equal("[NX.ClassManager] Cannot create an instance of unrecognized alias: ClassManagerTest.instantiateByAlias.cls99");
+        }
+
+    }
+
+    // }}}
 
 };
 
