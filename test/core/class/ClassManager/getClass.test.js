@@ -14,6 +14,7 @@ var assert = require('assert');
 var T_NX = require('NX/core');
 var T_Base = require('NX/core/class/Base');
 var T_Array = require('NX/core/lang/Array');
+var T_Class = require('NX/core/class/Class');
 var T_ClassManager = require('NX/core/class/ClassManager');
 
 // }}}
@@ -35,7 +36,26 @@ module.exports = {
         var ret = T_ClassManager.getClass(cls);
 
         ret.should.equal(ClassManagerTest.getClass.cls1);
+
     },
+
+    // }}}
+    // {{{ test getClass#pattern2
+
+    'test getClass#pattern2': function() {
+
+        T_NX.ns('ClassManagerTest', 'ClassManagerTest.getClass', 'ClassManagerTest.getClass.app');
+
+        ClassManagerTest.getClass.cls1 = function() {
+            return 'f1';
+        };
+
+        var cls = new ClassManagerTest.getClass.cls1();
+        var ret = T_ClassManager.getClass(cls);
+
+        assert.equal(ret, null);
+
+    }
 
     // }}}
 
