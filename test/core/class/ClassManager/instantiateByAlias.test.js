@@ -67,6 +67,27 @@ module.exports = {
 
     'test instantiateByAlias#pattern3': function() {
 
+        T_ClassManager.create('ClassManagerTest.instantiateByAlias.cls5', {
+            singleton: true,
+            alias: 'ClassManagerTest.instantiateByAlias.cls6',
+            test: function() {
+                return 'pattern3';
+            }
+        });
+
+        try {
+            var cls = T_ClassManager.instantiateByAlias('ClassManagerTest.instantiateByAlias.cls6');
+        } catch(e) {
+            e.message.should.equal("[NX.create] 'ClassManagerTest.instantiateByAlias.cls5' is a singleton and cannot be instantiated");
+        }
+
+    },
+
+    // }}}
+    // {{{ test instantiateByAlias#pattern4
+
+    'test instantiateByAlias#pattern4': function() {
+
         try {
             var cls = T_ClassManager.instantiateByAlias('ClassManagerTest.instantiateByAlias.cls99', {foo: 'bar'});
         } catch(e) {
