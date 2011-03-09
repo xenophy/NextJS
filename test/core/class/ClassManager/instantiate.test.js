@@ -25,30 +25,29 @@ module.exports = {
     'test instantiate#pattern1': function() {
 
         T_ClassManager.create('ClassManagerTest.instantiate.cls1', {
-            alias: 'ClassManagerTest.instantiate.cls2',
             test: function() {
                 return 'pattern1';
             }
         });
 
-        var cls = T_ClassManager.instantiate('ClassManagerTest.instantiate.cls2');
+        var cls = T_ClassManager.instantiate('ClassManagerTest.instantiate.cls1');
         cls.test().should.equal('pattern1');
 
     },
 
     // }}}
-    // {{{ test instantiateByAlias#pattern2
+    // {{{ test instantiate#pattern2
 
-    'test instantiateByAlias#pattern2': function() {
+    'test instantiate#pattern2': function() {
 
-        T_ClassManager.create('ClassManagerTest.instantiate.cls3', {
-            alternateClassName: 'ClassManagerTest.instantiate.cls4',
+        T_ClassManager.create('ClassManagerTest.instantiate.cls2', {
+            alias: 'ClassManagerTest.instantiate.cls3',
             test: function() {
                 return 'pattern2';
             }
         });
 
-        var cls = T_ClassManager.instantiate('ClassManagerTest.instantiate.cls4');
+        var cls = T_ClassManager.instantiate('ClassManagerTest.instantiate.cls3');
         cls.test().should.equal('pattern2');
 
     },
@@ -58,7 +57,8 @@ module.exports = {
 
     'test instantiateByAlias#pattern3': function() {
 
-        T_ClassManager.create('ClassManagerTest.instantiate.cls5', {
+        T_ClassManager.create('ClassManagerTest.instantiate.cls4', {
+            alternateClassName: 'ClassManagerTest.instantiate.cls5',
             test: function() {
                 return 'pattern3';
             }
