@@ -88,11 +88,69 @@ module.exports = {
             e.message.should.equal("[NX.define] Invalid alternate of: '[object Object]' for class: 'My.Class21'; must be a valid string");
         }
 
+    },
+
+    // }}}
+    // {{{ test create#pattern5
+
+    'test create#pattern5': function() {
+
+        T_ClassManager.exist('NXTest.ClassManager.create.p5cls').should.not.be.ok;
+
+        T_ClassManager.exist([
+            'NXTest.ClassManager.create.p5cls',
+            'NXTest.ClassManager.create.p5cls2'
+        ]).should.not.be.ok;
+
+        T_ClassManager.create('NXTest.ClassManager.create.p5cls', {});
+        T_ClassManager.exist('NXTest.ClassManager.create.p5cls').should.be.ok;
+
+        T_ClassManager.create('NXTest.ClassManager.create.p5cls2', {});
+        T_ClassManager.exist('NXTest.ClassManager.create.p5cls2').should.be.ok;
+
+        T_ClassManager.exist([
+            'NXTest.ClassManager.create.p5cls',
+            'NXTest.ClassManager.create.p5cls2'
+        ]).should.be.ok;
+
+    },
+
+    // }}}
+    // {{{ test create#pattern6
+
+    'test create#pattern6': function() {
+
+        try {
+            T_ClassManager.exist({});
+        } catch(e) {
+            e.message.should.equal('[NX.ClassManager.exist] Invalid classname, must be a string');
+        }
+
+    },
+
+    // }}}
+    // {{{ test create#pattern7
+
+    'test create#pattern7': function() {
+
+        T_ClassManager.exist(null).should.not.be.ok;
+
+    },
+
+    // }}}
+    // {{{ test create#pattern8
+
+    'test create#pattern8': function() {
+
+        NXTest.ClassManager.create.p8cls = function() {};
+
+        T_ClassManager.exist('NXTest.ClassManager.create.p8cls').should.be.ok;
+
+
     }
 
     // }}}
-
-
+ 
 };
 
 // }}}

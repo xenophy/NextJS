@@ -47,6 +47,14 @@ module.exports = {
 
         cls.resetName();
         cls.getName().should.equal('[Awesome]');
+
+        cls.setConfig({
+            isAwesome: false
+        });
+
+        cls.getIsAwesome().should.equal(false);
+        cls.isAwesome().should.not.be.ok;
+
     },
 
     // }}}
@@ -132,12 +140,19 @@ module.exports = {
     'test define#pattern5': function() {
 
         NX.define('NXTest.define.cls61', {
+            config: {
+                fee: 'baz'
+            },
+            foo: 'bar',
             hoge: function() {
                 return 'hoge';
             }
         });
 
         NX.define('NXTest.define.cls62', {
+            config: {
+                fee: 'boo'
+            },
             mixins: [
                 'NXTest.define.cls61'
             ]
@@ -146,10 +161,34 @@ module.exports = {
         var cls = new NXTest.define.cls62();
 
         cls.hoge().should.equal('hoge');
+        cls.foo.should.equal('bar');
+        cls.config.fee.should.equal('boo');
+
+    },
+
+    // }}}
+    // {{{ test define#pattern6
+
+    'test define#pattern6': function() {
+
+        NX.define('NXTest.define.p6cls', {
+        });
+
+        NX.define('NXTest.define.p6cls2', {
+        });
+
+        NX.define('NXTest.define.p6cls3', {
+            mixins: {
+                '0': 'NXTest.define.p6cls',
+                '1': 'NXTest.define.p6cls2'
+            }
+        });
+
 
     }
 
     // }}}
+
 
 };
 
