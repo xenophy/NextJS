@@ -74,14 +74,14 @@
    | NX/core/lang/Function/createBuffered.js  |   100.00 |   36 |    7 |      0 |
    | NX/core/util/DelayedTask/index.js        |   100.00 |   70 |    1 |      0 |
    | NX/core/lang/Function/createThrottled.js |   100.00 |   44 |    4 |      0 |
-   | NX/core/class/Base/callParent.js         |    66.67 |   50 |   12 |      4 |
+   | NX/core/class/Base/callParent.js         |   100.00 |   52 |    3 |      0 |
    | NX/core/class/Base/statics.js            |   100.00 |   30 |    1 |      0 |
-   | NX/core/class/Base/callOverridden.js     |    33.33 |   42 |    9 |      6 |
+   | NX/core/class/Base/callOverridden.js     |   100.00 |   44 |    5 |      0 |
    | NX/core/class/Base/statics/ownMethod.js  |   100.00 |   56 |    8 |      0 |
    | NX/core/class/Base/statics/borrowMethod.js |   100.00 |   33 |    3 |      0 |
    | NX/core/class/Base/statics/extend.js     |   100.00 |   28 |    3 |      0 |
    | NX/core/class/Base/statics/implement.js  |   100.00 |   38 |    5 |      0 |
-   | NX/core/class/Base/statics/override.js   |   100.00 |   46 |    8 |      0 |
+   | NX/core/class/Base/statics/override.js   |   100.00 |   46 |    5 |      0 |
    | NX/core/class/Base/statics/mixin.js      |   100.00 |   55 |    3 |      0 |
    | NX/core/class/Base/statics/createAlias.js |   100.00 |   28 |    2 |      0 |
    | NX/core/class/Class/constructor.js       |   100.00 |  115 |    4 |      0 |
@@ -191,7 +191,7 @@
    | NX/util/Observable/createRelayer.js      |   100.00 |   28 |    4 |      0 |
    | NX/util/Observable/enableBubble.js       |   100.00 |   52 |    4 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    94.58 | 9085 |  590 |     32 |
+                                              |    96.17 | 9089 |  574 |     22 |
                                               +----------+------+------+--------+
 
 
