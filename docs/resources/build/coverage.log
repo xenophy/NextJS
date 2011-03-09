@@ -51,7 +51,8 @@
    | NX/core/lang/String/escape.js            |   100.00 |   28 |    3 |      0 |
    | NX/core/lang/String/escapeRegex.js       |   100.00 |   28 |    2 |      0 |
    | NX/core/lang/String/format.js            |   100.00 |  149 |    8 |      0 |
-   | NX/core/class/Base/index.js              |    40.00 |  330 |   55 |     33 |
+   | NX/core/class/Base/index.js              |   100.00 |  184 |    4 |      0 |
+   | NX/core/class/Base/initConfig.js         |   100.00 |   38 |    2 |      0 |
    | NX/core/lang/Object/index.js             |   100.00 |   93 |    3 |      0 |
    | NX/core/lang/Object/toQueryString.js     |   100.00 |   34 |    3 |      0 |
    | NX/core/lang/Object/each.js              |   100.00 |   33 |    2 |      0 |
@@ -60,6 +61,8 @@
    | NX/core/lang/Object/getValues.js         |   100.00 |   32 |    4 |      0 |
    | NX/core/lang/Object/getKeys.js           |   100.00 |   37 |    5 |      0 |
    | NX/core/lang/Object/getSize.js           |   100.00 |   37 |    5 |      0 |
+   | NX/core/class/Base/setConfig.js          |    33.33 |   27 |    3 |      2 |
+   | NX/core/class/Base/applyConfig.js        |   100.00 |   38 |    3 |      0 |
    | NX/core/lang/Function/index.js           |   100.00 |  104 |    2 |      0 |
    | NX/core/lang/Function/flexSetter.js      |   100.00 |   45 |    2 |      0 |
    | NX/core/lang/Function/bind.js            |   100.00 |   51 |    7 |      0 |
@@ -71,6 +74,16 @@
    | NX/core/lang/Function/createBuffered.js  |   100.00 |   36 |    7 |      0 |
    | NX/core/util/DelayedTask/index.js        |   100.00 |   70 |    1 |      0 |
    | NX/core/lang/Function/createThrottled.js |   100.00 |   44 |    4 |      0 |
+   | NX/core/class/Base/callParent.js         |    66.67 |   50 |   12 |      4 |
+   | NX/core/class/Base/statics.js            |    20.00 |   30 |    5 |      4 |
+   | NX/core/class/Base/callOverridden.js     |    33.33 |   42 |    9 |      6 |
+   | NX/core/class/Base/statics/ownMethod.js  |    37.50 |   56 |    8 |      5 |
+   | NX/core/class/Base/statics/borrowMethod.js |    80.00 |   33 |    5 |      1 |
+   | NX/core/class/Base/statics/extend.js     |    66.67 |   28 |    3 |      1 |
+   | NX/core/class/Base/statics/implement.js  |    75.00 |   37 |    4 |      1 |
+   | NX/core/class/Base/statics/override.js   |    30.00 |   46 |   10 |      7 |
+   | NX/core/class/Base/statics/mixin.js      |    83.33 |   55 |   12 |      2 |
+   | NX/core/class/Base/statics/createAlias.js |   100.00 |   28 |    2 |      0 |
    | NX/core/class/Class/constructor.js       |   100.00 |  115 |    4 |      0 |
    | NX/core/class/Class/preprocessors/extend.js |   100.00 |   69 |    3 |      0 |
    | NX/core/class/Class/preprocessors/mixins.js |   100.00 |   34 |    2 |      0 |
@@ -170,8 +183,21 @@
    | NX/util/Observable/createRelayer.js      |   100.00 |   28 |    4 |      0 |
    | NX/util/Observable/enableBubble.js       |   100.00 |   52 |    4 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    89.42 | 8536 |  567 |     60 |
+                                              |    89.90 | 8898 |  594 |     60 |
                                               +----------+------+------+--------+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
