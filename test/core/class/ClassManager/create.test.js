@@ -58,9 +58,40 @@ module.exports = {
             e.message.should.equal("[NX.define] Invalid class name of: '[object Object]', must be a valid string");
         }
 
+    },
+
+    // }}}
+    // {{{ test create#pattern3
+
+    'test create#pattern3': function() {
+
+        try {
+            T_ClassManager.create('My.Class11', {
+                alias: {},
+            });
+        } catch(e) {
+            e.message.should.equal("[NX.define] Invalid alias of: '[object Object]' for class: 'My.Class11'; must be a valid string");
+        }
+
+    },
+
+    // }}}
+    // {{{ test create#pattern4
+
+    'test create#pattern4': function() {
+
+        try {
+            T_ClassManager.create('My.Class21', {
+                alternateClassName: {},
+            });
+        } catch(e) {
+            e.message.should.equal("[NX.define] Invalid alternate of: '[object Object]' for class: 'My.Class21'; must be a valid string");
+        }
+
     }
 
     // }}}
+
 
 };
 

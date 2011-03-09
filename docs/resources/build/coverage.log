@@ -1,4 +1,1798 @@
-[?25l[?25h   +------------------------------------------+----------+------+------+--------+
+[?25l$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.AbstractManager
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function],
+  '$className': 'NX.AbstractManager',
+  displayName: 'NX.AbstractManager',
+  superclass: 
+   { '$className': 'NX.Base',
+     '$class': 
+      { [Function]
+        ownMethod: [Function],
+        borrowMethod: [Function],
+        extend: [Function],
+        implement: [Function],
+        override: [Function],
+        mixin: [Function],
+        createAlias: [Function] },
+     self: 
+      { [Function]
+        ownMethod: [Function],
+        borrowMethod: [Function],
+        extend: [Function],
+        implement: [Function],
+        override: [Function],
+        mixin: [Function],
+        createAlias: [Function] },
+     constructor: [Function],
+     initConfig: [Function],
+     setConfig: [Function],
+     applyConfig: [Function],
+     callParent: [Function],
+     statics: [Function],
+     callOverridden: [Function] } }
+constructor
+{ [Function]
+  displayName: 'NX.AbstractManager#constructor',
+  '$owner': 
+   { [Function]
+     ownMethod: [Function],
+     borrowMethod: [Function],
+     extend: [Function],
+     implement: [Function],
+     override: [Function],
+     mixin: [Function],
+     createAlias: [Function],
+     '$className': 'NX.AbstractManager',
+     displayName: 'NX.AbstractManager',
+     superclass: 
+      { '$className': 'NX.Base',
+        '$class': [Object],
+        self: [Object],
+        constructor: [Function],
+        initConfig: [Function],
+        setConfig: [Function],
+        applyConfig: [Function],
+        callParent: [Function],
+        statics: [Function],
+        callOverridden: [Function] } },
+  '$name': 'constructor',
+  '$isOwned': true }
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NXTest.define.cls2
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function],
+  '$className': 'NXTest.define.cls2',
+  displayName: 'NXTest.define.cls2',
+  superclass: 
+   { '$className': 'NX.Base',
+     '$class': 
+      { [Function]
+        ownMethod: [Function],
+        borrowMethod: [Function],
+        extend: [Function],
+        implement: [Function],
+        override: [Function],
+        mixin: [Function],
+        createAlias: [Function] },
+     self: 
+      { [Function]
+        ownMethod: [Function],
+        borrowMethod: [Function],
+        extend: [Function],
+        implement: [Function],
+        override: [Function],
+        mixin: [Function],
+        createAlias: [Function] },
+     constructor: [Function],
+     initConfig: [Function],
+     setConfig: [Function],
+     applyConfig: [Function],
+     callParent: [Function],
+     statics: [Function],
+     callOverridden: [Function] } }
+constructor
+{ [Function]
+  displayName: 'NXTest.define.cls2#constructor',
+  '$owner': 
+   { [Function]
+     ownMethod: [Function],
+     borrowMethod: [Function],
+     extend: [Function],
+     implement: [Function],
+     override: [Function],
+     mixin: [Function],
+     createAlias: [Function],
+     '$className': 'NXTest.define.cls2',
+     displayName: 'NXTest.define.cls2',
+     superclass: 
+      { '$className': 'NX.Base',
+        '$class': [Object],
+        self: [Object],
+        constructor: [Function],
+        initConfig: [Function],
+        setConfig: [Function],
+        applyConfig: [Function],
+        callParent: [Function],
+        statics: [Function],
+        callOverridden: [Function] } },
+  '$name': 'constructor',
+  '$isOwned': true }
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+undefined
+$class
+undefined
+self
+undefined
+constructor
+[Function]
+initConfig
+undefined
+setConfig
+undefined
+applyConfig
+undefined
+callParent
+undefined
+statics
+undefined
+callOverridden
+undefined
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+$className
+NX.Base
+$class
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+self
+{ [Function]
+  ownMethod: [Function],
+  borrowMethod: [Function],
+  extend: [Function],
+  implement: [Function],
+  override: [Function],
+  mixin: [Function],
+  createAlias: [Function] }
+constructor
+[Function]
+initConfig
+[Function]
+setConfig
+[Function]
+applyConfig
+[Function]
+callParent
+[Function]
+statics
+[Function]
+callOverridden
+[Function]
+[?25h   +------------------------------------------+----------+------+------+--------+
    | filename                                 | coverage | LOC  | SLOC | missed |
    +------------------------------------------+----------+------+------+--------+
    | NX/core/index.js                         |    66.67 |  209 |    6 |      2 |
@@ -22,7 +1816,7 @@
    | NX/core/iterate.js                       |   100.00 |   46 |    5 |      0 |
    | NX/core/override.js                      |   100.00 |   23 |    1 |      0 |
    | NX/core/aliases/NX.js                    |   100.00 |   55 |    4 |      0 |
-   | NX/core/class/ClassManager/index.js      |    64.52 |  569 |   31 |     11 |
+   | NX/core/class/ClassManager/index.js      |    59.26 |  569 |   27 |     11 |
    | NX/core/lang/Array/index.js              |   100.00 |  171 |    1 |      0 |
    | NX/core/lang/Array/asort.js              |   100.00 |   25 |    2 |      0 |
    | NX/core/lang/Array/each.js               |   100.00 |   43 |    5 |      0 |
@@ -72,7 +1866,7 @@
    | NX/core/util/DelayedTask/index.js        |   100.00 |   70 |    1 |      0 |
    | NX/core/lang/Function/createThrottled.js |   100.00 |   44 |    4 |      0 |
    | NX/core/class/Class/constructor.js       |   100.00 |  115 |    4 |      0 |
-   | NX/core/class/Class/preprocessors/extend.js |    75.00 |   69 |    4 |      1 |
+   | NX/core/class/Class/preprocessors/extend.js |   100.00 |   71 |    3 |      0 |
    | NX/core/class/Class/preprocessors/mixins.js |    50.00 |   34 |    2 |      1 |
    | NX/core/class/Class/preprocessors/config.js |    80.00 |   87 |    5 |      1 |
    | NX/core/class/Class/preprocessors/statics.js |   100.00 |   43 |    2 |      0 |
@@ -81,12 +1875,12 @@
    | NX/core/class/ClassManager/parseNamespace.js |   100.00 |   61 |    4 |      0 |
    | NX/core/class/ClassManager/getByAlias.js |   100.00 |   23 |    2 |      0 |
    | NX/core/class/ClassManager/getName.js    |   100.00 |   23 |    1 |      0 |
-   | NX/core/class/ClassManager/getClass.js   |   100.00 |   23 |    2 |      0 |
+   | NX/core/class/ClassManager/getClass.js   |   100.00 |   23 |    1 |      0 |
    | NX/core/class/ClassManager/instantiateByAlias.js |   100.00 |   56 |    6 |      0 |
-   | NX/core/class/ClassManager/instantiate.js |   100.00 |   99 |    9 |      0 |
-   | NX/core/class/ClassManager/postprocessors/alias.js |    50.00 |   55 |    6 |      3 |
+   | NX/core/class/ClassManager/instantiate.js |   100.00 |   99 |    8 |      0 |
+   | NX/core/class/ClassManager/postprocessors/alias.js |   100.00 |   57 |    4 |      0 |
    | NX/core/class/ClassManager/postprocessors/singleton.js |   100.00 |   36 |    3 |      0 |
-   | NX/core/class/ClassManager/postprocessors/alternateClassName.js |    75.00 |   46 |    4 |      1 |
+   | NX/core/class/ClassManager/postprocessors/alternateClassName.js |   100.00 |   46 |    4 |      0 |
    | NX/core/aliases/Object.js                |   100.00 |   38 |    3 |      0 |
    | NX/core/aliases/ClassManager.js          |   100.00 |   44 |    4 |      0 |
    | NX/index.js                              |   100.00 |   87 |   17 |      0 |
@@ -136,7 +1930,7 @@
    | NX/view/WebView/index.js                 |   100.00 |   29 |    1 |      0 |
    | NX/core/class/ClassManager/createNamespaces.js |   100.00 |   52 |    3 |      0 |
    | NX/core/class/ClassManager/setAlias.js   |   100.00 |   60 |    4 |      0 |
-   | NX/core/class/ClassManager/getNamesByExpression.js |   100.00 |   77 |    4 |      0 |
+   | NX/core/class/ClassManager/getNamesByExpression.js |   100.00 |   77 |    3 |      0 |
    | NX/core/class/ClassManager/getNameByAlias.js |   100.00 |   23 |    1 |      0 |
    | NX/core/class/ClassManager/getNameByAlternate.js |   100.00 |   23 |    1 |      0 |
    | NX/core/class/ClassManager/insertDefaultPreprocessor.js |   100.00 |   51 |    8 |      0 |
@@ -170,7 +1964,7 @@
    | NX/util/Observable/createRelayer.js      |   100.00 |   28 |    4 |      0 |
    | NX/util/Observable/enableBubble.js       |   100.00 |   52 |    4 |      0 |
    +------------------------------------------+----------+------+------+--------+
-                                              |    85.00 | 8528 |  580 |     87 |
+                                              |    85.61 | 8532 |  570 |     82 |
                                               +----------+------+------+--------+
 
 

@@ -105,6 +105,24 @@ module.exports = {
          NXTest.define.cls4.value.should.equal(123);
          NXTest.define.cls4.func().should.equal('foo');
 
+    },
+
+    // }}}
+    // {{{ test define#pattern4
+
+    'test define#pattern4': function() {
+
+        var f = function() {
+        };
+
+        NX.define('NXTest.define.cls5', {
+            extend: f
+        });
+
+        var cls = new NXTest.define.cls5();
+
+        NX.isFunction(cls.initConfig).should.be.ok;
+
     }
 
     // }}}
