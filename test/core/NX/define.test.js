@@ -40,6 +40,7 @@ module.exports = {
 
         cls.getName().should.equal('[Awesome]');
         cls.getIsAwesome().should.equal(true);
+        cls.isAwesome().should.be.ok;
 
         cls.setName('Next JS');
         cls.getName().should.equal('[Next JS]');
@@ -122,6 +123,29 @@ module.exports = {
         var cls = new NXTest.define.cls5();
 
         NX.isFunction(cls.initConfig).should.be.ok;
+
+    },
+
+    // }}}
+    // {{{ test define#pattern5
+
+    'test define#pattern5': function() {
+
+        NX.define('NXTest.define.cls61', {
+            hoge: function() {
+                return 'hoge';
+            }
+        });
+
+        NX.define('NXTest.define.cls62', {
+            mixins: [
+                'NXTest.define.cls61'
+            ]
+        });
+
+        var cls = new NXTest.define.cls62();
+
+        cls.hoge().should.equal('hoge');
 
     }
 
