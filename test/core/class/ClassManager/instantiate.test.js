@@ -100,20 +100,40 @@ module.exports = {
 
     'test instantiate#pattern6': function() {
 
-        T_ClassManager.create('ClassManagerTest.instantiate.cls7', {
+        T_ClassManager.create('ClassManagerTest.instantiate.cls6', {
             singleton: true,
             test: function() {
-                return 'pattern3';
+                return 'pattern4';
             }
         });
 
         try {
-            var cls = T_ClassManager.instantiate('ClassManagerTest.instantiate.cls7');
+            var cls = T_ClassManager.instantiate('ClassManagerTest.instantiate.cls6');
         } catch(e) {
-            e.message.should.equal("[NX.create] 'ClassManagerTest.instantiate.cls7' is a singleton and cannot be instantiated");
+            e.message.should.equal("[NX.create] 'ClassManagerTest.instantiate.cls6' is a singleton and cannot be instantiated");
         }
 
-    }
+    },
+
+    // }}}
+    // {{{ test instantiate#pattern7
+
+    'test instantiate#pattern7': function() {
+
+        T_ClassManager.create('ClassManagerTest.instantiate.cls7', {
+            constructor: function(config) {
+                T_NX.apply(this, config);
+                return this;
+            },
+            test: function() {
+                return this.foo;
+            }
+        });
+
+        var cls7 = T_ClassManager.instantiate('ClassManagerTest.instantiate.cls7', {foo: 'bar'});
+        cls7.test().should.equal('bar');
+
+    },
 
     // }}}
 
