@@ -24,11 +24,11 @@ module.exports = {
     'test getPostprocessor#pattern1': function() {
 
         var foo = function() {
-            return 'foo';
+            return 'test1';
         };
 
         var bar = function() {
-            return 'bar';
+            return 'test2';
         };
 
         T_ClassManager.registerPostprocessor({
