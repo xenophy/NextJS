@@ -58,6 +58,20 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test get#pattern3
+
+    'test get#pattern3': function() {
+
+        T_NX.ns('ClassManagerTest', 'ClassManagerTest.get', 'ClassManagerTest.get.app');
+
+        ClassManagerTest.get.cls1 = function() {
+            return 'f1';
+        };
+
+        assert.equal(T_ClassManager.get('ClassManagerTest.get.cls2'), null);
+    }
+
+    // }}}
 
 
 };
