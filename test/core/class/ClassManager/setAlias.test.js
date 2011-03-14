@@ -67,6 +67,31 @@ module.exports = {
             e.message.should.equal('[NX.ClassManager] Overriding already existed alias: \'ClassManagerTest.setAlias.cls5\' of: \'ClassManagerTest.setAlias.cls3\' with: \'ClassManagerTest.setAlias.cls4\'. Be sure it\'s intentional.');
         }
 
+    },
+
+    // }}}
+    // {{{ test setAlias#pattern3
+
+    'test setAlias#pattern3': function() {
+
+        T_ClassManager.create('ClassManagerTest.setAlias.cls6', {
+            f3: function(){
+                return 'f3';
+            }
+        });
+
+        T_ClassManager.setAlias(ClassManagerTest.setAlias.cls6, 'ClassManagerTest.setAlias.cls7');
+
+        var ret = T_ClassManager.getNameByAlias('ClassManagerTest.setAlias.cls7');
+        ret.should.equal('ClassManagerTest.setAlias.cls6');
+
+        var ret = T_ClassManager.getAliasesByName('ClassManagerTest.setAlias.cls6');
+        T_Array.contains(ret, 'ClassManagerTest.setAlias.cls7').should.equal(true);
+
+        var cls = T_ClassManager.instantiateByAlias('ClassManagerTest.setAlias.cls7');
+
+        cls.f3().should.equal('f3');
+
     }
 
     // }}}
