@@ -16,7 +16,7 @@ var T_Array = require('NX/core/lang/Array');
 var T_ClassManager = require('NX/core/class/ClassManager');
 
 // }}}
-// {{{ getName
+// {{{ getNameByAlias
 
 module.exports = {
 
@@ -25,13 +25,15 @@ module.exports = {
     'test getNameByAlias#pattern1': function() {
 
         T_ClassManager.create('ClassManagerTest.getNameByAlias.cls1', {
-            alias: 'ClassManagerTest.getNameByAlias.cls2',
+            alias: 'ClassManagerTest.getNameByAlias.cls2'
         });
 
         var ret = T_ClassManager.getNameByAlias('ClassManagerTest.getNameByAlias.cls2');
         ret.should.equal('ClassManagerTest.getNameByAlias.cls1');
 
     }
+
+    // }}}
 
 };
 
