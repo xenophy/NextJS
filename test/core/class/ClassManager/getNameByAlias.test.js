@@ -25,9 +25,8 @@ module.exports = {
     'test getNameByAlias#pattern1': function() {
 
         T_ClassManager.create('ClassManagerTest.getNameByAlias.cls1', {
+            alias: 'ClassManagerTest.getNameByAlias.cls2',
         });
-
-        T_ClassManager.setAlias('ClassManagerTest.getNameByAlias.cls1', 'ClassManagerTest.getNameByAlias.cls2');
 
         var ret = T_ClassManager.getNameByAlias('ClassManagerTest.getNameByAlias.cls2');
         ret.should.equal('ClassManagerTest.getNameByAlias.cls1');
