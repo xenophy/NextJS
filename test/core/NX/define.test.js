@@ -85,7 +85,7 @@ module.exports = {
         });
 
 //        var cls2 = new NXTest.define.cls1();
-        var cls2 = new NXTest.define.cls2();
+        var cls2 = new NXTest.define.cls3();
 
         cls2.getName().should.equal('[Awesome]');
         cls2.getIsAwesome().should.equal(true);

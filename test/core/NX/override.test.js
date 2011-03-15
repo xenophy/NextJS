@@ -22,7 +22,7 @@ module.exports = {
 
     'test override#pattern1': function() {
 
-         NX.define('NXTest.override.cls1', {
+        NX.define('NXTest.override.cls1', {
             config: {
                 name: 'Awesome',
                 isAwesome: true
@@ -67,45 +67,53 @@ module.exports = {
         cls.isAwesome().should.be.ok;
 
     },
-/*
+
     // }}}
     // {{{ test override#pattern2
 
     'test override#pattern2': function() {
 
-         NX.override('NXTest.override.cls2', {
-             config: {
-                 name: 'Awesome',
-                 isAwesome: true
-             },
-             constructor: function(config) {
- //                console.log("are?");
-                 this.initConfig(config);
-                 return this;
-             },
-             applyName : function(val) {
-                 return "[" + val + "]";
-             }
+        NX.define('NXTest.override.cls2', {
+            config: {
+                name: 'Awesome',
+                isAwesome: true
+            },
+            constructor: function(config) {
+                this.initConfig(config);
+                return this;
+            },
+            applyName : function(val) {
+                return "[" + val + "]";
+            }
         });
 
-        NX.override('NXTest.override.cls3', {
+        NX.override(NXTest.override.cls2, {
+            config: {
+                name: 'hoge',
+                isAwesome: false
+            },
+            applyName : function(val) {
+                return "("+val+")";
+            }
+        });
+
+        NX.define('NXTest.override.cls3', {
             extend: 'NXTest.override.cls2',
             constructor : function() {
                 this.callParent(arguments);
             }
         });
 
-//        var cls2 = new NXTest.override.cls1();
-        var cls2 = new NXTest.override.cls2();
+        var cls2 = new NXTest.override.cls3();
 
-        cls2.getName().should.equal('[Awesome]');
-        cls2.getIsAwesome().should.equal(true);
+        cls2.getName().should.equal('(hoge)');
+        cls2.getIsAwesome().should.equal(false);
 
         cls2.setName('Next JS');
-        cls2.getName().should.equal('[Next JS]');
+        cls2.getName().should.equal('(Next JS)');
 
         cls2.resetName();
-        cls2.getName().should.equal('[Awesome]');
+        cls2.getName().should.equal('(hoge)');
 
     },
 
@@ -114,17 +122,26 @@ module.exports = {
 
     'test override#pattern3': function() {
 
-         NX.override('NXTest.override.cls4', {
-             statics: {
-                 value: 123,
-                 func: function() {
-                     return 'foo';
-                 }
-             }
-         });
+        NX.define('NXTest.override.cls4', {
+            statics: {
+                value: 123,
+                func: function() {
+                    return 'foo';
+                }
+            }
+        });
 
-         NXTest.override.cls4.value.should.equal(123);
-         NXTest.override.cls4.func().should.equal('foo');
+        NX.override(NXTest.override.cls2, {
+            statics: {
+                value: 978,
+                func: function() {
+                    return 'hoge';
+                }
+            }
+        });
+
+        NXTest.override.cls4.value.should.equal(123);
+        NXTest.override.cls4.func().should.equal('foo');
 
     },
 
@@ -133,27 +150,10 @@ module.exports = {
 
     'test override#pattern4': function() {
 
-        var f = function() {
-        };
-
-        NX.override('NXTest.override.cls5', {
-            extend: f
-        });
-
-        var cls = new NXTest.override.cls5();
-
-        NX.isFunction(cls.initConfig).should.be.ok;
-
-    },
-
-    // }}}
-    // {{{ test override#pattern5
-
-    'test override#pattern5': function() {
-
-        NX.override('NXTest.override.cls61', {
+        NX.define('NXTest.override.cls51', {
             config: {
-                fee: 'baz'
+                fee: 'baz',
+                test: 'test'
             },
             foo: 'bar',
             hoge: function() {
@@ -161,46 +161,32 @@ module.exports = {
             }
         });
 
-        NX.override('NXTest.override.cls62', {
+        NX.override(NXTest.override.cls51, {
+            config: {
+                fee: 'override',
+                test: 'override'
+            }
+        });
+
+        NX.define('NXTest.override.cls52', {
             config: {
                 fee: 'boo'
             },
             mixins: [
-                'NXTest.override.cls61'
+                'NXTest.override.cls51'
             ]
         });
 
-        var cls = new NXTest.override.cls62();
+        var cls = new NXTest.override.cls52();
 
         cls.hoge().should.equal('hoge');
         cls.foo.should.equal('bar');
         cls.config.fee.should.equal('boo');
-
-    },
-
-    // }}}
-    // {{{ test override#pattern6
-
-    'test override#pattern6': function() {
-
-        NX.override('NXTest.override.p6cls', {
-        });
-
-        NX.override('NXTest.override.p6cls2', {
-        });
-
-        NX.override('NXTest.override.p6cls3', {
-            mixins: {
-                '0': 'NXTest.override.p6cls',
-                '1': 'NXTest.override.p6cls2'
-            }
-        });
-
+        cls.config.test.should.equal('override');
 
     }
 
     // }}}
-*/
 
 };
 
