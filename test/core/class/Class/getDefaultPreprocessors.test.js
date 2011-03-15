@@ -30,39 +30,6 @@ module.exports = {
         T_Class.getDefaultPreprocessors()[4].should.equal('config');
         T_Class.getDefaultPreprocessors()[5].should.equal('statics');
 
-    },
-
-    // }}}
-    // {{{ test getDefaultPreprocessors#pattern2
-
-    'test getDefaultPreprocessors#pattern2': function() {
-
-        T_Class.setDefaultPreprocessors([
-            'processor1',
-            'processor2',
-            'processor3'
-        ]);
-
-        T_Class.insertDefaultPreprocessor('firstProcessor', 'first');
-        T_Class.insertDefaultPreprocessor('lastProcessor', 'last');
-
-        T_Class.getDefaultPreprocessors()[0].should.equal('firstProcessor');
-        T_Class.getDefaultPreprocessors()[1].should.equal('processor1');
-        T_Class.getDefaultPreprocessors()[2].should.equal('processor2');
-        T_Class.getDefaultPreprocessors()[3].should.equal('processor3');
-        T_Class.getDefaultPreprocessors()[4].should.equal('lastProcessor');
-
-        T_Class.setDefaultPreprocessors([
-            'className',
-            'loader',
-            'extend',
-            'mixins',
-            'config',
-            'statics'
-        ]);
-
-
-
     }
 
     // }}}

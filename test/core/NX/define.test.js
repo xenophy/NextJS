@@ -68,7 +68,7 @@ module.exports = {
                  isAwesome: true
              },
              constructor: function(config) {
-                 console.log("are?");
+ //                console.log("are?");
                  this.initConfig(config);
                  return this;
              },
@@ -84,7 +84,8 @@ module.exports = {
             }
         });
 
-        var cls2 = new NXTest.define.cls1();
+//        var cls2 = new NXTest.define.cls1();
+        var cls2 = new NXTest.define.cls3();
 
         cls2.getName().should.equal('[Awesome]');
         cls2.getIsAwesome().should.equal(true);

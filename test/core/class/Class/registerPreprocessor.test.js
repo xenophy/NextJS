@@ -41,7 +41,7 @@ module.exports = {
         assert.equal(T_Class.getPreprocessor('foo')(), foo());
         assert.equal(T_Class.getPreprocessor('bar')(), bar());
 
-    },
+    }
 
     // }}}
 
