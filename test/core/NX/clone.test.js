@@ -134,6 +134,22 @@ module.exports = {
         o.obj.length.should.equal(2);
         c.obj.length.should.equal(2);
 
+    },
+
+    // }}}
+    // {{{ test clone#empty
+
+    'test clone#empty': function() {
+
+        var c = T_NX.clone();
+        assert.equal(c, undefined);
+
+        var c = T_NX.clone(null);
+        assert.equal(c, null);
+
+        var c = T_NX.clone('');
+        assert.equal(c, '');
+
     }
 
     // }}}
