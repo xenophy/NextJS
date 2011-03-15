@@ -41,6 +41,9 @@ module.exports = {
                 name: 'hoge',
                 isAwesome: false
             },
+            addFunc : function(val) {
+                return "add func";
+            },
             applyName : function(val) {
                 return "("+val+")";
             }
@@ -49,6 +52,7 @@ module.exports = {
         var cls = new NXTest.override.cls1();
 
         cls.getName().should.equal('(hoge)');
+        cls.addFunc().should.equal('add func');
         cls.getIsAwesome().should.equal(false);
         cls.isAwesome().should.not.be.ok;
 
@@ -57,6 +61,7 @@ module.exports = {
 
         cls.resetName();
         cls.getName().should.equal('(hoge)');
+        cls.addFunc().should.equal('add func');
 
         cls.setConfig({
             name: 'Awesome',
@@ -92,6 +97,9 @@ module.exports = {
                 name: 'hoge',
                 isAwesome: false
             },
+            addFunc : function(val) {
+                return "add func";
+            },
             applyName : function(val) {
                 return "("+val+")";
             }
@@ -108,12 +116,14 @@ module.exports = {
 
         cls2.getName().should.equal('(hoge)');
         cls2.getIsAwesome().should.equal(false);
+        cls2.addFunc().should.equal('add func');
 
         cls2.setName('Next JS');
         cls2.getName().should.equal('(Next JS)');
 
         cls2.resetName();
         cls2.getName().should.equal('(hoge)');
+        cls2.addFunc().should.equal('add func');
 
     },
 
@@ -165,6 +175,9 @@ module.exports = {
             config: {
                 fee: 'override',
                 test: 'override'
+            },
+            addFunc : function(val) {
+                return "add func";
             }
         });
 
@@ -183,6 +196,7 @@ module.exports = {
         cls.foo.should.equal('bar');
         cls.config.fee.should.equal('boo');
         cls.config.test.should.equal('override');
+        cls.addFunc().should.equal('add func');
 
     }
 
