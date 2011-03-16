@@ -11,6 +11,7 @@
 require('should');
 var assert = require('assert');
 
+require('NX/core/class/ClassManager');
 var T_Array = require('NX/core/lang/Array');
 
 // }}}
@@ -54,6 +55,70 @@ module.exports = {
         var ret = [0, 1, 2, 3, 4];
         ret[0] = '';
         ret[4] = '';
+
+        ret = T_Array.clean(ret);
+
+        ret[0].should.equal(1);
+        ret[1].should.equal(2);
+        ret[2].should.equal(3);
+        ret.length.should.equal(3);
+
+    },
+
+    // }}}
+    // {{{ test clean#pattern4
+
+    'test clean#pattern4': function() {
+
+        var ret = T_Array.clean([0, null, 2, null, 4]);
+
+        ret[0].should.equal(0);
+        ret[1].should.equal(2);
+        ret[2].should.equal(4);
+        ret.length.should.equal(3);
+
+    },
+
+    // }}}
+    // {{{ test clean#pattern5
+
+    'test clean#pattern5': function() {
+
+        var ret = [0, 1, 2, 3, 4];
+        ret[0] = null;
+        ret[4] = null;
+
+        ret = T_Array.clean(ret);
+
+        ret[0].should.equal(1);
+        ret[1].should.equal(2);
+        ret[2].should.equal(3);
+        ret.length.should.equal(3);
+
+    },
+
+    // }}}
+    // {{{ test clean#pattern6
+
+    'test clean#pattern6': function() {
+
+        var ret = T_Array.clean([0, undefined, 2, undefined, 4]);
+
+        ret[0].should.equal(0);
+        ret[1].should.equal(2);
+        ret[2].should.equal(4);
+        ret.length.should.equal(3);
+
+    },
+
+    // }}}
+    // {{{ test clean#pattern7
+
+    'test clean#pattern7': function() {
+
+        var ret = [0, 1, 2, 3, 4];
+        ret[0] = undefined;
+        ret[4] = undefined;
 
         ret = T_Array.clean(ret);
 
