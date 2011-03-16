@@ -11,6 +11,8 @@
 require('should');
 var assert = require('assert');
 
+var T_NX = require('NX/core');
+
 require('NX/core/class/ClassManager');
 var T_Class = require('NX/core/class/Class');
 
@@ -26,7 +28,7 @@ module.exports = {
         T_ClassManager.create('NXTest.Base.ownMethod.p1cls', {
         });
 
-        NXTest.Base.ownMethod.p1cls.ownMethod('foo', NX.emptyFn);
+        NXTest.Base.ownMethod.p1cls.ownMethod('foo', T_NX.emptyFn);
 
         var cls = new NXTest.Base.ownMethod.p1cls();
 
