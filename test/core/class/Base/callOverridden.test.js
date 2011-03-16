@@ -11,6 +11,7 @@
 require('should');
 var assert = require('assert');
 
+require('NX/core');
 require('NX/core/class/ClassManager');
 var T_Class = require('NX/core/class/Class');
 
