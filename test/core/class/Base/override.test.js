@@ -11,6 +11,8 @@
 require('should');
 var assert = require('assert');
 
+require('NX');
+require('NX/core');
 require('NX/core/class/ClassManager');
 var T_Class = require('NX/core/class/Class');
 
@@ -33,6 +35,7 @@ module.exports = {
             }
         });
 
+        NXTest.Base.override.p1cls.override('test', 'xeno');
         NXTest.Base.override.p1cls.override('foo', 'baz');
         NXTest.Base.override.p1cls.override('fee', {
             foo: 'sage'
@@ -42,6 +45,7 @@ module.exports = {
         });
 
         var cls = new NXTest.Base.override.p1cls();
+        cls.test.should.equal('xeno');
         cls.foo.should.equal('baz');
         cls.fee.foo.should.equal('sage');
         cls.hoge().should.equal('piyo');
