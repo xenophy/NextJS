@@ -31,6 +31,7 @@ module.exports = {
         ret.length.should.equal(2);
         ret[0].should.equal(3);
         ret[1].should.equal(4);
+
     },
 
     // }}}
@@ -43,6 +44,7 @@ module.exports = {
         ret[0].should.equal('a');
         ret[1].should.equal('b');
         ret[2].should.equal('c');
+
     },
 
     // }}}
