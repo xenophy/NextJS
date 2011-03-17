@@ -26,6 +26,16 @@ module.exports = {
 
         ret = T_Boolean.toBoolean('y');
         ret.should.equal(true);
+
+        ret = T_Boolean.toBoolean('yes');
+        ret.should.equal(true);
+
+        ret = T_Boolean.toBoolean('true');
+        ret.should.equal(true);
+
+        ret = T_Boolean.toBoolean('1');
+        ret.should.equal(true);
+
     },
 
     // }}}
@@ -35,8 +45,18 @@ module.exports = {
 
         var ret;
 
-        ret = T_Boolean.toBoolean('yes');
-        ret.should.equal(true);
+        ret = T_Boolean.toBoolean('n');
+        ret.should.equal(false);
+
+        ret = T_Boolean.toBoolean('no');
+        ret.should.equal(false);
+
+        ret = T_Boolean.toBoolean('false');
+        ret.should.equal(false);
+
+        ret = T_Boolean.toBoolean('2');
+        ret.should.equal(false);
+
     },
 
     // }}}
@@ -46,8 +66,15 @@ module.exports = {
 
         var ret;
 
-        ret = T_Boolean.toBoolean({});
+        ret = T_Boolean.toBoolean(1);
         ret.should.equal(true);
+
+        ret = T_Boolean.toBoolean(300);
+        ret.should.equal(true);
+
+        ret = T_Boolean.toBoolean(-1);
+        ret.should.equal(true);
+
     },
 
     // }}}
@@ -57,14 +84,51 @@ module.exports = {
 
         var ret;
 
-        ret = T_Boolean.toBoolean(null);
+        ret = T_Boolean.toBoolean(true);
+        ret.should.equal(true);
+
+        ret = T_Boolean.toBoolean(false);
         ret.should.equal(false);
+
     },
 
     // }}}
     // {{{ test toBoolean#pattern5
 
     'test toBoolean#pattern5': function() {
+
+        var ret;
+
+        ret = T_Boolean.toBoolean({});
+        ret.should.equal(true);
+
+        ret = T_Boolean.toBoolean([]);
+        ret.should.equal(true);
+
+        ret = T_Boolean.toBoolean(new Date());
+        ret.should.equal(true);
+
+        ret = T_Boolean.toBoolean(function(){});
+        ret.should.equal(true);
+
+    },
+
+    // }}}
+    // {{{ test toBoolean#pattern5
+
+    'test toBoolean#pattern5': function() {
+
+        var ret;
+
+        ret = T_Boolean.toBoolean(null);
+        ret.should.equal(false);
+
+    },
+
+    // }}}
+    // {{{ test toBoolean#pattern6
+
+    'test toBoolean#pattern6': function() {
 
         var ret;
 
