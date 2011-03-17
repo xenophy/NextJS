@@ -11,6 +11,7 @@
 require('should');
 var assert = require('assert');
 
+require('NX/core/class/ClassManager');
 var T_Array = require('NX/core/lang/Array');
 
 // }}}
@@ -29,6 +30,23 @@ module.exports = {
 
         index = T_Array.indexOf(array, 7);
 
+        index.should.equal(-1);
+    },
+
+    // }}}
+    // {{{ test indexOf#pattern2
+
+    'test indexOf#pattern2': function() {
+
+        var array = ['hoge', 'foo', 'bar'];
+
+        var index = T_Array.indexOf(array, 'foo');
+        index.should.equal(1);
+
+        index = T_Array.indexOf(array, 'hoge', 0);
+        index.should.equal(0);
+
+        index = T_Array.indexOf(array, 'hoge', 1);
         index.should.equal(-1);
     }
 
