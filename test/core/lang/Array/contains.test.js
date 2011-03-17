@@ -11,6 +11,7 @@
 require('should');
 var assert = require('assert');
 
+require('NX/core/class/ClassManager');
 var T_Array = require('NX/core/lang/Array');
 
 // }}}
@@ -27,7 +28,6 @@ module.exports = {
         T_Array.contains(array, 5).should.equal(true);
         T_Array.contains(array, 9).should.equal(true);
         T_Array.contains(array, 7).should.equal(false);
-
 
     }
 

@@ -11,6 +11,7 @@
 require('should');
 var assert = require('assert');
 
+require('NX/core/class/ClassManager');
 var T_Array = require('NX/core/lang/Array');
 
 // }}}
@@ -28,6 +29,8 @@ module.exports = {
 
         T_Array.every([12, 5, 8, 130, 44], isBigEnough).should.equal(false);
         T_Array.every([12, 54, 18, 130, 44], isBigEnough).should.equal(true);
+        T_Array.every([], isBigEnough).should.equal(true);
+
     }
 
     // }}}
