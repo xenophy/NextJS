@@ -11,6 +11,7 @@
 require('should');
 var assert = require('assert');
 
+require('NX/core/class/ClassManager');
 var T_Array = require('NX/core/lang/Array');
 
 // }}}
@@ -23,15 +24,16 @@ module.exports = {
     'test include#pattern1': function() {
 
         var ret = [0, 1, 2, 3, 4];
-        T_Array.include(ret, 5);
+        T_Array.include(ret, 6);
 
         ret[0].should.equal(0);
         ret[1].should.equal(1);
         ret[2].should.equal(2);
         ret[3].should.equal(3);
         ret[4].should.equal(4);
-        ret[5].should.equal(5);
+        ret[5].should.equal(6);
         ret.length.should.equal(6);
+
     },
 
     // }}}
@@ -40,7 +42,7 @@ module.exports = {
     'test include#pattern2': function() {
 
         var ret = [0, 1, 2, 3, 4];
-        T_Array.include([0, 1, 2, 3, 4], 2);
+        T_Array.include(ret, 2);
 
         ret[0].should.equal(0);
         ret[1].should.equal(1);
@@ -48,6 +50,7 @@ module.exports = {
         ret[3].should.equal(3);
         ret[4].should.equal(4);
         ret.length.should.equal(5);
+
     }
 
     // }}}
