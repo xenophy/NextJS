@@ -29,8 +29,23 @@ module.exports = {
 
         f(1,2).should.equal('1:2:undefined');
 
-        T_Function.bind(f, this, [1,2,3], true)().should.equal('1:2:3');
-        T_Function.bind(f, this, 3, 2)(1,2).should.equal('1:2:3');
+        T_Function.bind(f, this, [4,5,6], true)().should.equal('4:5:6');
+
+    },
+
+    // }}}
+    // {{{ test bind#pattern2
+
+    'test bind#pattern2': function() {
+
+        var f = function(arg1, arg2, arg3) {
+            return arg1 + ':' + arg2 + ':' + arg3;
+        }
+
+        f(1,2).should.equal('1:2:undefined');
+
+        T_Function.bind(f, this, 3, 2)(5,4).should.equal('5:4:3');
+
     }
 
     // }}}
