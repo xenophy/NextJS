@@ -50,6 +50,24 @@ module.exports = {
 
         ret.should.be.not.ok;
 
+    },
+
+    // }}}
+    // {{{ test flexSetter#pattern3
+
+    'test flexSetter#pattern3': function() {
+
+        var ret = '';
+
+        var f = T_Function.flexSetter(function(key, v) {
+            ret = key + ':' + v;
+        });
+
+        f('hoge', 'foo');
+
+        ret.should.equal('hoge:foo');
+
+
     }
 
     // }}}
