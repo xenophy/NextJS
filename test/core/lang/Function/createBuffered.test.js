@@ -11,6 +11,7 @@
 require('should');
 var assert = require('assert');
 
+require('NX/core/class/ClassManager');
 var T_Function = require('NX/core/lang/Function');
 
 // }}}
@@ -22,18 +23,40 @@ module.exports = {
 
     'test createBuffered#pattern1': function() {
 
-        var startTime = new Date();
-
         var f = function() {
 
             var endTime = new Date();
             var msec = endTime - startTime;
 
-            msec.should.be.within(10,1000);
+            msec.should.be.within(50,200);
 
         };
 
-        T_Function.createBuffered(f, 10)();
+        var startTime = new Date();
+        T_Function.createBuffered(f, 50)();
+
+    },
+
+    // }}}
+    // {{{ test createBuffered#pattern2
+
+    'test createBuffered#pattern2': function() {
+
+        var f = function(arg1, arg2, arg3) {
+
+            var endTime = new Date();
+            var msec = endTime - startTime;
+
+            msec.should.be.within(50,200);
+
+            arg1.should.equal(4);
+            arg2.should.equal(5);
+            arg3.should.equal(6);
+
+        }
+
+        var startTime = new Date();
+        T_Function.createBuffered(f, 50, this, [4,5,6])();
 
     }
 
