@@ -11,6 +11,7 @@
 require('should');
 var assert = require('assert');
 
+require('NX/core/class/ClassManager');
 var T_Function = require('NX/core/lang/Function');
 
 // }}}
@@ -51,6 +52,27 @@ module.exports = {
         var sayHiToFriend = T_Function.createInterceptor(sayHi, null);
 
         sayHiToFriend('Fred').should.equal('Hi, Fred');
+        sayHiToFriend('Brian').should.equal('Hi, Brian');
+
+    },
+
+    // }}}
+    // {{{ test createInterceptor#pattern3
+
+    'test createInterceptor#pattern3': function() {
+
+        var returnValue = 'return test';
+        var sayHi = function(name){
+            return 'Hi, ' + name;
+        }
+
+        sayHi('Fred').should.equal('Hi, Fred');
+
+        var sayHiToFriend = T_Function.createInterceptor(sayHi, function(name){
+            return name == 'Brian';
+        },this, returnValue);
+
+        assert.equal(sayHiToFriend('Fred'), returnValue);
         sayHiToFriend('Brian').should.equal('Hi, Brian');
 
     }
