@@ -78,6 +78,27 @@ module.exports = {
 
         o.hoge.should.equal(123);
         o.piyo.should.equal(999);
+    },
+
+    // }}}
+    // {{{ test merge#pattern6
+
+    'test merge#pattern6': function() {
+
+        var o = {foo: 'bar'};
+        var a = {hoge: 123, piyo: 999};
+        var b = {huge: 456, bar: 888, test: function(){
+            return 'test func';
+        }};
+
+        T_Object.merge(o, a, b);
+
+        o.foo.should.equal('bar');
+        o.hoge.should.equal(123);
+        o.piyo.should.equal(999);
+        o.huge.should.equal(456);
+        o.bar.should.equal(888);
+        o.test().should.equal('test func');
     }
 
     // }}}
