@@ -31,6 +31,20 @@ module.exports = {
 
         f().should.equal('Hi, Fred');
 
+    },
+
+    // }}}
+    // {{{ test pass#pattern2
+
+    'test pass#pattern2': function() {
+
+        var sayHi = function(t, h){
+            return t+':'+h;
+        }
+
+        var f = T_Function.pass(sayHi);
+        f('test', 'hoge').should.equal('test:hoge');
+
     }
 
     // }}}
