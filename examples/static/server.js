@@ -13,7 +13,7 @@ require('../../lib/NX');
 // }}}
 // {{{ HTTP Server
 
-NX.regServer('http', {
+NX.regServer({
 
     // ポート指定
     port: 3000
