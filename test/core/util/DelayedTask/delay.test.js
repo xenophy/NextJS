@@ -33,6 +33,56 @@ module.exports = {
 
         dt.delay(10);
 
+    },
+
+    // }}}
+    // {{{ test delay#pattern2
+
+    'test delay#pattern2': function() {
+
+        var me = this,
+            startTime = new Date(),
+            test = {};
+
+        var dt = new T_UTIL_DelayedTask(function() {
+            var endTime = new Date();
+            var msec = endTime - startTime;
+
+            assert.equal(this, me);
+            msec.should.be.within(10,1000);
+        });
+
+        dt.delay(10, function(arg){
+            var endTime = new Date();
+            var msec = endTime - startTime;
+
+            assert.equal(this, test);
+            arg.should.equal('hoge');
+            msec.should.be.within(10,1000);
+
+        }, test, ['hoge']);
+
+    },
+
+    // }}}
+    // {{{ test delay#pattern3
+
+    'test delay#pattern3': function() {
+
+        var startTime = new Date(),
+            count = 0;
+
+        var dt = new T_UTIL_DelayedTask(function() {
+            var endTime = new Date();
+            var msec = endTime - startTime;
+            ++count;
+            count.should.equal(1);
+            msec.should.be.within(10,1000);
+        });
+
+        dt.delay(1001);
+        dt.delay(10);
+
     }
 
     // }}}
