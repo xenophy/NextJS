@@ -18,10 +18,17 @@ var T_String = require('NX/core/lang/String');
 
 module.exports = {
 
-    // {{{ test escape#standard
+    // {{{ test escape#pattern1
 
-    'test escape#standard': function() {
-        T_String.escape("'\\").should.equal("\\'\\\\");
+    'test escape#pattern1': function() {
+        T_String.escape("'").should.equal("\\'");
+    },
+
+    // }}}
+    // {{{ test escape#pattern2
+
+    'test escape#pattern2': function() {
+        T_String.escape("\\").should.equal("\\\\");
     }
 
     // }}}

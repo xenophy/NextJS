@@ -85,6 +85,27 @@ module.exports = {
 
     'test trim#pattern10': function() {
         T_String.trim('\ttext    ').should.equal('text');
+    },
+
+    // }}}
+    // {{{ test trim#pattern11
+
+    'test trim#pattern11': function() {
+        T_String.trim('text　').should.equal('text');
+    },
+
+    // }}}
+    // {{{ test trim#pattern12
+
+    'test trim#pattern12': function() {
+        T_String.trim('　text ').should.equal('text');
+    },
+
+    // }}}
+    // {{{ test trim#pattern13
+
+    'test trim#pattern13': function() {
+        T_String.trim('　text\t').should.equal('text');
     }
 
     // }}}
