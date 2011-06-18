@@ -2,14 +2,16 @@
 
 NODE = node
 TEST = expresso
-TESTS = test/NX.test.js
+TESTS = test/NX.test.js \
+		test/Array.test.js \
+		test/Function.test.js
 
 PREFIX = /usr/local
 LIB_PREFIX = $(HOME)/.node_libraries
 
 test:
 	@NODE_ENV=test $(TEST) \
-		-I lib \
+		-I lib -q \
 		$(TEST_FLAGS) $(TESTS)
 
 test-cov:
