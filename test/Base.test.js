@@ -9,7 +9,8 @@
 // {{{ requires
 
 require('NX');
-//assert = require('assert');
+require('should');
+assert = require('assert');
 
 // }}}
 // {{{ NX.Base Class Tests
