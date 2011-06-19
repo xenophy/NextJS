@@ -4,6 +4,7 @@ NODE = node
 TEST = expresso
 TESTS = test/NX.test.js \
 		test/Array.test.js \
+		test/Object.test.js \
 		test/Function.test.js
 
 PREFIX = /usr/local

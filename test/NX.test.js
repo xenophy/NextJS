@@ -1126,9 +1126,145 @@ module.exports = {
         NX.isIterable(new Date()).should.not.equal(true);
         NX.isIterable(function(){}).should.equal(true);
 
+    },
+
+    // }}}
+    // {{{ test clone#standard
+
+    'test clone#standard': function() {
+
+        var o = {
+            src: 'src object'
+        };
+
+        var c = NX.clone(o);
+
+        o.src.should.equal('src object');
+        c.src.should.equal('src object');
+
+        o.src = 'changed';
+
+        o.src.should.equal('changed');
+        c.src.should.equal('src object');
+
+    },
+
+    // }}}
+    // {{{ test clone#function
+
+    'test clone#function': function() {
+
+        var o = function() {
+            return 'original';
+        };
+
+        var c = NX.clone(o);
+
+        o().should.equal('original');
+        c().should.equal('original');
+
+        o = function() {
+            return 'replace';
+        }
+
+        o().should.equal('replace');
+        c().should.equal('original');
+
+    },
+
+    // }}}
+    // {{{ test clone#date
+
+    'test clone#date': function() {
+
+        var date1 = new Date();
+
+        var date2 = NX.clone(date1);
+
+        date1.getMilliseconds().should.equal(date2.getMilliseconds());
+        date2.setMilliseconds(500);
+        date1.getMilliseconds().should.not.equal(date2.getMilliseconds());
+    },
+
+    // }}}
+    // {{{ test clone#array
+
+    'test clone#array': function() {
+
+        var o = [1,2,3];
+        var c = NX.clone(o);
+
+        o[0].should.equal(1);
+        o[1].should.equal(2);
+        o[2].should.equal(3);
+
+        c[0].should.equal(1);
+        c[1].should.equal(2);
+        c[2].should.equal(3);
+
+        o.push(4);
+
+        o.length.should.equal(4);
+        c.length.should.equal(3);
+
+    },
+
+    // }}}
+    // {{{ test clone#nested
+
+    'test clone#nested': function() {
+
+        var o = {
+            cn: [{
+                tag: 'a'
+            },{
+                tag: 'span'
+            }]
+        };
+        o.obj = o.cn;
+
+        var c = NX.clone(o);
+
+        o.cn[0].tag.should.equal('a');
+        o.cn[1].tag.should.equal('span');
+
+        c.cn[0].tag.should.equal('a');
+        c.cn[1].tag.should.equal('span');
+
+        o.obj[0].tag.should.equal('a');
+        o.obj[1].tag.should.equal('span');
+
+        c.obj[0].tag.should.equal('a');
+        c.obj[1].tag.should.equal('span');
+
+        c.cn.push({tag: 'div'});
+
+        o.cn.length.should.equal(2);
+        c.cn.length.should.equal(3);
+
+        o.obj.length.should.equal(2);
+        c.obj.length.should.equal(2);
+
+    },
+
+    // }}}
+    // {{{ test clone#empty
+
+    'test clone#empty': function() {
+
+        var c = NX.clone();
+        assert.equal(c, undefined);
+
+        var c = NX.clone(null);
+        assert.equal(c, null);
+
+        var c = NX.clone('');
+        assert.equal(c, '');
+
     }
 
     // }}}
+
 
 };
 
