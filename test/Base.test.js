@@ -17,9 +17,58 @@ assert = require('assert');
 
 module.exports = {
 
-    'test String#length': function(){
-//        assert.equal(6, 'foobar'.length);
-    }
+    // {{{ test callOverridden#pattern1
+
+    'test callOverridden#pattern1': function() {
+
+        /*
+        NX.ClassManager.create('NXTest.Base.callOverridden.p1cls', {
+            hoge: function() {
+                return 'org';
+            }
+        });
+
+        NX.ClassManager.create('NXTest.Base.callOverridden.p1cls2', {
+            extend: 'NXTest.Base.callOverridden.p1cls',
+            hoge: function() {
+                this.callOverridden().should.equal('org');
+            }
+        });
+
+        try{
+            var cls = new NXTest.Base.callOverridden.p1cls2();
+            cls.hoge();
+        } catch(e) {
+            e.message.should.equal("[NXTest.Base.callOverridden.p1cls2] this.callOverridden was called in 'hoge' but this method has never been overridden");
+        }
+        */
+
+    },
+
+    // }}}
+    // {{{ test callOverridden#pattern2
+
+    'test callOverridden#pattern2': function() {
+
+        /*
+        NX.ClassManager.create('NXTest.Base.callOverridden.p2cls', {
+            hoge: function() {
+                return 'org';
+            }
+        });
+
+        NXTest.Base.callOverridden.p2cls.override('hoge', function() {
+            this.callOverridden().should.equal('org');
+        });
+
+        var cls = new NXTest.Base.callOverridden.p2cls();
+        cls.hoge();
+        */
+
+    },
+
+    // }}}
+
 };
 
 // }}}
