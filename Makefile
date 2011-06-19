@@ -2,11 +2,13 @@
 
 NODE = node
 TEST = expresso
-TESTS = test/NX.test.js \
-		test/Array.test.js \
+TESTS = test/Array.test.js \
+		test/Base.test.js \
+		test/ClassManager.test.js \
 		test/Error.test.js \
+		test/Function.test.js \
+		test/NX.test.js \
 		test/Object.test.js \
-		test/Function.test.js
 
 PREFIX = /usr/local
 LIB_PREFIX = $(HOME)/.node_libraries
