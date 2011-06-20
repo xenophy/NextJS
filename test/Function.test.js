@@ -426,7 +426,7 @@ module.exports = {
             var endTime = new Date();
             var msec = endTime - startTime;
 
-            msec.should.be.within(100*cnt,1000);
+            msec.should.be.within(100*cnt-1,1000);
 
             cnt++;
 

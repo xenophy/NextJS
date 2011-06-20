@@ -17,15 +17,6 @@ assert = require('assert');
 
 module.exports = {
 
-    // {{{ 'test insert#pattern1'
-
-    'test insert#pattern1': function() {
-
-
-
-    },
-
-    // }}}
     // {{{ 'test replace#pattern1'
 
     'test replace#pattern1': function() {
