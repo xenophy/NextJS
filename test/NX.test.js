@@ -1308,7 +1308,6 @@ module.exports = {
     // }}}
     // {{{ test define#pattern1
 
-    /*
     'test define#pattern1': function() {
 
          NX.define('NXTest.define.cls1', {
@@ -1477,10 +1476,6 @@ module.exports = {
     }
 
     // }}}
-
-    */
-
-
 
 };
 
