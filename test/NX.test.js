@@ -1386,7 +1386,6 @@ module.exports = {
 
     'test define#pattern3': function() {
 
-        /*
          NX.define('NXTest.define.cls4', {
              statics: {
                  value: 123,
@@ -1395,9 +1394,8 @@ module.exports = {
                  }
              }
          });
-/* NXTest.define.cls4.value.should.equal(123);
+         NXTest.define.cls4.value.should.equal(123);
          NXTest.define.cls4.func().should.equal('foo');
-         */
 
     },
 
@@ -1406,7 +1404,6 @@ module.exports = {
 
     'test define#pattern4': function() {
 
-        /*
         var f = function() {
         };
 
@@ -1416,7 +1413,7 @@ module.exports = {
 
         var cls = new NXTest.define.cls5();
 
-//        NX.isFunction(cls.initConfig).should.be.ok;
+        NX.isFunction(cls.initConfig).should.be.ok;
 
     },
 
@@ -1446,11 +1443,9 @@ module.exports = {
 
         var cls = new NXTest.define.cls62();
 
-        /*
         cls.hoge().should.equal('hoge');
         cls.foo.should.equal('bar');
         cls.config.fee.should.equal('boo');
-        */
 
     },
 
@@ -1459,7 +1454,6 @@ module.exports = {
 
     'test define#pattern6': function() {
 
-        /*
         NX.define('NXTest.define.p6cls', {
         });
 
@@ -1473,7 +1467,6 @@ module.exports = {
             }
         });
 
-        */
     }
 
     // }}}
