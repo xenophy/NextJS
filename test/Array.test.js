@@ -360,9 +360,20 @@ module.exports = {
         ret[0].should.equal('c');
         ret[1].should.equal('d');
 
+    },
+
+    // }}}
+    // {{{ 'test splice#pattern1'
+
+    'test splice#pattern1': function() {
+
+        var a = new Array("A", "B", "C", "D", "E", "F", "G");
+        NX.Array.splice(a, 2, 3, "c", "d", "e");
+
     }
 
     // }}}
+
 
 };
 
