@@ -1370,18 +1370,14 @@ module.exports = {
             }
         });
 
-        console.log(NXTest.define.cls3);
 
-        var cls2 = new NXTest.define.cls3();
+        var cls3 = new NXTest.define.cls3();
 
-        cls2.getName().should.equal('[Awesome]');
-        cls2.getIsAwesome().should.equal(true);
+        cls3.getName().should.equal('[Awesome]');
+        cls3.getIsAwesome().should.equal(true);
 
-        cls2.setName('Next JS');
-        cls2.getName().should.equal('[Next JS]');
-
-        cls2.resetName();
-        cls2.getName().should.equal('[Awesome]');
+        cls3.setName('Next JS');
+        cls3.getName().should.equal('[Next JS]');
 
     },
 
