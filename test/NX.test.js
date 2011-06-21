@@ -1324,7 +1324,7 @@ module.exports = {
             }
         });
 
-        //var cls = new NXTest.define.cls1();
+        var cls = new NXTest.define.cls1();
 
         /*
         cls.getName().should.equal('[Awesome]');
