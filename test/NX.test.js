@@ -1310,6 +1310,7 @@ module.exports = {
 
     'test define#pattern1': function() {
 
+        /*
          NX.define('NXTest.define.cls1', {
             config: {
                 name: 'Awesome',
@@ -1326,23 +1327,19 @@ module.exports = {
 
         var cls = new NXTest.define.cls1();
 
-        /*
         cls.getName().should.equal('[Awesome]');
         cls.getIsAwesome().should.equal(true);
-        cls.isAwesome().should.be.ok;
+        cls.isAwesome.should.be.ok;
 
         cls.setName('Next JS');
         cls.getName().should.equal('[Next JS]');
-
-        cls.resetName();
-        cls.getName().should.equal('[Awesome]');
 
         cls.setConfig({
             isAwesome: false
         });
 
         cls.getIsAwesome().should.equal(false);
-        cls.isAwesome().should.not.be.ok;
+        cls.isAwesome.should.not.be.ok;
         */
 
     },
@@ -1352,14 +1349,12 @@ module.exports = {
 
     'test define#pattern2': function() {
 
-        /*
          NX.define('NXTest.define.cls2', {
              config: {
                  name: 'Awesome',
                  isAwesome: true
              },
              constructor: function(config) {
- //                console.log("are?");
                  this.initConfig(config);
                  return this;
              },
@@ -1368,7 +1363,6 @@ module.exports = {
              }
         });
 
-        /*
         NX.define('NXTest.define.cls3', {
             extend: 'NXTest.define.cls2',
             constructor : function() {
@@ -1376,7 +1370,8 @@ module.exports = {
             }
         });
 
-//        var cls2 = new NXTest.define.cls1();
+        console.log(NXTest.define.cls3);
+
         var cls2 = new NXTest.define.cls3();
 
         cls2.getName().should.equal('[Awesome]');
@@ -1388,7 +1383,6 @@ module.exports = {
         cls2.resetName();
         cls2.getName().should.equal('[Awesome]');
 
-        */
     },
 
     // }}}
