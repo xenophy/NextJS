@@ -61,75 +61,9 @@ module.exports = {
 
     'test format#pattern1': function() {
 
-        var str = 'There are %d monkeys in the %s';
-        var ret = NX.String.format(str, 5, 'Japan');
-
-        ret.should.equal('There are 5 monkeys in the Japan');
-    },
-
-    // }}}
-    // {{{ test format#pattern2
-
-    'test format#pattern2': function() {
-
-        var str = 'The %2$s contains %1$d monkeys';
-        var ret = NX.String.format(str, 5, 'Japan');
-
-        ret.should.equal('The Japan contains 5 monkeys');
-    },
-
-    // }}}
-    // {{{ test format#pattern3
-
-    'test format#pattern3': function() {
-
-        var n = 43951789;
-        var u = -43951789;
-        var c = 65; // ASCII Code 'A'
-
-        NX.String.format("%%b = '%b'", n).should.equal("%b = '10100111101010011010101101'");
-        NX.String.format("%%c = '%c'", c).should.equal("%c = 'A'");
-        NX.String.format("%%d = '%d'", n).should.equal("%d = '43951789'");
-        NX.String.format("%%e = '%e'", n).should.equal("%e = '4.395179e+7'");
-        NX.String.format("%%u = '%u'", n).should.equal("%u = '43951789'");
-        NX.String.format("%%u = '%u'", u).should.equal("%u = '4251015507'");
-        NX.String.format("%%f = '%f'", n).should.equal("%f = '43951789.000000'");
-        NX.String.format("%%o = '%o'", n).should.equal("%o = '247523255'");
-        NX.String.format("%%s = '%s'", n).should.equal("%s = '43951789'");
-        NX.String.format("%%x = '%x'", n).should.equal("%x = '29ea6ad'");
-        NX.String.format("%%X = '%X'", n).should.equal("%X = '29EA6AD'");
-        NX.String.format("%%+d = '%+d'", n).should.equal("%+d = '+43951789'");
-        NX.String.format("%%+d = '%+d'", u).should.equal("%+d = '-43951789'");
-        NX.String.format("%%+d = '% d'", n).should.equal("%+d = ' 43951789'");
-        NX.String.format("%%z = '%z'", n).should.equal("%z = '%z'");
-        NX.String.format("abcde", n).should.equal("abcde");
-
-    },
-
-    // }}}
-    // {{{ test format#pattern4
-
-    'test format#pattern4': function() {
-
-        var s = 'monkey';
-        var t = 'many monkeys';
-
-        NX.String.format("[%s]", s).should.equal('[monkey]');
-        NX.String.format("[%10s]", s).should.equal('[    monkey]');
-        NX.String.format("[%-10s]", s).should.equal('[monkey    ]');
-        NX.String.format("[%010s]", s).should.equal('[0000monkey]');
-        NX.String.format("[%'#10s]", s).should.equal('[####monkey]');
-        NX.String.format("[%10.10s]", t).should.equal('[many monke]');
-
-    },
-
-    // }}}
-    // {{{ test format#pattern5
-
-    'test format#pattern5': function() {
-
-        NX.String.format("%04d-%02d-%02d", 1979, 5, 16).should.equal('1979-05-16');
-        NX.String.format("%0!d-%02d-%02d", 1979, 5, 16).should.equal('%0!d-1979-05');
+        var cls = 'my-class', text = 'Some text';
+        var s = NX.String.format('<div class="{0}">{1}</div>', cls, text);
+        s.should.equal('<div class="my-class">Some text</div>');
     },
 
     // }}}
@@ -221,6 +155,123 @@ module.exports = {
 
     'test trim#pattern13': function() {
         NX.String.trim('　text\t').should.equal('text');
+    },
+
+    // }}}
+    // {{{ test ellipsis#pattern1
+
+    'test ellipsis#pattern1': function() {
+
+        var s = NX.String.ellipsis('abcdefghijk', 6);
+        s.should.equal('abc...');
+
+    },
+
+    // }}}
+    // {{{ test ellipsis#pattern2
+
+    'test ellipsis#pattern2': function() {
+
+        var s = NX.String.ellipsis('This is a pen.', 10, true);
+        s.should.equal('This is...');
+
+    },
+
+    // }}}
+    // {{{ test ellipsis#pattern3
+
+    'test ellipsis#pattern3': function() {
+
+        var s = NX.String.ellipsis('a', 1);
+        s.should.equal('a');
+
+    },
+
+    // }}}
+    // {{{ test htmlDecode#pattern1
+
+    'test htmlDecode#pattern1': function() {
+
+        var s = NX.String.htmlDecode('a&amp;b&gt;c&lt;d');
+        s.should.equal('a&b>c<d');
+
+    },
+
+    // }}}
+    // {{{ test htmlDecode#pattern2
+
+    'test htmlDecode#pattern2': function() {
+
+        var s = NX.String.htmlDecode('&#65;&#66;&#67;');
+        s.should.equal('ABC');
+
+    },
+
+    // }}}
+    // {{{ test htmlEncode#pattern1
+
+    'test htmlEncode#pattern1': function() {
+
+        var s = NX.String.htmlEncode('a&b>c<d');
+        s.should.equal('a&amp;b&gt;c&lt;d');
+
+    },
+
+    // }}}
+    // {{{ test toggle#pattern1
+
+    'test toggle#pattern1': function() {
+
+        var sort = 'ASC';
+        sort = NX.String.toggle(sort, 'ASC', 'DESC');
+        sort.should.equal('DESC');
+        sort = NX.String.toggle(sort, 'ASC', 'DESC');
+        sort.should.equal('ASC');
+
+    },
+
+    // }}}
+    // {{{ test urlAppend#pattern1
+
+    'test urlAppend#pattern1': function() {
+
+        var url = 'http://www.xenophy.com/';
+        var s = NX.String.urlAppend(url, 'hoge');
+        s.should.equal('http://www.xenophy.com/?hoge');
+
+    },
+
+    // }}}
+    // {{{ test urlAppend#pattern2
+
+    'test urlAppend#pattern2': function() {
+
+        var url = 'http://www.xenophy.com/';
+        var s = NX.String.urlAppend(url, 'hoge');
+        s.should.equal('http://www.xenophy.com/?hoge');
+
+    },
+
+    // }}}
+    // {{{ test urlAppend#pattern3
+
+    'test urlAppend#pattern3': function() {
+
+        var url = 'http://www.xenophy.com/?foo=bar';
+        var s = NX.String.urlAppend(url, 'hoge');
+        s.should.equal('http://www.xenophy.com/?foo=bar&hoge');
+
+    },
+
+    // }}}
+    // {{{ test urlAppend#pattern4
+
+    'test urlAppend#pattern4': function() {
+
+        var url = 'http://www.xenophy.com/';
+        var s = NX.String.urlAppend(url, '');
+        s.should.equal('http://www.xenophy.com/');
+
     }
 
     // }}}
