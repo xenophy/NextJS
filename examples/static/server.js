@@ -6,10 +6,19 @@
  * http://www.xenophy.com
  */
 
-// {{{ NX Core
+// {{{ requires
 
-require('./core');
-require('./server');
+require('../../lib/NX');
+
+// }}}
+// {{{ HTTP Server
+
+NX.server({
+
+    // ポート指定
+    port: 80,
+
+});
 
 // }}}
 
