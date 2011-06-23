@@ -4,6 +4,7 @@ NODE = node
 TEST = expresso
 TESTS = test/Array.test.js \
 		test/Base.test.js \
+		test/Class.test.js \
 		test/ClassManager.test.js \
 		test/Error.test.js \
 		test/Function.test.js \
