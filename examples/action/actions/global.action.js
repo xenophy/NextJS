@@ -1,11 +1,9 @@
 
 module.exports = {
 
-    name: 'root',
-
     execute : function() {
 
-        console.log("index/action");
+        console.log("globalaction");
 
         this.end();
     }
