@@ -3,7 +3,7 @@ module.exports = {
 
     execute : function() {
 
-        console.log("subdir/index/action");
+        console.log("subdir/childdir/index/action");
 
         this.end();
     }

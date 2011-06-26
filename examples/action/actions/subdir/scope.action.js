@@ -3,9 +3,10 @@ module.exports = {
 
     execute : function() {
 
-        console.log("subdir/index/action");
+        console.log("scopeaction");
 
         this.end();
     }
 
 };
+
