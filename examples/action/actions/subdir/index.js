@@ -7,7 +7,7 @@ module.exports = {
 
         console.log("subdir/action");
 
-
+        this.end();
     }
 
 };
