@@ -8,7 +8,32 @@
 <body>
     <h1>Example: Action - Next JS</h1>
     <div id="content">
+
+        <h2>このページ</h2>
+        <p>アクションは次のものが動作します。</p>
+        <ul>
+            <li>グローバルアクション</li>
+            <li>indexアクション</li>
+        </ul>
+
+        <h2>Subdir</h2>
         <a href="./subdir/">subdir</a>
+        <p>404エラーになりますが、アクションは次のものが動作します。</p>
+        <ul>
+            <li>グローバルアクション</li>
+            <li>スコープアクション(subdirに配置してあるもの)</li>
+            <li>subdir/indexアクション</li>
+        </ul>
+
+        <h2>Subdir/Childdir</h2>
+        <a href="./subdir/childdir/">subdir/childdir</a>
+        <p>404エラーになりますが、アクションは次のものが動作します。</p>
+        <ul>
+            <li>グローバルアクション</li>
+            <li>スコープアクション(subdirに配置してあるもの)</li>
+            <li>subdir/childdir/indexアクション</li>
+        </ul>
+
     </div>
 </body>
 </html>
