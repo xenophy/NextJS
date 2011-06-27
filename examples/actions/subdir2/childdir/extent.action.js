@@ -3,7 +3,7 @@ module.exports = {
 
     execute : function() {
 
-        console.log("scopeaction");
+        console.log("extent action/childdir only");
 
         this.end();
     }
