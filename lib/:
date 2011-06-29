@@ -6,135 +6,89 @@
  * http://www.xenophy.com
  */
 
+// {{{ hash
+
+var hash = function(base, secret, fingerprint) {
+    return NX.Crypto.createHmac('sha256', secret).update(base + fingerprint).digest('base64').replace(/=*$/, '');
+}
+
+// }}}
+// {{{ generate
+
+var generate = function(req, secret, cookie) {
+
+    var base = NX.uid(24);
+    var id = base + '.' + hash(base, secret);
+
+    req.sessionId = id;
+    req.session = new NX.util.Session(req);
+    req.session.cookie = new NX.util.Cookie(cookie);
+
+};
+
+// }}}
 // {{{ NX.app.WebController.initSession
 
 module.exports = function() {
 
-    var defaultFingerprint = function(req) {
+    console.log("セッション初期化");
+
+    var me = this,
+        req = me.req,
+        res = me.res;
+
+    var defaultFingerprint = function() {
         return req.headers['user-agent'] || '';
     };
 
-    (function(ctrl) {
+    var share = me.share,
+        config = me.config,
+        store = config.session.store || NX.create('NX.data.MemoryStore'),
+        key = config.session.key,
+        secret = config.session.secret,
+        cookie = config.session.cookie,
+        fingerprint = config.session.fingerprint || defaultFingerprint,
+        a = 0;
 
-        var me = ctrl,
-            req = me.req,
-            res = me.res,
-            share = me.share,
-            config = me.config,
-            store = config.session.store || NX.create('NX.data.MemoryStore'),
-            key = config.session.key,
-            secret = config.session.secret,
-            cookie = config.session.cookie,
-            fingerprint = config.session.fingerprint || defaultFingerprint;
+    fingerprint = fingerprint();
 
-        var sessionId = req.cookies[key];
-        var writeHead = res.writeHead;
-        res.writeHead = function(status, headers) {
+    store.generate = generate;
 
-            if(req.session) {
+    var writeHead = res.writeHead;
+    res.writeHead = function(status, headers) {
 
-                var cookie = req.session.cookie,
+        if(req.session) {
+
+            var cookie = req.session.cookie,
                 secured = cookie.getSecure() && (req.connection.secure || req.connection.proxySecure);
 
-                if(secured || !cookie.getSecure()) {
-                    me.setCookie(key, sessionId, cookie);
-                }
-
+            if(secured || !cookie.getSecure()) {
+                me.setCookie(key, req.sessionId);
             }
 
-            res.writeHead = writeHead;
-
-            return res.writeHead(status, headers);
-        };
-
-        var end = res.end;
-        res.end = function(data, encoding) {
-
-            res.end = end;
-
-            if(req.session) {
-
-                req.session.resetMaxAge();
-                req.session.save(function() {
-                    res.end(data, encoding);
-                });
-
-            } else {
-
-                res.end(data, encoding);
-
-            }
-
-        };
-
-        if(!share.sessionStore) {
-
-            store.generate = function(req) {
-
-                var base = NX.uid(24);
-                var id = base + '.' + hash(req, base);
-
-                req.sessionStore = store;
-                req.session = new NX.util.Session(req, {});
-                req.session.cookie = new NX.util.Cookie(cookie);
-                req.session.id = id;
-                req.session.resetLastAccess();
-
-            };
-            share.sessionStore = store;
-
-        } else {
-            store = share.sessionStore;
         }
 
-        // {{{ hash
+        res.writeHead = writeHead;
 
-        var hash = function(req, base) {
-            return NX.Crypto.createHmac('sha256', secret).update(base + fingerprint(req)).digest('base64').replace(/=*$/, '');
+        return res.writeHead(status, headers);
+    };
+
+    var end = res.end;
+    res.end = function(data, encoding) {
+
+        res.end = end;
+
+        if(share.session) {
+
         }
 
-        // }}}
-        // {{{ generate
+    }
+ 
 
-        var generate = function() {
-            store.generate(req);
-        };
-
-        // }}}
-
-        if(!sessionId) {
-            generate();
-            return;
-        }
-
-        /*
-        var parts = sessionId.split('.');
-
-        if(parts[1] != hash(req, parts[0])) {
-            generate();
-            return;
-        }
-        */
-
-        store.get(sessionId, function(data) {
-
-            req.sessionStore = store;
-            req.session = new NX.util.Session(req, data || {});
-            req.session.cookie = new NX.util.Cookie(cookie);
-            req.session.id = sessionId;
-            req.session.resetLastAccess();
-
-        });
-
-    })(this);
-
-
-
-
-
-
-
-
+    if(!req.sessionId) {
+        generate(req, secret, cookie);
+        return;
+    }
 
 
 
