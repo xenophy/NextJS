@@ -13,7 +13,7 @@ require('../lib/NX');
 // }}}
 // {{{ HTTP Server
 
-NX.server({
+NX.service({
 
     // [ポート指定]
     // デフォルト3000ポート、未指定でも3000ポートになります

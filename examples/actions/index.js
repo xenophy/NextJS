@@ -5,7 +5,7 @@ module.exports = {
 
     execute : function() {
 
-        console.log("index/action");
+//        console.log("index/action");
 
         this.end();
     }
