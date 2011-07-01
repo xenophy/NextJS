@@ -32,7 +32,6 @@ NX.service({
     // デフォルトでNXDを利用しプロセスをデーモン化します。
     enableDaemon: false,
 
-    /*
     // [SSL設定]
     ssl: {
 
@@ -46,7 +45,6 @@ NX.service({
         cert: './certs/certificate.pem'
 
     }
-    */
 
 });
 
