@@ -4,10 +4,10 @@
 
 Next JS is Application Server on node.js
 
-## 利用する外部モジュール
+## データベースを利用する場合の外部モジュール
 
-* [https://github.com/senchalabs/connect](https://github.com/senchalabs/connect)
-* [https://github.com/felixge/node-formidable](https://github.com/felixge/node-formidable)
-* [https://github.com/christkv/node-mongodb-native](https://github.com/christkv/node-mongodb-native)
-* [https://github.com/LearnBoost/Socket.IO-node](https://github.com/LearnBoost/Socket.IO-node)
+* [MySQL](https://github.com/felixge/node-mysql.git)
+* [PostgreSQL](https://github.com/brianc/node-postgres.git)
+* [MongoDB](https://github.com/christkv/node-mongodb-native)
+* [Oracle](https://github.com/mariano/node-db-oracle.git)
 
