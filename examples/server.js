@@ -26,8 +26,7 @@ NX.service({
     // [ワーカー]
     // デフォルトでCPU数(コア)を取得して自動的に最適なワーカー数を設定します。
     // falseに設定するとworkerを使用せずmasterでのみ動作します。
-    workers: 2,
-    //workers: false,
+    workers: false,
 
     // [デーモン化]
     // デフォルトでNXDを利用しプロセスをデーモン化します。
