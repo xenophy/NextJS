@@ -6,22 +6,33 @@
  * http://www.xenophy.com
  */
 
-// {{{ NX.app.Action.constructor
+// {{{ NX.app.Action.init
 
-module.exports = function(config) {
+module.exports = function(fn) {
 
-    config = config || {};
+    var me = this;
 
-    NX.apply(this, config);
-    NX.apply(this, {
-        get: {},
-        post: {},
-        request: {},
-        result: {}
+    console.log(me.uses);
+
+    NX.each(me.uses, function(item) {
+        console.log(item);
+    
     });
-    NX.applyIf(this, {
-        uses: []
+
+
+    me.uses.forEach(me.uses, function(item) {
+
+        console.log(item);
+
+
+
     });
+
+    fn();
+
+
+
+
 
 };
 
