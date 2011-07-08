@@ -2,7 +2,6 @@
 module.exports = {
 
     default: {
-        name: 'default',
         adapter: 'mysql',
         host: 'localhost',
         user: 'root',
