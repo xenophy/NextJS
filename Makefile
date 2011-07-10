@@ -11,7 +11,8 @@ TESTS = test/Array.test.js \
 		test/Loader.test.js \
 		test/NX.test.js \
 		test/Object.test.js \
-		test/String.test.js
+		test/String.test.js \
+		test/data/Store.test.js
 
 PREFIX = /usr/local
 LIB_PREFIX = $(HOME)/.node_libraries
