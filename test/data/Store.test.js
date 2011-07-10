@@ -13,7 +13,7 @@ require('should');
 assert = require('assert');
 
 // }}}
-// {{{ NX.data.Session Class Tests
+// {{{ NX.data.Store Class Tests
 
 module.exports = {
 
