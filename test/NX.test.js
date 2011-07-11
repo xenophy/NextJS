@@ -1612,6 +1612,51 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test moduleCacheClear#pattern1
+
+    'test moduleCacheClear#pattern1': function() {
+
+        var filename = __dirname + '/shared/req1.js';
+
+        var src = [
+            'module.exports = {',
+            '    foo: "bar"',
+            '};'
+        ].join('');
+
+        // ファイル書き込み
+        NX.Fs.writeFileSync(filename, src);
+
+        var o = require(filename);
+
+        o.foo.should.equal('bar');
+
+        var src = [
+            'module.exports = {',
+            '    foo: "bar2"',
+            '};'
+        ].join('');
+
+        // ファイル書き込み
+        NX.Fs.writeFileSync(filename, src);
+
+        var o = require(filename);
+
+        o.foo.should.equal('bar');
+
+        var stat = NX.Fs.statSync(filename);
+
+        NX.moduleCacheClear(filename, stat.mtime);
+
+        var o = require(filename);
+
+        o.foo.should.equal('bar2');
+
+        NX.Fs.unlinkSync(filename);
+
+    }
+
+    // }}}
 
 };
 
