@@ -272,7 +272,14 @@ module.exports = {
         var s = NX.String.urlAppend(url, '');
         s.should.equal('http://www.xenophy.com/');
 
-    }
+    },
+
+    // }}}
+    // {{{ test replace#pattern1
+
+    'test replace#pattern1': function() {
+        NX.String.replace('nextjs', 'js', 'JS').should.equal('nextJS');
+    },
 
     // }}}
 
