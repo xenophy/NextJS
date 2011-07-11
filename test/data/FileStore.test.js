@@ -13,7 +13,7 @@ require('should');
 assert = require('assert');
 
 // }}}
-// {{{ NX.data.MemoryStore Class Tests
+// {{{ NX.data.FileStore Class Tests
 
 module.exports = {
 
@@ -21,7 +21,7 @@ module.exports = {
 
     'test set#pattern1': function(beforeExit) {
 
-        var s = NX.create('NX.data.MemoryStore');
+        var s = NX.create('NX.data.FileStore');
         var trace = false;
         var trace2 = false;
 
@@ -51,9 +51,7 @@ module.exports = {
 
             var o = NX.JSON.decode(s.sessions.teston000001);
 
-            s.sessions.teston000001.should.equal('{"values":{"foo":"bar"},"expires":4118914800000}');
-            o.values.foo.should.equal('bar');
-            o.expires.should.equal(4118914800000);
+            s.sessions.teston000001.should.equal(true);
         });
 
     },
@@ -63,7 +61,9 @@ module.exports = {
 
     'test set#pattern2': function(beforeExit) {
 
-        var s = NX.create('NX.data.MemoryStore');
+        var s = NX.create('NX.data.FileStore');
+
+        s.set(null);
 
         s.set('teston000002', {
             values: {
@@ -90,7 +90,7 @@ module.exports = {
 
     'test all#pattern1': function(beforeExit) {
 
-        var s = NX.create('NX.data.MemoryStore');
+        var s = NX.create('NX.data.FileStore');
 
         s.set('teston000004', {
             values: {
