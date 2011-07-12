@@ -6,6 +6,7 @@ TESTS = test/Array.test.js \
 		test/Base.test.js \
 		test/Class.test.js \
 		test/ClassManager.test.js \
+		test/Date.test.js \
 		test/Error.test.js \
 		test/Function.test.js \
 		test/Loader.test.js \
