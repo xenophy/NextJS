@@ -13,35 +13,35 @@
         <h2>Simple Bind</h2>
         <dl>
             <dt>string</dt>
-            <dd>value: {{data.string}}</dd>
+            <dd>value: <%data.string%></dd>
 
             <dt>number</dt>
-            <dd>value: {{data.number}}</dd>
+            <dd>value: <%data.number%></dd>
 
             <dt>boolean</dt>
-            <dd>value: {{data.bool}}</dd>
+            <dd>value: <%data.bool%></dd>
         </dl>
         <!-- /Simple Bind -->
 
         <!-- Foreach -->
         <h2>Foreach</h2>
         <dl>
-            {{foreach from=data.fruit item=item key=key}}
-            <dt>{{item.name}}</dt>
-            <dd>Price: {{item.price}}</dd>
-            {{/foreach}}
+            <%foreach from=data.fruit item=item key=key%>
+            <dt><%item.name%></dt>
+            <dd>Price: <%item.price%></dd>
+            <%/foreach%>
         </dl>
         <!-- /Foreach -->
 
         <!-- Foreach Else -->
         <h2>Foreach Else</h2>
         <dl>
-            {{foreach from=data.nodata item=item key=key}}
-            <dt>{{item.name}}</dt>
-            <dd>Price: {{item.price}}</dd>
-            {{foreachelse}}
+            <%foreach from=data.nodata item=item key=key%>
+            <dt><%item.name%></dt>
+            <dd>Price: <%item.price%></dd>
+            <%foreachelse%>
             <dd>No items.</dd>
-            {{/foreach}}
+            <%/foreach%>
         </dl>
         <!-- /Foreach Else -->
 
@@ -49,88 +49,88 @@
         <!-- If -->
         <h2>If</h2>
         <dl>
-            {{if data.string === 'string'}}
+            <%if data.string === 'string'%>
             <dd>data.string is "string".</dd>
-            {{/if}}
-            {{if data.number == '3000'}}
+            <%/if%>
+            <%if data.number == '3000'%>
             <dd>data.number is 3000.</dd>
-            {{/if}}
-            {{if data.number != '2000'}}
+            <%/if%>
+            <%if data.number != '2000'%>
             <dd>data.number is not 2000.</dd>
-            {{/if}}
-            {{if data.number > 1000 }}
+            <%/if%>
+            <%if data.number > 1000 %>
             <dd>data.number is over 1000.</dd>
-            {{/if}}
-            {{if data.number >= 3000 }}
+            <%/if%>
+            <%if data.number >= 3000 %>
             <dd>data.number is below 3000.</dd>
-            {{/if}}
-            {{if data.number <= 3000 }}
+            <%/if%>
+            <%if data.number <= 3000 %>
             <dd>data.number is more 3000.</dd>
-            {{/if}}
-            {{if data.number < 5000}}
+            <%/if%>
+            <%if data.number < 5000%>
             <dd>data.number is under 5000.</dd>
-            {{/if}}
-            {{if data.string === 'string' and data.bool === true}}
+            <%/if%>
+            <%if data.string === 'string' and data.bool === true%>
             <dd>data.string is "string" and data.bool is true.</dd>
-            {{/if}}
+            <%/if%>
         </dl>
         <!-- /If -->
 
         <!-- If Else -->
         <h2>If Else</h2>
         <dl>
-            {{if data.string === 'string2'}}
+            <%if data.string === 'string2'%>
             <dd>data.string is "string".</dd>
-            {{else}}
-            {{if data.string !== 'string3'}}
+            <%else%>
+            <%if data.string !== 'string3'%>
             <dd>data.string is not "string".</dd>
-            {{/if}}
-            {{/if}}
+            <%/if%>
+            <%/if%>
         </dl>
         <!-- /If Else -->
 
         <!-- Else If -->
         <h2>If Else</h2>
         <dl>
-            {{if data.number == 3001}}
+            <%if data.number == 3001%>
             <dd>data.number is 3001</dd>
-            {{elseif data.number == 3000}}
+            <%elseif data.number == 3000%>
             <dd>data.number is 3000</dd>
-            {{/if}}
+            <%/if%>
 
-            {{if data.number == 3001}}
+            <%if data.number == 3001%>
             <dd>data.number is 3001</dd>
-            {{elseif data.number == 3002}}
+            <%elseif data.number == 3002%>
             <dd>data.number is 3000</dd>
-            {{else}}
-            {{if data.number == 3001}}
+            <%else%>
+            <%if data.number == 3001%>
             <dd>data.number is 3001</dd>
-            {{elseif data.number == 3000}}
+            <%elseif data.number == 3000%>
             <dd>data.number is 3000</dd>
-            {{/if}}
-            {{/if}}
+            <%/if%>
+            <%/if%>
         </dl>
         <!-- /Else If -->
 
         <!-- Include -->
         <h2>Include</h2>
 
-        {{include file='foo.html' outvar='Next JS'}}
+        <%include file='foo.html' outvar='Next JS'%>
 
         <!-- /Include -->
 
         <!-- Modifier -->
         <h2>Modifier</h2>
         <dl>
-            {{foreach from=data.fruit item=item key=key}}
-            <dt>{{item.name}}</dt>
-            <dd>Price: {{item.price|jpMoney}}</dd>
-            {{/foreach}}
-            <dd>number: {{data.number|numberFormat}}</dd>
-            <dd>string: {{data.string|capitalize}}</dd>
-            <dd>text: {{data.text|nl2br}}</dd>
-            <dd>html: {{data.html|htmlEncode}}</dd>
-            <dd>replace: {{data.string|replace:"str":"enjoy"}}</dd>
+            <%foreach from=data.fruit item=item key=key%>
+            <dt><%item.name%></dt>
+            <dd>Price: <%item.price|jpMoney%></dd>
+            <%/foreach%>
+            <dd>number: <%data.number|numberFormat%></dd>
+            <dd>string: <%data.string|capitalize%></dd>
+            <dd>text: <%data.text|nl2br%></dd>
+            <dd>html: <%data.html|htmlEncode%></dd>
+            <dd>replace: <%data.string|replace:"str":"enjoy"%></dd>
         </dl>
         <!-- /Modifier -->
 
