@@ -1,15 +1,43 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <html>
 <head>
+    <meta http-equiv="content-Type" content="text/html; charset=utf8">
+    <meta http-equiv="content-style-type" content="text/css">
     <title>404 Not Found</title>
+
+    <style>
+        .nx-body {
+            color: #444;
+            background-image: -webkit-gradient(
+                linear,
+                left bottom,
+                left top,
+                color-stop(0.6, rgb(255,255,255)),
+                color-stop(1, rgb(224,224,224))
+            );
+            background-image: -moz-linear-gradient(
+                center bottom,
+                rgb(255,255,255) 60%,
+                rgb(224,224,224) 100%
+            );
+        }
+
+        @-moz-document url-prefix() {
+            .nx-body {
+                height: 100%;
+            }
+        }
+
+        .nx-body h1 {
+            margin-top: 80px;
+            font-size: 40px;
+        }
+
+    </style>
 </head>
-<body>
-    <h1>Not Found</h1>
-    <p>The requested URL xxxxxx was not found on this server.</p>
-    <address>
-        <a href="/"><!--#echo var="SERVER_NAME" --></a><br /> <!--#config timefmt="%c" -->
-        <span><!--#echo var="DATE_LOCAL" --><br />
-        <!--#echo var="SERVER_SOFTWARE" --></span>
-    </address>
+<body class="nx-body">
+    <div style="margin: 0 auto; width: 900px;">
+        <h1>404 Not Found</h1>
+        <p>The requested URL was not found on this server.</p>
+    </div>
 </body>
 </html>
