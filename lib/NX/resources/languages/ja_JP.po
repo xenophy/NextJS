@@ -1,0 +1,16 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.7 ja\n"
+"Report-Msgid-Bugs-To: info@xenophy.com\n"
+"POT-Creation-Date: 2011-07-14 03:32+0900\n"
+"PO-Revision-Date: 2011-07-14 04:04+0900\n"
+"Last-Translator: Kazuhiro Kotsutsumi <kotsutsumi@xenophy.com>\n"
+"Language-Team: Xenophy.CO.,LTD <info@xenophy.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: teston
+msgid "Links for {0}"
+msgstr "{0} へのリンクです。"
+
