@@ -1,0 +1,32 @@
+/*!
+ * Ext Core Library 3.0
+ * http://extjs.com/
+ * Copyright(c) 2006-2009, Ext JS, LLC.
+ * 
+ * MIT Licensed - http://extjs.com/license/mit.txt
+ */
+body {
+    background: #fff;
+    font: 86% 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    padding: 50px;
+}
+
+h1, h2, h3 { font-family: "Trebuchet MS",Verdana,Sans-Serif; }
+
+h2 {
+    font-size: 1.5em;
+    letter-spacing: 0.4pt;
+    text-transform: uppercase;
+    padding-top: 0.5em;
+    color: #1C417C;
+}
+
+h3 {
+    font-size: 1.0em;
+    letter-spacing: 0.2pt;
+    text-transform: uppercase;
+    padding-top: 0.5em;
+    color: #0464BB;
+}
+
+a img{ border: none; }

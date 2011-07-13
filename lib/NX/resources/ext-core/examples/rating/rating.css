@@ -1,0 +1,61 @@
+/*!
+ * Ext Core Library 3.0
+ * http://extjs.com/
+ * Copyright(c) 2006-2009, Ext JS, LLC.
+ * 
+ * MIT Licensed - http://extjs.com/license/mit.txt
+ */
+/* Stars */
+.ux-rating-reset,
+.ux-rating-star {
+	float:left;
+	width:17px;
+	height:15px;
+	text-indent:-999em;
+	cursor:pointer;
+	display:block;
+	background:transparent;
+	overflow:hidden
+}
+.ux-rating-reset,
+.ux-rating-reset a {
+	background:url(images/delete.gif) no-repeat 0 -16px
+}
+.ux-rating-star,
+.ux-rating-star a {
+	background:url(images/star.gif) no-repeat 0 0px
+}
+.ux-rating-reset a,
+.ux-rating-star a {
+	display:block;
+	width:16px;
+	height:100%;
+	background-position:0 0px
+}
+.ux-rating-star-on a {
+	background-position:0 -16px!important
+}
+.ux-rating-star-hover a {
+	background-position:0 -32px
+}
+.ux-rating-reset-hover a {
+	background-position:0 -16px
+}
+.ux-rating-disabled a {
+	cursor:default !important
+}
+.ux-rating-star {
+	background:transparent!important;
+	overflow:hidden!important
+}
+
+.ext-ie .ux-rating-clearfix {
+    zoom: 1;
+}
+.ux-rating-clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Ext Rating Example</title>		
+        
+    	<link href="../examples.css" rel="stylesheet" />
+        <link href="rating.css" rel="stylesheet" />
+        
+    	<script src="../../ext-core-debug.js"></script>
+        <script src="rating.js"></script>
+        
+        <script>
+            Ext.onReady(function() {                
+                var rating1 = new Ext.ux.Rating('rating1', {
+                    canReset: true,
+                    split: 2
+                });
+                
+                new Ext.ux.Rating('rating2');
+            })
+        </script>
+    </head>
+
+    <body>
+    	<h2>Rating Example</h2>
+    
+    	<h3>Simple star rating</h3>
+        
+        <p>
+            5 star rating with split: 2 and reset
+			<div id="rating1">
+				<input type="radio" name="rating1" value="0.5" title="Very poor">
+				<input type="radio" name="rating1" value="1" title="Very poor">
+				<input type="radio" name="rating1" value="1.5" title="Not that bad">
+				<input type="radio" name="rating1" value="2" title="Not that bad">
+				<input type="radio" name="rating1" value="2.5" title="Average">
+				<input type="radio" name="rating1" value="3" title="Average">
+				<input type="radio" name="rating1" value="3.5" title="Good">
+				<input type="radio" name="rating1" value="4" title="Good">
+				<input type="radio" name="rating1" value="4.5" title="Perfect">
+				<input type="radio" name="rating1" value="5" title="Perfect">
+			</div> 
+        </p>
+		        
+        <p>
+            Disabled 10 star rating
+			<div id="rating2">
+				<input disabled="true" type="radio" name="rating2" value="1" title="Very poor">
+				<input disabled="true" type="radio" name="rating2" value="2" title="Very poor">
+				<input disabled="true" type="radio" name="rating2" value="3" title="Not that bad">
+				<input disabled="true" type="radio" name="rating2" value="4" title="Not that bad">
+				<input disabled="true" type="radio" name="rating2" value="5" title="Average">
+				<input disabled="true" type="radio" name="rating2" value="6" title="Average">
+				<input disabled="true" checked="true" type="radio" name="rating2" value="7" title="Good">
+				<input disabled="true" type="radio" name="rating2" value="8" title="Good">
+				<input disabled="true" type="radio" name="rating2" value="9" title="Perfect">
+				<input disabled="true" type="radio" name="rating2" value="10" title="Perfect">
+			</div> 
+        </p>
+    </body>
+</html>
