@@ -11,10 +11,10 @@
 
         <h2>ユーザー一覧</h2>
         <dl>
-            {foreach from=users item=item key=key}
+            <%foreach from=users item=item key=key%>
             <dt>ユーザー名</dt>
-            <dd>{item.name}</dd>
-            {/foreach}
+            <dd><%item.name%></dd>
+            <%/foreach%>
         </dl>
 
     </div>
