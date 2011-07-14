@@ -3,7 +3,7 @@ module.exports = {
 
     name: 'root',
 
-    execute : function() {
+    execute : function(req, res) {
 
 //        console.log("index/action");
 

@@ -1,7 +1,7 @@
 
 module.exports = {
 
-    execute : function() {
+    execute : function(res, res) {
 
         // console.log("globalaction");
 
