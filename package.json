@@ -2,7 +2,7 @@
     "name" : "NX",
     "description" : "Next JS is Application Server on node.js.",
     "keywords": ["framework", "web", "Web Server", "Application Server", "NextJS", "Ext JS"],
-    "version" : "0.7.0dev",
+    "version" : "0.7.0",
     "author" : "Kazuhiro Kotsutsumi <kotsutsumi@xenophy.com>",
     "repository" : "git://github.com/xenophy/NextJS.git",
     "main" : "./lib/NX"
