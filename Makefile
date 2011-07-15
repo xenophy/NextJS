@@ -16,7 +16,7 @@ TESTS = test/Array.test.js \
 		test/data/Store.test.js \
 		test/data/FileStore.test.js \
 		test/data/MemoryStore.test.js \
-		test/util/Format.test.js 
+		test/util/Format.test.js
 
 PREFIX = /usr/local
 LIB_PREFIX = $(HOME)/.node_libraries
