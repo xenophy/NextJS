@@ -16,6 +16,7 @@ TESTS = test/Array.test.js \
 		test/data/Store.test.js \
 		test/data/FileStore.test.js \
 		test/data/MemoryStore.test.js \
+		test/util/Template.test.js \
 		test/util/Format.test.js
 
 PREFIX = /usr/local
@@ -28,7 +29,7 @@ test:
 
 test-cov:
 	@rm -Rf lib-cov
-	@$(MAKE) test TEST_FLAGS="--cov"
+	@$(MAKE) test TEST_FLAGS="--cov -j ./ut-result.json"
 	@rm -Rf lib-cov
 
 .PHONY: test test-cov
