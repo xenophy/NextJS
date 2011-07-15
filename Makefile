@@ -29,10 +29,22 @@ test:
 
 test-cov:
 	@rm -Rf lib-cov
-	@$(MAKE) test TEST_FLAGS="--cov -j ./ut-result.json"
+	@$(MAKE) test TEST_FLAGS="--cov"
 	@rm -Rf lib-cov
 
-.PHONY: test test-cov
+test-cov2:
+	@rm -Rf lib-cov
+	@$(MAKE) test TEST_FLAGS="--cov -j ./node-jscoverage.json"
+	@rm -Rf lib-cov
+	@rm -Rf ./ut-result.js
+	@touch ./ut-result.js
+	@echo "window.node_jscoverage_result = " > ut-result.js
+	@cat node-jscoverage.json >> ut-result.js;
+	@echo ";" >> ut-result.js
+	@rm -Rf ./node-jscoverage.json;
+	@mv ut-result.js ./test/node-jscoverage.js;
+
+.PHONY: test test-cov test-cov2
 
 # eof
 

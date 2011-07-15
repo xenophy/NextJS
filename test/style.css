@@ -1,0 +1,35 @@
+/* vim: set expandtab tabstop=2 shiftwidth=2 softtabstop=2: */
+
+body h1 {
+  font-family   : verdana, sans-serif;
+  display       : block;
+  margin        : 0 auto;
+  width         : 920px;
+  margin-top    : 1em;
+  margin-bottom : 1em;
+}
+
+body div#content {
+  margin            : 0 auto;
+  width             : 920px;
+  background-color  : #f8f8f8;
+  padding           : .7em;
+  font-size         : 13.34px;
+  font-family       : verdana, sans-serif;
+  border            : 1px #E0E0E0 solid;
+}
+
+body div#content h2,
+body div#content h3,
+body div#content h4 {
+  padding-top  : 10px;
+  border-top   : 4px solid #E0E0E0;
+}
+
+/*
+ * Local variables:
+ * tab-width: 2
+ * c-basic-offset: 2
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */
