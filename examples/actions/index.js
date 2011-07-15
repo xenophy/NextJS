@@ -5,8 +5,6 @@ module.exports = {
 
     execute : function(req, res) {
 
-//        console.log("index/action");
-
         this.end();
     }
 
