@@ -67,7 +67,51 @@ module.exports = {
     },
 
     // }}}
+    // {{{ 'test if#pattern1'
 
+    'test if#pattern1': function(beforeExit) {
+
+        var tpl = [
+            '<ul>',
+            "<!--{if data == 'teston'}-->",
+            '<li><!--{data}--></li>',
+            '<!--{/if}-->',
+            '</ul>'
+        ].join('');
+
+        var result = [
+            '<ul>',
+            '<li>teston</li>',
+            '</ul>'
+        ].join('');
+
+        var t = NX.create('NX.util.Template');
+        var ret = t.fetch(tpl, {
+            data: 'teston'
+        });
+
+        ret.should.equal(result);
+
+        /*
+        var result = [
+            '<ul>',
+            '</ul>'
+        ].join('');
+
+        var ret = t.fetch(tpl, {
+            data: 'teston2'
+        });
+
+        ret.should.equal(result);
+
+        */
+
+
+
+
+    }
+
+    // }}}
 
 };
 
