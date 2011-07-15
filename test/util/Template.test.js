@@ -17,7 +17,6 @@ assert = require('assert');
 
 module.exports = {
 
-    /*
     // {{{ 'test print#pattern1'
 
     'test print#pattern1': function(beforeExit) {
@@ -108,9 +107,7 @@ module.exports = {
         });
 
     },
-    */
 
-   /*
     // }}}
     // {{{ 'test if#pattern2'
 
@@ -141,7 +138,6 @@ module.exports = {
         });
 
     },
-    */
 
     // }}}
     // {{{ 'test if#pattern3'
@@ -176,7 +172,6 @@ module.exports = {
 
     },
 
-    /*
     // }}}
     // {{{ 'test if#pattern4'
 
@@ -460,7 +455,6 @@ module.exports = {
         });
 
     },
-    */
 
     // }}}
     // {{{ 'test if#pattern9'
