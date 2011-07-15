@@ -170,9 +170,273 @@ module.exports = {
             ret.should.equal(result);
         });
 
-    }
+    },
 
     // }}}
+    // {{{ 'test if#pattern4'
+
+    'test if#pattern4': function(beforeExit) {
+
+        var tpl = [
+            '<ul>',
+            "<!--{if data == 'teston'}-->",
+            '<li><!--{data}--></li>',
+            '<!--{elseif data == "hoge"}-->',
+            '<li>(<!--{data}-->)</li>',
+            '<!--{elseif data == "foo"}-->',
+            '<li><<!--{data}-->></li>',
+            '<!--{else}-->',
+            '<li>[<!--{data}-->]</li>',
+            '<!--{/if}-->',
+            '</ul>'
+        ].join('');
+
+        var result = [
+            '<ul>',
+            '<li><foo></li>',
+            '</ul>'
+        ].join('');
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+            data: 'foo'
+        }, function(ret) {
+            ret.should.equal(result);
+        });
+
+    },
+
+    // }}}
+    // {{{ 'test if#pattern5'
+
+    'test if#pattern5': function(beforeExit) {
+
+        var tpl = [
+            '<ul>',
+
+            "<!--{if data != 'teston'}-->",
+            '<li><!--{data}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if data != 'teston2'}-->",
+            '<li><!--{data}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if data2 < 500}-->",
+            '<li><!--{data2}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if data2 < 100}-->",
+            '<li><!--{data2}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if data3 > 500}-->",
+            '<li><!--{data3}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if data3 > 1000}-->",
+            '<li><!--{data3}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if data4 <= 500}-->",
+            '<li><!--{data4}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if data4 <= 100}-->",
+            '<li><!--{data4}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if data5 >= 500}-->",
+            '<li><!--{data5}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if data5 >= 1000}-->",
+            '<li><!--{data5}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if data6 === 1234}-->",
+            '<li><!--{data6}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if data6 === '1234'}-->",
+            '<li><!--{data6}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if data7 !== 1234}-->",
+            '<li><!--{data7}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if data7 !== '1234'}-->",
+            '<li><!--{data7}--></li>',
+            '<!--{/if}-->',
+
+            '</ul>'
+        ].join('');
+
+        var result = [
+            '<ul>',
+            '<li>teston2</li>',
+            '<li>200</li>',
+            '<li>700</li>',
+            '<li>500</li>',
+            '<li>500</li>',
+            '<li>1234</li>',
+            '<li>1234</li>',
+            '</ul>'
+        ].join('');
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+            data : 'teston2',
+            data2: 200,
+            data3: 700,
+            data4: 500,
+            data5: 500,
+            data6: 1234,
+            data7: '1234'
+        }, function(ret) {
+            ret.should.equal(result);
+        });
+
+    },
+
+    // }}}
+    // {{{ 'test if#pattern6'
+
+    'test if#pattern6': function(beforeExit) {
+
+        var tpl = [
+            '<ul>',
+
+            "<!--{if 10 % 3}-->",
+            '<li>true</li>',
+            '<!--{/if}-->',
+
+            "<!--{if 10 % 2}-->",
+            '<li>true</li>',
+            '<!--{/if}-->',
+
+            "<!--{if !data}-->",
+            '<li>false</li>',
+            '<!--{/if}-->',
+
+            "<!--{if !data2}-->",
+            '<li>true</li>',
+            '<!--{/if}-->',
+
+            "<!--{if true}-->",
+            '<li>true</li>',
+            '<!--{/if}-->',
+
+            "<!--{if false}-->",
+            '<li>false</li>',
+            '<!--{/if}-->',
+
+            '</ul>'
+        ].join('');
+
+        var result = [
+            '<ul>',
+            '<li>true</li>',
+            '<li>false</li>',
+            '<li>true</li>',
+            '<li>false</li>',
+            '</ul>'
+        ].join('');
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+            data: false,
+            data2: true
+        }, function(ret) {
+            ret.should.equal(result);
+        });
+
+    },
+
+    // }}}
+    // {{{ 'test if#pattern7'
+
+    'test if#pattern7': function(beforeExit) {
+
+        var tpl = [
+            '<ul>',
+
+            "<!--{if 1 == true}-->",
+            '<li>true</li>',
+            '<!--{/if}-->',
+
+            "<!--{if 0 == false}-->",
+            '<li>false</li>',
+            '<!--{/if}-->',
+
+            '</ul>'
+        ].join('');
+
+        var result = [
+            '<ul>',
+            '<li>true</li>',
+            '<li>false</li>',
+            '</ul>'
+        ].join('');
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+            data: 50
+        }, function(ret) {
+            ret.should.equal(result);
+        });
+
+    },
+
+    // }}}
+    // {{{ 'test if#pattern8'
+
+    'test if#pattern8': function(beforeExit) {
+
+        var tpl = [
+            '<ul>',
+
+            "<!--{if 0 < data and 100 > data}-->",
+            '<li><!--{data}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if 0 < data and 1 == data and 100 > data}-->",
+            '<li><!--{data}--></li>',
+            '<!--{/if}-->',
+
+            "<!--{if 10 > data or 30 < data or 51 < data}-->",
+            '<li><!--{data}--></li>',
+            '<!--{/if}-->',
+
+            '</ul>'
+        ].join('');
+
+        var result = [
+            '<ul>',
+            '<li>50</li>',
+            '<li>50</li>',
+            '</ul>'
+        ].join('');
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+            data: 50
+        }, function(ret) {
+            ret.should.equal(result);
+        });
+
+    },
+
+    // }}}
+
+
+
 
 };
 
