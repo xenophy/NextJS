@@ -95,7 +95,6 @@ module.exports = {
             ret.should.equal(result);
         });
 
-        /*
         var result = [
             '<ul>',
             '</ul>'
@@ -103,10 +102,73 @@ module.exports = {
 
         t.fetch(tpl, {
             data: 'teston2'
-        }, function() {
+        }, function(ret) {
             ret.should.equal(result);
         });
-        */
+
+    },
+
+    // }}}
+    // {{{ 'test if#pattern2'
+
+    'test if#pattern2': function(beforeExit) {
+
+        var tpl = [
+            '<ul>',
+            "<!--{if data == 'teston'}-->",
+            '<li><!--{data}--></li>',
+            '<!--{else}-->',
+            '<li>[<!--{data}-->]</li>',
+            '<!--{/if}-->',
+            '</ul>'
+        ].join('');
+
+        var result = [
+            '<ul>',
+            '<li>[value]</li>',
+            '</ul>'
+        ].join('');
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+            data: 'value'
+        }, function(ret) {
+            ret.should.equal(result);
+        });
+
+    },
+
+    // }}}
+    // {{{ 'test if#pattern3'
+
+    'test if#pattern3': function(beforeExit) {
+
+        var tpl = [
+            '<ul>',
+            "<!--{if data == 'teston'}-->",
+            '<li><!--{data}--></li>',
+            '<!--{elseif data == "hoge"}-->',
+            '<li>(<!--{data}-->)</li>',
+            '<!--{else}-->',
+            '<li>[<!--{data}-->]</li>',
+            '<!--{/if}-->',
+            '</ul>'
+        ].join('');
+
+        var result = [
+            '<ul>',
+            '<li>(hoge)</li>',
+            '</ul>'
+        ].join('');
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+            data: 'hoge'
+        }, function(ret) {
+            ret.should.equal(result);
+        });
 
     }
 
