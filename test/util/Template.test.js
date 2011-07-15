@@ -24,11 +24,12 @@ module.exports = {
         var tpl = '<p><!--{value}--></p>';
 
         var t = NX.create('NX.util.Template');
-        var ret = t.fetch(tpl, {
-            value: 'teston',
-        });
 
-        ret.should.equal('<p>teston</p>');
+        t.fetch(tpl, {
+            value: 'teston',
+        }, function(ret) {
+            ret.should.equal('<p>teston</p>');
+        });
 
     },
 
@@ -54,15 +55,16 @@ module.exports = {
         ].join('');
 
         var t = NX.create('NX.util.Template');
-        var ret = t.fetch(tpl, {
+
+        t.fetch(tpl, {
             data: [
                 'value1',
                 'value2',
                 'value3'
             ]
+        }, function(ret) {
+            ret.should.equal(result);
         });
-
-        ret.should.equal(result);
 
     },
 
@@ -86,11 +88,12 @@ module.exports = {
         ].join('');
 
         var t = NX.create('NX.util.Template');
-        var ret = t.fetch(tpl, {
-            data: 'teston'
-        });
 
-        ret.should.equal(result);
+        t.fetch(tpl, {
+            data: 'teston'
+        }, function(ret) {
+            ret.should.equal(result);
+        });
 
         /*
         var result = [
@@ -98,16 +101,12 @@ module.exports = {
             '</ul>'
         ].join('');
 
-        var ret = t.fetch(tpl, {
+        t.fetch(tpl, {
             data: 'teston2'
+        }, function() {
+            ret.should.equal(result);
         });
-
-        ret.should.equal(result);
-
         */
-
-
-
 
     }
 
