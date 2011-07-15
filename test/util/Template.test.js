@@ -17,6 +17,7 @@ assert = require('assert');
 
 module.exports = {
 
+    /*
     // {{{ 'test print#pattern1'
 
     'test print#pattern1': function(beforeExit) {
@@ -107,7 +108,9 @@ module.exports = {
         });
 
     },
+    */
 
+   /*
     // }}}
     // {{{ 'test if#pattern2'
 
@@ -138,6 +141,7 @@ module.exports = {
         });
 
     },
+    */
 
     // }}}
     // {{{ 'test if#pattern3'
@@ -172,6 +176,7 @@ module.exports = {
 
     },
 
+    /*
     // }}}
     // {{{ 'test if#pattern4'
 
@@ -455,11 +460,39 @@ module.exports = {
         });
 
     },
+    */
 
     // }}}
+    // {{{ 'test if#pattern9'
 
+    'test if#pattern9': function(beforeExit) {
 
+        var tpl = [
 
+            "<!--{if true == true}-->",
+                "<!--{if true == false}-->",
+                    '<p>true</p>',
+                "<!--{else}-->",
+                    '<p>false</p>',
+                '<!--{/if}-->',
+            '<!--{/if}-->',
+
+        ].join('');
+
+        var result = [
+            '<p>false</p>',
+        ].join('');
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+        }, function(ret) {
+            ret.should.equal(result);
+        });
+
+    },
+
+    // }}}
 
 };
 
