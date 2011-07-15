@@ -1,7 +1,8 @@
 
 Ext.onReady(function() {
 
-    console.log(window.node_jscoverage_result);
+    
+    console.log();
 
     var results = [];
     Ext.iterate(node_jscoverage_result.files, function(file, o) {
@@ -29,11 +30,13 @@ Ext.onReady(function() {
         }
     });
 
+    var progress = 'LOC [{0}], SLOC: [{1}], coverage: [{2}%], totalMisses: [{3}]';
+
     Ext.create('Ext.container.Viewport', {
         layout: 'border',
         items:[{
             region: 'center',
-            title: 'Next JS Unit Test Code Coverage Result.',
+            title: 'Next JS Unit Test Code Coverage Result. - ' +  Ext.String.format(progress, node_jscoverage_result.LOC, node_jscoverage_result.SLOC, node_jscoverage_result.coverage, node_jscoverage_result.totalMisses),
             xtype:'grid',
             store: Ext.data.StoreManager.lookup('coverage'),
             columns: [
