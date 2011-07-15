@@ -41,7 +41,7 @@ module.exports = {
             trace2 = true;
 
             v.values.foo.should.equal('bar');
-            v.expires.should.equal(4118914800000);
+            v.expires.should.equal(4118947200000);
         });
 
         beforeExit(function() {
@@ -51,9 +51,9 @@ module.exports = {
 
             var o = NX.JSON.decode(s.sessions.teston000001);
 
-            s.sessions.teston000001.should.equal('{"values":{"foo":"bar"},"expires":4118914800000}');
+            s.sessions.teston000001.should.equal('{"values":{"foo":"bar"},"expires":4118947200000}');
             o.values.foo.should.equal('bar');
-            o.expires.should.equal(4118914800000);
+            o.expires.should.equal(4118947200000);
         });
 
     },

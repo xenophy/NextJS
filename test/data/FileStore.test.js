@@ -41,7 +41,7 @@ module.exports = {
             trace2 = true;
 
             v.values.foo.should.equal('bar');
-            v.expires.should.equal(4118914800000);
+            v.expires.should.equal(4118947200000);
         });
 
         beforeExit(function() {
