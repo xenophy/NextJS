@@ -1,7 +1,11 @@
 # 0.7.1
 ======================
 
-  * Info examplesディレクトリを削除して、NXSamplesリポジトリに移動しました。
+  * Info   examplesディレクトリを削除して、NXSamplesリポジトリに移動しました。
+  * Change NX.util.Tempalteの初期デリミタ変更。
+           左デリミタ: '<!--{'
+           右デリミタ: '}-->'
+  * Change NX.util.TempalteでHTMLコメントを強制的に削除していたが、削除しないようにしました。
 
 
 # 0.7.0
