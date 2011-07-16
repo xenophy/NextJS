@@ -591,6 +591,29 @@ module.exports = {
     },
 
     // }}}
+    // {{{ 'test include#pattern1'
+
+    'test include#pattern1': function(beforeExit) {
+
+        var tpl = "<!--{include file='foo.html' outvar='Next JS' outvar2=true outvar3=false}-->";
+        var t = NX.create('NX.util.Template', {
+            exec: 'test/shared/util/Template'
+        });
+
+        var result = [
+            "<p>Next&nbsp;JS</p>",
+            "<p>true</p>",
+            "<p>false</p>"
+        ].join("\n");
+
+        t.fetch(tpl, {
+        }, function(ret) {
+            ret.should.equal(result + "\n");
+        });
+
+    },
+
+    // }}}
 
 };
 
