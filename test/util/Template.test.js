@@ -69,6 +69,110 @@ module.exports = {
     },
 
     // }}}
+    // {{{ 'test foreach#pattern2'
+
+    'test foreach#pattern2': function(beforeExit) {
+
+        var tpl = [
+            '<ul>',
+            '<!--{foreach from=loop item=item key=key}-->',
+                '<!--{foreach from=item item=v key=vkey}-->',
+                '<li><!--{v.v}--></li>',
+                '<!--{/foreach}-->',
+            '<!--{/foreach}-->',
+            '</ul>'
+        ].join('');
+
+        var result = [
+            '<ul>',
+            '<li>1</li>',
+            '<li>2</li>',
+            '<li>3</li>',
+            '<li>4</li>',
+            '<li>5</li>',
+            '</ul>'
+        ].join('');
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+            loop: [
+                [{v: 1}],
+                [{v: 2}],
+                [{v: 3}],
+                [{v: 4}],
+                [{v: 5}]
+            ]
+        }, function(ret) {
+            ret.should.equal(result);
+        });
+
+    },
+
+    // }}}
+    // {{{ 'test foreach#pattern3'
+
+    'test foreach#pattern3': function(beforeExit) {
+
+        var tpl = [
+            '<ul>',
+            '<!--{foreach from=data item=item key=key}-->',
+            '<li><!--{item}--></li>',
+            '<!--{foreachelse}-->',
+            '<li>none</li>',
+            '<!--{/foreach}-->',
+            '</ul>'
+        ].join('');
+
+        var result = [
+            '<ul>',
+            '<li>none</li>',
+            '</ul>'
+        ].join('');
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+            data: []
+        }, function(ret) {
+            ret.should.equal(result);
+        });
+
+    },
+
+    // }}}
+    // {{{ 'test foreach#pattern4'
+
+    'test foreach#pattern4': function(beforeExit) {
+
+        var tpl = [
+            '<ul>',
+            '<!--{foreach from=data item=item key=key}-->',
+            '<li><!--{item.a.b}--></li>',
+            '<!--{/foreach}-->',
+            '</ul>'
+        ].join('');
+
+        var result = [
+            '<ul>',
+            '</ul>'
+        ].join('');
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+            data: [
+                'value1',
+                'value2',
+                'value3'
+            ]
+        }, function(ret) {
+            ret.should.equal(result);
+        });
+
+    },
+
+    // }}}
     // {{{ 'test if#pattern1'
 
     'test if#pattern1': function(beforeExit) {
