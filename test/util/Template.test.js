@@ -614,6 +614,56 @@ module.exports = {
     },
 
     // }}}
+    // {{{ 'test modifier#pattern1'
+
+    'test modifier#pattern1': function(beforeExit) {
+
+        var tpl = [
+            '<p><!--{number|numberFormat}--></p>',
+            '<p><!--{string|capitalize}--></p>',
+            '<p><!--{text|nl2br}--></p>'
+        ].join('');
+        var t = NX.create('NX.util.Template');
+
+        var result = [
+            '<p>5,000</p>',
+            '<p>Teston</p>',
+            "<p>line1<br />line2<br />line3</p>",
+        ].join("");
+
+        t.fetch(tpl, {
+            price: 5000,
+            number: 5000,
+            string: 'teston',
+            text: [
+                'line1',
+                'line2',
+                'line3'
+            ].join("\n"),
+        }, function(ret) {
+            ret.should.equal(result);
+        });
+
+    },
+
+    // }}}
+    // {{{ 'test comment#pattern1'
+
+    'test comment#pattern1': function(beforeExit) {
+
+        var tpl = '<p><!-- コメント --></p>';
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+            value: 'teston',
+        }, function(ret) {
+            ret.should.equal('<p><!-- コメント --></p>');
+        });
+
+    },
+
+    // }}}
 
 };
 
