@@ -153,11 +153,158 @@ module.exports = {
         NX.Date.formatContainsHourInfo('Y-m-d').should.equal(false);
         NX.Date.formatContainsHourInfo('Y-m-d h:i:s').should.equal(true);
 
+    },
+
+    // }}}
+    // {{{ 'test getDayOfYear#pattern1'
+
+    'test getDayOfYear#pattern1': function() {
+
+        var dt = new Date('2011-01-15');
+        NX.Date.getDayOfYear(dt).should.equal(14);
+
+        var dt = new Date('2011-11-11');
+        NX.Date.getDayOfYear(dt).should.equal(314);
+
+    },
+
+    // }}}
+    // {{{ 'test getElapsed#pattern1'
+
+    'test getElapsed#pattern1': function() {
+
+        var dt = new Date('2011-01-15');
+        var dt2 = new Date('2011-01-17');
+        NX.Date.getElapsed(dt, dt2).should.equal(172800000);
+    },
+
+    // }}}
+    // {{{ 'test getFirstDayOfMonth#pattern1'
+
+    'test getFirstDayOfMonth#pattern1': function() {
+
+        var dt = new Date('1/10/2007'),
+        firstDay = NX.Date.getFirstDayOfMonth(dt);
+        NX.Date.dayNames[firstDay].should.equal('Monday');
+    },
+
+    // }}}
+    // {{{ 'test getLastDayOfMonth#pattern1'
+
+    'test getLastDayOfMonth#pattern1': function() {
+
+        var dt = new Date('1/10/2007'),
+        lastDay = NX.Date.getLastDayOfMonth(dt);
+        NX.Date.dayNames[lastDay].should.equal('Wednesday');
+    },
+
+    // }}}
+    // {{{ 'test getMonthNumber#pattern1'
+
+    'test getMonthNumber#pattern1': function() {
+
+        NX.Date.getMonthNumber('Jan').should.equal(0);
+        NX.Date.getMonthNumber('Feb').should.equal(1);
+        NX.Date.getMonthNumber('Mar').should.equal(2);
+        NX.Date.getMonthNumber('Apr').should.equal(3);
+        NX.Date.getMonthNumber('May').should.equal(4);
+        NX.Date.getMonthNumber('Jun').should.equal(5);
+        NX.Date.getMonthNumber('Jul').should.equal(6);
+        NX.Date.getMonthNumber('Aug').should.equal(7);
+        NX.Date.getMonthNumber('Sep').should.equal(8);
+        NX.Date.getMonthNumber('Oct').should.equal(9);
+        NX.Date.getMonthNumber('Nov').should.equal(10);
+        NX.Date.getMonthNumber('Dec').should.equal(11);
+
+    },
+
+    // }}}
+    // {{{ 'test getShortMonthName#pattern1'
+
+    'test getShortMonthName#pattern1': function() {
+
+        NX.Date.getShortMonthName(0).should.equal('Jan');
+        NX.Date.getShortMonthName(1).should.equal('Feb');
+        NX.Date.getShortMonthName(2).should.equal('Mar');
+        NX.Date.getShortMonthName(3).should.equal('Apr');
+        NX.Date.getShortMonthName(4).should.equal('May');
+        NX.Date.getShortMonthName(5).should.equal('Jun');
+        NX.Date.getShortMonthName(6).should.equal('Jul');
+        NX.Date.getShortMonthName(7).should.equal('Aug');
+        NX.Date.getShortMonthName(8).should.equal('Sep');
+        NX.Date.getShortMonthName(9).should.equal('Oct');
+        NX.Date.getShortMonthName(10).should.equal('Nov');
+        NX.Date.getShortMonthName(11).should.equal('Dec');
+
+    },
+
+    // }}}
+    // {{{ 'test getShortDayName#pattern1'
+
+    'test getShortDayName#pattern1': function() {
+
+        NX.Date.getShortDayName(0).should.equal('Sun');
+        NX.Date.getShortDayName(1).should.equal('Mon');
+        NX.Date.getShortDayName(2).should.equal('Tue');
+        NX.Date.getShortDayName(3).should.equal('Wed');
+        NX.Date.getShortDayName(4).should.equal('Thu');
+        NX.Date.getShortDayName(5).should.equal('Fri');
+        NX.Date.getShortDayName(6).should.equal('Sat');
+
+    },
+
+    // }}}
+    // {{{ 'test getSuffix#pattern1'
+
+    'test getSuffix#pattern1': function() {
+
+        var dt = new Date('1/10/2007');
+        NX.Date.getSuffix(dt).should.equal('th');
+
+        var dt = new Date('1/31/2007');
+        NX.Date.getSuffix(dt).should.equal('st');
+
+        var dt = new Date('1/22/2007');
+        NX.Date.getSuffix(dt).should.equal('nd');
+
+        var dt = new Date('1/23/2007');
+        NX.Date.getSuffix(dt).should.equal('rd');
+
+    },
+
+    // }}}
+    // {{{ 'test getTimezone#pattern1'
+
+    'test getTimezone#pattern1': function() {
+
+        var dt = new Date('1/23/2007');
+        NX.Date.getTimezone(dt).should.equal('JST');
+
+    },
+
+    // }}}
+    // {{{ 'test getWeekOfYear#pattern1'
+
+    'test getWeekOfYear#pattern1': function() {
+
+        var dt = new Date('1/23/2007');
+        NX.Date.getWeekOfYear(dt).should.equal(4);
+
+    },
+
+    // }}}
+    // {{{ 'test isDST.js#pattern1'
+
+    'test isDST#pattern1': function() {
+
+        var dt = new Date('1/23/2007');
+        NX.Date.isDST(dt).should.equal(false);
+
     }
 
     // }}}
 
-};
+}
 
 /*
  * Local variables:
