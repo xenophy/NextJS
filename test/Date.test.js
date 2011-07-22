@@ -92,6 +92,7 @@ module.exports = {
         NX.Date.format(dt, 'l, \\t\\he jS \\of F Y h:i:s A').should.equal('Thursday, the 11th of January 2007 06:05:01 AM');
         NX.Date.format(dt, 'c').should.equal('2007-01-11T06:05:01+09:00');
         NX.Date.format(dt, 'MS').should.equal("\\/Date(1168463101000)\\/");
+        NX.Date.format(dt, 'D').should.equal('Thu');
 
     },
 
@@ -120,6 +121,23 @@ module.exports = {
         dt = NX.Date.parse("2006-02-29 03:20:01", "Y-m-d H:i:s", true);
         assert.equal(dt, null);
 
+        dt = NX.Date.parse("2006 Sat", "Y D");
+        NX.Date.format(dt, 'Y D').should.equal('2006 Sat');
+
+        dt = NX.Date.parse("2006 Saturday", "Y l");
+        NX.Date.format(dt, 'Y l').should.equal('2006 Saturday');
+
+        dt = NX.Date.parse("2006 January", "Y F");
+        NX.Date.format(dt, 'Y F').should.equal('2006 January');
+
+        dt = NX.Date.parse("2006 Jan", "Y M");
+        NX.Date.format(dt, 'Y M').should.equal('2006 Jan');
+
+        dt = NX.Date.parse("2006", "o");
+        NX.Date.format(dt, 'o').should.equal('2006');
+
+        dt = NX.Date.parse("2006-01-01 12:43:12", "Y-m-d h:i:s");
+        NX.Date.format(dt, 'Y-m-d h:i:s').should.equal('2006-01-01 12:43:12');
     },
 
     // }}}
