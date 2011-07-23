@@ -14,18 +14,8 @@ module.exports = {
 
     execute: function() {
 
-        this.set('actionret', 'ok');
-
-        this.set({
-            data1: 0,
-            data2: 1,
-            data3: 2
-        });
-
-        this.set();
-
-        // アクション終了
-        this.end();
+        // わざとエラーを発生
+        this.ends();
 
     }
 

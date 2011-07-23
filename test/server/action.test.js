@@ -42,15 +42,79 @@ module.exports = {
                     method: 'GET'
                 };
                 var res = {
-                    //body: file,
+                    body: file,
                     status: 200
                 }
                 var cb = function(res) {
-                   res.body.should.equal(file);
+                    res.body.should.equal(file);
                     assert.ok(res);
                 };
 
                 assert.response(NX.servers['UnitTest0002'], req, res, cb);
+
+            }
+        });
+
+    },
+
+    // }}}
+    // {{{ test action#pattern2
+
+    'test action#pattern2': function(beforeExit) {
+
+        NX.service({
+            serverId: 'UnitTest0003',
+            port: process.env.NXTestServerPort++,
+            workers: false,
+            enableDaemon: false,
+            bootarg: 'start',
+            execPath: docRoot,
+            next: function() {
+
+                var req = {
+                    url: '/error500.html',
+                    method: 'GET'
+                };
+                var res = {
+                    status: 500
+                }
+                var cb = function(res) {
+                    assert.ok(res);
+                };
+
+                assert.response(NX.servers['UnitTest0003'], req, res, cb);
+
+            }
+        });
+
+    },
+
+    // }}}
+    // {{{ test action#pattern3
+
+    'test action#pattern3': function(beforeExit) {
+
+        NX.service({
+            serverId: 'UnitTest0004',
+            port: process.env.NXTestServerPort++,
+            workers: false,
+            enableDaemon: false,
+            bootarg: 'start',
+            execPath: docRoot,
+            next: function() {
+
+                var req = {
+                    url: '/favicon.ico',
+                    method: 'GET'
+                };
+                var res = {
+                    status: 200
+                }
+                var cb = function(res) {
+                    assert.ok(res);
+                };
+
+                assert.response(NX.servers['UnitTest0004'], req, res, cb);
 
             }
         });
