@@ -97,10 +97,114 @@ module.exports = {
         NX.util.Format.fileSize(5000).should.equal('4.9 KB');
         NX.util.Format.fileSize(5000000).should.equal('4.8 MB');
 
+    },
+
+    // }}}
+    // {{{ 'test jpMoney#pattern1'
+
+    'test jpMoney#pattern1': function(beforeExit) {
+
+        var ret = NX.util.Format.jpMoney(5000).replace("Â", "");
+        ret.should.equal("¥5,000");
+
+    },
+
+    // }}}
+    // {{{ 'test lowercase#pattern1'
+
+    'test lowercase#pattern1': function(beforeExit) {
+
+        NX.util.Format.lowercase('NextJS').should.equal('nextjs');
+
+    },
+
+    // }}}
+    // {{{ 'test math#pattern1'
+
+    'test math#pattern1': function(beforeExit) {
+
+        NX.util.Format.math(500, "* 10").should.equal(5000);
+
+    },
+
+    // }}}
+    // {{{ 'test number#pattern1'
+
+    'test number#pattern1': function(beforeExit) {
+
+        NX.util.Format.number(500).should.equal(500);
+        NX.util.Format.number('a', '0.00').should.equal('');
+        NX.util.Format.number(500, '0.00').should.equal('500.00');
+        NX.util.Format.number(500, '0.00/i').should.equal('500.00');
+        NX.util.Format.number(500, '000/i').should.equal('500');
+        NX.util.Format.number(-500, '000/i').should.equal('-500');
+
+    },
+
+    // }}}
+    // {{{ 'test numberRender#pattern1'
+
+    'test numberRender#pattern1': function(beforeExit) {
+
+        var f = NX.util.Format.numberRenderer('0.00');
+        f(500).should.equal('500.00');
+
+    },
+
+    // }}}
+    // {{{ 'test parseBox#pattern1'
+
+    'test parseBox#pattern1': function(beforeExit) {
+
+        var ret = NX.util.Format.parseBox('10 10 10 10');
+        ret.top.should.equal(10);
+        ret.bottom.should.equal(10);
+        ret.left.should.equal(10);
+        ret.right.should.equal(10);
+
+        var ret = NX.util.Format.parseBox('10 10 10');
+        ret.top.should.equal(10);
+        ret.bottom.should.equal(10);
+        ret.left.should.equal(10);
+        ret.right.should.equal(10);
+
+        var ret = NX.util.Format.parseBox('10 10');
+        ret.top.should.equal(10);
+        ret.bottom.should.equal(10);
+        ret.left.should.equal(10);
+        ret.right.should.equal(10);
+
+        var ret = NX.util.Format.parseBox('10');
+        ret.top.should.equal(10);
+        ret.bottom.should.equal(10);
+        ret.left.should.equal(10);
+        ret.right.should.equal(10);
+
+        var ret = NX.util.Format.parseBox(10);
+        ret.top.should.equal(10);
+        ret.bottom.should.equal(10);
+        ret.left.should.equal(10);
+        ret.right.should.equal(10);
+    },
+
+    // }}}
+    // {{{ 'test plural#pattern1'
+
+    'test plural#pattern1': function(beforeExit) {
+
+        var ret = NX.util.Format.plural(1, "Comment");
+        ret.should.equal('1 Comment');
+
+        var ret = NX.util.Format.plural(2, "Comment");
+        ret.should.equal('2 Comments');
+
+        var ret = NX.util.Format.plural(2, "Comment", "Comment[S]");
+        ret.should.equal('2 Comment[S]');
+
+
     }
 
     // }}}
-
 
 };
 
