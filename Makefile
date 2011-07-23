@@ -18,12 +18,15 @@ TESTS = test/Array.test.js \
 		test/data/FileStore.test.js \
 		test/data/MemoryStore.test.js \
 		test/util/Template.test.js \
-		test/util/Format.test.js
+		test/util/Format.test.js \
+		test/server/action.test.js \
+		test/server/static.test.js
 
 PREFIX = /usr/local
 LIB_PREFIX = $(HOME)/.node_libraries
 
 test:
+	@rm -Rf node_modules
 	@mkdir node_modules
 	@mkdir node_modules/NX
 	@cp -Rf ./lib/NX node_modules
@@ -33,6 +36,7 @@ test:
 	@rm -Rf node_modules
 
 test-cov:
+	@rm -Rf node_modules
 	@mkdir node_modules
 	@node-jscoverage ./lib ./node_modules
 	@NODE_ENV=test $(TEST) \

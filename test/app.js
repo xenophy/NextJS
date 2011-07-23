@@ -1,9 +1,6 @@
 
 Ext.onReady(function() {
 
-    
-    console.log();
-
     var results = [];
     Ext.iterate(node_jscoverage_result.files, function(file, o) {
 
