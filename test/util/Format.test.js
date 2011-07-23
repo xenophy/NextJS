@@ -50,6 +50,57 @@ module.exports = {
     },
 
     // }}}
+    // {{{ 'test date#pattern1'
+
+    'test date#pattern1': function(beforeExit) {
+
+        NX.util.Format.date().should.equal('');
+        NX.util.Format.date('2006-01-01').should.equal('01/01/2006');
+
+    },
+
+    // }}}
+    // {{{ 'test dateRender#pattern1'
+
+    'test dateRender#pattern1': function(beforeExit) {
+
+        var f = NX.util.Format.dateRenderer('Y-m-d');
+        var dt = new Date('2006-01-01');
+        f(dt).should.equal('2006-01-01');
+
+    },
+
+    // }}}
+    // {{{ 'test defaultValue#pattern1'
+
+    'test defaultValue#pattern1': function(beforeExit) {
+
+        NX.util.Format.defaultValue(undefined, 500).should.equal(500);
+
+    },
+
+    // }}}
+    // {{{ 'test escapeRegex#pattern1'
+
+    'test escapeRegex#pattern1': function(beforeExit) {
+
+        NX.util.Format.escapeRegex('*').should.equal('\\*');
+
+    },
+
+    // }}}
+    // {{{ 'test fileSize#pattern1'
+
+    'test fileSize#pattern1': function(beforeExit) {
+
+        NX.util.Format.fileSize(500).should.equal('500 bytes');
+        NX.util.Format.fileSize(5000).should.equal('4.9 KB');
+        NX.util.Format.fileSize(5000000).should.equal('4.8 MB');
+
+    }
+
+    // }}}
+
 
 };
 
