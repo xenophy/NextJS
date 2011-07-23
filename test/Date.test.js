@@ -138,6 +138,16 @@ module.exports = {
 
         dt = NX.Date.parse("2006-01-01 12:43:12", "Y-m-d h:i:s");
         NX.Date.format(dt, 'Y-m-d h:i:s').should.equal('2006-01-01 12:43:12');
+
+        dt = NX.Date.parse("2006-01-01 12:43:12 +02:00", "Y-m-d h:i:s P");
+        NX.Date.format(dt, 'Y-m-d h:i:s P').should.equal('2006-01-01 07:43:12 +09:00');
+
+        dt = NX.Date.parse("2006-01-01 12:43:12 +0200", "Y-m-d h:i:s O");
+        NX.Date.format(dt, 'Y-m-d h:i:s O').should.equal('2006-01-01 07:43:12 +0900');
+
+        dt = NX.Date.parse("2004-02-12T15:19:21+00:00", "c");
+        NX.Date.format(dt, 'c').should.equal('2004-02-13T00:19:21+09:00');
+
     },
 
     // }}}
@@ -311,12 +321,25 @@ module.exports = {
     },
 
     // }}}
-    // {{{ 'test isDST.js#pattern1'
+    // {{{ 'test isDST#pattern1'
 
     'test isDST#pattern1': function() {
 
         var dt = new Date('1/23/2007');
         NX.Date.isDST(dt).should.equal(false);
+
+    },
+
+    // }}}
+    // {{{ 'test parseFunctions#pattern1'
+
+    'test parseFunctions#pattern1': function() {
+
+        var pf = NX.Date.parseFunctions['MS'];
+
+        var dt = pf('\/Date(1238606590509+0800)\/');
+
+        NX.Date.format(dt, 'Y-m-d h:i:s').should.equal('2009-04-02 02:23:10');
 
     }
 
