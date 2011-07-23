@@ -6,7 +6,7 @@
  * http://www.xenophy.com
  */
 
-// {{{ extent
+// {{{ extent.action
 
 module.exports = {
 
