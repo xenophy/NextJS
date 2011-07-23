@@ -202,7 +202,96 @@ module.exports = {
         ret.should.equal('2 Comment[S]');
 
 
-    }
+    },
+
+    // }}}
+    // {{{ 'test round#pattern1'
+
+    'test round#pattern1': function(beforeExit) {
+
+        NX.util.Format.round(50.14, 1).should.equal(50.1);
+
+
+    },
+
+    // }}}
+    // {{{ 'test stripScripts#pattern1'
+
+    'test stripScripts#pattern1': function(beforeExit) {
+
+        var str = [
+            '<html>',
+            '<head>',
+            '<script src="./test.js"></script>',
+            '</head>',
+            '</html>'
+        ].join("");
+
+        var ret = [
+            '<html>',
+            '<head>',
+            '</head>',
+            '</html>'
+        ].join("");
+
+        NX.util.Format.stripScripts(str).should.equal(ret);
+
+    },
+
+    // }}}
+    // {{{ 'test stripTags#pattern1'
+
+    'test stripTags#pattern1': function(beforeExit) {
+
+        var str = [
+            '<html>',
+            '<head>',
+            '<script src="./test.js"></script>',
+            '</head>',
+            '</html>'
+        ].join("");
+
+        var ret = '';
+
+        NX.util.Format.stripTags(str).should.equal(ret);
+
+    },
+
+    // }}}
+    // {{{ 'test substr#pattern1'
+
+    'test substr#pattern1': function(beforeExit) {
+
+        NX.util.Format.substr('abcdefg', 2, 10).should.equal("cdefg");
+
+    },
+
+    // }}}
+    // {{{ 'test undef#pattern1'
+
+    'test undef#pattern1': function(beforeExit) {
+
+        NX.util.Format.undef(undefined).should.equal("");
+
+    },
+
+    // }}}
+    // {{{ 'test uppercase#pattern1'
+
+    'test uppercase#pattern1': function(beforeExit) {
+
+        NX.util.Format.uppercase('NextJS').should.equal('NEXTJS');
+
+    },
+
+    // }}}
+    // {{{ 'test usMoney#pattern1'
+
+    'test usMoney#pattern1': function(beforeExit) {
+
+        NX.util.Format.usMoney('5000').should.equal('$5,000.00');
+
+    },
 
     // }}}
 
