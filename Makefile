@@ -24,14 +24,21 @@ PREFIX = /usr/local
 LIB_PREFIX = $(HOME)/.node_libraries
 
 test:
+	@mkdir node_modules
+	@mkdir node_modules/NX
+	@cp -Rf ./lib/NX node_modules
 	@NODE_ENV=test $(TEST) \
 		-I lib -q \
 		$(TEST_FLAGS) $(TESTS)
+	@rm -Rf node_modules
 
 test-cov:
-	@rm -Rf lib-cov
-	@$(MAKE) test TEST_FLAGS="--cov"
-	@rm -Rf lib-cov
+	@mkdir node_modules
+	@node-jscoverage ./lib ./node_modules
+	@NODE_ENV=test $(TEST) \
+		-I lib -q \
+		$(TEST_FLAGS) $(TESTS)
+	@rm -Rf node_modules
 
 test-cov2:
 	@rm -Rf lib-cov
