@@ -121,11 +121,11 @@ module.exports = {
         dt = NX.Date.parse("2006-02-29 03:20:01", "Y-m-d H:i:s", true);
         assert.equal(dt, null);
 
-        dt = NX.Date.parse("2006 Sat", "Y D");
-        NX.Date.format(dt, 'Y D').should.equal('2006 Sat');
+        dt = NX.Date.parse("2006-01-01 Sun", "Y-m-d D");
+        NX.Date.format(dt, 'Y-m-d D').should.equal('2006-01-01 Sun');
 
-        dt = NX.Date.parse("2006 Saturday", "Y l");
-        NX.Date.format(dt, 'Y l').should.equal('2006 Saturday');
+        dt = NX.Date.parse("2006-01-01 Sunday", "Y-m-d l");
+        NX.Date.format(dt, 'Y-m-d l').should.equal('2006-01-01 Sunday');
 
         dt = NX.Date.parse("2006 January", "Y F");
         NX.Date.format(dt, 'Y F').should.equal('2006 January');
