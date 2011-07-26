@@ -39,7 +39,7 @@ test:
 test-cov:
 	@rm -Rf node_modules
 	@mkdir node_modules
-	@node-jscoverage ./lib ./node_modules
+	@jscoverage ./lib ./node_modules
 	@NODE_ENV=test $(TEST) \
 		-I lib -q \
 		$(TEST_FLAGS) $(TESTS)

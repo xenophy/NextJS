@@ -664,6 +664,23 @@ module.exports = {
     },
 
     // }}}
+    // {{{ 'test literal#pattern1'
+
+    'test literal#pattern1': function(beforeExit) {
+
+        var tpl = NX.Fs.readFileSync('test/shared/util/Template/templates/literal.html').toString();
+        var rtpl = NX.Fs.readFileSync('test/shared/util/Template/templates/literal.result.html').toString();
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+        }, function(ret) {
+            ret.should.equal(rtpl);
+        });
+
+    },
+
+    // }}}
 
 };
 
