@@ -21,6 +21,7 @@ TESTS = test/Array.test.js \
 		test/util/Format.test.js \
 		test/server/action.test.js \
 		test/server/cookie.test.js \
+		test/server/get.test.js \
 		test/server/module.test.js \
 		test/server/static.test.js
 

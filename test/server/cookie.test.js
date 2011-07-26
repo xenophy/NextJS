@@ -57,6 +57,58 @@ module.exports = {
     },
 
     // }}}
+    // {{{ test cookie#pattern2
+
+    'test cookie#pattern2': function(beforeExit) {
+
+        NX.service({
+            serverId: 'UnitTestCookie0002',
+            port: process.env.NXTestServerPort++,
+            workers: false,
+            enableDaemon: false,
+            bootarg: 'start',
+            execPath: docRoot,
+            next: function() {
+
+                var file = NX.Fs.readFileSync(docRoot + '/public/index.result.html').toString();
+
+                var cookie = '';
+                var cookies = [{
+                    param1:'kotsutsumi'
+                }];
+                cookies.forEach(function(item, i) {
+                    if(i>0) {
+                        cookie += '; ';
+                    }
+                    NX.iterate(item, function(key, v) {
+                        cookie += key + '=' + v;
+                    });
+                });
+
+                var req = {
+                    url: '/',
+                    headers: {
+                        Cookie: cookie
+                    },
+                    method: 'GET'
+                };
+                var res = {
+                    body: file,
+                    status: 200
+                }
+                var cb = function(res) {
+                    assert.ok(res);
+                };
+
+                assert.response(NX.servers['UnitTestCookie0002'], req, res, cb);
+
+            }
+        });
+
+    },
+
+    // }}}
+
 
 };
 
