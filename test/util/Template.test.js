@@ -591,6 +591,28 @@ module.exports = {
     },
 
     // }}}
+    // {{{ 'test if#pattern10'
+
+    'test if#pattern10': function(beforeExit) {
+
+        var tpl = [
+
+            "<!--{if true == }-->",
+                "<!--{if true == false}-->",
+                    '<p>true</p>',
+            '<!--{/f}-->',
+
+        ].join('');
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+        }, function(ret) {
+        });
+
+    },
+
+    // }}}
     // {{{ 'test include#pattern1'
 
     'test include#pattern1': function(beforeExit) {
@@ -621,7 +643,10 @@ module.exports = {
         var tpl = [
             '<p><!--{number|numberFormat}--></p>',
             '<p><!--{string|capitalize}--></p>',
-            '<p><!--{text|nl2br}--></p>'
+            '<p><!--{text|nl2br}--></p>',
+            '<p><!--{text2|defaultValue:1}--></p>',
+            '<p><!--{text3|defaultValue:true}--></p>',
+            '<p><!--{text4|defaultValue:false}--></p>'
         ].join('');
         var t = NX.create('NX.util.Template');
 
@@ -629,6 +654,9 @@ module.exports = {
             '<p>5,000</p>',
             '<p>Teston</p>',
             "<p>line1<br />line2<br />line3</p>",
+            '<p>1</p>',
+            '<p>true</p>',
+            '<p>false</p>',
         ].join("");
 
         t.fetch(tpl, {
@@ -670,6 +698,23 @@ module.exports = {
 
         var tpl = NX.Fs.readFileSync('test/shared/util/Template/templates/literal.html').toString();
         var rtpl = NX.Fs.readFileSync('test/shared/util/Template/templates/literal.result.html').toString();
+
+        var t = NX.create('NX.util.Template');
+
+        t.fetch(tpl, {
+        }, function(ret) {
+            ret.should.equal(rtpl);
+        });
+
+    },
+
+    // }}}
+    // {{{ 'test literal#pattern2'
+
+    'test literal#pattern2': function(beforeExit) {
+
+        var tpl = NX.Fs.readFileSync('test/shared/util/Template/templates/literal2.html').toString();
+        var rtpl = NX.Fs.readFileSync('test/shared/util/Template/templates/literal2.result.html').toString();
 
         var t = NX.create('NX.util.Template');
 
