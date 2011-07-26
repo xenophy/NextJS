@@ -11,9 +11,10 @@
 module.exports = {
 
     uses: [
-        'mod1'
+        'mod1',
+        {name: 'mod2'},
+        'mod_notexists',
     ],
-
 
 
     // {{{ execute
@@ -21,6 +22,7 @@ module.exports = {
     execute: function() {
 
         this.set('ret1', this.mod1.foo());
+        this.set('ret2', this.mod2.bar());
 
         // アクション終了
         this.end();
