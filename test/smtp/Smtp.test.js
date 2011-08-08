@@ -21,6 +21,20 @@ module.exports = {
 
     'test connect#pattern1': function(beforeExit) {
 
+        var mail = NX.create('NX.smtp.Client', {
+        });
+
+        mail.send({
+            to: 'kotsutsumi@xenophy.com',
+            from: 'user@foo.or.jp',
+            subject: 'てすとんタイトル',
+            body: 'てすとん'
+        });
+
+
+
+
+        /*
         var smtp = NX.create('NX.smtp.Smtp', {
         });
 
@@ -34,7 +48,7 @@ module.exports = {
 
                         smtp.data(function() {
 
-                            smtp.message('teston');
+                            smtp.message('てすとん');
 
                             smtp.end(function() {
 
@@ -51,6 +65,7 @@ module.exports = {
             });
 
         });
+        */
 
     }
 
