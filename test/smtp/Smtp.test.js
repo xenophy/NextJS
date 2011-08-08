@@ -24,10 +24,33 @@ module.exports = {
         var smtp = NX.create('NX.smtp.Smtp', {
         });
 
-        smtp.connect();
+        smtp.connect(function() {
 
+            smtp.helo(function() {
 
+                smtp.mail('user@foo.or.jp', function() {
 
+                    smtp.rcpt('kotsutsumi@xenophy.com', function() {
+
+                        smtp.data(function() {
+
+                            smtp.message('teston');
+
+                            smtp.end(function() {
+
+                                smtp.close();
+
+                            });
+
+                        });
+
+                    });
+
+                });
+
+            });
+
+        });
 
     }
 
