@@ -20,8 +20,8 @@ LIB_PREFIX = $(HOME)/.node_libraries
 test:
 	@rm -Rf node_modules
 	@mkdir node_modules
-	@mkdir node_modules/NX
-	@cp -Rf ./lib/NX node_modules
+	@mkdir node_modules/nx
+	@cp -Rf ./lib/nx node_modules
 	@NODE_ENV=test $(TEST) \
 		-I lib -q \
 		$(TEST_FLAGS) $(TESTS)

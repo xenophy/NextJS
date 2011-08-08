@@ -21,7 +21,8 @@ module.exports = {
 
     'test connect#pattern1': function(beforeExit) {
 
-        var smtp = NX.create('NX.smtp.Smtp');
+        var smtp = NX.create('NX.smtp.Smtp', {
+        });
 
         smtp.connect();
 
