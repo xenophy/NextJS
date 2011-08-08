@@ -6,7 +6,7 @@
     "author" : "Kazuhiro Kotsutsumi <kotsutsumi@xenophy.com>",
     "repository" : "git://github.com/xenophy/NextJS.git",
     "dependencies": {
-        "nx-core": ">= 0.1.1"
+        "nx-core": ">= 0.1.2"
     },
     "main" : "./lib/nx"
 }
