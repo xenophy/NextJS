@@ -11,7 +11,8 @@ TESTS = test/util/Template.test.js \
 		test/server/cookie.test.js \
 		test/server/get.test.js \
 		test/server/module.test.js \
-		test/server/static.test.js
+		test/server/static.test.js \
+		test/smtp/Smtp.test.js
 
 PREFIX = /usr/local
 LIB_PREFIX = $(HOME)/.node_libraries
