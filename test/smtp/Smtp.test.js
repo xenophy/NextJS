@@ -21,11 +21,12 @@ module.exports = {
 
     'test connect#pattern1': function(beforeExit) {
 
+
         var mail = NX.create('NX.smtp.Client', {
         });
 
         mail.send({
-            to: 'kotsutsumi@xenophy.com',
+//            to: 'kotsutsumi@xenophy.com',
             from: 'user@foo.or.jp',
             subject: 'てすとんタイトル',
             body: 'てすとん'
