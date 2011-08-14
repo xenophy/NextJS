@@ -22,6 +22,8 @@ module.exports = {
     'test connect#pattern1': function(beforeExit) {
 
         var host = process.env.NX_TEST_MAIL_SERVER;
+        var to = '小堤 一弘 <' + process.env.NX_TEST_MAIL_TO + '>';
+        var from = 'ねくすとじぇーえす <' + process.env.NX_TEST_MAIL_FROM + '>';
 
         if(host) {
 
@@ -30,54 +32,13 @@ module.exports = {
             });
 
             mail.send({
-                to: 'kotsutsumi@xenophy.com',
-                from: 'user@foo.or.jp',
+                to: to,
+                from: from,
                 subject: 'てすとんタイトル',
                 text: 'てすとん'
             });
 
         }
-
-
-
-        /*
-
-
-
-
-
-        /*
-        var smtp = NX.create('NX.smtp.Smtp', {
-        });
-
-        smtp.connect(function() {
-
-            smtp.helo(function() {
-
-                smtp.mail('user@foo.or.jp', function() {
-
-                    smtp.rcpt('kotsutsumi@xenophy.com', function() {
-
-                        smtp.data(function() {
-
-                            smtp.message('てすとん');
-
-                            smtp.end(function() {
-
-                                smtp.close();
-
-                            });
-
-                        });
-
-                    });
-
-                });
-
-            });
-
-        });
-        */
 
     }
 
