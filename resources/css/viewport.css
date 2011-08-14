@@ -41,11 +41,30 @@ html { height: 100%; }
 body { -webkit-font-smoothing: antialiased; font-family: 13px/1.231 "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; min-width: 980px; color: #484848; background: #f8f8f8; min-height: 100%; }
 
 /* line 93, ../sass/viewport.scss */
-#loading { position: absolute; width: 180px; margin: -70px 0 0 -90px; height: 140px; top: 50%; left: 50%; }
+#loading { position: absolute; width: 180px; margin: -150px 0 0 -120px; height: 140px; top: 50%; left: 50%; }
 /* line 100, ../sass/viewport.scss */
-#loading .title { background: url(../images/loading-title.png) no-repeat; position: absolute; display: block; top: 0; left: 0px; width: 180px; height: 27px; }
+
+#loading .title {
+    font-family: 'Alice', serif;
+    color: #c3c3c3;
+    font-size: 48px;
+    z-index: 10000;
+    padding-top: 252px;
+    padding-left: 60px;
+    width: 254px;
+    position: absolute;
+}
+
 /* line 108, ../sass/viewport.scss */
-#loading .logo { background: url(../images/loading.gif) no-repeat; position: absolute; display: block; top: 25px; left: 22px; width: 120px; height: 120px; }
+#loading .logo {
+    background: url(../images/loading_bg.gif) no-repeat;
+    position: absolute;
+    display: block;
+    top: 25px;
+    left: 0px;
+    width: 254px;
+    height: 230px;
+}
 
 /* line 117, ../sass/viewport.scss */
 a { color: #083772; text-decoration: none; }
