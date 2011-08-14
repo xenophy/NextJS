@@ -21,15 +21,27 @@ module.exports = {
 
     'test connect#pattern1': function(beforeExit) {
 
-        var mail = NX.create('NX.smtp.Client', {
-        });
+        var host = process.env.NX_TEST_MAIL_SERVER;
 
-        mail.send({
-            to: 'kotsutsumi@xenophy.com',
-            from: 'user@foo.or.jp',
-            subject: 'てすとんタイトル',
-            text: 'てすとん'
-        });
+        if(host) {
+
+            var mail = NX.create('NX.smtp.Client', {
+                host: host
+            });
+
+            mail.send({
+                to: 'kotsutsumi@xenophy.com',
+                from: 'user@foo.or.jp',
+                subject: 'てすとんタイトル',
+                text: 'てすとん'
+            });
+
+        }
+
+
+
+        /*
+
 
 
 
