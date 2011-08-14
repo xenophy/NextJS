@@ -22,8 +22,7 @@ module.exports = {
     'test connect#pattern1': function(beforeExit) {
 
         var host = process.env.NX_TEST_MAIL_SERVER;
-        //var to = '小堤 一弘 <' + process.env.NX_TEST_MAIL_TO + '>';
-        var to = '浅野 裕紀 <asano@xenophy.com>';
+        var to = '小堤 一弘 <' + process.env.NX_TEST_MAIL_TO + '>';
         var from = 'ねくすとじぇーえす <' + process.env.NX_TEST_MAIL_FROM + '>';
 
         if(host) {
