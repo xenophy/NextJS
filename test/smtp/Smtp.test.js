@@ -22,10 +22,17 @@ module.exports = {
     'test connect#pattern1': function(beforeExit) {
 
         var host = process.env.NX_TEST_MAIL_SERVER;
-        var to = '小堤 一弘 <' + process.env.NX_TEST_MAIL_TO + '>';
+        //var to = '小堤 一弘 <' + process.env.NX_TEST_MAIL_TO + '>';
+        var to = '浅野 裕紀 <asano@xenophy.com>';
         var from = 'ねくすとじぇーえす <' + process.env.NX_TEST_MAIL_FROM + '>';
 
         if(host) {
+
+            var path = NX.Path.normalize(__dirname + '/../shared/smtp/Client/logo.png');
+            var filename = 'nextjs.png';
+
+            var path2 = NX.Path.normalize(__dirname + '/../shared/smtp/Client/roll.png');
+            var filename2 = 'nextjs2.png';
 
             var mail = NX.create('NX.smtp.Client', {
                 host: host
@@ -34,6 +41,13 @@ module.exports = {
             mail.send({
                 to: to,
                 from: from,
+                attachments: [{
+                    path: path,
+                    name: filename
+                },{
+                    path: path2,
+                    name: filename2
+                }],
                 subject: 'てすとんタイトル',
                 text: 'てすとん'
             });
