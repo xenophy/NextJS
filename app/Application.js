@@ -31,5 +31,7 @@ Ext.define('Docs.Application', {
         if (Docs.initEventTracking) {
             Docs.initEventTracking();
         }
+
+        Ext.fly('loading').remove();
     }
 });

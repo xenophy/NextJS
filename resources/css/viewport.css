@@ -76,7 +76,8 @@ a:hover { color: #0464BB; }
 .notice { background-color: #fff99c; text-align: center; color: #434343; font-weight: bold; padding: 8px 0; }
 
 /* line 131, ../sass/viewport.scss */
-.logo { background: url(../images/icon.png) 0 -787px no-repeat; }
+/*.logo { background: url(../images/icon.png) 0 -787px no-repeat; }*/
+.logo { background: url(../images/lt_logo.png) 0 0 no-repeat; }
 
 /* line 134, ../sass/viewport.scss */
 .search { background: url(../images/search-box.png) no-repeat; padding: 3px 0 0 25px; }
@@ -118,7 +119,9 @@ a:hover { color: #0464BB; }
 /* line 198, ../sass/viewport.scss */
 #center-container { padding: 20px; }
 /* line 201, ../sass/viewport.scss */
-#center-container h1 { font-family: "klavika-web-1", "klavika-web-2", sans-serif; letter-spacing: -1px; padding-bottom: 5px; padding-top: 12px; border-bottom: 1px #f1f1f1; font-size: 2.3em; color: #66ab16; }
+#center-container h1 {
+    font-family: 'Alice', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Mayryo','ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+    letter-spacing: -1px; padding-bottom: 5px; padding-top: 12px; border-bottom: 1px #f1f1f1; font-size: 2.3em; color: #5a8314; }
 /* line 209, ../sass/viewport.scss */
 #center-container h1 a { color: #66ab16; }
 /* line 211, ../sass/viewport.scss */

@@ -11,7 +11,8 @@ Ext.define('Docs.view.index.Container', {
         var data = this.classData;
 
         var tpl = new Ext.XTemplate(
-            '<h1 class="pb">{title}</h1>',
+            '<h1 class="pb">Next JS is Application Server on node</h1>',
+            /*
             '<div class="legend icons">',
                 '<h4>アイコン凡例</h4>',
                 '<ul>',
@@ -61,6 +62,7 @@ Ext.define('Docs.view.index.Container', {
                     '<div style="clear:both"></div>',
                 '</div>',
             '</tpl>',
+            */
             {
                 renderClasses: function(category) {
                     return Ext.Array.map(data.categories[category].classes, function(cls) {
