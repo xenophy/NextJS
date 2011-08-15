@@ -1,13 +1,35 @@
-/**
- * List of classes on front page.
- * Together with links to guides and icons legend.
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/*!
+ * Next JS Documentation
+ *
+ * Copyright (c)2011 Xenophy.CO.,LTD All rights Reserved.
+ * http://www.xenophy.com
  */
+
+// {{{ Docs.view.index.Container
+
 Ext.define('Docs.view.index.Container', {
+
+    // {{{ extend
+
     extend: 'Ext.container.Container',
+
+    // }}}
+    // {{{ alias
+
     alias : 'widget.indexcontainer',
+
+    // }}}
+    // {{{ cls
+
     cls: 'class-list',
 
+    // }}}
+    // {{{ initComponent
+
     initComponent: function() {
+
         var data = this.classData;
 
         var tpl = new Ext.XTemplate(
@@ -122,4 +144,17 @@ Ext.define('Docs.view.index.Container', {
 
         this.callParent(arguments);
     }
+
+    // }}}
+
 });
+
+// }}}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */

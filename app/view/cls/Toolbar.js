@@ -1,22 +1,50 @@
-/**
- * Toolbar with menus providing quick access to class members.
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/*!
+ * Next JS Documentation
+ *
+ * Copyright (c)2011 Xenophy.CO.,LTD All rights Reserved.
+ * http://www.xenophy.com
  */
+
+// {{{ Docs.view.cls.Toolbar
+
 Ext.define('Docs.view.cls.Toolbar', {
+
+    // {{{ extend
+
     extend: 'Ext.toolbar.Toolbar',
+
+    // }}}
+    // {{{ requires
+
     requires: [
         'Docs.view.HoverMenuButton',
         'Docs.Settings'
     ],
 
+    // }}}
+    // {{{ dock
+
     dock: 'top',
+
+    // }}}
+    // {{{ cls
+
     cls: 'member-links',
+
+    // }}}
+    // {{{ padding
+
     padding: '3 5',
 
-    /**
-     * @cfg {Object} docClass
-     * Documentation for a class.
-     */
+    // }}}
+    // {{{ docClass
+
     docClass: {},
+
+    // }}}
+    // {{{ initComponent
 
     initComponent: function() {
         this.items = [];
@@ -87,6 +115,9 @@ Ext.define('Docs.view.cls.Toolbar', {
         this.callParent(arguments);
     },
 
+    // }}}
+    // {{{ createMemberButton
+
     createMemberButton: function(cfg) {
         var data = Ext.Array.map(cfg.members, function(m) {
             return this.createLinkRecord(this.docClass.name, m);
@@ -106,6 +137,9 @@ Ext.define('Docs.view.cls.Toolbar', {
         });
     },
 
+    // }}}
+    // {{{ createClassListButton
+
     createClassListButton: function(text, classes) {
         var data = Ext.Array.map(classes, function(cls) {
             return this.createLinkRecord(cls);
@@ -119,7 +153,9 @@ Ext.define('Docs.view.cls.Toolbar', {
         });
     },
 
-    // creates store tha holds link records
+    // }}}
+    // {{{ createStore
+
     createStore: function(records) {
         var store = Ext.create('Ext.data.Store', {
             fields: ['id', 'cls', 'url', 'label', 'inherited']
@@ -128,7 +164,9 @@ Ext.define('Docs.view.cls.Toolbar', {
         return store;
     },
 
-    // Creates link object referencing a class (and optionally a class member)
+    // }}}
+    // {{{ createLinkRecord
+
     createLinkRecord: function(cls, member) {
         return {
             cls: cls,
@@ -138,10 +176,9 @@ Ext.define('Docs.view.cls.Toolbar', {
         };
     },
 
-    /**
-     * Hides or unhides inherited members.
-     * @param {Boolean} hide
-     */
+    // }}}
+    // {{{ hideInherited
+
     hideInherited: function(hide) {
         Docs.Settings.set("hideInherited", hide);
 
@@ -181,4 +218,17 @@ Ext.define('Docs.view.cls.Toolbar', {
             }
         }, this);
     }
+
+    // }}}
+
 });
+
+// }}}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */

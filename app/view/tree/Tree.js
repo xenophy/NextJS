@@ -1,34 +1,73 @@
-/**
- * The class tree
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/*!
+ * Next JS Documentation
+ *
+ * Copyright (c)2011 Xenophy.CO.,LTD All rights Reserved.
+ * http://www.xenophy.com
  */
+
+// {{{ Docs.view.tree.Tree
+
 Ext.define('Docs.view.tree.Tree', {
+
+    // {{{ extend
+
     extend: 'Ext.tree.Panel',
+
+    // }}}
+    // {{{ alias
+
     alias : 'widget.classtree',
+
+    // }}}
+    // {{{ requires
+
     requires: [
         'Docs.view.HoverMenuButton',
         'Docs.Favorites',
         'Docs.History'
     ],
 
+    // }}}
+    // {{{ cls
+
     cls: 'class-tree iScroll',
+
+    // }}}
+    // {{{ folderSort
+
     folderSort: true,
+
+    // }}}
+    // {{{ useArrows
+
     useArrows: true,
+
+    // }}}
+    // {{{ rootVisible
+
     rootVisible: false,
 
+    // }}}
+    // {{{ border
+
     border: false,
+
+    // }}}
+    // {{{ bodyBorder
+
     bodyBorder: false,
 
+    // }}}
+    // {{{ initComponent
+
     initComponent: function() {
+
         this.addEvents(
-            /**
-             * @event
-             * Fired when class in tree was clicked on and needs to be loaded.
-             * @param {String} cls  name of the class.
-             */
             "pageclick"
         );
 
-        // Expand the main tree
         this.root.expanded = true;
         this.root.children[0].expanded = true;
 
@@ -78,22 +117,7 @@ Ext.define('Docs.view.tree.Tree', {
         ];
 
         this.callParent();
-        
-        // Add links for favoriting classes
-        //
-        // We should be able to just listen the "render" event of tee,
-        // but for some reason the tree nodes aren't quite ready when
-        // "render" fires (setting text on node will cause an
-        // exception because the actual dom node seems to be missing,
-        // although setting text on the currently hidden nodes will
-        // work).  I found a workaround by listening the "refresh"
-        // event which seems to first fire when all tree nodes are
-        // ready.  Most ceartanly a big hack.
-        //
-        // Additionally all this is done after callParent, because the
-        // getRootNode() will work after initComponent has run.
-        // Probably not neccessary, because "refresh" should happen
-        // after that anyway, but just to play it safe.
+
         Docs.Favorites.setTree(this);
         Ext.getStore("Favorites").on("load", function() {
             this.getView().on("refresh", function(){
@@ -102,14 +126,24 @@ Ext.define('Docs.view.tree.Tree', {
         }, this);
     },
 
+    // }}}
+    // {{{ addFavIcons
+
     addFavIcons: function(node) {
-        if (node.get("leaf")) {
+
+        if(node.get("leaf")) {
+
             var cls = node.raw.clsName;
             var show = Docs.Favorites.has(cls) ? "show" : "";
             node.set("text", node.get("text") + Ext.String.format('<a rel="{0}" class="fav {1}"></a>', cls, show));
             node.commit();
+
         }
+
     },
+
+    // }}}
+    // {{{ onItemClick
 
     onItemClick: function(view, node, item, index, e) {
 
@@ -152,39 +186,62 @@ Ext.define('Docs.view.tree.Tree', {
         }
     },
 
-    /**
-     * Selects class node in tree by name.
-     *
-     * @param {String} cls
-     */
+    // }}}
+    // {{{ selectClass
+
     selectClass: function(cls) {
+
         var r = this.findRecordByClassName(cls);
-        if (r) {
+
+        if(r) {
+
             this.getSelectionModel().select(r);
+
             r.bubble(function(n) {
                 n.expand();
             });
+
         }
+
     },
 
-    /**
-     * Sets favorite status of class on or off.
-     *
-     * @param {String} cls  name of the class
-     * @param {Boolean} enable  true to mark class as favorite.
-     */
+    // }}}
+    // {{{ setFavorite
+
     setFavorite: function(cls, enable) {
+
         var r = this.findRecordByClassName(cls);
-        if (r) {
+
+        if(r) {
             var show = enable ? "show" : "";
             r.set("text", r.get("text").replace(/class="fav *(show)?"/, 'class="fav '+show+'"'));
             r.commit();
         }
+
     },
 
+    // }}}
+    // {{{ findRecordByClassName
+
     findRecordByClassName: function(cls) {
+
         return this.getRootNode().findChildBy(function(n) {
             return cls === n.raw.clsName;
         }, this, true);
+
     }
+
+    // }}}
+
 });
+
+// }}}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ *
+ */

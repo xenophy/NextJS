@@ -1,13 +1,37 @@
-/**
- * Renders class name and icon in page header.
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/*!
+ * Next JS Documentation
+ *
+ * Copyright (c)2011 Xenophy.CO.,LTD All rights Reserved.
+ * http://www.xenophy.com
  */
+
+// {{{ Docs.view.cls.Header
+
 Ext.define('Docs.view.cls.Header', {
+
+    // {{{ extend
+
     extend: 'Ext.container.Container',
+
+    // }}}
+    // {{{ padding
+
     padding: '5 0 17 0',
-    // Initially the component will be empty and so the initial height
-    // will not be correct if not set explicitly
+
+    // }}}
+    // {{{ height
+
     height: 47,
+
+    // }}}
+    // {{{ alias
+
     alias: 'widget.classheader',
+
+    // }}}
+    // {{{ tpl
 
     tpl: Ext.create('Ext.XTemplate',
         '<h1 class="{[this.getClass(values)]}">',
@@ -34,11 +58,23 @@ Ext.define('Docs.view.cls.Header', {
         }
     ),
 
-    /**
-     * Loads class name and icon to header.
-     * @param {Object} cls  class config.
-     */
+    // }}}
+    // {{{ load
+
     load: function(cls) {
         this.update(this.tpl.apply(cls));
     }
+
+    // }}}
+
 });
+
+// }}}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */

@@ -1,22 +1,45 @@
-/**
- * Controller for search.
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/*!
+ * Next JS Documentation
+ *
+ * Copyright (c)2011 Xenophy.CO.,LTD All rights Reserved.
+ * http://www.xenophy.com
  */
+
+// {{{ Docs.controller.Search
+
 Ext.define('Docs.controller.Search', {
+
+    // {{{ extend
+
     extend: 'Ext.app.Controller',
+
+    // }}}
+    // {{{ views
 
     views: [
         'search.Dropdown'
     ],
 
+    // }}}
+    // {{{ stores
+
     stores: ['Search'],
 
+    // }}}
+    // {{{ init
+
     init: function() {
+
         this.control({
+
             '#search-dropdown': {
                 itemclick: function(dropdown, record) {
                     this.loadRecord(record);
                 }
             },
+
             '#search-field': {
                 keyup: function(el, ev) {
                     var dropdown = this.getDropdown();
@@ -87,39 +110,62 @@ Ext.define('Docs.controller.Search', {
         });
     },
 
+    // }}}
+    // {{{ getDropdown
+
     getDropdown: function() {
+
         return this.dropdown || (this.dropdown = Ext.getCmp('search-dropdown'));
+
     },
 
-    // loads class/method corrseponding to the record
+    // }}}
+    // {{{ loadRecord
+
     loadRecord: function(record) {
+
         var name = record.get("cls");
-        if (record.get("type") !== 'cls') {
+
+        if(record.get("type") !== 'cls') {
             name += '-' + record.get("type") + '-' + record.get("member");
         }
+
         Docs.App.getController('Classes').loadPage(name);
+
         this.getDropdown().hide();
+
     },
+
+    // }}}
+    // {{{ search
 
     search: function(term) {
-        // perform search and load results to store
+
         var limit = 10;
         var results = this.filterMembers(term);
+
         this.getDropdown().setTotal(results.length);
         this.getDropdown().getStore().loadData(results.slice(0, limit));
-        // position dropdown below search box
+
         this.getDropdown().alignTo('search-field', 'bl', [-23, 2]);
-        // hide dropdown when nothing found
-        if (results.length === 0) {
+
+        if(results.length === 0) {
+
             this.getDropdown().hide();
-        }
-        else {
-            // auto-select first result
+
+        } else {
+
             this.getDropdown().getSelectionModel().select(0);
+
         }
+
     },
 
+    // }}}
+    // {{{ filterMembers
+
     filterMembers: function(text) {
+
         var results = [[], [], [], [], []];
         var xFull=0, nFull=1, xBeg=2, nBeg=3, nMid=4;
         var hasDot = /\./.test(text);
@@ -153,4 +199,16 @@ Ext.define('Docs.controller.Search', {
         return Ext.Array.flatten(results);
     }
 
+    // }}}
+
 });
+
+// }}}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */

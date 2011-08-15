@@ -1,26 +1,59 @@
-/**
- * Renders the whole class-documentation page.
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/*!
+ * Next JS Documentation
+ *
+ * Copyright (c)2011 Xenophy.CO.,LTD All rights Reserved.
+ * http://www.xenophy.com
  */
+
+// {{{ Docs.view.cls.Overview
+
 Ext.define('Docs.view.cls.Overview', {
+
+    // {{{ exntend
+
     extend: 'Ext.panel.Panel',
+
+    // }}}
+    // {{{ alias
+
     alias: 'widget.classoverview',
+
+    // }}}
+    // {{{ requires
+
     requires: [
         'Docs.view.cls.Toolbar',
         'Docs.Syntax',
         'Docs.Settings'
     ],
 
+    // }}}
+    // {{{ cls
+
     cls: 'class-overview iScroll',
+
+    // }}}
+    // {{{ title
+
     title: 'クラス概要',
+
+    // }}}
+    // {{{ autoScroll
+
     autoScroll: true,
+
+    // }}}
+    // {{{ bodyPadding
+
     bodyPadding: '20',
 
-    /**
-     * Scrolls the specified element into view
-     *
-     * @param {String} query  DomQuery selector string.
-     */
+    // }}}
+    // {{{ scrollToEl
+
     scrollToEl: function(query) {
+
         var el = Ext.get(Ext.query(query)[0]);
         if (el) {
             var isMember = el.hasCls("member");
@@ -36,12 +69,11 @@ Ext.define('Docs.view.cls.Overview', {
         }
     },
 
-    /**
-     * Renders class documentation in this panel.
-     *
-     * @param {Object} docClass
-     */
+    // }}}
+    // {{{ load
+
     load: function(docClass) {
+
         this.docClass = docClass;
 
         if (this.toolbar) {
@@ -60,6 +92,9 @@ Ext.define('Docs.view.cls.Overview', {
         }
     },
 
+    // }}}
+    // {{{ renderClass
+
     renderClass: function(cls) {
         this.classTpl = this.classTpl || new Ext.XTemplate(
             '<div>',
@@ -77,6 +112,9 @@ Ext.define('Docs.view.cls.Overview', {
             members: this.renderMembers(cls)
         });
     },
+
+    // }}}
+    // {{{ renderHierarchy
 
     renderHierarchy: function(cls) {
         if (cls.superclasses.length === 0 && cls.allMixins.length === 0 && cls.alternateClassNames.length === 0) {
@@ -111,6 +149,9 @@ Ext.define('Docs.view.cls.Overview', {
         });
     },
 
+    // }}}
+    // {{{ renderClassTree
+
     renderClassTree: function(superclasses, firstChild) {
         if (superclasses.length === 0) {
             return "";
@@ -131,9 +172,15 @@ Ext.define('Docs.view.cls.Overview', {
         });
     },
 
+    // }}}
+    // {{{ renderLink
+
     renderLink: function(className) {
         return Ext.String.format('<a href="#/api/{0}" rel="{0}" class="docClass">{0}</a>', className);
     },
+
+    // }}}
+    // {{{ renderMembers
 
     renderMembers: function(cls) {
         var typeTitles = {
@@ -153,6 +200,9 @@ Ext.define('Docs.view.cls.Overview', {
         return html.join("");
     },
 
+    // }}}
+    // {{{ renderSection
+
     renderSection: function(members, type, title) {
         this.sectionTpl = this.sectionTpl || new Ext.XTemplate(
             '<div id="m-{type}">',
@@ -168,6 +218,9 @@ Ext.define('Docs.view.cls.Overview', {
             members: Ext.Array.map(members, this.renderMemberDiv, this).join("")
         });
     },
+
+    // }}}
+    // {{{ renderMemberDiv
 
     renderMemberDiv: function(member, index) {
         this.memberTpl = this.memberTpl || new Ext.XTemplate(
@@ -212,6 +265,9 @@ Ext.define('Docs.view.cls.Overview', {
         }, member));
     },
 
+    // }}}
+    // {{{ renderSignature
+
     renderSignature: function(member) {
         this.signatureTpl = this.signatureTpl || new Ext.XTemplate(
             '{before}<a href="#/api/{member}-{tagname}-{name}" class="name {expandable}">{name}</a>{params}{after}'
@@ -248,10 +304,16 @@ Ext.define('Docs.view.cls.Overview', {
         return this.signatureTpl.apply(cfg);
     },
 
+    // }}}
+    // {{{ renderShortParam
+
     renderShortParam: function(param) {
         var p = param.type + " " + param.name;
         return param.optional ? "["+p+"]" : p;
     },
+
+    // }}}
+    // {{{ renderLongDoc
 
     renderLongDoc: function(member) {
         var doc = member.doc;
@@ -285,6 +347,9 @@ Ext.define('Docs.view.cls.Overview', {
         return doc;
     },
 
+    // }}}
+    // {{{ renderLongParam
+
     renderLongParam: function(param) {
         this.paramTpl = this.paramTpl || new Ext.XTemplate(
             '<li>',
@@ -297,6 +362,9 @@ Ext.define('Docs.view.cls.Overview', {
 
         return this.paramTpl.apply(param);
     },
+
+    // }}}
+    // {{{ renderReturn
 
     renderReturn: function(returnDoc) {
         this.returnTpl = this.returnTpl || new Ext.XTemplate(
@@ -313,4 +381,17 @@ Ext.define('Docs.view.cls.Overview', {
 
         return this.returnTpl.apply(returnDoc);
     }
+
+    // }}}
+
 });
+
+// }}}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */

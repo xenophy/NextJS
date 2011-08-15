@@ -1,25 +1,85 @@
-/**
- * Renders search results list.
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/*!
+ * Next JS Documentation
+ *
+ * Copyright (c)2011 Xenophy.CO.,LTD All rights Reserved.
+ * http://www.xenophy.com
  */
+
+// {{{ Docs.view.search.Dropdown
+
 Ext.define('Docs.view.search.Dropdown', {
+
+    // {{{ exntend
+
     extend: 'Ext.view.View',
+
+    // }}}
+    // {{{ aliase
+
     alias: 'widget.searchdropdown',
 
+    // }}}
+    // {{{ floating
+
     floating: true,
+
+    // }}}
+    // {{{ autoShow
+
     autoShow: false,
+
+    // }}}
+    // {{{ autoRender
+
     autoRender: true,
+
+    // }}}
+    // {{{ toFrontOnShow
+
     toFrontOnShow: true,
+
+    // }}}
+    // {{{ focusOnToFront
+
     focusOnToFront: false,
+
+    // }}}
+    // {{{ store
 
     store: 'Search',
 
+    // }}}
+    // {{{ id
+
     id: 'search-dropdown',
+
+    // }}}
+    // {{{ overItemCls
+
     overItemCls:'x-view-over',
+
+    // }}}
+    // {{{ trackOver
+
     trackOver: true,
+
+    // }}}
+    // {{{ itemSelector
+
     itemSelector:'div.item',
+
+    // }}}
+    // {{{ singleSelect
+
     singleSelect: true,
 
+    // }}}
+    // {{{ initComponent
+
     initComponent: function() {
+
         this.tpl = new Ext.XTemplate(
             '<tpl for=".">',
                 '<div class="item {type}">',
@@ -32,22 +92,39 @@ Ext.define('Docs.view.search.Dropdown', {
                 getTotal: Ext.bind(this.getTotal, this)
             }
         );
+
         this.callParent(arguments);
+
     },
 
-    /**
-     * Sets number of total search results
-     * @param {Number} total
-     */
+    // }}}
+    // {{{ setTotal
+
     setTotal: function(total) {
+
         this.total = total;
+
     },
 
-    /**
-     * Returns number of total search results
-     * @return {Number}
-     */
+    // }}}
+    // {{{ getTotal
+
     getTotal: function() {
+
         return this.total;
+
     }
+
+    // }}}
+
 });
+
+// }}}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */
