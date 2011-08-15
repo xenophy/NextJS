@@ -174,6 +174,7 @@ Ext.define('Docs.controller.Search', {
         var reBeg = new RegExp("^" + safeText, "i");
         var reMid = new RegExp(safeText, "i");
 
+        /*
         Ext.Array.forEach(Docs.membersData.data, function(r) {
             // when search text has "." in it, search from the full name (e.g. "Ext.Component.focus")
             // Otherwise search from just the member name (e.g. "focus" or "Component")
@@ -194,7 +195,7 @@ Ext.define('Docs.controller.Search', {
             else if (reMid.test(name)) {
                 results[nMid].push(r);
             }
-        });
+            });*/
 
         return Ext.Array.flatten(results);
     }
