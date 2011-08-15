@@ -2,6 +2,7 @@
 ======================
   * Change  NX.app.ActinがNX.app.action.Actionに変更されました。
   * Change  NX.app.ModuleがNX.app.action.Moduleに変更されました。
+  * Change  NX.app.ConfigがNX.app.config.Configに変更されました。
   * Change  NX.app.AbstractControllerがNX.app.controller.Abstractに変更されました。
   * Change  NX.app.WebControllerがNX.app.controller.Webに変更されました。
 
