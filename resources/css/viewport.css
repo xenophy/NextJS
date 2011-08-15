@@ -121,7 +121,14 @@ a:hover { color: #0464BB; }
 /* line 201, ../sass/viewport.scss */
 #center-container h1 {
     font-family: 'Alice', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Mayryo','ＭＳ Ｐゴシック','MS PGothic', sans-serif;
-    letter-spacing: -1px; padding-bottom: 5px; padding-top: 12px; border-bottom: 1px #f1f1f1; font-size: 2.3em; color: #5a8314; }
+    letter-spacing: -1px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    border-bottom: 1px #f1f1f1;
+    font-size: 2.3em;
+    color: #5a8314;
+    border-bottom: solid 1px #666666;
+}
 /* line 209, ../sass/viewport.scss */
 #center-container h1 a { color: #66ab16; }
 /* line 211, ../sass/viewport.scss */
@@ -134,6 +141,19 @@ a:hover { color: #0464BB; }
 #center-container h1.component a { background: url(../images/component-m.png) no-repeat 0 -5px; margin-left: -12px; padding: 0.1em 0 0.4em 2em; }
 /* line 233, ../sass/viewport.scss */
 #center-container h1.singleton a { background: url(../images/singleton-m.png) no-repeat 0 -5px; margin-left: -12px; padding: 0.1em 0 0.4em 2em; }
+
+
+#center-container h2 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-family: 'Alice', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Mayryo','ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+    font-size: 1.8em;
+    color: #666;
+}
+
+#center-container p {
+    padding-bottom: 0.5em;
+}
 
 /* line 238, ../sass/viewport.scss */
 .container { background: #fff; border-radius: 5px; -moz-border-radius: 5px; -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); padding: 20px; line-height: 1.4em; }
