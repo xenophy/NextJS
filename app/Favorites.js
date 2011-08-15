@@ -1,52 +1,86 @@
-/**
- * Favorites management.
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/*!
+ * Next JS Documentation
+ *
+ * Copyright (c)2011 Xenophy.CO.,LTD All rights Reserved.
+ * http://www.xenophy.com
  */
+
+// {{{ Docs.Favorites
+
 Ext.define("Docs.Favorites", {
+
+    // {{{ extend
+
     extend: 'Docs.LocalStore',
+
+    // }}}
+    // {{{ storeName
+
     storeName: 'Favorites',
+
+    // }}}
+    // {{{ singleton
+
     singleton: true,
 
-    /**
-     * Associates Favorites with Docs TreePanel component.
-     * @param {Docs.view.tree.Tree} tree
-     */
+    // }}}
+    // {{{ setTree
+
     setTree: function(tree) {
         this.tree = tree;
     },
 
-    /**
-     * Adds class to favorites
-     *
-     * @param {String} cls  the class to add
-     */
+    // }}}
+    // {{{ add
+
     add: function(cls) {
-        if (!this.has(cls)) {
+
+        if(!this.has(cls)) {
+
             this.store.add({cls: cls});
             this.syncStore();
             this.tree.setFavorite(cls, true);
+
         }
+
     },
 
-    /**
-     * Removes class from favorites.
-     *
-     * @param {String} cls  the class to remove
-     */
+    // }}}
+    // {{{ remove
+
     remove: function(cls) {
-        if (this.has(cls)) {
+
+        if(this.has(cls)) {
+
             this.store.removeAt(this.store.findExact('cls', cls));
             this.syncStore();
             this.tree.setFavorite(cls, false);
+
         }
+
     },
 
-    /**
-     * Checks if class is in favorites
-     *
-     * @param {String} cls  the classname to check
-     * @return {Boolean} true when class exists in favorites.
-     */
+    // }}}
+    // {{{ has
+
     has: function(cls) {
+
         return this.store.findExact('cls', cls) > -1;
+
     }
+
+    // }}}
+
 });
+
+// }}}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */

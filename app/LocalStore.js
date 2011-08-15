@@ -1,28 +1,50 @@
-/**
- * Provides methods dealing with localStorage- and memory-store.
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/*!
+ * Next JS Documentation
  *
- * Base class for History and Favorites.
+ * Copyright (c)2011 Xenophy.CO.,LTD All rights Reserved.
+ * http://www.xenophy.com
  */
+
+// {{{ Docs.localStorage
+
 Ext.define("Docs.LocalStore", {
+
+    // {{{ storeName
+
     storeName: '',
 
-    /**
-     * Initializes store management.
-     *
-     * Initializes this.store variable and loads the store if
-     * localStorage available.
-     */
+    // }}}
+    // {{{ init
+
     init: function() {
+
         this.localStorage = ('localStorage' in window && window['localStorage'] !== null);
         this.store = Ext.getStore(this.storeName);
         this.localStorage && this.store.load();
+
     },
 
-    /**
-     * Syncs the store with localStorage if possible.
-     */
+    // }}}
+    // {{{ syncStore
+
     syncStore: function() {
+
         this.localStorage && this.store.sync();
+
     }
 
+    // }}}
+
 });
+
+// }}}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */

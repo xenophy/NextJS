@@ -25,7 +25,7 @@ Ext.define('Docs.view.tree.Tree', {
              * Fired when class in tree was clicked on and needs to be loaded.
              * @param {String} cls  name of the class.
              */
-            "classclick"
+            "pageclick"
         );
 
         // Expand the main tree
@@ -112,29 +112,43 @@ Ext.define('Docs.view.tree.Tree', {
     },
 
     onItemClick: function(view, node, item, index, e) {
-        var clsName = node.raw ? node.raw.clsName : node.data.clsName;
 
-        if (clsName) {
-            if (e.getTarget(".fav")) {
+        var pageName = node.raw ? node.raw.pageName : node.data.pageName;
+
+        if(pageName) {
+
+            if(e.getTarget(".fav")) {
+
                 var favEl = Ext.get(e.getTarget(".fav"));
-                if (favEl.hasCls('show')) {
-                    Docs.Favorites.remove(clsName);
+
+                if(favEl.hasCls('show')) {
+
+                    Docs.Favorites.remove(pageName);
+
+                } else {
+
+                    Docs.Favorites.add(pageName);
+
                 }
-                else {
-                    Docs.Favorites.add(clsName);
-                }
+
+            } else {
+
+                this.fireEvent("pageclick", pageName);
+
             }
-            else {
-                this.fireEvent("classclick", clsName);
-            }
-        }
-        else if (!node.isLeaf()) {
-            if (node.isExpanded()) {
+
+        } else if(!node.isLeaf()) {
+
+            if(node.isExpanded()) {
+
                 node.collapse(false);
-            }
-            else {
+
+            } else {
+
                 node.expand(false);
+
             }
+
         }
     },
 

@@ -1,7 +1,8 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
 
 /*!
- * Next JS GitHub Pages
+ * Next JS Documentation
+ *
  * Copyright (c)2011 Xenophy.CO.,LTD All rights Reserved.
  * http://www.xenophy.com
  */

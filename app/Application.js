@@ -1,12 +1,27 @@
-/**
- * Main application definition for Docs app.
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/*!
+ * Next JS Documentation
  *
- * We define our own Application class because this way we can also
- * easily define the dependencies.
+ * Copyright (c)2011 Xenophy.CO.,LTD All rights Reserved.
+ * http://www.xenophy.com
  */
+
+// {{{ Docs.Application
+
 Ext.define('Docs.Application', {
+
+    // {{{ exntend
+
     extend: 'Ext.app.Application',
+
+    // }}}
+    // {{{ name
+
     name: 'Docs',
+
+    // }}}
+    // {{{ requires
 
     requires: [
         'Docs.Favorites',
@@ -14,24 +29,46 @@ Ext.define('Docs.Application', {
         'Docs.Settings'
     ],
 
+    // }}}
+    // {{{ controllers
+
     controllers: [
         'Classes',
         'Search'
     ],
 
+    // }}}
+    // {{{ autoCreateViewport
+
     autoCreateViewport: true,
 
+    // }}}
+    // {{{ launch
+
     launch: function() {
+
         Docs.App = this;
         Docs.Favorites.init();
         Docs.History.init();
         Docs.Settings.init();
 
-        // When google analytics event tracking script present on page
-        if (Docs.initEventTracking) {
+        if(Docs.initEventTracking) {
             Docs.initEventTracking();
         }
 
         Ext.fly('loading').remove();
     }
+
+    // }}}
+
 });
+
+// }}}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */
