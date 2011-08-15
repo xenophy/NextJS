@@ -152,6 +152,16 @@ a:hover { color: #0464BB; }
     color: #666;
 }
 
+#center-container h3 {
+    padding-top: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #666;
+    margin-bottom: 6px;
+    font-family: 'Alice', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Mayryo','ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+    font-size: 1.4em;
+    color: #666;
+}
+
 #center-container p {
     padding-bottom: 0.5em;
 }
@@ -172,8 +182,12 @@ a:hover { color: #0464BB; }
     border-bottom: 1px solid #ccc;
 }
 
-#center-container li em {
+#center-container li em,
+#center-container p em {
     font-weight: bold;
+}
+
+#center-container li em {
     margin-right: 20px;
 }
 
