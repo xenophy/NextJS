@@ -1,25 +1,52 @@
-/**
- * Menu shown by {@link Docs.view.HoverMenuButton}.
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/*!
+ * Next JS Documentation
+ *
+ * Copyright (c)2011 Xenophy.CO.,LTD All rights Reserved.
+ * http://www.xenophy.com
  */
+
+// {{{ Docs.view.HoverMenuButton
+
 Ext.define('Docs.view.HoverMenu', {
+
+    // {{{ exntend
+
     extend: 'Ext.view.View',
 
+    // }}}
+    // {{{ componentCls
+
     componentCls: 'hover-menu',
+
+    // }}}
+    // {{{ itemSelector
+
     itemSelector: 'div.item',
+
+    // }}}
+    // {{{ deferEmptyText
+
     deferEmptyText: false,
+
+    // }}}
+    // {{{ renderTo
+
     renderTo: Ext.getBody(),
 
-    /**
-     * @cfg {Number} colHeight  maximum number of items in one column.
-     * When more than that, items are placed into multiple columns.
-     * Defaults to 25 (current maximum length of history).
-     */
+    // }}}
+    // {{{ columnHeight
+
     columnHeight: 25,
-    /**
-     * @cfg {Boolean} showCloseButtons  true to show "x" after each menu item.
-     * Defaults to false.
-     */
+
+    // }}}
+    // {{{ showCloseButtons
+
     showCloseButtons: false,
+
+    // }}}
+    // {{{ initComponent
 
     initComponent: function() {
         this.tpl = new Ext.XTemplate(
@@ -54,4 +81,18 @@ Ext.define('Docs.view.HoverMenu', {
 
         this.callParent();
     }
+
+    // }}}
+
 });
+
+// }}}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ *
+ */

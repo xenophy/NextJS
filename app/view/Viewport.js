@@ -1,10 +1,23 @@
-/**
- * The main viewport, split in to a west and center region.
- * The North region should also be shown by default in the packaged
- * (non-live) version of the docs. TODO: close button on north region.
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/*!
+ * Next JS Documentation
+ *
+ * Copyright (c)2011 Xenophy.CO.,LTD All rights Reserved.
+ * http://www.xenophy.com
  */
+
+// {{{ Docs.view.Viewport
+
 Ext.define('Docs.view.Viewport', {
+
+    // {{{ exntend
+
     extend: 'Ext.container.Viewport',
+
+    // }}}
+    // {{{ requires
+
     requires: [
         'Docs.view.cls.Container',
         'Docs.view.index.Container',
@@ -12,11 +25,26 @@ Ext.define('Docs.view.Viewport', {
         'Docs.History'
     ],
 
+    // }}}
+    // {{{ id
+
     id: 'viewport',
+
+    // }}}
+    // {{{ layout
+
     layout: 'border',
+
+    // }}}
+    // {{{ defaults
+
     defaults: { xtype: 'container' },
 
+    // }}}
+    // {{{ initComponent
+
     initComponent: function() {
+
         this.items = [
 
             // This is the 'live docs' header that should appear in the distributed version of the docs
@@ -117,4 +145,18 @@ Ext.define('Docs.view.Viewport', {
 
         this.callParent(arguments);
     }
+
+    // }}}
+
 });
+
+// }}}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ *
+ */

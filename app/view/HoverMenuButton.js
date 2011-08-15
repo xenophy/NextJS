@@ -2,36 +2,47 @@
  * Toolbar button with menu that appears when hovered over.
  */
 Ext.define('Docs.view.HoverMenuButton', {
+
+    // {{{ exntend
+
     extend: 'Ext.toolbar.TextItem',
+
+    // }}}
+    // {{{ alias
+
     alias: 'widget.hovermenubutton',
+
+    // }}}
+    // {{{ componentCls
+
     componentCls: "hover-menu-button",
+
+    // }}}
+    // {{{ requires
+
     requires: [
         'Docs.view.HoverMenu'
     ],
 
-    /**
-     * @cfg {Ext.data.Store} store
-     * Store with menu items (required).
-     */
+    // }}}
+    // {{{ menuCfg
 
-    /**
-     * @cfg {Object} menuCfg
-     * Additional config options for {@link Docs.view.HoverMenu}
-     */
     menuCfg: {},
 
-    /**
-     * @cfg {Boolean} showCount
-     * True to show small number in button indicating the number of items in menu.
-     * Defaults to false.
-     */
+    // }}}
+    // {{{ showCount
+
     showCount: false,
 
+    // }}}
+    // {{{ statics
+
     statics: {
-        // Global list of all menus.
-        // So we can hide all other menus while showing a specific one.
         menus: []
     },
+
+    // }}}
+    // {{{ initComponent
 
     initComponent: function() {
         this.addEvents(
@@ -65,7 +76,11 @@ Ext.define('Docs.view.HoverMenuButton', {
         this.callParent(arguments);
     },
 
+    // }}}
+    // {{{ onRender
+
     onRender: function() {
+
         this.callParent(arguments);
 
         this.renderMenu();
@@ -105,6 +120,9 @@ Ext.define('Docs.view.HoverMenuButton', {
 
     },
 
+    // }}}
+    // {{{ onDestroy
+
     onDestroy: function() {
         // clean up DOM
         this.menu.destroy();
@@ -113,6 +131,9 @@ Ext.define('Docs.view.HoverMenuButton', {
 
         this.callParent(arguments);
     },
+
+    // }}}
+    // {{{ renderMenu
 
     renderMenu: function() {
         this.menu.getEl().setVisibilityMode(Ext.core.Element.DISPLAY);
@@ -130,18 +151,33 @@ Ext.define('Docs.view.HoverMenuButton', {
         Docs.view.HoverMenuButton.menus.push(this.menu);
     },
 
+    // }}}
+    // {{{ deferHideMenu
+
     deferHideMenu: function() {
         this.hideTimeout = Ext.Function.defer(function() {
             this.menu.hide();
         }, 200, this);
     },
 
-    /**
-     * Returns the store used by menu.
-     * @return {Ext.data.Store}
-     */
+    // }}}
+    // {{{ getStore
+
     getStore: function() {
         return this.store;
     }
 
+    // }}}
+
 });
+
+// }}}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ *
+ */
