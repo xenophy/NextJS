@@ -144,6 +144,7 @@ a:hover { color: #0464BB; }
 
 
 #center-container h2 {
+    margin-top: 20px;
     padding-top: 12px;
     padding-bottom: 12px;
     font-family: 'Alice', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Mayryo','ＭＳ Ｐゴシック','MS PGothic', sans-serif;
@@ -154,6 +155,28 @@ a:hover { color: #0464BB; }
 #center-container p {
     padding-bottom: 0.5em;
 }
+
+#center-container code {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    display: block;
+    width: 100%;
+    padding: 16px;
+}
+
+#center-container li {
+    padding-bottom: 2px;
+    padding-top: 6px;
+    padding-left: 6px;
+    border-bottom: 1px solid #ccc;
+}
+
+#center-container li em {
+    font-weight: bold;
+    margin-right: 20px;
+}
+
 
 /* line 238, ../sass/viewport.scss */
 .container { background: #fff; border-radius: 5px; -moz-border-radius: 5px; -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); padding: 20px; line-height: 1.4em; }
