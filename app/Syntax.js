@@ -21,10 +21,10 @@ Ext.define("Docs.Syntax", {
     highlight: function(root) {
 
         Ext.Array.forEach(Ext.query("pre > code", root.dom || root), function(el) {
-            Ext.get(el).addCls("prettyprint");
+//            Ext.get(el).addCls("prettyprint");
         });
 
-        prettyPrint();
+//        prettyPrint();
 
     }
 

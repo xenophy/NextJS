@@ -80,7 +80,7 @@ Ext.define('Docs.controller.Classes', {
 
                 pageclick: function(page) {
 
-                    this.loadPage(page);
+                    this.showGuide(page);
 
                 }
 
@@ -125,27 +125,27 @@ Ext.define('Docs.controller.Classes', {
     // }}}
     // {{{ loadPage
 
-    loadPage: function(clsUrl, noHistory) {
+    loadPage: function(pageUrl, noHistory) {
 
-        var cls = clsUrl;
+        var page = pageUrl;
         var member;
 
         Ext.getCmp('container').layout.setActiveItem(1);
 
-        var matches = clsUrl.match(/^(.*?)(?:-(.*))?$/);
+        var matches = pageUrl.match(/^(.*?)(?:-(.*))?$/);
 
         if(matches) {
-            cls = matches[1];
+            page = matches[1];
             member = matches[2];
         }
 
         if(!noHistory) {
-            Docs.History.push("/api/" + clsUrl);
+            Docs.History.push("/pages/" + pageUrl);
         }
 
-        if(this.cache[cls]) {
+        if(this.cache[page]) {
 
-            this.showClass(this.cache[cls], member);
+            this.showClass(this.cache[page], member);
 
         } else {
 
@@ -154,16 +154,19 @@ Ext.define('Docs.controller.Classes', {
             }
 
             Ext.data.JsonP.request({
-                url: this.getBaseUrl() + '/pages/' + cls + '.js',
-                callbackName: cls.replace(/\./g, '_'),
+                url: this.getBaseUrl() + '/pages/' + page + '.html',
+                callbackName: page.replace(/\./g, '_'),
                 success: function(json, opts) {
 
-
-                    this.cache[cls] = json;
+                    this.cache[page] = json;
                     this.showClass(json, member);
+
                 },
+
                 failure : function(response, opts) {
+
                     console.log('Fail');
+
                 },
                 scope: this
             });
@@ -208,10 +211,11 @@ Ext.define('Docs.controller.Classes', {
     // {{{ showGuide
 
     showGuide: function(name, noHistory) {
-        noHistory || Docs.History.push("/guide/" + name);
+
+        noHistory || Docs.History.push("/pages/" + name);
 
         Ext.data.JsonP.request({
-            url: this.getBaseUrl() + "/guides/" + name + "/README.js",
+            url: this.getBaseUrl() + "/pages/" + name + "/README.js",
             callbackName: name,
             success: function(json) {
                 Ext.getCmp("guide").update(json.guide);

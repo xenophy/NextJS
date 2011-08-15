@@ -45,105 +45,318 @@ Ext.define('Docs.view.Viewport', {
 
     initComponent: function() {
 
-        this.items = [
+        this.items = [{
 
-            // This is the 'live docs' header that should appear in the distributed version of the docs
-            // {
-            //     region: 'north',
-            //     layout: 'fit',
-            //     cls: 'notice',
-            //     html: 'For up to date documentation and features, visit <a href="http://docs.sencha.com/ext-js/4-0">http://docs.sencha.com/ext-js/4-0</a>',
-            //     height: 33
-            // },
+            // {{{ region
 
-            {
-                region:'west',
-                width: 240,
-                id: 'west-region-container',
-                padding: '5 0 20 20',
-                layout: 'vbox',
-                defaults: {
-                    xtype: 'container',
-                    width: "100%"
-                },
-                items: [
-                    {
-                        xtype: 'button',
-                        cls: 'logo',
-                        height: 60,
-                        margin: '0 0 10 0',
-                        width: 220,
-                        border: 0,
-                        ui: 'hmm',
-                        listeners: {
-                            click: function() {
-                                Ext.getCmp('container').layout.setActiveItem(0);
-                                Docs.History.push("");
-                            }
-                        }
-                    },
-                    {
-                        cls: 'search',
-                        id: 'search-container',
-                        height: 40,
-                        items: [
-                            {
-                                xtype: 'triggerfield',
-                                triggerCls: 'reset',
-                                emptyText: '検索',
-                                id: 'search-field',
-                                enableKeyEvents: true,
-                                hideTrigger: true,
-                                onTriggerClick: function() {
-                                    this.reset();
-                                    this.focus();
-                                    this.setHideTrigger(true);
-                                    Ext.getCmp('search-dropdown').hide();
-                                }
-                            },
-                            {
-                                xtype: 'searchdropdown'
-                            }
-                        ]
-                    },
-                    {
-                        flex: 1,
-                        xtype: 'classtree',
-                        root: Docs.classData
-                    }
-                ]
+            region:'west',
+
+            // }}}
+            // {{{ width
+
+            width: 240,
+
+            // }}}
+            // {{{ id
+
+            id: 'west-region-container',
+
+            // }}}
+            // {{{ padding
+
+            padding: '5 0 20 20',
+
+            // }}}
+            // {{{ layout
+
+            layout: 'vbox',
+
+            // }}}
+            // {{{ defaults
+
+            defaults: {
+
+                // {{{ xtype
+
+                xtype: 'container',
+
+                // }}}
+                // {{{ width
+
+                width: "100%"
+
+                // }}}
+
             },
-            {
-                region: 'center',
-                id: 'center-container',
-                layout: 'fit',
-                minWidth: 800,
-                items: {
-                    id: 'container',
-                    xtype: 'container',
-                    layout: 'card',
-                    padding: '20',
-                    cls: 'container',
-                    items: [
-                        {
-                            autoScroll: true,
-                            xtype: 'indexcontainer',
-                            classData: Docs.overviewData
-                        },
-                        {
-                            xtype: 'classcontainer'
-                        },
-                        {
-                            autoScroll: true,
-                            xtype: 'container',
-                            id: 'guide'
+
+                // }}}
+                // {{{ items
+
+                items: [{
+
+                    // {{{ xtype
+
+                    xtype: 'button',
+
+                    // }}}
+                    // {{{ cls
+
+                    cls: 'logo',
+
+                    // }}}
+                    // {{{ height
+
+                    height: 60,
+
+                    // }}}
+                    // {{{ margin
+
+                    margin: '0 0 10 0',
+
+                    // }}}
+                    // {{{ width
+
+                    width: 220,
+
+                    // }}}
+                    // {{{ border
+
+                    border: 0,
+
+                    // }}}
+                    // {{{ ui
+
+                    ui: 'hmm',
+
+                    // }}}
+                    // {{{ listeners
+
+                    listeners: {
+
+                        // {{{ click
+
+                        click: function() {
+
+                            Ext.getCmp('container').layout.setActiveItem(0);
+                            Docs.History.push("");
                         }
-                    ]
-                }
+
+                        // }}}
+
+                    }
+
+                    // }}}
+
+                }, {
+
+                    // {{{ cls
+
+                    cls: 'search',
+
+                    // }}}
+                    // {{{ search-container
+
+                    id: 'search-container',
+
+                    // }}}
+                    // {{{ height
+
+                    height: 40,
+
+                    // }}}
+                    // {{{ items
+
+                    items: [{
+
+                        // {{{ xtype
+
+                        xtype: 'triggerfield',
+
+                        // }}}
+                        // {{{ triggerCls
+
+                        triggerCls: 'reset',
+
+                        // }}}
+                        // {{{ emptyText
+
+                        emptyText: '検索',
+
+                        // }}}
+                        // {{{ id
+
+                        id: 'search-field',
+
+                        // }}}
+                        // {{{ enableKeyEvents
+
+                        enableKeyEvents: true,
+
+                        // }}}
+                        // {{{ hideTrigger
+
+                        hideTrigger: true,
+
+                        // }}}
+                        // {{{ onTriggerClick
+
+                        onTriggerClick: function() {
+
+                            this.reset();
+                            this.focus();
+                            this.setHideTrigger(true);
+                            Ext.getCmp('search-dropdown').hide();
+                        }
+
+                        // }}}
+
+                    },{
+
+                        // {{{ xtype
+
+                        xtype: 'searchdropdown'
+
+                        // }}}
+
+                    }
+
+                    // }}}
+
+                ]
+
+                // }}}
+
+            },{
+
+                // {{{ flex
+
+                flex: 1,
+
+                // }}}
+                // {{{ xtype
+
+                xtype: 'classtree',
+
+                // }}}
+                // {{{ root
+
+                root: Docs.classData
+
+                // }}}
+
+            }]
+
+            // }}}
+
+        },{
+
+            // {{{ region
+
+            region: 'center',
+
+            // }}}
+            // {{{ id
+
+            id: 'center-container',
+
+            // }}}
+            // {{{ layout
+
+            layout: 'fit',
+
+            // }}}
+            // {{{ minWidth
+
+            minWidth: 800,
+
+            // }}}
+            // {{{ items
+
+            items: {
+
+                // {{{ id
+
+                id: 'container',
+
+                // }}}
+                // {{{ xtype
+
+                xtype: 'container',
+
+                // }}}
+                // {{{ layout
+
+                layout: 'card',
+
+                // }}}
+                // {{{ padding
+
+                padding: '20',
+
+                // }}}
+                // {{{ cls
+
+                cls: 'container',
+
+                // }}}
+                // {{{ items
+
+                items: [{
+
+                    // {{{ autoScroll
+
+                    autoScroll: true,
+
+                    // }}}
+                    // {{{ xtype
+
+                    xtype: 'indexcontainer',
+
+                    // }}}
+                    // {{{ classData
+
+                    classData: Docs.overviewData
+
+                    // }}}
+
+                },{
+
+                    // {{{ xtype
+
+                    xtype: 'classcontainer'
+
+                    // }}}
+
+                },{
+
+                    // {{{ autScroll
+
+                    autoScroll: true,
+
+                    // }}}
+                    // {{{ xtype
+
+                    xtype: 'container',
+
+                    // }}}
+                    // {{{ id
+
+                    id: 'guide'
+
+                    // }}}
+
+                }]
+
+                // }}}
+
             }
-        ];
+
+            // }}}
+
+        }];
 
         this.callParent(arguments);
+
     }
 
     // }}}

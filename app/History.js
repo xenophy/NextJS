@@ -63,7 +63,7 @@ Ext.define("Docs.History", {
 
             Docs.App.getController('Classes').loadPage(url.key, true);
 
-        } else if (url.type === "guide") {
+        } else if (url.type === "pages") {
 
             Docs.App.getController('Classes').showGuide(url.key, true);
 
@@ -80,7 +80,7 @@ Ext.define("Docs.History", {
 
     parseToken: function(token) {
 
-        var matches = token && token.match(/\/(api|guide)\/(.*)/);
+        var matches = token && token.match(/\/(api|pages)\/(.*)/);
 
         return matches ? {type: matches[1], key: matches[2]} : {};
 

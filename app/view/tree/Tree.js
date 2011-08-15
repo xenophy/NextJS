@@ -64,66 +64,73 @@ Ext.define('Docs.view.tree.Tree', {
 
     initComponent: function() {
 
-        this.addEvents(
-            "pageclick"
-        );
-
+        this.addEvents('pageclick');
         this.root.expanded = true;
         this.root.children[0].expanded = true;
-
         this.on("itemclick", this.onItemClick, this);
+        this.dockedItems = [{
 
-        this.dockedItems = [
-            {
-                xtype: 'container',
-                layout: 'hbox',
-                dock: 'top',
-                margin: '0 0 15 0',
-                items: [
-                    {
-                        xtype: 'hovermenubutton',
-                        cls: 'icon-fav sidebar',
-                        text: 'お気に入り',
-                        menuCfg: {
-                            cls: 'sidebar',
-                            emptyText: 'No favorites',
-                            showCloseButtons: true
-                        },
-                        store: Ext.getStore('Favorites'),
-                        listeners: {
-                            closeclick: function(cls) {
-                                Docs.Favorites.remove(cls);
-                            }
-                        }
-                    },
-                    {
-                        xtype: 'hovermenubutton',
-                        cls: 'icon-hist sidebar',
-                        text: '履歴',
-                        menuCfg: {
-                            cls: 'sidebar',
-                            emptyText: 'No history',
-                            showCloseButtons: true
-                        },
-                        store: Ext.getStore('History'),
-                        listeners: {
-                            closeclick: function(cls) {
-                                Docs.History.removeClass(cls);
-                            }
-                        }
+            xtype: 'container',
+            layout: 'hbox',
+            dock: 'top',
+            margin: '0 0 15 0',
+            items: [{
+
+                xtype: 'hovermenubutton',
+                cls: 'icon-fav sidebar',
+                text: 'お気に入り',
+
+                menuCfg: {
+                    cls: 'sidebar',
+                    emptyText: 'No favorites',
+                    showCloseButtons: true
+                },
+
+                store: Ext.getStore('Favorites'),
+
+                listeners: {
+                    closeclick: function(cls) {
+                        Docs.Favorites.remove(cls);
                     }
-                ]
-            }
-        ];
+                }
+
+            }, {
+
+                xtype: 'hovermenubutton',
+                cls: 'icon-hist sidebar',
+                text: '履歴',
+
+                menuCfg: {
+                    cls: 'sidebar',
+                    emptyText: 'No history',
+                    showCloseButtons: true
+                },
+
+                store: Ext.getStore('History'),
+
+                listeners: {
+                    closeclick: function(cls) {
+                        Docs.History.removeClass(cls);
+                    }
+                }
+
+            }]
+        }];
 
         this.callParent();
 
         Docs.Favorites.setTree(this);
+
         Ext.getStore("Favorites").on("load", function() {
+
             this.getView().on("refresh", function(){
+
                 this.getRootNode().cascadeBy(this.addFavIcons, this);
+
             }, this, {single: true});
+
         }, this);
+
     },
 
     // }}}

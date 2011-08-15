@@ -6,7 +6,7 @@ Docs.classData = {
         "text":"Next JS 環境構築ガイド",
         "children":[{
             "isClass"   : true,
-            "pageName"   : "mac",
+            "pageName"  : "env_overview",
             "text"      : "概要",
             "iconCls"   : "icon-class",
             "leaf"      : true
