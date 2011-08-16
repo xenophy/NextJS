@@ -1,5 +1,10 @@
 # 0.7.5
 ======================
+  * Add     SSLのWorker対応
+  * Add     Http設定（serviceコンフィグオプション）でworker:0を指定できるようになりました。
+  * Change  SSL設定で、ca指定が可能になりました。
+  * Fixed   Workerで起動できなかった不具合を修正
+  * Change  セッションを強制的にNX.data.FileStoreになるようになりました。(今後改善予定)
   * Add     NX.dispatcherの実装によりコマンドラインでアクションの実行が可能になりました。
   * Add     NX.app.controller.CLIクラスが実装されました。
   * Change  NX.server.AbstractServerがNX.server.Abstractに変更されました。
@@ -9,9 +14,11 @@
   * Change  NX.app.AbstractControllerがNX.app.controller.Abstractに変更されました。
   * Change  NX.app.WebControllerがNX.app.controller.Webに変更されました。
 
+
 # 0.7.4
 ======================
   * Info    NX.smtp.*が実装されました。
+
 
 # 0.7.3
 ======================
