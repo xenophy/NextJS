@@ -60,13 +60,19 @@ static Handle<Value> Start(const Arguments& args) {
 
         if(args.Length() > 0 && args[0]->IsInt32()) {
 
+            // 引数で指定されたfdに対して出力
             new_fd = args[0]->Int32Value();
+
             dup2(new_fd, STDOUT_FILENO);
             dup2(new_fd, STDERR_FILENO);
 
+        } else if(args.Length() > 0 && args[0]->IsFalse()) {
+
         } else {
+
             freopen("/dev/null", "w", stderr);
             freopen("/dev/null", "w", stdout);
+
         }
     }
 
