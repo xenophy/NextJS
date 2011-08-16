@@ -1,8 +1,9 @@
 # 0.7.5
 ======================
+  * Add     NX.dispatcherの実装によりコマンドラインでアクションの実行が可能になりました。
   * Add     NX.app.controller.CLIクラスが実装されました。
   * Change  NX.server.AbstractServerがNX.server.Abstractに変更されました。
-  * Change  NX.app.ActionがNX.app.action.Actionに変更されました。
+  * Change  NX.app.ActionがNX.app.action.Webに変更されました。
   * Change  NX.app.ModuleがNX.app.action.Moduleに変更されました。
   * Change  NX.app.ConfigがNX.app.config.Configに変更されました。
   * Change  NX.app.AbstractControllerがNX.app.controller.Abstractに変更されました。

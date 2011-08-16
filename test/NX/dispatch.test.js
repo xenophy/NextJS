@@ -21,7 +21,10 @@ module.exports = {
 
     'test dispatch#pattern1': function(beforeExit) {
 
-        //NX.dispatch('index');
+        NX.dispatch({
+            execPath: __dirname + '/../shared/NX/dispatch',
+            action: 'index'
+        });
 
     }
 
