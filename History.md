@@ -1,5 +1,6 @@
 # 0.7.5
 ======================
+  * Add     アクセスログ出力
   * Add     SSLのWorker対応
   * Add     Http設定（serviceコンフィグオプション）でworker:0を指定できるようになりました。
   * Change  SSL設定で、ca指定が可能になりました。
