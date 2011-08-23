@@ -1,5 +1,14 @@
 # 0.7.6
 ======================
+  * [WORK]  ベーシック認証を行うための、this.auth.user / this.auth.pw 変数を実装
+  * [WORK]  ベーシック認証キャンセル時に、401 Unauthorizedを返却するようになりました。
+  * [WORK]  ベーシック認証失敗時に、403 Forbiddenを返却するようになりました。
+  * [WORK]  ExtDirect APIの出力とインタフェースになるNX.app.action.Direct(NX.DirectAction)を実装しました。
+
+  * Add     this.templateで動的に出力テンプレートを変更できるようになりました。
+  * Add     this.redirectを実装しました。
+  * Add     this.abortで以降の悪ショーンチェーンと停止するメソッドを実装しました。
+  * Change  globalアクション、extentアクションもユーザーアクションチェーンに対応しました。
   * Change  this.dumpで深い階層のオブジェクト表示レベルを20階層までに制限しました。
   * Fixed   this.dumpでオブジェクトのキーと値が反対に表示されていたバグを修正
   * Add     Worker動作時、NX.Loader設定の自動継承実装
