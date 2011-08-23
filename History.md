@@ -1,10 +1,10 @@
 # 0.7.6
 ======================
-  * [WORK]  ベーシック認証を行うための、this.auth.user / this.auth.pw 変数を実装
-  * [WORK]  ベーシック認証キャンセル時に、401 Unauthorizedを返却するようになりました。
-  * [WORK]  ベーシック認証失敗時に、403 Forbiddenを返却するようになりました。
   * [WORK]  ExtDirect APIの出力とインタフェースになるNX.app.action.Direct(NX.DirectAction)を実装しました。
 
+  * Add     ベーシック認証を行うための、this.basicAuthを実装
+  * Add     ベーシック認証キャンセル時に、401 Unauthorizedを返却するようになりました。
+  * Add     ベーシック認証失敗時に、403 Forbiddenを返却するようになりました。
   * Add     this.templateで動的に出力テンプレートを変更できるようになりました。
   * Add     this.redirectを実装しました。
   * Add     this.abortで以降の悪ショーンチェーンと停止するメソッドを実装しました。
