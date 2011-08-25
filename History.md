@@ -1,7 +1,6 @@
 # 0.7.6
 ======================
-  * [WORK]  ExtDirect APIの出力とインタフェースになるNX.app.action.Direct(NX.DirectAction)を実装しました。
-
+  * Add     ExtDirect APIの出力とインタフェースになるNX.app.action.Direct(NX.DirectAction)を実装しました。
   * Add     ベーシック認証を行うための、this.basicAuthを実装
   * Add     ベーシック認証キャンセル時に、401 Unauthorizedを返却するようになりました。
   * Add     ベーシック認証失敗時に、403 Forbiddenを返却するようになりました。
