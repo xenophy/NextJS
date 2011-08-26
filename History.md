@@ -1,4 +1,4 @@
-# 0.7.7
+# 0.8.0
 ======================
   * Change  node-mysql 0.9.3形式に対応
   * Add     NX.util.MarkDown クラス作成
