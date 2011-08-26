@@ -1,3 +1,9 @@
+# 0.7.7
+======================
+  * [WORK]  バーチャルホスト設定に対応しました。
+  * [WORK]  NXDをnext-daemonパッケージに分離しました。
+
+
 # 0.7.6
 ======================
   * Add     ExtDirect APIの出力とインタフェースになるNX.app.action.Direct(NX.DirectAction)を実装しました。
