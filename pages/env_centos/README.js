@@ -190,8 +190,16 @@ Ext.data.JsonP.env_centos({
         'cd www;' + "\n",
         'echo "require(\'nx\').service();" > server.js' + "\n",
         'mkdir public;' + "\n",
-        'echo "&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;Next JS Test&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;p&gt;Next JS Setting Complete.&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;" > index.html' + "\n",
+        'echo "&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;Next JS Test&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;p&gt;Next JS Setting Complete.&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;" > public/index.html' + "\n",
         'node server start;',
+        '</pre>',
+        '<p>ブラウザからアクセスして表示を確認します。</p>',
+        '<pre>',
+        'http://[サーバアドレス]:3000/',
+        '</pre>',
+        '<p>確認が終わったら、サーバーを停止します。</p>',
+        '<pre>',
+        'node server stop;',
         '</pre>',
 
     ].join("")
