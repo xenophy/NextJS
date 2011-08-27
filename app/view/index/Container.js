@@ -32,6 +32,8 @@ Ext.define('Docs.view.index.Container', {
 
         var data = this.classData;
 
+        var tpl = Ext.XTemplate.from('toppage');
+        /*
         var tpl = new Ext.XTemplate(
             '<h1 class="pb">Next JS is Application Server on node</h1>',
             '<h2>SSJS時代のアプリケーションサーバー</h2>',
@@ -56,7 +58,7 @@ Ext.define('Docs.view.index.Container', {
 
             '<h2>更新情報</h2>',
             '<ul>',
-                '<li><em>2011.07.19</em>当サイト作成開始</li>',
+                '<li><em>2011.08.28</em>v0.8.1 リリース</li>',
                 '<li><em>2011.07.19</em>v0.7.4 リリース</li>',
             '</ul>',
 
@@ -152,6 +154,7 @@ Ext.define('Docs.view.index.Container', {
             {}
         );
 
+        */
 
         var html = this.html = tpl.apply(Ext.apply({
         }, data));
