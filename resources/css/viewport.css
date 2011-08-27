@@ -163,14 +163,12 @@ a:hover { color: #0464BB; }
 #center-container h3 {
     padding-top: 18px;
     font: normal 1em/1.5 sans-serif;
-    /*font-family: 'Alice', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Mayryo','ＭＳ Ｐゴシック','MS PGothic', sans-serif;*/
     font-size: 1.2em;
     font-weight: bold;
     color: #54682F;
 }
 
 #center-container p {
-    /*padding-bottom: 0.5em;*/
     margin: 1ex 5ex 1ex 0;
 }
 
@@ -389,14 +387,16 @@ a:hover { color: #0464BB; }
 #guide { padding-right: 10px; font-size: 14px; }
 /* line 491, ../sass/viewport.scss */
 #guide h1 {
-    font-family: 'Alice', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Mayryo','ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+    font: normal 1em/1.5 sans-serif;
     letter-spacing: -1px;
-    padding-bottom: 12px;
-    padding-top: 12px;
     border-bottom: 1px #f1f1f1;
     font-size: 2.3em;
     color: #5a8314;
     border-bottom: solid 1px #666666;
+    background: none;
+    font-weight: normal;
+    margin: 0;
+    border-bottom: 1px solid #AAA;
 }
 
 /* line 499, ../sass/viewport.scss */
@@ -405,9 +405,21 @@ a:hover { color: #0464BB; }
     margin-top: 20px;
     padding-top: 12px;
     padding-bottom: 12px;
-    font-family: 'Alice', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Mayryo','ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+    /*font-family: 'Alice', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Mayryo','ＭＳ Ｐゴシック','MS PGothic', sans-serif;*/
+    font: normal 1em/1.5 sans-serif;
     font-size: 1.8em;
     color: #333;
+        margin-top: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font: normal 1em/1.5 sans-serif;
+/*    font-family: 'Alice', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Mayryo','ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+    font-size: 1.8em;
+    */
+    font-size: 150%;
+    color: #333;
+    padding-bottom: .17em;
+    border-bottom: 1px solid #AAA;
 }
 
 #guide h3 {
@@ -415,7 +427,8 @@ a:hover { color: #0464BB; }
     padding-bottom: 6px;
     border-bottom: 1px solid #666;
     margin-bottom: 6px;
-    font-family: 'Alice', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Mayryo','ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+    /*font-family: 'Alice', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Mayryo','ＭＳ Ｐゴシック','MS PGothic', sans-serif;*/
+    font: normal 1em/1.5 sans-serif;
     font-size: 1.4em;
     color: #666;
 }
@@ -423,6 +436,11 @@ a:hover { color: #0464BB; }
 /* line 509, ../sass/viewport.scss */
 /* line 516, ../sass/viewport.scss */
 #guide hr { display: none; }
+
+
+#guide p {
+    margin: 1ex 5ex 1ex 0;
+}
 
 /* line 521, ../sass/viewport.scss */
 .class-overview .deprecated-signature, .class-overview .protected-signature, .class-overview .static-signature, .class-overview .constructor-signature { font-weight: bold; text-transform: uppercase; color: white; font-size: 0.7em; border-radius: 2px; -moz-border-radius: 2px; margin-left: 5px; padding: 0 3px; }

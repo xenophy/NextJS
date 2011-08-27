@@ -168,8 +168,9 @@ Ext.data.JsonP.env_centos({
         'curl http://npmjs.org/install.sh | sh',
         '</pre>',
         '<p>',
-        '<em>Is this OK? enter \'yes\' or \'no\'</em>と聞かれたら<em>yes</em>を入力してエンター。',
+        '<em>Is this OK? enter \'yes\' or \'no\'</em>と聞かれたら<em>yes</em>を入力してエンターキーを押します。',
         '</p>',
+        '<br />',
 
         '<h4>npmのバージョン確認</h4>',
         '<pre>',
