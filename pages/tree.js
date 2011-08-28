@@ -19,12 +19,6 @@ Docs.classData = {
             "leaf"      : true
         },{
             "isClass"   : true,
-            "pageName"  : "about_webserver",
-            "text"      : "Webサーバー機能",
-            "iconCls"   : "icon-class",
-            "leaf"      : true
-        },{
-            "isClass"   : true,
             "pageName"  : "about_roadmap",
             "text"      : "ロードマップ",
             "iconCls"   : "icon-class",
@@ -33,6 +27,32 @@ Docs.classData = {
             "isClass"   : true,
             "pageName"  : "about_license",
             "text"      : "著作権に関する情報",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
+        }]
+    },{
+        "text":"Next JS 環境構築ガイド",
+        "iconCls":"icon-pkg",
+        "children":[{
+            "isClass"   : true,
+            "pageName"  : "env_overview",
+            "text"      : "概要",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "env_centos",
+            "text"      : "Cent OS",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
+        }]
+    },{
+        "text":"チュートリアル",
+        "iconCls":"icon-pkg",
+        "children":[{
+            "isClass"   : true,
+            "pageName"  : "tutorial_list",
+            "text"      : "一覧",
             "iconCls"   : "icon-class",
             "leaf"      : true
         }]
@@ -73,32 +93,6 @@ Docs.classData = {
             "isClass"   : true,
             "pageName"  : "util_overview",
             "text"      : "概要",
-            "iconCls"   : "icon-class",
-            "leaf"      : true
-        }]
-    },{
-        "text":"Next JS 環境構築ガイド",
-        "iconCls":"icon-pkg",
-        "children":[{
-            "isClass"   : true,
-            "pageName"  : "env_overview",
-            "text"      : "概要",
-            "iconCls"   : "icon-class",
-            "leaf"      : true
-        },{
-            "isClass"   : true,
-            "pageName"  : "env_centos",
-            "text"      : "Cent OS",
-            "iconCls"   : "icon-class",
-            "leaf"      : true
-        }]
-    },{
-        "text":"チュートリアル",
-        "iconCls":"icon-pkg",
-        "children":[{
-            "isClass"   : true,
-            "pageName"  : "tutorial_list",
-            "text"      : "一覧",
             "iconCls"   : "icon-class",
             "leaf"      : true
         }]
