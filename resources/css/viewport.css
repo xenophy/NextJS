@@ -182,10 +182,12 @@ a:hover { color: #0464BB; }
 }
 
 #center-container li {
+    /*
     padding-bottom: 2px;
     padding-top: 6px;
     padding-left: 6px;
     border-bottom: 1px solid #ccc;
+    */
 }
 
 #center-container li em,
@@ -441,6 +443,17 @@ a:hover { color: #0464BB; }
 #guide p {
     margin: 1ex 5ex 1ex 0;
 }
+
+#guide ul {
+    line-height: 1.5em;
+    list-style-type: square;
+    list-style-image: url(../images/bullet.png);
+}
+
+.class-overview ul li, #guide ul li {
+    list-style-image: url(../images/bullet.png);
+}
+
 
 /* line 521, ../sass/viewport.scss */
 .class-overview .deprecated-signature, .class-overview .protected-signature, .class-overview .static-signature, .class-overview .constructor-signature { font-weight: bold; text-transform: uppercase; color: white; font-size: 0.7em; border-radius: 2px; -moz-border-radius: 2px; margin-left: 5px; padding: 0 3px; }

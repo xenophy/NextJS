@@ -7,7 +7,7 @@ Docs.classData = {
         "iconCls":"icon-pkg",
         "children":[{
             "isClass"   : true,
-            "pageName"  : "about_mainfunc",
+            "pageName"  : "about_primaryfunc",
             "text"      : "主要機能",
             "iconCls"   : "icon-class",
             "leaf"      : true
