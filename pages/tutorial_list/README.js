@@ -25,6 +25,7 @@ Ext.data.JsonP.tutorial_list({
         '<li><a href="#">バーチャルホストとバーチャルコンテンツルート</a></li>',
         '<li><a href="#">ロギング</a></li>',
         '<li><a href="#">JavaScriptクラスシステム</a></li>',
+        '<li><a href="#">カスタムアクションクラスとNX.Loader</a></li>',
         '</ul>',
 
     ].join("")
