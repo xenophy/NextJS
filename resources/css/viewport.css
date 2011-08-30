@@ -425,14 +425,11 @@ a:hover { color: #0464BB; }
 }
 
 #guide h3 {
-    padding-top: 12px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #666;
-    margin-bottom: 6px;
-    /*font-family: 'Alice', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Mayryo','ＭＳ Ｐゴシック','MS PGothic', sans-serif;*/
+    padding-top: 18px;
     font: normal 1em/1.5 sans-serif;
-    font-size: 1.4em;
-    color: #666;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #54682F;
 }
 
 /* line 509, ../sass/viewport.scss */
