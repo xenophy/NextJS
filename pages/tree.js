@@ -45,6 +45,12 @@ Docs.classData = {
             "text"      : "Cent OS",
             "iconCls"   : "icon-class",
             "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "env_ubuntu",
+            "text"      : "Ubuntu",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
         }]
     },{
         "text":"チュートリアル",
