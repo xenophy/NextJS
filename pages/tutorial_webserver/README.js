@@ -96,10 +96,13 @@ Ext.data.JsonP.tutorial_webserver({
         '<p>',
         'あなたは、サーバーを起動するために<em>service</em>メソッドを呼び出しただけで、Webサーバーとして機能させることに成功しました。',
         'しかも、ポートは3000ポートでリスンしています。',
-        '<em>service</em>メソッドはこれらの設定を行うことができます。serviceメソッドで設定できる項目を一つずつ確認していきます。',
+        '<em>service</em>メソッドはこれらの設定を行うことができます。',
+        '設定は、オブジェクトで行います。直接オブジェクトリテラルで指定することがほとんどです。',
+        'serviceメソッドで設定できる項目を一つずつ確認していきます。',
         '</p>',
 
         '<h3>serviceメソッドに設定可能なコンフィグオプション</h3>',
+
         '<table>',
         '<tr>',
         '<th>オプション名</th>',
@@ -145,13 +148,13 @@ Ext.data.JsonP.tutorial_webserver({
 
         '<tr>',
         '<td>next</td>',
-        '<td>NX.empty</td>',
+        '<td><em>NX.empty</em></td>',
         '<td>リクエスト終了後のコールバック関数</td>',
         '</tr>',
 
         '<tr>',
         '<td>paths</td>',
-        '<td>Object(詳細は、次項参照)</td>',
+        '<td><em>Object(詳細は、次項参照)</em></td>',
         '<td>パス設定オブジェクト</td>',
         '</tr>',
 
@@ -169,19 +172,19 @@ Ext.data.JsonP.tutorial_webserver({
 
         '<tr>',
         '<td>session</td>',
-        '<td>Object(詳細は、次項参照)</td>',
+        '<td><em>Object(詳細は、次項参照)</em></td>',
         '<td>セッション設定</td>',
         '</tr>',
 
         '<tr>',
         '<td>ssl</td>',
-        '<td>Object(詳細は、次項参照)</td>',
+        '<td><em>Object(詳細は、次項参照)</em></td>',
         '<td>SSL設定</td>',
         '</tr>',
 
         '<tr>',
         '<td>virtualhost</td>',
-        '<td>Object(詳細は、次項参照)</td>',
+        '<td><em>Object(詳細は、次項参照)</em></td>',
         '<td>バーチャルホスト設定</td>',
         '</tr>',
 
@@ -189,6 +192,243 @@ Ext.data.JsonP.tutorial_webserver({
         '<td>workers</td>',
         '<td><em>require(\'os\').cpus().length</em></td>',
         '<td>ワーカー数</td>',
+        '</tr>',
+
+        '</table>',
+
+
+        '<h3>パス設定オブジェクト</h3>',
+
+        '<table>',
+        '<tr>',
+        '<th>オプション名</th>',
+        '<th>初期値</th>',
+        '<th>説明</th>',
+        '</tr>',
+
+        '<tr>',
+        '<td>exec</td>',
+        '<td>server.jsが実行されているディレクトリ</td>',
+        '<td>初期値は、nodeコマンドを実行したディレクトリになります。以降の設定はすべて、このexecパス以下の設定がデフォルトです。</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>logs</td>',
+        '<td><em>[execディレクトリ]/logs</em></td>',
+        '<td>ログ出力ディレクトリパス</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>configs</td>',
+        '<td><em>[execディレクトリ]/configs</em></td>',
+        '<td>設定ファイルディレクトリパス</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>modules</td>',
+        '<td><em>[execディレクトリ]/modules</em></td>',
+        '<td>モジュールディレクトリパス</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>public</td>',
+        '<td><em>[execディレクトリ]/public</em></td>',
+        '<td>コンテンツディレクトリパス</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>controllers</td>',
+        '<td><em>[execディレクトリ]/controllers</em></td>',
+        '<td>コントローラーディレクトリパス</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>templates</td>',
+        '<td><em>[execディレクトリ]/templates</em></td>',
+        '<td>テンプレートディレクトリパス</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>actions</td>',
+        '<td><em>[execディレクトリ]/actions</em></td>',
+        '<td>アクションディレクトリパス</td>',
+        '</tr>',
+
+        '</table>',
+
+
+        '<h3>セッション設定</h3>',
+
+        '<table>',
+        '<tr>',
+        '<th>オプション名</th>',
+        '<th>初期値</th>',
+        '<th>説明</th>',
+        '</tr>',
+
+        '<tr>',
+        '<td>key</td>',
+        '<td><em>\'nextjs.sid\'</em></td>',
+        '<td>セッションキー名</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>secret</td>',
+        '<td><em>process.NXEnv.sessionSecret</em>の値</td>',
+        '<td>ハッシュキー生成時に利用するシークレットコード</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>cookie</td>',
+        '<td><em>Object(詳細は、次項参照)</em></td>',
+        '<td>セッションのハッシュキーを保存する際のCookie設定</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>gc</td>',
+        '<td><em>Object(詳細は、次項参照)</em></td>',
+        '<td>ガーベージコレクションオブジェクト設定</td>',
+        '</tr>',
+
+        '</table>',
+
+
+        '<h3>セッション用Cookie設定</h3>',
+
+        '<table>',
+        '<tr>',
+        '<th>オプション名</th>',
+        '<th>初期値</th>',
+        '<th>説明</th>',
+        '</tr>',
+
+        '<tr>',
+        '<td>path</td>',
+        '<td><em>\'/\'</em></td>',
+        '<td>サーバ上での、クッキーを有効としたいパス \'/\' をセットすると、クッキーは domain 配下の全てで有効となります。</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>httpOnly</td>',
+        '<td><em>true</em></td>',
+        '<td>true を設定すると、HTTP を通してのみクッキーにアクセスできるようになります。 つまり、JavaScript のようなスクリプト言語からはアクセスできなくなるということです。 この設定を使用すると、XSS 攻撃によって ID を盗まれる危険性を減らせる (が、すべてのブラウザがこの設定をサポートしているというわけではありません) と言われています。</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>maxAge</td>',
+        '<td><em>14400000</em></td>',
+        '<td>クッキーの有効期限</td>',
+        '</tr>',
+
+        '</table>',
+
+
+        '<h3>セッション用ガーベージコレクションオブジェクト設定</h3>',
+
+        '<table>',
+        '<tr>',
+        '<th>オプション名</th>',
+        '<th>初期値</th>',
+        '<th>説明</th>',
+        '</tr>',
+
+        '<tr>',
+        '<td>probability</td>',
+        '<td><em>1</em></td>',
+        '<td></td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>divisor</td>',
+        '<td><em>1000</em></td>',
+        '<td></td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>maxAge</td>',
+        '<td><em>14400000</em></td>',
+        '<td></td>',
+        '</tr>',
+
+        '</table>',
+
+
+        '<h3>SSL設定</h3>',
+        '<p>',
+        'すべての設定、初期値は<em>serviceメソッドに設定可能なコンフィグオプション</em>と同様ですが、いくつか追加されています。',
+        '</p>',
+
+        '<table>',
+        '<tr>',
+        '<th>オプション名</th>',
+        '<th>初期値</th>',
+        '<th>説明</th>',
+        '</tr>',
+
+        '<tr>',
+        '<td>port</td>',
+        '<td><em>3001</em></td>',
+        '<td>ポート番号</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>key</td>',
+        '<td>-</td>',
+        '<td>秘密鍵パス設定(例:<em>\'./certs/server.key\'</em>)</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>cert</td>',
+        '<td>-</td>',
+        '<td>証明書パス設定(例:<em>\'./certs/server.crt\'</em>)</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>ca</td>',
+        '<td><em>-</em></td>',
+        '<td>CA証明書(例:<em>\'./certs/server.cer\'</em>)</td>',
+        '</tr>',
+
+        '</table>',
+
+
+        '<h3>バーチャルホスト設定</h3>',
+
+        '<table>',
+        '<tr>',
+        '<th>オプション名</th>',
+        '<th>初期値</th>',
+        '<th>説明</th>',
+        '</tr>',
+
+        '<tr>',
+        '<td>server</td>',
+        '<td>-</td>',
+        '<td>サーバー名設定(例:<em>nxtest1.com</em>)</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>alias</td>',
+        '<td>-</td>',
+        '<td>サーバーエイリアス(例:<em>\'*.nxtest1.com\'</em>)</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>port</td>',
+        '<td><em>3000</em></td>',
+        '<td>ポート番号</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>virtualroot</td>',
+        '<td>-</td>',
+        '<td>バーチャルルート設定</td>',
+        '</tr>',
+
+        '<tr>',
+        '<td>root</td>',
+        '<td><em>execパス</em></td>',
+        '<td>ルート設定</td>',
         '</tr>',
 
         '</table>',
