@@ -41,5 +41,7 @@ Ext.data.JsonP.about_roadmap({
         'マイクロバージョンについては、奇数、偶数のルールは存在しません。',
         '</p>',
 
+        '<address>Copyright &copy; 2006 - 2011 <a href="http://www.xenophy.com/">Xenophy.CO.,LTD</a> All rights Reserved.</address>',
+
     ].join("")
 });

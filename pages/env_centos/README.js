@@ -202,6 +202,7 @@ Ext.data.JsonP.env_centos({
         '<pre>',
         'node server stop;',
         '</pre>',
+        '<address>Copyright &copy; 2006 - 2011 <a href="http://www.xenophy.com/">Xenophy.CO.,LTD</a> All rights Reserved.</address>',
 
     ].join("")
 });

@@ -10,6 +10,7 @@ Ext.data.JsonP.about_license({
         'しかし、著作権を放棄するわけではありません。',
         '著作権は、開発元である株式会社ゼノフィに帰属します。',
         '</p>',
+        '<address>Copyright &copy; 2006 - 2011 <a href="http://www.xenophy.com/">Xenophy.CO.,LTD</a> All rights Reserved.</address>',
 
     ].join("")
 });

@@ -27,6 +27,7 @@ Ext.data.JsonP.tutorial_list({
         '<li><a href="#">JavaScriptクラスシステム</a></li>',
         '<li><a href="#">カスタムアクションクラスとNX.Loader</a></li>',
         '</ul>',
+        '<address>Copyright &copy; 2006 - 2011 <a href="http://www.xenophy.com/">Xenophy.CO.,LTD</a> All rights Reserved.</address>',
 
     ].join("")
 });

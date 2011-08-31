@@ -13,5 +13,6 @@ Ext.data.JsonP.env_overview({
         '  <li>Scientific Linux</li>',
         '  <li>openSUSE</li>',
         '</ul>',
+        '<address>Copyright &copy; 2006 - 2011 <a href="http://www.xenophy.com/">Xenophy.CO.,LTD</a> All rights Reserved.</address>',
     ].join("")
 });

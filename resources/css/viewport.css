@@ -584,5 +584,27 @@ address {
     margin-bottom: 30px;
     margin-right: 30px;
     text-align: right;
-
 }
+
+table {
+    margin: 10px 0 10px 0;
+    border-top: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+}
+
+th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+th, td {
+    border-bottom: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+    padding: 0.5em;
+}
+
+em {
+    color: #173350;
+}
+
+
