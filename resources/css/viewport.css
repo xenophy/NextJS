@@ -586,24 +586,24 @@ address {
     text-align: right;
 }
 
-table {
+#guide table {
     margin: 10px 0 10px 0;
     border-top: 1px #ccc solid;
     border-left: 1px #ccc solid;
 }
 
-th {
+#guide th {
     background-color: #f1f1f1;
     font-weight: bold;
 }
 
-th, td {
+#guide th, td {
     border-bottom: 1px #ccc solid;
     border-right: 1px #ccc solid;
     padding: 0.5em;
 }
 
-em {
+#guide em {
     color: #173350;
 }
 
