@@ -10,8 +10,7 @@ Ext.data.JsonP.tutorial_list({
         '</p>',
 
         '<ul style="margin: 20px; 0 0 0;">',
-        '<li><a href="#">Webサーバーの起動</a></li>',
-        '<li><a href="#">静的ページの配置</a></li>',
+        '<li><a href="#/pages/tutorial_webserver">Webサーバーの起動</a></li>',
         '<li><a href="#">アクションとアクションチェーン</a></li>',
         '<li><a href="#">グローバルアクションとエクテントアクション</a></li>',
         '<li><a href="#">パラメータの取得と設定</a></li>',
