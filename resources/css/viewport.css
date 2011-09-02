@@ -597,7 +597,7 @@ address {
     font-weight: bold;
 }
 
-#guide th, td {
+#guide th, #guide td {
     border-bottom: 1px #ccc solid;
     border-right: 1px #ccc solid;
     padding: 0.5em;
