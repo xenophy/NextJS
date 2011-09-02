@@ -67,6 +67,12 @@ Docs.classData = {
             "text"      : "Webサーバーの起動",
             "iconCls"   : "icon-class",
             "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_action",
+            "text"      : "アクションとアクションチェーン",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
         }]
     },{
         "text":"コントローラー",
