@@ -73,6 +73,12 @@ Docs.classData = {
             "text"      : "アクションとアクションチェーン",
             "iconCls"   : "icon-class",
             "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_globalextent",
+            "text"      : "グローバルアクションとエクテントアクション",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
         }]
     },{
         "text":"コントローラー",

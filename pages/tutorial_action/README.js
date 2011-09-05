@@ -217,6 +217,19 @@ Ext.data.JsonP.tutorial_action({
         'しかし、アクション内の以降の処理も処理されますので、注意してください。',
         '</p>-->',
 
+        '<h2>リダイレクト</h2>',
+        '<p>',
+        'アクション内でリダイレクトを行う場合、this.redirectメソッドを利用します。',
+        '</p>',
+        '<pre>',
+        '<span style="color:#000099;">this</span>.redirect(<span style="color:#009900;">\'http://www.xenophy.com/\'</span>);',
+        '</pre>',
+        '<p>',
+        'メソッドの種類的には、endやabortと変わりません。',
+        'リダイレクトの処理（HTTPヘッダーの返却）を行いますし、コントローラーの次の処理へ移行しますが、',
+        'redirectを呼び出した後の処理も実行されますので、注意してください。',
+        '</p>',
+
         '<address>Copyright &copy; 2006 - 2011 <a href="http://www.xenophy.com/">Xenophy.CO.,LTD</a> All rights Reserved.</address>',
 
         ].join("")
