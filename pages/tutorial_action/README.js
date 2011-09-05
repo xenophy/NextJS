@@ -165,7 +165,59 @@ Ext.data.JsonP.tutorial_action({
         'オブジェクトリテラルを指定することで、配列の設定順に次々アクションを実行します。',
         '</p>',
 
+        '<h3>アクション間でデータの共有</h3>',
+        '<p>',
+        '先ほど2つのアクションを順番に実行する設定を学びました。',
+        '1つ目のアクションの結果に応じて、2つ目アクションの動作を変化させるためには、',
+        'アクション間でデータを共有する必要があります。',
+        '<em>this.res.result</em>にアクセスすることで、そこまでのthis.setされたKey/Valueが格納されています。',
+        '共有データを格納するために特別なことをする必要はありません。',
+        'まだ、<em>this.res.result</em>に直接データを書き込むようなことは避けるべきです。',
+        '</p>',
+
+        '<p>',
+        '先ほどのアクションチェーンの２つ目のアクションを次のように変更することで、',
+        '１つ目のアクションで設定した値を取得できることが確認できます。',
+        '</p>',
+
+        '<pre>',
+        '<span style="color:#000099;">this</span>.<span style="color:#000099;">set</span>(<span style="color:#009900;">\'foo\'</span>, <span style="color:#009900;">\'first action &quot;mykey&quot; is \'</span> + <span style="color:#000099;">this</span>.res.result[<span style="color:#009900;">\'mykey\'</span>]);',
+        '</pre>',
+
+        '<h2>アクションの中断</h2>',
+        '<p>',
+        '先ほどのアクションチェーンで複数のアクションを設定することはできるようになりましたが、',
+        '条件により、以降のアクションを実行したくない場合、<em>this.res.result</em>の値で判定して処理を実行させない、などの対処もできますが',
+        '<em>this.abort()</em>を利用することで、メソッドをコールした時点でアクションの処理を中断することができます。',
+        'メソッドの扱いとしては、<em>this.end()</em>と同じ種類のメソッドになりますが、',
+        '次のアクションへ進まないというのが、<em>this.abort()</em>の特徴です。',
+        '</p>',
+
+        '<pre>',
+        'module.exports = [{' + "\n",
+        '    execute: <span style="color:#000099;">function</span>() {' + "\n",
+        '        <span style="color:#000099;">this</span>.<span style="color:#000099;">set</span>(<span style="color:#009900;">\'mykey\'</span>, <span style="color:#009900;">\'myvalue\'</span>);' + "\n",
+        '        <span style="color:#000099;">this</span>.abort();</span> <span style="color:#990000;">// ここでアクション終了</span>' + "\n",
+        '    }' + "\n",
+        '},{' + "\n",
+        '    <span style="color:#990000;">// このアクションは実行されない</span>' + "\n",
+        '    execute: <span style="color:#000099;">function</span>() {' + "\n",
+        '        <span style="color:#000099;">this</span>.<span style="color:#000099;">set</span>(<span style="color:#009900;">\'foo\'</span>, <span style="color:#009900;">\'first action &quot;mykey&quot; is \'</span> + <span style="color:#000099;">this</span>.res.result[<span style="color:#009900;">\'mykey\'</span>]);' + "\n",
+        '        <span style="color:#000099;">this</span>.end();' + "\n",
+        '    }' + "\n",
+        '}];',
+        '</pre>',
+
+        '<!--<h2>アクセスの禁止</h2>',
+        '<p>',
+        '後のベーシック認証で利用しますが、条件によりHTTPのステータスコードを200ではなく、',
+        '403で返却したい場合に、<em>this.forbidden()</em>でアクションを停止させることができます。',
+        '<en>this.abort</em>と、<em>this.end</em>と同じ種類のメソッドになります。',
+        'forbiddenメソッドが呼び出された時点で、アクションは中断しコントローラーの処理に戻ります。',
+        'しかし、アクション内の以降の処理も処理されますので、注意してください。',
+        '</p>-->',
+
         '<address>Copyright &copy; 2006 - 2011 <a href="http://www.xenophy.com/">Xenophy.CO.,LTD</a> All rights Reserved.</address>',
 
-    ].join("")
-});
+        ].join("")
+    });
