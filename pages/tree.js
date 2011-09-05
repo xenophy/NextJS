@@ -79,6 +79,12 @@ Docs.classData = {
             "text"      : "グローバルアクションとエクテントアクション",
             "iconCls"   : "icon-class",
             "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_params",
+            "text"      : "パラメータの取得と設定",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
         }]
     },{
         "text":"コントローラー",
