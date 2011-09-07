@@ -91,6 +91,66 @@ Docs.classData = {
             "text"      : "ファイルアップロード",
             "iconCls"   : "icon-class",
             "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_template",
+            "text"      : "テンプレートエンジン",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_module",
+            "text"      : "モジュールの利用",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_moduledb",
+            "text"      : "モジュールとデータベース",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_extdirect",
+            "text"      : "ExtDirectルータ - NX.DirectAction",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_basicauth",
+            "text"      : "ベーシック認証",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_mail",
+            "text"      : "メール送信",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_virtualhost",
+            "text"      : "バーチャルホストとバーチャルコンテンツルート",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_log",
+            "text"      : "ロギング",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_classsystem",
+            "text"      : "JavaScriptクラスシステム",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_customaction",
+            "text"      : "カスタムアクションクラスとNX.Loader",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
         }]
     },{
         "text":"コントローラー",
