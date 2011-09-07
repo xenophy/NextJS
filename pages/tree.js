@@ -85,6 +85,12 @@ Docs.classData = {
             "text"      : "パラメータの取得と設定",
             "iconCls"   : "icon-class",
             "leaf"      : true
+        },{
+            "isClass"   : true,
+            "pageName"  : "tutorial_upload",
+            "text"      : "ファイルアップロード",
+            "iconCls"   : "icon-class",
+            "leaf"      : true
         }]
     },{
         "text":"コントローラー",

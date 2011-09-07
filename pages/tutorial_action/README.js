@@ -230,6 +230,15 @@ Ext.data.JsonP.tutorial_action({
         'redirectを呼び出した後の処理も実行されますので、注意してください。',
         '</p>',
 
+        '<h2>変数の確認</h2>',
+        '<p>',
+        'ここまでで、アクション内の変数を確認したいときに、クライアントサイドの場合console.logなどを利用して',
+        '変数内の状態を確認するのが一般的です。',
+        'nodeにもconsole.logが実装されているため、そのまま利用できますが、あくまで標準出力に出力されるだけであって、',
+        'ブラウザで確認ができるわけでは、ありません。',
+        '</p>',
+
+
         '<address>Copyright &copy; 2006 - 2011 <a href="http://www.xenophy.com/">Xenophy.CO.,LTD</a> All rights Reserved.</address>',
 
         ].join("")
