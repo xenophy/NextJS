@@ -105,12 +105,6 @@ Docs.classData = {
             "leaf"      : true
         },{
             "isClass"   : true,
-            "pageName"  : "tutorial_moduledb",
-            "text"      : "モジュールとデータベース",
-            "iconCls"   : "icon-class",
-            "leaf"      : true
-        },{
-            "isClass"   : true,
             "pageName"  : "tutorial_extdirect",
             "text"      : "ExtDirectルータ - NX.DirectAction",
             "iconCls"   : "icon-class",

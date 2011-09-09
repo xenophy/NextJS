@@ -17,7 +17,6 @@ Ext.data.JsonP.tutorial_list({
         '<li><a href="#/pages/tutorial_upload">ファイルアップロード</a></li>',
         '<li><a href="#/pages/tutorial_template">テンプレートエンジン</a></li>',
         '<li><a href="#/pages/tutorial_module">モジュールの利用</a></li>',
-        '<li><a href="#/pages/tutorial_moduledb">モジュールとデータベース</a></li>',
         '<li><a href="#/pages/tutorial_extdirect">ExtDirectルータ - NX.DirectAction</a></li>',
         '<li><a href="#/pages/tutorial_basicauth">ベーシック認証</a></li>',
         '<li><a href="#/pages/tutorial_mail">メール送信</a></li>',
