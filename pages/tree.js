@@ -111,12 +111,6 @@ Docs.classData = {
             "leaf"      : true
         },{
             "isClass"   : true,
-            "pageName"  : "tutorial_basicauth",
-            "text"      : "ベーシック認証",
-            "iconCls"   : "icon-class",
-            "leaf"      : true
-        },{
-            "isClass"   : true,
             "pageName"  : "tutorial_mail",
             "text"      : "メール送信",
             "iconCls"   : "icon-class",

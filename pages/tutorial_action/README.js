@@ -238,6 +238,39 @@ Ext.data.JsonP.tutorial_action({
         'ブラウザで確認ができるわけでは、ありません。',
         '</p>',
 
+        '<h2>ベーシック認証</h2>',
+        '<p>',
+        'アクション内でベーシック認証をかける場合の手順を説明します。',
+        '</p>',
+
+        '<h4>index.js</h4>',
+        '<pre>',
+        'module.exports = [{' + "\n",
+        '    execute: <span style="color:#000099;">function</span>() {' + "\n",
+        '        <span style="color:#000099;">var</span> me = <span style="color:#000099;">this</span>;' + "\n",
+        '        me.basicAuth(<span style="color:#000099;">function</span>(user, pw) {' + "\n",
+        '            <span style="color:#000099;">if</span>(user === <span style="color:#009900;">&quot;kotsutsumi&quot;</span> &amp;&amp; pw === <span style="color:#009900;">&quot;pass&quot;</span>) {' + "\n",
+        '                me.end();' + "\n",
+        '            } <span style="color:#000099;">else</span> {' + "\n",
+        '                me.forbidden();' + "\n",
+        '            }' + "\n",
+        '        });' + "\n",
+        '    }' + "\n",
+        '}];',
+        '</pre>',
+
+        '<p>',
+        'basicAuthメソッドを呼び出すだけです。',
+        '引数には、ブラウザから入力されたIDとパスワードが引き渡されます。',
+        'また、endの他に、<em>forbidden</em>メソッドを呼び出すと、ブラウザに対して403を送信することができます。',
+        '</p>',
+
+        '<p>',
+        '上記の場合だと、ページに対してベーシック認証をかけていますが、ディレクトリに対して、サイト全体に対してという場合は、',
+        'グローバルアクション、エクテントアクションでbasicAuthを実装してください。',
+        '</p>',
+
+
 
         '<address>Copyright &copy; 2006 - 2011 <a href="http://www.xenophy.com/">Xenophy.CO.,LTD</a> All rights Reserved.</address>',
 
