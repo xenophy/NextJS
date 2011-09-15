@@ -101,10 +101,10 @@ module.exports = function(config) {
     dumptags = '';
     info.forEach(function(item) {
 
-        var key = NX.String.format('[Line: {0}, {1}]', item.line, item.filename);
+        var key = NX.String.format('Line: {0}, {1}', item.line, item.filename);
 
 
-        dumptags += NX.String.format('console.info("{0}");', key);
+        dumptags += NX.String.format('console.dir({0});', key);
         dumptags += NX.String.format('console.dir({0});', NX.JSON.encode(item.dump));
 
     //    output[key] = item.dump;
