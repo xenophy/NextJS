@@ -6,6 +6,7 @@
     "author" : "Kazuhiro Kotsutsumi <kotsutsumi@xenophy.com>",
     "repository" : "git://github.com/xenophy/NextJS.git",
     "dependencies": {
+        "mongodb": "0.9.6-18",
         "mysql": "0.9.3",
         "iconv-jp": "1.1.2",
         "nx-daemon": ">= 0.1.0",
