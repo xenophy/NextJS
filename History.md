@@ -1,5 +1,8 @@
 # 0.8.3
 ======================
+  * Add     MongoDBサポート開始、findメソッド実装
+  * Add     モジュールでMySQL使用時に利用できるsetメソッドを実装
+  * Add     モジュールでMySQL使用時に利用できるinsert/update/deleteメソッドを実装
   * Add     モジュールでMySQL使用時に利用できるinsert/update/deleteメソッドを実装
   * Add     モジュールでMySQL使用時に利用できるbeginTrans/commit/rollbackメソッドを実装
   * Fixed   this.dumpで配列を指定した場合に、正常に出力されないバグを修正
