@@ -1,3 +1,7 @@
+# 0.8.4
+======================
+
+
 # 0.8.3
 ======================
   * Add     MongoDB createDatabase/dropDatabase/createCollection/dropCollectionメソッド実装
