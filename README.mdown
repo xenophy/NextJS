@@ -6,8 +6,8 @@ Next JS is Application Server on node.js
 
 ## データベースを利用する場合の外部モジュール
 
-* [MySQL](https://github.com/felixge/node-mysql.git)
-* [PostgreSQL](https://github.com/brianc/node-postgres.git)
+* [MySQL](https://github.com/felixge/node-mysql)
+* [PostgreSQL](https://github.com/brianc/node-postgres)
 * [MongoDB](https://github.com/christkv/node-mongodb-native)
-* [Oracle](https://github.com/mariano/node-db-oracle.git)
+* [Oracle](https://github.com/mariano/node-db-oracle)
 
