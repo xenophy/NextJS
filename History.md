@@ -1,5 +1,7 @@
 # 0.8.3
 ======================
+  * Add     MongoDB createDatabase/dropDatabase/createCollection/dropCollectionメソッド実装
+  * Add     MongoDB insert/update/findAndModify/save/removeメソッド実装
   * Add     MongoDBサポート開始、findメソッド実装
   * Add     モジュールでMySQL使用時に利用できるsetメソッドを実装
   * Add     モジュールでMySQL使用時に利用できるinsert/update/deleteメソッドを実装
