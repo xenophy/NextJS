@@ -1,0 +1,163 @@
+/* vim: set expandtab tabstop=2 shiftwidth=2 softtabstop=2: */
+
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,p,blockquote,
+th,td,article,aside,dialog,figure,footer,header,hgroup,menu,nav,section,time,mark,audio,video {
+  margin: 0;
+  padding: 0;
+}
+
+img,body,html {
+  border: 0;
+}
+
+address,caption,cite,code,dfn,em,strong,th,var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol,ul {
+  list-style: none;
+}
+
+caption,th {
+  text-align: left;
+}
+
+article,aside,figure,footer,header,
+hgroup,nav {
+  display: block;
+}
+
+q:before,q:after {
+  content: '';
+}
+
+body {
+  background-image: url(./images/bg.gif);
+  background-repeat: repeat-x;
+}
+
+#wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  height: 72px;
+}
+
+#eyecatch {
+  height: 495px;
+  background-image: url(./images/eyecatch.jpg);
+  background-repeat: no-repeat;
+}
+
+#eyecatch .catch1 {
+  font-size: 42px;
+  line-height: 42px;
+  top: 50px;
+  left: 390px;
+  position: relative;
+}
+
+#eyecatch .catch1 strong {
+  color: #ff7e00;
+}
+
+#eyecatch .catch2 {
+  color: #5a5a5a;
+  font-size: 16px;
+  top: 60px;
+  left: 390px;
+  position: relative;
+}
+
+#eyecatch .button-text {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  top: 128px;
+  left: 760px;
+  position: relative;
+}
+
+#eyecatch .catch3 {
+  color: #586370;
+  font-size: 26px;
+  top: 248px;
+  left: 30px;
+  position: relative;
+}
+
+#eyecatch .catch4 {
+  color: #939393;
+  font-size: 16px;
+  top: 240px;
+  left: 30px;
+  position: relative;
+}
+
+#content {
+  padding: 40px;
+}
+
+#sidebar {
+  width: 220px;
+  float: right;
+}
+
+#sidebar ul {
+  padding-bottom: 20px;
+}
+
+#sidebar ul li a {
+  color: #5E7185;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+}
+
+h1 {
+  top: 10px;
+  position: relative;
+}
+
+h2 {
+  color:#000000;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#sidebar h3 {
+  color: #909090;
+  font-size: 24px;
+  margin-bottom: 10px;
+
+}
+
+article {
+  width: 660px;
+  padding-right: 40px;
+}
+
+article p {
+  color: #727A82;
+  padding-bottom: 1em;
+}
+
+article h3 {
+  margin: 10px 0;
+  font-size: 16px;
+  font-family: Arial;
+}
+
+footer {
+  margin-top:0 20px 20px 20px;
+  padding: 20px;
+  background: url(images/fbg.gif) no-repeat center 0;
+  font-size: 12px;
+  color: #4F5F70;
+  line-height: 1.3em;
+  text-align: center;
+  width: 100%;
+}
