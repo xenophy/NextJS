@@ -1,13 +1,9 @@
 # 0.8.5
 ======================
-TODO:redisをクラス化
-TODO:セッション名にport番号をつけるかどうか、設定できるようにする。
 TODO:Socket.IO対応、セッションも利用できるように。
   * Add     [開発中]モジュールの動的ローディング実装
-  * Add     [開発中]SMTPクライアントがSSL/TLSに対応しました。
-  * Add     [開発中]SMTPクライアントがSMTP認証に対応しました。
-  * Add     [開発中]アクション内でmailコマンドが利用できるようになりました。
   * Add     [開発中]node cluster対応、workerが動作するようになりました。
+  * Add     アクション内でmailコマンドが利用できるようになりました。
   * Add     Redisセッション実装
   * Add     NX.data.RedisStoreクラス実装
 
