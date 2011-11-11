@@ -8,7 +8,7 @@
     "dependencies": {
         "mongodb": ">= 0.9.6-18",
         "mysql": ">= 0.9.3",
-        "node-redis": ">= 0.6.7",
+        "redis": ">= 0.6.7",
         "emailjs": ">= 0.1.15",
         "socket.io": ">= 0.8.6",
         "iconv-jp": ">= 1.1.3",
