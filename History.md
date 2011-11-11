@@ -1,8 +1,9 @@
 # 0.8.5
 ======================
-  * Add     [開発中]モジュールの動的ローディング実装
+TODO:Socket.IOのバインド設定をserver.jsから行えるようにする。ログレベルも。
+  * Add     モジュールの動的ローディング実装
   * Add     node cluster対応、workerが動作するようになりました。
-  * Add     [開発中]Socket.IOとアクションを連携して利用できるようになりました。
+  * Add     Socket.IOとアクションを連携して利用できるようになりました。
   * Add     アクション内でmailコマンドが利用できるようになりました。
   * Add     Redisセッション実装
   * Add     NX.data.RedisStoreクラス実装
