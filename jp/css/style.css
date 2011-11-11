@@ -1,0 +1,280 @@
+@charset "utf-8";
+
+/* vim: set expandtab tabstop=2 shiftwidth=2 softtabstop=2: */
+
+/* ---------------------------------------------------------------------------
+ エレメント初期化
+--------------------------------------------------------------------------- */
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,p,blockquote,
+th,td,article,aside,dialog,figure,footer,header,hgroup,menu,nav,section,time,mark,audio,video {
+  margin: 0;
+  padding: 0;
+}
+
+img,body,html {
+  border: 0;
+}
+
+address,caption,cite,code,dfn,em,strong,th,var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol,ul {
+  list-style: none;
+}
+
+caption,th {
+  text-align: left;
+}
+
+article,aside,figure,footer,header,
+hgroup,nav {
+  display: block;
+}
+
+q:before,q:after {
+  content: '';
+}
+
+
+/* ---------------------------------------------------------------------------
+
+ エレメントデザイン設定
+
+ エレメントに対する個別のデザイン設定を行う。
+
+ ex.)
+
+ h1 {
+  font-size: 120%;
+}
+
+--------------------------------------------------------------------------- */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 16px;
+  font-size: 1.6rem;
+  background: url(../images/bg.gif) repeat-x;
+}
+
+h1 {
+  position: relative;
+  top: 10px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #000000;
+  font-size: 20px;
+}
+
+article {
+  width: 660px;
+  padding: 40px 0 0 40px;
+}
+
+article p {
+  padding-bottom: 1em;
+  color: #727A82;
+}
+
+article h3 {
+  margin: 10px 0;
+  font-family: Arial;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+
+/* ---------------------------------------------------------------------------
+
+ レイアウト設定
+
+ レイアウトに関する設定を行います。
+
+--------------------------------------------------------------------------- */
+#wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+
+/* ---------------------------------------------------------------------------
+
+ 文脈によって変わるスタイル定義
+
+--------------------------------------------------------------------------- */
+
+/* ------------------------------
+ ヘッダー
+------------------------------ */
+header {
+  height: 72px;
+}
+
+header h1 {
+  float: left;
+}
+
+header p {
+  float: right;
+  line-height: 1.0;
+  padding: 28px 0 0;
+  font-size: 16px;
+}
+
+header a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+
+/* ------------------------------
+ フッター
+------------------------------ */
+footer {
+  width: 100%;
+  line-height: 1.3em;
+  margin: 0 20px 20px 20px;
+  padding: 20px;
+  color: #4F5F70;
+  font-size: 1.2rem;
+  font-size: 12px;
+  text-align: center;
+  background: url(../images/fbg.gif) no-repeat center 0;
+}
+
+
+/* ---------------------------------------------------------------------------
+
+ id クラス設定
+
+ 特定の役割を持った要素へのスタイル定義を行います。
+
+--------------------------------------------------------------------------- */
+
+/* ------------------------------
+ eyecatch
+------------------------------ */
+#eyecatch {
+  display: block;
+  height: 495px;
+  background: url(../images/eyecatch.jpg) no-repeat;
+}
+
+#eyecatch .catch1 {
+  line-height: 42px;
+  margin: 0 0 10px;
+  padding: 50px 0 0 390px;
+  font-size: 42px;
+}
+
+#eyecatch .catch1 strong {
+  color: #ff7e00;
+}
+
+#eyecatch .catch2 {
+  height: 104px;
+  padding: 0 0 0 390px;
+  color: #5a5a5a;
+  font-size: 16px;
+}
+
+#eyecatch .dl_box {
+  float: right;
+  height: 155px;
+  padding: 0 24px 0 0;
+  text-align: center;
+}
+
+#eyecatch .btn_download {
+  width: 250px;
+  height: 50px;
+  background: url(../images/btn.gif) no-repeat;
+}
+
+#eyecatch .btn_download a {
+  display: block;
+  height: 50px;
+  line-height: 1.0;
+  padding: 16px 0 0;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+#eyecatch .catch3 {
+  padding: 0 0 0 30px;
+  color: #586370;
+  font-size: 26px;
+  white-space: nowrap;
+}
+
+#eyecatch .catch4 {
+  padding: 0 0 0 30px;
+  color: #939393;
+  font-size: 16px;
+}
+
+
+/* ------------------------------
+ sidebar
+------------------------------ */
+#sidebar {
+  float: right;
+  width: 220px;
+  padding: 40px 0 0 0;
+}
+
+#sidebar ul {
+  padding-bottom: 20px;
+}
+
+#sidebar ul li a {
+  display: block;
+  margin-bottom: 4px;
+  color: #5E7185;
+  font-weight: bold;
+}
+
+#sidebar h3 {
+  margin-bottom: 10px;
+  color: #909090;
+  font-size: 24px;
+  font-size: 2.4rem;
+}
+
+
+/* ---------------------------------------------------------------------------
+
+ id クラス設定
+
+ 特定の役割を持った要素へのスタイル定義を行います。
+ ただし、接頭辞として（.x-）の使用は禁止します。
+
+ ex.) 禁止例
+
+ li.x-example {
+
+ }
+
+--------------------------------------------------------------------------- */
+
+/* ------------------------------
+ クリアフィックス 設定
+------------------------------ */
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clearfix {
+  overflow: hidden;
+  zoom: 1;
+}
+
