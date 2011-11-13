@@ -73,8 +73,28 @@ h2 {
 }
 
 article {
-  width: 660px;
+  width: 920px;
   padding: 40px 0 0 40px;
+}
+
+article.contents {
+  margin: 40px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+article.contents h2 {
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+
+article.contents ul {
+  padding-left: 20px;
+}
+
+article.contents li {
+  font-size: 10px;
+  font-size: 1.0rem;
 }
 
 article p {
@@ -88,6 +108,16 @@ article h3 {
   font-size: 16px;
   font-size: 1.6rem;
 }
+
+article h4 {
+  margin: 10px 0;
+  font-family: Arial;
+  font-size: 14px;
+  font-size: 1.4rem;
+  color: #54682F;
+}
+
+
 
 
 /* ---------------------------------------------------------------------------
