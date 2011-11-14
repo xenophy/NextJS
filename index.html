@@ -1,114 +1,170 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Next JS - Next JS is Application Server on node</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" type="image/ico" href="resources/favicon.ico" />
-    <link rel="icon" href="resources/favicon.ico" type="image/ico" />
-    <link rel="canonical" href="http://http://xenophy.github.com/NextJS" />
-    <link rel="stylesheet" href="resources/css/reset.css" type="text/css" />
-    <link rel="stylesheet" href="resources/css/docs-ext.css" type="text/css" />
-    <link rel="stylesheet" href="resources/css/scrollbars.css" type="text/css" />
-    <link rel="stylesheet" href="resources/css/viewport.css" type="text/css" />
-    <link href='http://fonts.googleapis.com/css?family=Alice' rel='stylesheet' type='text/css'>
-
+<meta charset="UTF-8" />
+    <title>
+        Next JS - Next JS is Application Server on node
+    </title>
+    <meta name="description" content="Next JS Site" />
+    <meta name="keywords" content="Next JS,javascript" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
     <!--[if IE]>
-    <link rel="stylesheet" href="resources/css/ie.css" type="text/css" />
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+    </script>
     <![endif]-->
-
-    <script type="text/javascript" src="ext/ext-all.js"></script>
-    <script type="text/javascript"> Ext.ns("Docs"); </script>
-    <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="pages/tree.js"></script>
-
 </head>
-<body id="ext-body" class="iScroll">
-    <div id="loading"><span class="title">Next JS</span><span class="logo"></span></div>
-    <form id="history-form" class="x-hide-display">
-        <input type="hidden" id="x-history-field" />
-        <iframe id="x-history-frame"></iframe>
-    </form>
-    <div id="toppage" style="display: none;">
-        <h1>Next JS Project Documentation</h1>
-        <p>Next JS は、node上でのサーバーサイドアプリケーション開発を加速させるために開発されている次世代アプリケーションサーバーです。</p>
+<body>
 
-        <h2>What is the Next JS Project?</h2>
-        <p>Ext JS / Sencha Touch の記法に慣れ親しんだユーザーが、クライアントコードを記述するようにサーバーサイドプログラミングを行える機能を提供します。</p>
-        <img src="./resources/images/top/logo.png" style="margin: 6ex 0 4ex 0;" />
-        <p>Webサーバーとしての基本的な機能、そしてMVCフレームワークとしてのクラス群の提供を行います。nodeを導入してみて、かなりシンプルで高速、そして無限の可能性を感じませんでしたか？しかし、同時に実際にアプリケーションを作成するには、Webサーバーとしての機能から自分で実装していく必要があることに気がついたでしょう。Next JSは、そういったプラットフォームを提供するとともに、Ext JS / Sencha Touchの最適なバックエンド（サーバーサイド）となるために開発が進められています。もちろん、HTMLベースの開発だってPHPでよく利用されるSmartyライクなテンプレートエンジンを備えているので問題ありません。</p>
-        <p>Next JSを利用することでクライアントサイド、サーバーサイド、そしてデータベースアダプタとしてMongoDBのアダプタを実装しているので、データベース操作までもがJavaScriptだけで完結します。当然ながら、データベースをMySQLやPostgreSQLなどに切り替えた利用も行えます。思いついたアプリケーションを、手軽に実装できるアプリケーションサーバー＆フレームワークを目的として開発を進めています。</p>
+    <!-- wrapper -->
+    <div id="wrapper">
 
-        <h2>Overview</h2>
-        <p>Ext JSと初めてであった時とてもわくわくしたのを覚えていますか？そして ExtJS でアプリケーションを組み上げる時に、サーバーサイドでは別の言語を使わねばならないことにがっかりしたことを。ご安心ください。あのわくわくがサーバーサイドにもやって来ました。</p>
-        <p>Next JS は、node上で動作するフレームワークですが、それ自身が Webサーバーでありアプリケーションサーバーでもあります。
-        これからはExt JSのサーバーサイドを書くのに、PHP や Java はいりません。驚くべきことに Apache すらいらないのです。(もちろん、開発用途により多言語を利用することがダメということではありません。)nodeと Next JS をインストールすれば、クライアントサイドと同じようにサーバーサイドでも JavaScript で書くことができます。しかも、Sencha Touch /ExtJS と同じ記法が使えます。</p>
+        <!-- ヘッダー -->
+        <header>
+            <h1>
+                <a href="/"><img src="images/logo.png" alt="Next JS" /></a>
+            </h1>
+            <p>
+                <a href="./jp/">日本語</a>
+            </p>
+        </header>
+        <!-- /ヘッダー -->
 
-        <h3>ExtJS / Sencha Touch との強い連携</h3>
-        <p>小さなプロジェクトの場合だと、ひとりのプログラマがクライアントサイドだけでなくサーバーサイドのコーディングも引き受けるということはよくあります。
-        さっきまでクライアントで JavaScript を書いていた人間は、ついついPHPの変数名の$を忘れてしまい不毛なエラーを発生させたりします。
-        Next JS であればサーバーサイドも同じ言語ですからそんな心配はいりません。
-        しかも Ext JS の設計思想を踏襲しているため、Ext JS の技術者であればなんの違和感もなくコーディングすることができます。
-        特にExt JS 4から導入された新クラスシステムに、Next JS(正確にはNext Core)は完全に対応しています。
-        Extというグローバルオブジェクトに作成される変数をNXに置き換えて考えるだけです。
-        Ext JS と素晴らしい連携が取れることも特徴です。
-        Ext JS の長所の一つである、ExtDirect によるサーバーサイドの呼び出しに完全に対応しています。
-        サーバーサイドも JavaScript であるため、全く違和感なくデータの受け渡しができます。</p>
+        <!-- main -->
+        <section id="main">
 
-        <h3>MVCモデル</h3>
-        <p>Next JS は、サーバーサイドで MVC(Model-View-Controller)を実現しています。
-        Module はデータベースのテーブルと結びつき、他のテーブルとアソシエーションを結ぶこともできます。
-        Contoroller は、セッションを管理したり複数の Module を扱うことができます。
-        そして Contoroller の Action メソッド一つ一つがあなたのサイトの１ページになります。
-        View では、Smarty ライクな書式でテンプレートを作成することができます。
-        ExtDirect と連携する ExtDirect アクションでは，MVC のMの部分をサーバーサイドに置き、
-        他はすべてクライアントサイドで解決するというシングル ページ アプリケーション の王道をゆく構成をとることができます。
-        ExtDirect コントローラーを使えば、Module の public メソッドが、そのまま ExtDirect からコールできるようになります。
-        そして、現在のところ本家 Sencha でもサポートされていない、Sencha Touch からの Direct アクセスに関してもサポートする予定です。</p>
+            <!-- eyecatch -->
+            <section id="eyecatch">
+                <p class="catch1">
+                Application server that evolves by <strong>your idea</strong>
+                </p>
+                <p class="catch2">
+                A person who has already used node or is going to use from now on can use  Next JS by the simple introduction method and begin to develop promptly.
+                </p>
+                <div class="clearfix">
+                    <div class="dl_box">
+                        <p class="btn_download">
+                            <a href="https://github.com/xenophy/NextJS/wiki/">Now Next JS is available.</a>
+                        </p>
+                    </div>
+                </div>
+                <p class="catch3">
+                Next JS is the solution that creates the node application at high speed.
+                </p>
+                <p class="catch4">
+                We bring up the server side development environment by using the strong class system.
+                </p>
+            </section>
+            <!-- /eyecatch -->
 
-        <h3>次世代へ</h3>
-        <p>HTML5 の中でも注目されている WebSocet も Next JS で使えます。
-        WebSocet を使えば，真の双方向通信が可能になります。
-        サーバー側の状態変化を知るために、まだですかまだですかと何度もHTTPリクエストを送る必要はありません。
-        ごく普通のWebサーバーとしての機能から、Ext.Direct，WebSocet にいたるまで、多くの通信方法でクライアントと通信できます。
-        このことは多くのユーザーが訪れる、一般的なサイトから、深く業務に根ざした複雑な Webアプリケーションまで幅広く構築できることを意味します。
-        </p>
+            <!-- content -->
+            <section id="content">
 
-        <h2>How can I use it?</h2>
-        <p>Next JSを利用するには、nodeとnpmがインストールされている環境が必要です。
-        環境がなく、これからnodeを触ってみようというところから始めるには、
-        <a href="#/pages/env_overview">Next JS 環境構築ガイド</a>
-        を一読いただくのがオススメです。
-        既に環境のある方は、次のようにnpmでNext JSをインストールしてください。
-        Next JSのパッケージ名は<em>nx</em>です。
-        </p>
+                <!-- Project -->
+                <article>
+                    <h2>
+                        What is Next JS Project?
+                    </h2>
+                    <p>
+                    Next JS Project provides the user who becomes accustomed to the notation of Ext JS/Sencha Touch with the function that executes the server side programming to describe the client code.
+                    </p>
+                    <p>
+Next JS Project provides the basic function as the Web server and the class group as MVC framework. Didn’t you feel very simple, high-speed, infinite possibility after introducing node ? However at the same time you must have noticed that it is necessary to implement by yourself rather than by the function as the Web server to actually create the application.
+                    </p>
+                    <p>
+Next JS provides such platform, and is under development to become the best back end of Ext JS/Sencha Touch (server side). Of course Next JS enables development of HTML with Smarty-like template engine that is often used with PHP.
+                    </p>
+                    <p>
+                    As the adaptor of MongoDB is implemented as the client side, server side, and a data base adaptor by using Next JS the database is totally operated only with JavaScript. Naturally, you can switch the data base to MySQL and PostgreSQL, etc. Now we are on the way of development aiming at application server & framework that can easily implement application hit on one’s mind.
+                    </p>
+                </article>
+                <!-- /Project -->
 
-        <h2>About License</h2>
-        <p>Next JSはMIT ライセンスで提供されているため、気軽に利用することができます。
-        また、GitHubでオープンソースプロジェクトとして開発されています。
-        開発に興味を持った方は、我々と一緒に開発を行ってみませんか？
-        まだまだ、開発環境や手順は未熟ですが、様々な開発者とともに作り上げていくことができたら、私たちはうれしく思います。</p>
-        <p>
-        さらに、<a href="http://groups.google.com/group/nextjs?hl=ja">メーリングリスト(nextjs@googlegroups.com)</a>を作成しましたので
-        ユーザー同士で情報提供を行っていただければ幸いです。
-        </p>
+                <!-- Overview -->
+                <article>
+                    <h2>Overview</h2>
+                    <p>
+                    You remember having gotten excited very much experiencing Ext JS for the first time ? And you must be disappointed because it is necessary to use another language on the server side when assembling the application with ExtJS. Never mind. New exciting tool came to the server side. Next JS is the framework that operates on node but is itself the Web server and also the application server. From now on neither PHP nor Java is needed to write the server side of Ext JS. Surprisingly, even Apache is unnecessary. (naturally several languages can be used due to the development usage.)
+                    </p>
+                    <p>
+If node and Next JS are installed, it is possible to write with JavaScript even on the server side just like the client side. Moreover, the same notation as Sencha Touch/ExtJS can be used.
+                    </p>
 
-        <address>Copyright © 2006 - 2011 <a href="http://www.xenophy.com/">Xenophy.CO.,LTD</a> All rights Reserved.</address>
+                    <h3>Strong cooperation with ExtJS/Sencha Touch</h3>
+                    <p>
+There are often cases that single programmer undertakes coding on not only the client side but also the server side in the small project. The client who kept writing JavaScript inadvertently forgets the variable identifier $ of PHP and often causes a barren error. In the case of Next JS since the server side is the same language as the client side such problem never happens.
+                    </p>
+                    <p>
+Moreover, since the system design of Next JS follows the one of Ext JS an engineer of Ext JS can do coding without any sense of incompatibility. Especially, Next JS (Next Core precisely) completely corresponds to the new class system introduced from Ext JS 4. It is enough only by replacing the variable created on the global object named Ext with on NX. The feature is to perfectly cooperate with Ext JS.
+                    </p>
+                    <p>
+                    It completely corresponds to the call of the server side by ExtDirect that is one of merits of Ext JS. As the server side is by JavaScript, data can be completely delivered without any sense of incompatibility.
+                    </p>
+                    <h3>MVC Model</h3>
+                    <p>
+Next JS has achieved MVC(Model-View-Controller) on the server side. Module is tied up with the table of the data base, and can connect other tables with Association. Contoroller can manage the session and deal with multiple Modules.
+                    </p>
+                    <p>
+Also each one of the Action method of Contoroller becomes one page of your site. In View, the template can be made with the Smarty-like format.
+                    </p>
+                    <p>
+On the ExtDirect action that is cooperated with ExtDirect, we can configure the authentic method of the single page application in which the part of M of MVC is placed on the server side, and the rest is solved on the client side. Using ExtDirect controller, the public method of Module can be called from ExtDirect immediately.
+                    </p>
+                    <h3>To the next generation</h3>
+                    <p>
+WebSocet paid attention in HTML5 can be used with Next JS. Using WebSocet, the true bidirectional communication becomes possible.
+                    </p>
+                    <p>
+HTTP request need not be sent often to know the state change on the server side. It is possible to communicate with the client by various communication methods from the usual function as Web server to Ext.Direct, WebSocet.
+                    </p>
+                    <p>
+This means that it is possible to widely construct general sites where a lot of users visit through complicated Web application closely related with business.
+                    </p>
+                </article>
+                <!-- /Overview -->
+
+                <!-- How can I use it? -->
+                <article>
+                    <h2>How to use ?</h2>
+                    <p>
+The environment in which node and npm are installed is necessary to use Next JS. In the case of no environment and for beginners of node, it is recommended to read through the Next JS environment construction guide. With the environment please install Next JS with npm. The package name of Next JS is nx.
+                    </p>
+                    <p>
+Users of Cent OS 5/6 and Fedora 15/16 provide node, npm, and Next JS of RPM version. Registering the repository, it is possible to install from node to npm and Next JS by the batch by using yum.
+                    </p>
+                    <p>
+                    Please refer to <a href="https://github.com/xenophy/NextJS/wiki/%E3%83%9B%E3%83%BC%E3%83%A0">Wiki</a> for details.
+                    </p>
+                </article>
+                <!-- /How can I use it? -->
+
+                <!-- About License -->
+                <article>
+                    <h2>About license</h2>
+                    <p>
+As Next JS is provided by MIT license, it is possible to use it readily. Moreover, Next JS is developed with GitHub as open source project. We ask someone who is interested in development to work with us. Still, we are not mature in the development environment and the procedure, we are truly happy if we can make new tools together with various developers.
+                    </p>
+                    <p>
+                    In addition, we had mailing list (<a href="mailto:nextjs@googlegroups.com">nextjs@googlegroups.com</a>), so we hope users provide information mutually. 
+                    </p>
+                </article>
+                <!-- /About License -->
+
+            </section>
+            <!-- /content -->
+
+        </section>
+        <!-- /main -->
+
+        <!-- フッター -->
+        <footer>
+            <address>
+                <p>Copyright &copy; 2006-2011 Xenophy.CO.,LTD All rights Reserved.</p>
+            </address>
+        </footer>
+        <!-- /フッター -->
 
     </div>
-
-    <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-2285128-11']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
+    <!-- /contaniner -->
 
 </body>
 </html>
