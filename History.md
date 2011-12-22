@@ -1,7 +1,7 @@
 # 0.8.9
 ======================
   * Add     DirectAction(ExtDirect)のコンフィグオプションにurlが指定できるようになりました。
-  * Add     Ext.util.Template include時のファイル名指定にシングルクォーテーション以外に、ダブルクォーテーションにも対応しました。
+  * Add     NX.util.Template include時のファイル名指定にシングルクォーテーション以外に、ダブルクォーテーションにも対応しました。
 
 
  # 0.8.8
