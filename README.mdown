@@ -1,8 +1,7 @@
 # Next JS
 
-<img src="http://www.nextjs.net/wp-content/themes/wp.vicuna/skins/style-mono/images/common/logo.png" alt="Next JS" style="border:0" />
-
 Next JS is Application Server on node.js
+Be sure to check out Next JS's successor [Ext Server](https://github.com/xenophy/ext-server).
 
 ## データベースを利用する場合の外部モジュール
 
