@@ -18,7 +18,7 @@ var fs = require('fs'),
         return;
     }
 
-    if(!path.existsSync(pofile)) {
+    if(!fs.existsSync(pofile)) {
         console.log('.po file is not exists.');
         return;
     }
